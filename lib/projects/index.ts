@@ -81,6 +81,14 @@ export const projects: Project[] = [
   stiloGroup,
 ];
 
+console.log("==================================");
+console.log("PROJECT COUNT:", projects.length);
+console.log(
+  "PROJECT SLUGS:",
+  projects.map((p) => p.slug)
+);
+console.log("==================================");
+
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
 }

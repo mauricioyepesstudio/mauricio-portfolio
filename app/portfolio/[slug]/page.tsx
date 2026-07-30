@@ -7,6 +7,7 @@ import ProjectHero from "@/components/ProjectHero";
 import ProjectOverview from "@/components/ProjectOverview";
 import ProjectMetrics from "@/components/ProjectMetrics";
 import ProjectGallery from "@/components/ProjectGallery";
+import ProjectSections from "@/components/ProjectSections";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
@@ -27,7 +28,9 @@ export async function generateMetadata({
 
   const project = getProject(slug);
 
-  if (!project) return {};
+  if (!project) {
+    return {};
+  }
 
   return {
     title: `${project.title} — Case Study`,
@@ -108,11 +111,7 @@ export default async function CaseStudyPage({
           </Reveal>
 
           <div className="lg:col-span-2">
-
-            <ProjectMetrics
-              metrics={project.metrics}
-            />
-
+            <ProjectMetrics metrics={project.metrics} />
           </div>
 
         </div>
@@ -125,10 +124,14 @@ export default async function CaseStudyPage({
           result={project.result}
         />
 
-        <ProjectGallery
-          title={project.title}
-          images={project.gallery}
-        />
+        {project.sections ? (
+          <ProjectSections sections={project.sections} />
+        ) : (
+          <ProjectGallery
+            title={project.title}
+            images={project.gallery}
+          />
+        )}
 
         <ProjectNavigation
           previous={

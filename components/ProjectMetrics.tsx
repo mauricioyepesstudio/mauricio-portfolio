@@ -14,38 +14,38 @@ export default function ProjectMetrics({
 }: ProjectMetricsProps) {
   return (
     <section className="w-full">
-
       <Reveal>
-        <div className="rounded-[36px] border border-line bg-gradient-to-br from-[#141414] via-[#101010] to-[#0b0b0b] overflow-hidden">
-
+        <div className="overflow-hidden rounded-[36px] border border-line bg-gradient-to-br from-[#141414] via-[#101010] to-[#0b0b0b]">
           <div className="grid grid-cols-2 lg:grid-cols-4">
-
             {metrics.map((metric, index) => (
               <div
                 key={metric.label}
-                className={`relative p-10 md:p-12 ${
+                className={`p-10 md:p-12 ${
                   index !== metrics.length - 1
-                    ? "border-b lg:border-b-0 lg:border-r border-line"
+                    ? "border-b border-line lg:border-b-0 lg:border-r"
                     : ""
                 }`}
               >
+                <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+                  {metric.label}
+                </p>
+
                 <p
-  className={`font-semibold leading-tight text-paper ${
-    metric.value.length > 12
-      ? "text-xl md:text-2xl"
-      : "text-[3rem] md:text-[4rem]"
-  }`}
->
-  {metric.value}
-</p>
+                  className={`font-semibold leading-tight text-paper ${
+                    metric.value.length > 15
+                      ? "text-xl md:text-2xl"
+                      : metric.value.length > 8
+                      ? "text-2xl md:text-3xl"
+                      : "text-5xl md:text-6xl"
+                  }`}
+                >
+                  {metric.value}
+                </p>
               </div>
             ))}
-
           </div>
-
         </div>
       </Reveal>
-
     </section>
   );
 }

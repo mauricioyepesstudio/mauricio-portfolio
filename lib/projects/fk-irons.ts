@@ -7,96 +7,112 @@ const fkIrons: Project = {
 
   client: "FK Irons",
 
-  category: "Brand Marketing",
+  category: "Brand Marketing & Product Design",
 
   year: "2024",
 
-  heroImage:
-    "/projects/fk-irons/7a89ee1520904636317bdb4731e4.png",
+  heroImage: "/projects/fk-irons/Artboard 1.png",
 
   gallery: [
-    "/projects/fk-irons/7a89ee1520904636317bdb4731e4.png",
-    "/projects/fk-irons/9d91751520904636317bdb419d17.png",
+    "/projects/fk-irons/Artboard 1.png",
+    "/projects/fk-irons/Artboard 2.png",
+    "/projects/fk-irons/Artboard 3.png",
+    "/projects/fk-irons/Artboard 4.png",
+    "/projects/fk-irons/Artboard 5.png",
+    "/projects/fk-irons/Artboard 6.png",
+    "/projects/fk-irons/Artboard 7.png",
+    "/projects/fk-irons/Artboard 8.png",
   ],
 
   sections: [
     {
-      title: "Marketing Campaigns",
+      title: "Product Campaigns",
       images: [
-        "/projects/fk-irons/7a89ee1520904636317bdb4731e4.png",
+        "/projects/fk-irons/Artboard 1.png",
+        "/projects/fk-irons/Artboard 2.png",
+        "/projects/fk-irons/Artboard 3.png",
       ],
     },
+
     {
-      title: "Product Promotion",
+      title: "Advertising",
       images: [
-        "/projects/fk-irons/9d91751520904636317bdb419d17.png",
+        "/projects/fk-irons/Artboard 4.png",
+        "/projects/fk-irons/Artboard 5.png",
+        "/projects/fk-irons/Artboard 6.png",
+      ],
+    },
+
+    {
+      title: "Brand Content",
+      images: [
+        "/projects/fk-irons/Artboard 7.png",
+        "/projects/fk-irons/Artboard 8.png",
       ],
     },
   ],
 
   deliverables: [
     "Creative Direction",
-    "Advertising Design",
-    "Digital Campaigns",
+    "Advertising Campaigns",
+    "Product Launches",
     "Social Media Design",
-    "Product Marketing",
-    "Brand Identity",
-    "Website Graphics",
     "Email Marketing",
+    "Website Graphics",
+    "Digital Advertising",
+    "Print Design",
+    "Brand Marketing",
+    "Visual Content",
   ],
 
   cover: {
     from: "#000000",
-    to: "#2563EB",
+    to: "#3B82F6",
   },
 
   excerpt:
-    "Creative campaigns and promotional assets designed for FK Irons, one of the world's leading tattoo equipment manufacturers.",
+    "Developing global marketing campaigns, product launches and premium brand experiences for one of the tattoo industry's most recognized manufacturers.",
 
   services: [
     "Creative Direction",
+    "Advertising Design",
     "Graphic Design",
     "Brand Marketing",
-    "Advertising",
-    "Digital Marketing",
-    "Campaign Development",
-    "Social Media Design",
+    "Digital Campaigns",
+    "Social Media",
+    "Product Marketing",
   ],
 
   problem:
-    "Create premium marketing materials capable of communicating innovation, precision and performance while maintaining FK Irons' globally recognized visual identity.",
+    "FK Irons required a consistent visual system capable of supporting product launches, international marketing campaigns, distributor communications and brand growth while maintaining its premium positioning across global markets.",
 
   strategy:
-    "Develop bold, high-impact campaigns focused on product launches, professional artists and distributor communication using clean layouts and premium visuals.",
+    "Create a flexible creative system built around premium product photography, bold typography, minimal layouts and performance-driven messaging that resonates with professional tattoo artists worldwide.",
 
   solution:
-    "Designed advertising campaigns, promotional graphics, digital assets and branded content that reinforced the company's visual identity across multiple marketing channels.",
+    "Designed product launch campaigns, digital advertising, email marketing, website graphics, social media content, event materials and promotional assets that maintained visual consistency across every customer touchpoint.",
 
   result:
-    "Delivered consistent, high-quality marketing materials that strengthened product positioning, improved brand consistency and supported international promotional campaigns.",
+    "Contributed to strengthening FK Irons' global brand presence through cohesive marketing campaigns supporting new product releases, international distributors and one of the industry's fastest growing premium brands.",
 
   metrics: [
-    {
-      label: "Industry",
-      value: "Tattoo",
-    },
-    {
-      label: "Campaigns",
-      value: "40+",
-    },
-    {
-      label: "Markets",
-      value: "Worldwide",
-    },
-    {
-      label: "Role",
-      value: "Senior Graphic Designer",
-    },
-    {
-      label: "Brand",
-      value: "Global",
-    },
-  ],
+  {
+    label: "Campaigns",
+    value: "80+",
+  },
+  {
+    label: "Markets",
+    value: "Worldwide",
+  },
+  {
+    label: "Products",
+    value: "15+",
+  },
+  {
+    label: "Role",
+    value: "Senior Designer",
+  },
+],
 };
 
 export default fkIrons;
