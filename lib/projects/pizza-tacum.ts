@@ -11,41 +11,17 @@ const pizzaTacum: Project = {
 
   year: "2022",
 
-  heroImage: "/projects/pizza-tacum/Artboard 1.png",
+  heroImage: "/projects/pizza-tacum/Artboard 1.jpg",
 
   gallery: [
-    "/projects/pizza-tacum/Artboard 1.png",
-    "/projects/pizza-tacum/Artboard 2.png",
-    "/projects/pizza-tacum/Artboard 3.png",
-    "/projects/pizza-tacum/Artboard 4.png",
-    "/projects/pizza-tacum/Artboard 5.png",
-    "/projects/pizza-tacum/Artboard 6.png",
-    "/projects/pizza-tacum/Artboard 7.png",
-    "/projects/pizza-tacum/Artboard 8.png",
+    "/projects/pizza-tacum/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/pizza-tacum/Artboard 1.png",
-        "/projects/pizza-tacum/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Menu & Promotions",
-      images: [
-        "/projects/pizza-tacum/Artboard 3.png",
-        "/projects/pizza-tacum/Artboard 4.png",
-        "/projects/pizza-tacum/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      images: [
-        "/projects/pizza-tacum/Artboard 6.png",
-        "/projects/pizza-tacum/Artboard 7.png",
-        "/projects/pizza-tacum/Artboard 8.png",
+        "/projects/pizza-tacum/Artboard 1.jpg"
       ],
     },
   ],

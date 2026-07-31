@@ -11,41 +11,37 @@ const branding: Project = {
 
   year: "2024",
 
-  heroImage: "/projects/branding/Artboard 1.png",
+  heroImage: "/projects/branding/Artboard 1.jpg",
 
   gallery: [
-    "/projects/branding/Artboard 1.png",
-    "/projects/branding/Artboard 2.png",
-    "/projects/branding/Artboard 3.png",
-    "/projects/branding/Artboard 4.png",
-    "/projects/branding/Artboard 5.png",
-    "/projects/branding/Artboard 6.png",
-    "/projects/branding/Artboard 7.png",
-    "/projects/branding/Artboard 8.png",
+    "/projects/branding/Artboard 1.jpg",
+    "/projects/branding/Artboard 10.jpg",
+    "/projects/branding/Artboard 11.jpg",
+    "/projects/branding/Artboard 12.jpg",
+    "/projects/branding/Artboard 13.jpg",
+    "/projects/branding/Artboard 14.jpg",
+    "/projects/branding/Artboard 15.jpg",
+    "/projects/branding/Artboard 16.jpg",
+    "/projects/branding/Artboard 17.jpg",
+    "/projects/branding/Artboard 18.jpg",
+    "/projects/branding/Artboard 19.jpg"
   ],
 
   sections: [
     {
-      title: "Logo Design",
+      title: "Portfolio",
       images: [
-        "/projects/branding/Artboard 1.png",
-        "/projects/branding/Artboard 2.png",
-        "/projects/branding/Artboard 3.png",
-      ],
-    },
-    {
-      title: "Visual Identity",
-      images: [
-        "/projects/branding/Artboard 4.png",
-        "/projects/branding/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Brand Applications",
-      images: [
-        "/projects/branding/Artboard 6.png",
-        "/projects/branding/Artboard 7.png",
-        "/projects/branding/Artboard 8.png",
+        "/projects/branding/Artboard 1.jpg",
+        "/projects/branding/Artboard 10.jpg",
+        "/projects/branding/Artboard 11.jpg",
+        "/projects/branding/Artboard 12.jpg",
+        "/projects/branding/Artboard 13.jpg",
+        "/projects/branding/Artboard 14.jpg",
+        "/projects/branding/Artboard 15.jpg",
+        "/projects/branding/Artboard 16.jpg",
+        "/projects/branding/Artboard 17.jpg",
+        "/projects/branding/Artboard 18.jpg",
+        "/projects/branding/Artboard 19.jpg"
       ],
     },
   ],

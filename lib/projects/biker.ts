@@ -11,41 +11,17 @@ const biker: Project = {
 
   year: "2022",
 
-  heroImage: "/projects/biker/Artboard 1.png",
+  heroImage: "/projects/biker/Artboard 1.jpg",
 
   gallery: [
-    "/projects/biker/Artboard 1.png",
-    "/projects/biker/Artboard 2.png",
-    "/projects/biker/Artboard 3.png",
-    "/projects/biker/Artboard 4.png",
-    "/projects/biker/Artboard 5.png",
-    "/projects/biker/Artboard 6.png",
-    "/projects/biker/Artboard 7.png",
-    "/projects/biker/Artboard 8.png",
+    "/projects/biker/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Campaign",
+      title: "Portfolio",
       images: [
-        "/projects/biker/Artboard 1.png",
-        "/projects/biker/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Advertising Design",
-      images: [
-        "/projects/biker/Artboard 3.png",
-        "/projects/biker/Artboard 4.png",
-        "/projects/biker/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Content",
-      images: [
-        "/projects/biker/Artboard 6.png",
-        "/projects/biker/Artboard 7.png",
-        "/projects/biker/Artboard 8.png",
+        "/projects/biker/Artboard 1.jpg"
       ],
     },
   ],

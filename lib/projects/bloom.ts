@@ -11,41 +11,17 @@ const bloom: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/bloom/Artboard 1.png",
+  heroImage: "/projects/bloom/Artboard 1.jpg",
 
   gallery: [
-    "/projects/bloom/Artboard 1.png",
-    "/projects/bloom/Artboard 2.png",
-    "/projects/bloom/Artboard 3.png",
-    "/projects/bloom/Artboard 4.png",
-    "/projects/bloom/Artboard 5.png",
-    "/projects/bloom/Artboard 6.png",
-    "/projects/bloom/Artboard 7.png",
-    "/projects/bloom/Artboard 8.png",
+    "/projects/bloom/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/bloom/Artboard 1.png",
-        "/projects/bloom/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Social Media",
-      images: [
-        "/projects/bloom/Artboard 3.png",
-        "/projects/bloom/Artboard 4.png",
-        "/projects/bloom/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Advertising",
-      images: [
-        "/projects/bloom/Artboard 6.png",
-        "/projects/bloom/Artboard 7.png",
-        "/projects/bloom/Artboard 8.png",
+        "/projects/bloom/Artboard 1.jpg"
       ],
     },
   ],

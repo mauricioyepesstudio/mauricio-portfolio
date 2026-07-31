@@ -11,41 +11,17 @@ const claveEstrategica: Project = {
 
   year: "2022",
 
-  heroImage: "/projects/clave-estrategica/Artboard 1.png",
+  heroImage: "/projects/clave-estrategica/Artboard 1.jpg",
 
   gallery: [
-    "/projects/clave-estrategica/Artboard 1.png",
-    "/projects/clave-estrategica/Artboard 2.png",
-    "/projects/clave-estrategica/Artboard 3.png",
-    "/projects/clave-estrategica/Artboard 4.png",
-    "/projects/clave-estrategica/Artboard 5.png",
-    "/projects/clave-estrategica/Artboard 6.png",
-    "/projects/clave-estrategica/Artboard 7.png",
-    "/projects/clave-estrategica/Artboard 8.png",
+    "/projects/clave-estrategica/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Corporate Identity",
+      title: "Portfolio",
       images: [
-        "/projects/clave-estrategica/Artboard 1.png",
-        "/projects/clave-estrategica/Artboard 2.png",
-        "/projects/clave-estrategica/Artboard 3.png",
-      ],
-    },
-    {
-      title: "Marketing Materials",
-      images: [
-        "/projects/clave-estrategica/Artboard 4.png",
-        "/projects/clave-estrategica/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Business Communication",
-      images: [
-        "/projects/clave-estrategica/Artboard 6.png",
-        "/projects/clave-estrategica/Artboard 7.png",
-        "/projects/clave-estrategica/Artboard 8.png",
+        "/projects/clave-estrategica/Artboard 1.jpg"
       ],
     },
   ],

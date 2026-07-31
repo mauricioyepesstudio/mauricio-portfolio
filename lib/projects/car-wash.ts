@@ -11,41 +11,17 @@ const carWash: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/car-wash/Artboard 1.png",
+  heroImage: "/projects/car-wash/Artboard 1.jpg",
 
   gallery: [
-    "/projects/car-wash/Artboard 1.png",
-    "/projects/car-wash/Artboard 2.png",
-    "/projects/car-wash/Artboard 3.png",
-    "/projects/car-wash/Artboard 4.png",
-    "/projects/car-wash/Artboard 5.png",
-    "/projects/car-wash/Artboard 6.png",
-    "/projects/car-wash/Artboard 7.png",
-    "/projects/car-wash/Artboard 8.png",
+    "/projects/car-wash/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Campaign",
+      title: "Portfolio",
       images: [
-        "/projects/car-wash/Artboard 1.png",
-        "/projects/car-wash/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Promotional Design",
-      images: [
-        "/projects/car-wash/Artboard 3.png",
-        "/projects/car-wash/Artboard 4.png",
-        "/projects/car-wash/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      images: [
-        "/projects/car-wash/Artboard 6.png",
-        "/projects/car-wash/Artboard 7.png",
-        "/projects/car-wash/Artboard 8.png",
+        "/projects/car-wash/Artboard 1.jpg"
       ],
     },
   ],

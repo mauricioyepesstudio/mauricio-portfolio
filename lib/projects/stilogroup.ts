@@ -11,41 +11,33 @@ const stiloGroup: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/stilogroup/Artboard 1.png",
+  heroImage: "/projects/stilogroup/Artboard 1.jpg",
 
   gallery: [
-    "/projects/stilogroup/Artboard 1.png",
-    "/projects/stilogroup/Artboard 2.png",
-    "/projects/stilogroup/Artboard 3.png",
-    "/projects/stilogroup/Artboard 4.png",
-    "/projects/stilogroup/Artboard 5.png",
-    "/projects/stilogroup/Artboard 6.png",
-    "/projects/stilogroup/Artboard 7.png",
-    "/projects/stilogroup/Artboard 8.png",
+    "/projects/stilogroup/Artboard 1.jpg",
+    "/projects/stilogroup/Artboard 10.jpg",
+    "/projects/stilogroup/Artboard 11.jpg",
+    "/projects/stilogroup/Artboard 12.jpg",
+    "/projects/stilogroup/Artboard 13.jpg",
+    "/projects/stilogroup/Artboard 14.jpg",
+    "/projects/stilogroup/Artboard 15.jpg",
+    "/projects/stilogroup/Artboard 16.jpg",
+    "/projects/stilogroup/Artboard 17.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/stilogroup/Artboard 1.png",
-        "/projects/stilogroup/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Interior Design Marketing",
-      images: [
-        "/projects/stilogroup/Artboard 3.png",
-        "/projects/stilogroup/Artboard 4.png",
-        "/projects/stilogroup/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Campaigns",
-      images: [
-        "/projects/stilogroup/Artboard 6.png",
-        "/projects/stilogroup/Artboard 7.png",
-        "/projects/stilogroup/Artboard 8.png",
+        "/projects/stilogroup/Artboard 1.jpg",
+        "/projects/stilogroup/Artboard 10.jpg",
+        "/projects/stilogroup/Artboard 11.jpg",
+        "/projects/stilogroup/Artboard 12.jpg",
+        "/projects/stilogroup/Artboard 13.jpg",
+        "/projects/stilogroup/Artboard 14.jpg",
+        "/projects/stilogroup/Artboard 15.jpg",
+        "/projects/stilogroup/Artboard 16.jpg",
+        "/projects/stilogroup/Artboard 17.jpg"
       ],
     },
   ],

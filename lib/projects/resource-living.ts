@@ -14,14 +14,12 @@ const resourceLiving: Project = {
   heroImage: "/projects/resource-living/Artboard 1.png",
 
   gallery: [
-    "/projects/resource-living/Artboard 1.png",
-  "/projects/resource-living/Artboard 2.png",
-  "/projects/resource-living/Artboard 3.png",
-  "/projects/resource-living/Artboard 4.png",
-  "/projects/resource-living/Artboard 5.png",
-  "/projects/resource-living/Artboard 6.png",
-  "/projects/resource-living/Artboard 7.png",
-  "/projects/resource-living/Artboard 8.png",
+    "/projects/resource-living/Artboard 2.jpg",
+"/projects/resource-living/Artboard 3.jpg",
+"/projects/resource-living/Artboard 4.jpg",
+"/projects/resource-living/Artboard 5.jpg",
+"/projects/resource-living/Artboard 6.jpg",
+"/projects/resource-living/Artboard 7.jpg",
   ],
 
   deliverables: [

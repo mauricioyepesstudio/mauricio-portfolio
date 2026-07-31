@@ -6,30 +6,48 @@ import { projects } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Case studies in branding, packaging, editorial design, marketing campaigns, and website design by Creative Director Mauricio Yepes.",
+    "Creative work by Mauricio Yepes including branding, editorial design, advertising campaigns, digital marketing and web design.",
 };
 
 export default function PortfolioPage() {
   return (
-    <div className="pt-40 pb-28 md:pb-40">
-      <div className="container-px max-w-content mx-auto">
+    <div className="pt-40 pb-32">
+      <div className="container-px mx-auto max-w-content">
         <Reveal>
-          <p className="eyebrow mb-4">Portfolio</p>
-          <h1 className="font-sans font-semibold text-display-lg text-paper max-w-3xl">
-            Case studies, not galleries.
-          </h1>
-          <p className="text-bone text-lg mt-6 max-w-xl">
-            Every project below covers the problem, the strategy, the
-            solution, and the measurable result — the same way I&apos;d walk a
-            client through the work.
-          </p>
+          <div className="max-w-5xl">
+            <p className="eyebrow mb-5">Portfolio</p>
+
+            <h1 className="font-sans text-5xl font-semibold leading-[0.92] text-paper md:text-7xl">
+              Creative work
+              <br />
+              driven by strategy,
+              <br />
+              crafted for results.
+            </h1>
+
+            <p className="mt-8 max-w-3xl text-xl leading-9 text-bone">
+              A curated collection of branding, editorial, advertising,
+              digital marketing and web design projects developed over more
+              than two decades of professional experience.
+            </p>
+          </div>
         </Reveal>
-<p className="text-red-500 text-2xl mb-10">
-  Projects: {projects.length}
-</p>
-        <div className="grid md:grid-cols-2 gap-8 mt-20">
-          {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.08}>
+
+        <Reveal delay={0.1}>
+          <div className="mt-16 mb-20 flex flex-col gap-4 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
+            <p className="text-xs uppercase tracking-[0.35em] text-bone">
+              Selected Projects
+            </p>
+
+            <p className="text-sm text-bone">
+              {projects.length} Case Studies • 20+ Years • 500+ Projects
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid gap-10 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 0.04}>
               <ProjectCard project={project} />
             </Reveal>
           ))}

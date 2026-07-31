@@ -11,41 +11,33 @@ const loana: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/loana/Artboard 1.png",
+  heroImage: "/projects/loana/Artboard 1.jpg",
 
   gallery: [
-    "/projects/loana/Artboard 1.png",
-    "/projects/loana/Artboard 2.png",
-    "/projects/loana/Artboard 3.png",
-    "/projects/loana/Artboard 4.png",
-    "/projects/loana/Artboard 5.png",
-    "/projects/loana/Artboard 6.png",
-    "/projects/loana/Artboard 7.png",
-    "/projects/loana/Artboard 8.png",
+    "/projects/loana/Artboard 1.jpg",
+    "/projects/loana/Artboard 2.jpg",
+    "/projects/loana/Artboard 3.jpg",
+    "/projects/loana/Artboard 4.jpg",
+    "/projects/loana/Artboard 5.jpg",
+    "/projects/loana/Artboard 6.jpg",
+    "/projects/loana/Artboard 7.jpg",
+    "/projects/loana/Artboard 8.jpg",
+    "/projects/loana/Artboard 9.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/loana/Artboard 1.png",
-        "/projects/loana/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Beauty Campaigns",
-      images: [
-        "/projects/loana/Artboard 3.png",
-        "/projects/loana/Artboard 4.png",
-        "/projects/loana/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      images: [
-        "/projects/loana/Artboard 6.png",
-        "/projects/loana/Artboard 7.png",
-        "/projects/loana/Artboard 8.png",
+        "/projects/loana/Artboard 1.jpg",
+        "/projects/loana/Artboard 2.jpg",
+        "/projects/loana/Artboard 3.jpg",
+        "/projects/loana/Artboard 4.jpg",
+        "/projects/loana/Artboard 5.jpg",
+        "/projects/loana/Artboard 6.jpg",
+        "/projects/loana/Artboard 7.jpg",
+        "/projects/loana/Artboard 8.jpg",
+        "/projects/loana/Artboard 9.jpg"
       ],
     },
   ],

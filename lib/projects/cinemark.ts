@@ -15,37 +15,15 @@ const cinemark: Project = {
 
   gallery: [
     "/projects/cinemark/Artboard 1.png",
-    "/projects/cinemark/Artboard 2.png",
-    "/projects/cinemark/Artboard 3.png",
-    "/projects/cinemark/Artboard 4.png",
-    "/projects/cinemark/Artboard 5.png",
-    "/projects/cinemark/Artboard 6.png",
-    "/projects/cinemark/Artboard 7.png",
-    "/projects/cinemark/Artboard 8.png",
+    "/projects/cinemark/Artboard 2.jpg"
   ],
 
   sections: [
     {
-      title: "Advertising Campaigns",
+      title: "Portfolio",
       images: [
         "/projects/cinemark/Artboard 1.png",
-        "/projects/cinemark/Artboard 2.png",
-        "/projects/cinemark/Artboard 3.png",
-      ],
-    },
-    {
-      title: "Seasonal Promotions",
-      images: [
-        "/projects/cinemark/Artboard 4.png",
-        "/projects/cinemark/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      images: [
-        "/projects/cinemark/Artboard 6.png",
-        "/projects/cinemark/Artboard 7.png",
-        "/projects/cinemark/Artboard 8.png",
+        "/projects/cinemark/Artboard 2.jpg"
       ],
     },
   ],

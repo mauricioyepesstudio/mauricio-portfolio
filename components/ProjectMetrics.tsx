@@ -13,39 +13,57 @@ export default function ProjectMetrics({
   metrics,
 }: ProjectMetricsProps) {
   return (
-    <section className="w-full">
+    <section className="mt-32">
+
       <Reveal>
-        <div className="overflow-hidden rounded-[36px] border border-line bg-gradient-to-br from-[#141414] via-[#101010] to-[#0b0b0b]">
+
+        <div className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#171717] via-[#111111] to-[#0b0b0b] shadow-[0_30px_80px_rgba(0,0,0,.35)]">
+
           <div className="grid grid-cols-2 lg:grid-cols-4">
+
             {metrics.map((metric, index) => (
+
               <div
                 key={metric.label}
-                className={`p-10 md:p-12 ${
+                className={`relative overflow-hidden p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.03] ${
                   index !== metrics.length - 1
-                    ? "border-b border-line lg:border-b-0 lg:border-r"
+                    ? "border-b border-white/10 lg:border-b-0 lg:border-r"
                     : ""
                 }`}
               >
-                <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">
+
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-gold/0 via-gold/60 to-gold/0 opacity-0 transition-opacity duration-500 hover:opacity-100" />
+
+                <p className="text-xs uppercase tracking-[0.35em] text-gold">
                   {metric.label}
                 </p>
 
-                <p
-                  className={`font-semibold leading-tight text-paper ${
-                    metric.value.length > 15
-                      ? "text-xl md:text-2xl"
-                      : metric.value.length > 8
-                      ? "text-2xl md:text-3xl"
-                      : "text-5xl md:text-6xl"
-                  }`}
-                >
-                  {metric.value}
-                </p>
+                <div className="mt-8">
+
+                  <p
+                    className={`font-semibold leading-none tracking-tight text-paper ${
+                      metric.value.length > 15
+                        ? "text-2xl"
+                        : metric.value.length > 8
+                        ? "text-4xl"
+                        : "text-6xl"
+                    }`}
+                  >
+                    {metric.value}
+                  </p>
+
+                </div>
+
               </div>
+
             ))}
+
           </div>
+
         </div>
+
       </Reveal>
+
     </section>
   );
 }

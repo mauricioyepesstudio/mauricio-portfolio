@@ -21,11 +21,11 @@ export default function ProjectHero({
   to,
 }: ProjectHeroProps) {
   return (
-    <Reveal delay={0.15}>
-      <section className="mt-16">
-        <div className="relative overflow-hidden rounded-[40px] border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,.45)]">
+    <Reveal delay={0.1}>
+      <section className="mt-12">
+        <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-[#0b0b0b]">
 
-          <div className="relative h-[75vh] md:h-[82vh]">
+          <div className="relative h-[68vh] min-h-[620px]">
 
             {image ? (
               <>
@@ -35,14 +35,14 @@ export default function ProjectHero({
                   fill
                   priority
                   sizes="100vw"
-                  className="object-cover scale-105 transition-transform duration-[7000ms] hover:scale-100"
+                  className="object-cover"
                 />
 
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/35" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
               </>
             ) : (
               <div
@@ -53,37 +53,51 @@ export default function ProjectHero({
               />
             )}
 
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 xl:p-24">
+            <div className="absolute inset-x-0 bottom-0 p-8 md:p-14 xl:p-20">
 
-              <div className="max-w-6xl">
+              <div className="max-w-5xl">
 
-                <p className="eyebrow mb-6">
+                <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80">
+                  Case Study
+                </span>
+
+                <p className="mt-8 text-sm uppercase tracking-[0.35em] text-white/60">
                   {category}
                 </p>
 
-                <h1 className="font-sans font-semibold text-paper leading-[0.9] tracking-[-0.04em] text-5xl md:text-7xl xl:text-[7rem]">
+                <h1 className="mt-4 text-5xl font-semibold leading-[0.9] tracking-[-0.04em] text-white md:text-7xl xl:text-8xl">
                   {title}
                 </h1>
 
-                <div className="mt-14 flex flex-wrap gap-16">
+                <div className="mt-12 grid grid-cols-3 gap-10 max-w-2xl">
 
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.35em] text-neutral-500 mb-2">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">
                       Client
                     </p>
 
-                    <p className="text-paper text-xl">
+                    <p className="mt-2 text-lg text-white">
                       {client}
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.35em] text-neutral-500 mb-2">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">
                       Year
                     </p>
 
-                    <p className="text-paper text-xl">
+                    <p className="mt-2 text-lg text-white">
                       {year}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                      Role
+                    </p>
+
+                    <p className="mt-2 text-lg text-white">
+                      Creative Director
                     </p>
                   </div>
 

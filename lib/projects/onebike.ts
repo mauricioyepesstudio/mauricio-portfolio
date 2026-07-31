@@ -11,41 +11,17 @@ const onebike: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/onebike/Artboard 1.png",
+  heroImage: "/projects/onebike/Artboard 1.jpg",
 
   gallery: [
-    "/projects/onebike/Artboard 1.png",
-    "/projects/onebike/Artboard 2.png",
-    "/projects/onebike/Artboard 3.png",
-    "/projects/onebike/Artboard 4.png",
-    "/projects/onebike/Artboard 5.png",
-    "/projects/onebike/Artboard 6.png",
-    "/projects/onebike/Artboard 7.png",
-    "/projects/onebike/Artboard 8.png",
+    "/projects/onebike/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/onebike/Artboard 1.png",
-        "/projects/onebike/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Marketing Campaigns",
-      images: [
-        "/projects/onebike/Artboard 3.png",
-        "/projects/onebike/Artboard 4.png",
-        "/projects/onebike/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Advertising",
-      images: [
-        "/projects/onebike/Artboard 6.png",
-        "/projects/onebike/Artboard 7.png",
-        "/projects/onebike/Artboard 8.png",
+        "/projects/onebike/Artboard 1.jpg"
       ],
     },
   ],

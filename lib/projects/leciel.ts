@@ -11,41 +11,17 @@ const leciel: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/leciel/Artboard 1.png",
+  heroImage: "/projects/leciel/Artboard 1.jpg",
 
   gallery: [
-    "/projects/leciel/Artboard 1.png",
-    "/projects/leciel/Artboard 2.png",
-    "/projects/leciel/Artboard 3.png",
-    "/projects/leciel/Artboard 4.png",
-    "/projects/leciel/Artboard 5.png",
-    "/projects/leciel/Artboard 6.png",
-    "/projects/leciel/Artboard 7.png",
-    "/projects/leciel/Artboard 8.png",
+    "/projects/leciel/Artboard 1.jpg"
   ],
 
   sections: [
     {
-      title: "Luxury Branding",
+      title: "Portfolio",
       images: [
-        "/projects/leciel/Artboard 1.png",
-        "/projects/leciel/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Real Estate Marketing",
-      images: [
-        "/projects/leciel/Artboard 3.png",
-        "/projects/leciel/Artboard 4.png",
-        "/projects/leciel/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Campaigns",
-      images: [
-        "/projects/leciel/Artboard 6.png",
-        "/projects/leciel/Artboard 7.png",
-        "/projects/leciel/Artboard 8.png",
+        "/projects/leciel/Artboard 1.jpg"
       ],
     },
   ],

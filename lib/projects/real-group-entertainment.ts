@@ -11,38 +11,27 @@ const realGroupEntertainment: Project = {
 
   year: "2025",
 
-  heroImage:
-    "/projects/real-group-entertainment/Artboard 1.png",
+  heroImage: "/projects/real-group-entertainment/Artboard 1.jpg",
 
   gallery: [
-    "/projects/real-group-entertainment/Artboard 1.png",
-    "/projects/real-group-entertainment/Artboard 2.png",
-    "/projects/real-group-entertainment/Artboard 3.png",
-    "/projects/real-group-entertainment/Artboard 4.png",
-    "/projects/real-group-entertainment/Artboard 5.png",
-    "/projects/real-group-entertainment/Artboard 6.png",
+    "/projects/real-group-entertainment/Artboard 1.jpg",
+    "/projects/real-group-entertainment/Artboard 2.jpg",
+    "/projects/real-group-entertainment/Artboard 3.jpg",
+    "/projects/real-group-entertainment/Artboard 4.jpg",
+    "/projects/real-group-entertainment/Artboard 5.jpg",
+    "/projects/real-group-entertainment/Artboard 6.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/real-group-entertainment/Artboard 1.png",
-        "/projects/real-group-entertainment/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      images: [
-        "/projects/real-group-entertainment/Artboard 3.png",
-        "/projects/real-group-entertainment/Artboard 4.png",
-      ],
-    },
-    {
-      title: "Creative Campaigns",
-      images: [
-        "/projects/real-group-entertainment/Artboard 5.png",
-        "/projects/real-group-entertainment/Artboard 6.png",
+        "/projects/real-group-entertainment/Artboard 1.jpg",
+        "/projects/real-group-entertainment/Artboard 2.jpg",
+        "/projects/real-group-entertainment/Artboard 3.jpg",
+        "/projects/real-group-entertainment/Artboard 4.jpg",
+        "/projects/real-group-entertainment/Artboard 5.jpg",
+        "/projects/real-group-entertainment/Artboard 6.jpg"
       ],
     },
   ],

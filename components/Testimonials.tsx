@@ -25,8 +25,8 @@ export default function Testimonials() {
           <p className="eyebrow mb-4">Selected Clients</p>
 
           <h2 className="font-sans font-semibold text-display-md text-paper mb-6 max-w-3xl">
-            XXXXXXXX TEST XXXXXXXX
-          </h2>
+  Trusted by leading brands across the U.S. and Latin America.
+</h2>
 
           <p className="text-bone text-lg max-w-2xl mb-16">
             More than two decades collaborating with startups, international

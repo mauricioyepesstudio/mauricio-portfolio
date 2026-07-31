@@ -11,41 +11,19 @@ const stamina: Project = {
 
   year: "2023",
 
-  heroImage: "/projects/stamina/Artboard 1.png",
+  heroImage: "/projects/stamina/Artboard 1.jpg",
 
   gallery: [
-    "/projects/stamina/Artboard 1.png",
-    "/projects/stamina/Artboard 2.png",
-    "/projects/stamina/Artboard 3.png",
-    "/projects/stamina/Artboard 4.png",
-    "/projects/stamina/Artboard 5.png",
-    "/projects/stamina/Artboard 6.png",
-    "/projects/stamina/Artboard 7.png",
-    "/projects/stamina/Artboard 8.png",
+    "/projects/stamina/Artboard 1.jpg",
+    "/projects/stamina/Artboard 10.jpg"
   ],
 
   sections: [
     {
-      title: "Brand Identity",
+      title: "Portfolio",
       images: [
-        "/projects/stamina/Artboard 1.png",
-        "/projects/stamina/Artboard 2.png",
-      ],
-    },
-    {
-      title: "Fitness Campaigns",
-      images: [
-        "/projects/stamina/Artboard 3.png",
-        "/projects/stamina/Artboard 4.png",
-        "/projects/stamina/Artboard 5.png",
-      ],
-    },
-    {
-      title: "Digital Advertising",
-      images: [
-        "/projects/stamina/Artboard 6.png",
-        "/projects/stamina/Artboard 7.png",
-        "/projects/stamina/Artboard 8.png",
+        "/projects/stamina/Artboard 1.jpg",
+        "/projects/stamina/Artboard 10.jpg"
       ],
     },
   ],

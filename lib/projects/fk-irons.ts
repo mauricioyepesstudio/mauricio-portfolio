@@ -16,38 +16,14 @@ const fkIrons: Project = {
   gallery: [
     "/projects/fk-irons/Artboard 1.png",
     "/projects/fk-irons/Artboard 2.png",
-    "/projects/fk-irons/Artboard 3.png",
-    "/projects/fk-irons/Artboard 4.png",
-    "/projects/fk-irons/Artboard 5.png",
-    "/projects/fk-irons/Artboard 6.png",
-    "/projects/fk-irons/Artboard 7.png",
-    "/projects/fk-irons/Artboard 8.png",
   ],
 
   sections: [
     {
-      title: "Product Campaigns",
+      title: "Portfolio",
       images: [
         "/projects/fk-irons/Artboard 1.png",
         "/projects/fk-irons/Artboard 2.png",
-        "/projects/fk-irons/Artboard 3.png",
-      ],
-    },
-
-    {
-      title: "Advertising",
-      images: [
-        "/projects/fk-irons/Artboard 4.png",
-        "/projects/fk-irons/Artboard 5.png",
-        "/projects/fk-irons/Artboard 6.png",
-      ],
-    },
-
-    {
-      title: "Brand Content",
-      images: [
-        "/projects/fk-irons/Artboard 7.png",
-        "/projects/fk-irons/Artboard 8.png",
       ],
     },
   ],
@@ -96,23 +72,23 @@ const fkIrons: Project = {
     "Contributed to strengthening FK Irons' global brand presence through cohesive marketing campaigns supporting new product releases, international distributors and one of the industry's fastest growing premium brands.",
 
   metrics: [
-  {
-    label: "Campaigns",
-    value: "80+",
-  },
-  {
-    label: "Markets",
-    value: "Worldwide",
-  },
-  {
-    label: "Products",
-    value: "15+",
-  },
-  {
-    label: "Role",
-    value: "Senior Designer",
-  },
-],
+    {
+      label: "Campaigns",
+      value: "80+",
+    },
+    {
+      label: "Markets",
+      value: "Worldwide",
+    },
+    {
+      label: "Products",
+      value: "15+",
+    },
+    {
+      label: "Role",
+      value: "Senior Designer",
+    },
+  ],
 };
 
 export default fkIrons;

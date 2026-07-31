@@ -5,97 +5,133 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/projects";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+}: {
+  project: Project;
+}) {
   return (
     <Link
       href={`/portfolio/${project.slug}`}
       className="group block"
-      aria-label={`View case study: ${project.title}`}
     >
       <motion.article
         whileHover={{
-  y: -8,
-  scale: 1.015,
-}}
-        transition={{ duration: 0.35 }}
-        className="overflow-hidden rounded-[36px] border border-white/10 bg-[#0f0f0f] transition-all duration-500 hover:border-white/20"
+          y: -10,
+        }}
+        transition={{
+          duration: 0.45,
+        }}
+        className="overflow-hidden rounded-[38px] border border-white/10 bg-[#0d0d0d] transition-all duration-500 hover:border-white/20"
       >
-        <div className="relative aspect-[16/9] overflow-hidden">
+        {/* IMAGE */}
 
-          {project.heroImage ? (
-            <motion.img
-              src={project.heroImage}
-              alt={project.title}
-              whileHover={{ scale: 1.08 }}
-              transition={{ duration: 0.9 }}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          ) : (
-            <div
-              className="absolute inset-0"
-              style={{
-                background: `linear-gradient(135deg, ${project.cover.from}, ${project.cover.to})`,
-              }}
-            />
-          )}
+        <div className="relative aspect-[16/10] overflow-hidden">
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
+          <motion.img
+            src={project.heroImage}
+            alt={project.title}
+            className="absolute inset-0 h-full w-full object-cover"
+            whileHover={{
+              scale: 1.08,
+            }}
+            transition={{
+              duration: 1,
+            }}
+          />
 
-          <div className="absolute inset-x-0 bottom-0 p-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
 
-            <p className="text-[11px] uppercase tracking-[0.35em] text-gold mb-3">
+          {/* CATEGORY */}
+
+          <div className="absolute left-8 top-8">
+
+            <span className="rounded-full border border-white/20 bg-black/40 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white backdrop-blur-md">
               {project.category}
-            </p>
+            </span>
 
-            <h3 className="text-white text-[48px] font-semibold leading-[0.95] tracking-[-0.03em]">
+          </div>
+
+          {/* ARROW */}
+
+          <motion.div
+            whileHover={{
+              rotate: 45,
+              scale: 1.08,
+            }}
+            className="absolute right-8 top-8 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black"
+          >
+            <ArrowUpRight size={22} />
+          </motion.div>
+
+          {/* TITLE */}
+
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+
+            <h3 className="text-[44px] font-semibold leading-[0.95] tracking-[-0.03em] text-white">
               {project.title}
             </h3>
 
-            <p className="text-white/70 mt-3">
+            <p className="mt-3 text-white/70">
               {project.client}
             </p>
 
           </div>
 
-          <motion.div
-            whileHover={{
-              rotate: 45,
-              scale: 1.1,
-            }}
-            className="absolute top-6 right-6 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-xl"
-          >
-            <ArrowUpRight size={22} />
-          </motion.div>
-
         </div>
 
-        <div className="px-10 py-9">
+        {/* CONTENT */}
 
-          <p className="text-white/70 text-[18px] leading-9">
+        <div className="px-8 py-8">
+
+          <p className="text-[17px] leading-8 text-white/70">
             {project.excerpt}
           </p>
 
+          {/* SERVICES */}
+
           <div className="mt-8 flex flex-wrap gap-3">
-            {project.services.slice(0, 3).map((service) => (
+
+            {project.services.slice(0, 4).map((service) => (
+
               <span
                 key={service}
                 className="rounded-full border border-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.25em] text-white/60"
               >
                 {service}
               </span>
+
             ))}
+
           </div>
+
+          {/* FOOTER */}
 
           <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
 
-            <span className="text-sm text-white/40">
-              {project.year}
-            </span>
+            <div>
 
-            <span className="flex items-center gap-2 font-medium text-gold transition-all group-hover:gap-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+                YEAR
+              </p>
+
+              <p className="mt-2 text-lg text-white">
+                {project.year}
+              </p>
+
+            </div>
+
+            <motion.div
+              whileHover={{
+                x: 8,
+              }}
+              className="flex items-center gap-3 font-medium text-gold"
+            >
               View Case Study
-              <ArrowUpRight size={16} />
-            </span>
+
+              <ArrowUpRight size={18} />
+
+            </motion.div>
 
           </div>
 
