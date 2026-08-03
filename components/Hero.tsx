@@ -38,13 +38,13 @@ const line = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-radial-fade flex items-center">
+    <section className="relative overflow-hidden bg-radial-fade flex items-center min-h-[100svh] lg:min-h-screen">
 
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
 
-      <div className="container-px max-w-[1600px] mx-auto w-full relative z-10 py-24">
+      <div className="container-px max-w-[1600px] mx-auto w-full relative z-10 pt-36 pb-20 lg:pt-32 lg:pb-20">
 
-        <div className="grid grid-cols-12 gap-x-20 items-center">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-x-20 items-center">
 
           {/* LEFT */}
 
@@ -68,7 +68,16 @@ export default function Hero() {
                   <motion.h1
                     key={word}
                     variants={line}
-                    className="text-6xl md:text-7xl xl:text-8xl font-semibold leading-[0.9] tracking-tight text-paper"
+                    className="
+text-5xl
+sm:text-6xl
+md:text-7xl
+xl:text-8xl
+font-semibold
+leading-[0.9]
+tracking-tight
+text-paper
+"
                   >
                     {word}
                   </motion.h1>
@@ -77,7 +86,14 @@ export default function Hero() {
 
               <motion.p
                 variants={line}
-                className="max-w-xl text-lg leading-8 text-bone"
+                className="
+max-w-xl
+text-base
+sm:text-lg
+leading-7
+sm:leading-8
+text-bone
+"
               >
                 I create premium brand identities, digital experiences,
                 advertising campaigns and marketing systems that help
@@ -87,7 +103,13 @@ export default function Hero() {
 
               <motion.div
                 variants={line}
-                className="flex flex-wrap gap-5 pt-4"
+                className="
+flex
+flex-col
+sm:flex-row
+gap-4
+pt-4
+"
               >
                 <Link
                   href="/portfolio"
@@ -109,9 +131,22 @@ export default function Hero() {
           </div>
 
           {/* RIGHT */}
-          <div className="col-span-12 lg:col-span-7 relative flex items-end justify-center lg:justify-end min-h-[760px]">
+          <div
+className="
+col-span-12
+lg:col-span-7
+relative
+flex
+items-end
+justify-center
+lg:justify-end
+min-h-[300px]
+sm:min-h-[480px]
+lg:min-h-[760px]
+"
+>
 
-            <div className="absolute right-12 top-24 h-[620px] w-[620px] rounded-full bg-white/5 blur-[140px]" />
+            <div className="absolute h-[300px] w-[300px] sm:h-[620px] sm:w-[620px] rounded-full bg-white/5 blur-[140px]" />
 
             <Image
   src="/images/mauricio.png"
@@ -119,11 +154,21 @@ export default function Hero() {
   width={900}
   height={1200}
   priority
-  className="relative z-10 -translate-y-4 w-[470px] lg:w-[610px] h-auto object-contain"
+  className="
+relative
+z-10
+w-[240px]
+sm:w-[340px]
+md:w-[430px]
+lg:w-[610px]
+h-auto
+object-contain
+mx-auto
+"
 />
 
           </div>
-          {/* STATS */}
+                    {/* STATS */}
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,31 +176,39 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="col-span-12 mt-10 border-t border-line pt-10"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
 
               <div>
-                <h3 className="text-5xl font-semibold text-paper">20+</h3>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-paper">
+                  20+
+                </h3>
                 <p className="mt-3 text-sm uppercase tracking-[0.3em] text-bone">
                   Years Experience
                 </p>
               </div>
 
               <div>
-                <h3 className="text-5xl font-semibold text-paper">300+</h3>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-paper">
+                  300+
+                </h3>
                 <p className="mt-3 text-sm uppercase tracking-[0.3em] text-bone">
                   Projects Delivered
                 </p>
               </div>
 
               <div>
-                <h3 className="text-5xl font-semibold text-paper">100+</h3>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-paper">
+                  100+
+                </h3>
                 <p className="mt-3 text-sm uppercase tracking-[0.3em] text-bone">
                   Brands Worked With
                 </p>
               </div>
 
               <div>
-                <h3 className="text-5xl font-semibold text-paper">2</h3>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-paper">
+                  2
+                </h3>
                 <p className="mt-3 text-sm uppercase tracking-[0.3em] text-bone">
                   Languages
                 </p>

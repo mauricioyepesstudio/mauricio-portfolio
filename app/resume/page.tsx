@@ -1,109 +1,316 @@
 import type { Metadata } from "next";
-import { Download } from "lucide-react";
+import { Download, Mail, Globe, Briefcase } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { experience, skills, languages } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Download the resume of Mauricio Yepes, Creative Director and Brand Strategist based in Miami, FL.",
+    "Resume of Mauricio Yepes — Creative Director, Brand Strategist and Marketing Designer based in Miami, Florida.",
 };
 
 export default function ResumePage() {
   return (
-    <div className="pt-40 pb-28 md:pb-40">
+    <div className="pt-40 pb-32 md:pb-40">
       <div className="container-px max-w-content mx-auto">
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-20">
+        {/* HERO */}
+
+        <div className="grid md:grid-cols-12 gap-8 items-end mb-24">
           <Reveal className="md:col-span-8">
             <p className="eyebrow mb-4">Resume</p>
+
             <h1 className="font-sans font-semibold text-display-lg text-paper">
-              Twelve years,
+              20+ years creating
               <br />
-              <span className="font-serif italic text-gold">one</span> point
-              of view.
+              brands, campaigns and
+              <span className="font-serif italic text-gold">
+                {" "}
+                experiences.
+              </span>
             </h1>
           </Reveal>
+
           <Reveal delay={0.1} className="md:col-span-4 md:text-right">
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 justify-center bg-paper text-ink px-7 py-3.5 rounded-full text-sm font-medium tracking-wide hover:bg-gold transition-colors duration-300"
+              className="inline-flex items-center gap-2 justify-center rounded-full bg-paper px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition-all duration-300 hover:bg-gold"
             >
-              <Download size={16} /> Download PDF
+              <Download size={18} />
+              Download Resume
             </a>
           </Reveal>
         </div>
 
-        <div className="border border-line rounded-3xl p-8 md:p-16">
-          <div className="grid md:grid-cols-12 gap-10 pb-12 border-b border-line">
+        {/* RESUME CARD */}
+
+        <div className="rounded-[36px] border border-line bg-[#101010] p-8 md:p-16">
+
+          {/* HEADER */}
+
+          <div className="grid md:grid-cols-12 gap-10 border-b border-line pb-12">
+
             <Reveal className="md:col-span-8">
-              <h2 className="font-serif italic text-3xl text-paper">
+
+              <h2 className="font-serif italic text-5xl text-paper">
                 Mauricio Yepes
               </h2>
-              <p className="text-bone mt-2">
-                Creative Director &amp; Brand Strategist
+
+              <p className="mt-3 text-xl text-bone">
+                Creative Director • Brand Strategist • Marketing Designer
               </p>
-              <p className="text-bone text-sm mt-4">
-                Miami, FL — Legally authorized to work in the United States
+
+              <p className="mt-5 max-w-3xl leading-8 text-bone">
+                Creative Director with more than 20 years of experience
+                developing branding systems, editorial publications,
+                advertising campaigns, websites and digital marketing
+                strategies for companies throughout the United States and
+                Latin America.
               </p>
+
             </Reveal>
-            <Reveal delay={0.05} className="md:col-span-4 md:text-right">
-              <p className="text-sm text-bone">hello@mauricioyepes.com</p>
-              <p className="text-sm text-bone mt-1">
-                {languages.join(" · ")}
-              </p>
+
+            <Reveal delay={0.05} className="md:col-span-4">
+
+              <div className="space-y-5">
+
+                <div className="flex items-center gap-3 text-bone">
+                  <Mail size={18} />
+                  <span>hello@mauricioyepes.com</span>
+                </div>
+
+                <div className="flex items-center gap-3 text-bone">
+                  <Globe size={18} />
+                  <span>www.mauricioyepes.com</span>
+                </div>
+
+                <div className="flex items-center gap-3 text-bone">
+                  <Briefcase size={18} />
+                  <span>Miami, Florida</span>
+                </div>
+
+                <p className="pt-4 text-sm text-gold">
+                  Legally authorized to work in the United States
+                </p>
+
+                <p className="text-sm text-bone">
+                  {languages.join(" • ")}
+                </p>
+
+              </div>
+
             </Reveal>
+
           </div>
 
-          <div className="py-12 border-b border-line">
+          {/* PROFESSIONAL SUMMARY */}
+
+          <div className="border-b border-line py-14">
+
             <Reveal>
-              <p className="eyebrow mb-6">Experience</p>
+
+              <p className="eyebrow mb-6">
+                Professional Summary
+              </p>
+
+              <p className="max-w-5xl text-xl leading-10 text-bone">
+                I help businesses create memorable brands through strategic
+                thinking, creative direction, editorial design, digital
+                marketing and AI-assisted creative workflows. My work combines
+                design excellence with measurable business results, always
+                focused on helping brands stand out and grow.
+              </p>
+
             </Reveal>
-            <div className="space-y-10">
-              {experience.map((item, i) => (
-                <Reveal key={item.role} delay={i * 0.05}>
-                  <div className="grid md:grid-cols-12 gap-4">
-                    <span className="md:col-span-3 text-sm text-gold">
-                      {item.period}
-                    </span>
-                    <div className="md:col-span-9">
-                      <h3 className="text-lg text-paper font-medium">
-                        {item.role} — {item.org}
-                      </h3>
-                      <p className="text-sm text-bone mt-1 mb-2">
-                        {item.location}
-                      </p>
-                      <p className="text-bone leading-relaxed">
-                        {item.description}
+
+          </div>
+
+          {/* EXPERIENCE */}
+
+          <div className="border-b border-line py-14">
+
+            <Reveal>
+              <p className="eyebrow mb-8">
+                Professional Experience
+              </p>
+            </Reveal>
+
+            <div className="space-y-12">
+
+              {experience.map((item, index) => (
+
+                <Reveal
+                  key={item.role}
+                  delay={index * 0.05}
+                >
+
+                  <div className="grid md:grid-cols-12 gap-6">
+
+                    <div className="md:col-span-3">
+                      <p className="text-gold text-sm uppercase tracking-[0.2em]">
+                        {item.period}
                       </p>
                     </div>
+
+                    <div className="md:col-span-9">
+
+                      <h3 className="text-2xl font-medium text-paper">
+                        {item.role}
+                      </h3>
+
+                      <p className="mt-1 text-bone">
+                        {item.org}
+                      </p>
+
+                      <p className="mb-5 text-sm text-bone/70">
+                        {item.location}
+                      </p>
+
+                      <p className="leading-8 text-bone">
+                        {item.description}
+                      </p>
+
+                    </div>
+
                   </div>
+
                 </Reveal>
+
               ))}
+
             </div>
+
           </div>
 
-          <div className="pt-12">
+          {/* SKILLS */}
+
+          <div className="border-b border-line py-14">
+
             <Reveal>
-              <p className="eyebrow mb-6">Core Skills</p>
+              <p className="eyebrow mb-8">
+                Core Skills
+              </p>
             </Reveal>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
               {Object.entries(skills).map(([category, items], i) => (
-                <Reveal key={category} delay={i * 0.05}>
-                  <p className="text-sm text-paper font-medium mb-3 capitalize">
+
+                <Reveal
+                  key={category}
+                  delay={i * 0.05}
+                >
+
+                  <h3 className="mb-5 text-paper font-semibold capitalize">
                     {category}
-                  </p>
-                  <ul className="space-y-1.5">
+                  </h3>
+
+                  <ul className="space-y-2">
+
                     {items.map((item) => (
-                      <li key={item} className="text-sm text-bone">
+
+                      <li
+                        key={item}
+                        className="text-bone"
+                      >
                         {item}
                       </li>
+
                     ))}
+
                   </ul>
+
                 </Reveal>
+
               ))}
+
             </div>
+
           </div>
+
+          {/* SOFTWARE */}
+
+          <div className="border-b border-line py-14">
+
+            <Reveal>
+
+              <p className="eyebrow mb-8">
+                Software & Platforms
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+
+                {[
+                  "Adobe Photoshop",
+                  "Illustrator",
+                  "InDesign",
+                  "After Effects",
+                  "Premiere Pro",
+                  "Figma",
+                  "WordPress",
+                  "Elementor",
+                  "Shopify",
+                  "Meta Ads",
+                  "Google Ads",
+                  "HubSpot",
+                  "ChatGPT",
+                  "Midjourney",
+                  "Runway",
+                ].map((item) => (
+
+                  <span
+                    key={item}
+                    className="rounded-full border border-line px-5 py-2 text-sm text-paper"
+                  >
+                    {item}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </Reveal>
+
+          </div>
+
+          {/* AVAILABILITY */}
+
+          <div className="pt-14">
+
+            <Reveal>
+
+              <p className="eyebrow mb-8">
+                Available For
+              </p>
+
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+                {[
+                  "Creative Direction",
+                  "Brand Strategy",
+                  "Marketing Leadership",
+                  "Senior Graphic Design",
+                  "Advertising Campaigns",
+                  "Editorial Design",
+                  "Digital Marketing",
+                  "Freelance & Full-Time",
+                ].map((item) => (
+
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-line p-6 text-center text-paper transition hover:border-gold"
+                  >
+                    {item}
+                  </div>
+
+                ))}
+
+              </div>
+
+            </Reveal>
+
+          </div>
+
         </div>
       </div>
     </div>
