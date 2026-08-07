@@ -21,14 +21,14 @@ export default function SelectedWork() {
             </p>
 
             <h2 className="text-paper font-sans font-semibold text-5xl md:text-7xl leading-[0.95]">
-              Building brands, campaigns and digital experiences that leave a
-              lasting impression.
+              Case studies from magazine publishing, product launches
+              and lifestyle brands — built end to end, not just designed.
             </h2>
 
             <p className="mt-8 text-bone text-xl leading-9 max-w-3xl">
-              A selection of editorial, branding, advertising and digital
-              projects developed for international companies and growing
-              businesses.
+              Editorial design, lead-generation systems, packaging and
+              advertising campaigns for international companies and
+              growing businesses.
             </p>
           </div>
         </Reveal>

@@ -13,8 +13,8 @@ export default function Footer() {
               Mauricio Yepes
             </p>
             <p className="text-bone text-sm mt-3 max-w-xs">
-              Creative Direction, Brand Strategy, and Marketing Design for
-              brands that refuse to look ordinary.
+              Creative direction, brand strategy and marketing design —
+              from magazine publishing to international product launches.
             </p>
           </div>
 

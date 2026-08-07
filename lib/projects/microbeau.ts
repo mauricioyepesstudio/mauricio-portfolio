@@ -18,16 +18,9 @@ const microbeau: Project = {
 
   sections: [
     {
-      title: "Twelve Days of Beauty",
-      images: [
-        "/projects/microbeau/twelve-days-of-beauty-campaign/hero/twelve-days-of-beauty-hero.png",
-        "/projects/microbeau/twelve-days-of-beauty-campaign/social/twelve-days-of-beauty-flux-post.webp",
-        "/projects/microbeau/twelve-days-of-beauty-campaign/social/twelve-days-of-beauty-bellar-machine-post.webp",
-        "/projects/microbeau/twelve-days-of-beauty-campaign/social/twelve-days-of-beauty-xion-machine-post.webp",
-      ],
-    },
-    {
-      title: "Beauty in Authenticity",
+      title: "Brand Voice",
+      description:
+        "Beauty in Authenticity — the campaign built to put real, working PMU artists in front of the brand instead of stock talent, setting the tone for everything downstream.",
       images: [
         "/projects/microbeau/beauty-in-authenticity-campaign/hero/MB- Beauty in Authenticity - Blog 2.png",
         "/projects/microbeau/beauty-in-authenticity-campaign/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png",
@@ -36,7 +29,9 @@ const microbeau: Project = {
       ],
     },
     {
-      title: "Product Launches — Flux & Vertix",
+      title: "Product Launches",
+      description:
+        "Launch creative for Microbeau's core hardware and consumables — the Flux and Vertix machine lines and the Pico needle system — for a technical, international artist audience.",
       images: [
         "/projects/microbeau/pico-needle-campaign/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png",
         "/projects/microbeau/flux-max-campaign/social/flux-max-machine-post.webp",
@@ -45,8 +40,12 @@ const microbeau: Project = {
       ],
     },
     {
-      title: "Seasonal & Promotional Campaigns",
+      title: "Campaign Calendar",
+      description:
+        "The recurring promotional engine — Black Friday, Twelve Days of Beauty, New Year and price campaigns — all built to the same visual system so a new promotion never starts from a blank page.",
       images: [
+        "/projects/microbeau/twelve-days-of-beauty-campaign/hero/twelve-days-of-beauty-hero.png",
+        "/projects/microbeau/twelve-days-of-beauty-campaign/social/twelve-days-of-beauty-flux-post.webp",
         "/projects/microbeau/blak-friday-campaign/hero/blak-friday-social-feed-header.webp",
         "/projects/microbeau/kikstar-the-new-year-campaign/banner/kikstar-the-new-year-pmu-collection-machine-web-banner.png",
         "/projects/microbeau/price-drop-campaign/banner/price-drop-banner.webp",
@@ -54,7 +53,9 @@ const microbeau: Project = {
       ],
     },
     {
-      title: "Artist Spotlight & Community",
+      title: "Artist Community",
+      description:
+        "Distributor sales sheets and artist-spotlight features that keep the brand's international network of PMU professionals engaged between launches.",
       images: [
         "/projects/microbeau/Mystique-Brows-By-Jenny-Lind-Brows-Campaign/hero/Microbeau-Black-History-Month.png",
         "/projects/microbeau/Mystique-Brows-By-Jenny-Lind-Brows-Campaign/social/Mystique-Brows-By-Jenny-Lind-Brow-Services.png",
@@ -82,7 +83,7 @@ const microbeau: Project = {
   },
 
   excerpt:
-    "Creative marketing campaigns developed for one of the world's leading permanent makeup brands, supporting product launches, distributor growth, and global brand awareness.",
+    "Product-launch and campaign creative for Microbeau, an international permanent-makeup hardware and pigment brand, built for a technical, distributor-driven artist network.",
 
   services: [
     "Creative Direction",
@@ -95,16 +96,16 @@ const microbeau: Project = {
   ],
 
   problem:
-    "Microbeau and its pigment brand Evenflo Colours ship new PMU hardware and formulas on a near-constant cycle, across a global, highly technical artist community — every launch needed creative that could explain a new product fast without losing the brand's premium tone.",
+    "Microbeau and its pigment brand Evenflo Colours ship new PMU hardware and formulas on a near-constant cycle, to a global, highly technical artist community — every launch needed creative that could explain a new product fast without cheapening the brand's premium tone, and every promotion needed to reuse rather than reinvent the system.",
 
   strategy:
-    "Standardize a repeatable campaign system — hero art, social, email/newsletter and sales-sheet formats — flexible enough to cover everything from a single-day promotion to a multi-week seasonal push, while leaving room for storytelling campaigns like Beauty in Authenticity that put real artists in front of the brand.",
+    "Build one visual system with enough range to cover a single-day promotion and a multi-week product launch alike — hero art, social, email and distributor sales-sheet formats — and use it to carry both hardware launches and brand-values storytelling like Beauty in Authenticity, which puts working artists in front of the brand instead of stock talent.",
 
   solution:
-    "Produced creative for recurring seasonal and promotional campaigns (Black Friday, Twelve Days of Beauty, New Year, Anniversary, Price Drop), individual product launches (Flux, Vertix and Pico needle systems), distributor sales sheets, and artist-community features, all built to a shared visual system across social, email and web.",
+    "Produced launch creative for the Flux, Vertix and Pico product lines, ran the recurring promotional calendar (Black Friday, Twelve Days of Beauty, New Year, Anniversary, Price Drop) on a shared template system, built distributor sales sheets, and produced artist-community features — all on one consistent visual language across social, email and web.",
 
   result:
-    "Delivered 100+ campaigns on a consistent visual system, giving Microbeau and Evenflo Colours a reusable creative pipeline for global product launches instead of one-off design requests.",
+    "Delivered 100+ campaigns on a single visual system, giving Microbeau and Evenflo Colours a reusable creative pipeline for global product launches instead of one-off design requests for every new drop.",
 
   metrics: [
     {

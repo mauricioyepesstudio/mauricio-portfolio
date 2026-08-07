@@ -114,11 +114,11 @@ export default function ResumePage() {
               </p>
 
               <p className="max-w-5xl text-xl leading-10 text-bone">
-                I help businesses create memorable brands through strategic
-                thinking, creative direction, editorial design, digital
-                marketing and AI-assisted creative workflows. My work combines
-                design excellence with measurable business results, always
-                focused on helping brands stand out and grow.
+                Twenty years directing creative for magazines, product
+                launches and marketing campaigns across the United States
+                and Latin America. My work spans strategy, editorial
+                design, digital marketing and AI-assisted production,
+                built to hold up in market, not just in a deck.
               </p>
 
             </Reveal>

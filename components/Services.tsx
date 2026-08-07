@@ -8,7 +8,7 @@ export default function Services() {
         <Reveal>
           <p className="eyebrow mb-4">What I Do</p>
           <h2 className="font-sans font-semibold text-display-md text-paper mb-16 max-w-2xl">
-            Creative solutions that combine strategy, design and technology to build brands that stand out.
+            Twenty years of creative direction, compressed into eight disciplines I still do myself.
           </h2>
         </Reveal>
 

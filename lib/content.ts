@@ -2,42 +2,42 @@ export const services = [
   {
     title: "Creative Direction",
     description:
-      "Leading creative vision from concept to execution across branding, advertising, digital experiences and integrated marketing campaigns.",
+      "Setting the creative direction for a brand or campaign from first concept through final production, not handing it off after the deck.",
   },
   {
     title: "Brand Identity",
     description:
-      "Building memorable visual identities, logo systems, typography and brand guidelines that create consistency across every touchpoint.",
+      "Logo systems, typography and brand guidelines built to stay consistent once other people start applying them.",
   },
   {
     title: "Editorial Design",
     description:
-      "Designing magazines, catalogs, brochures and corporate publications with strong visual storytelling and refined typography.",
+      "Magazine layouts, catalogs and corporate publications — the discipline behind thirty-plus print editions a year.",
   },
   {
     title: "Advertising & Campaigns",
     description:
-      "Developing integrated campaigns for print, digital and social media focused on brand awareness, engagement and business growth.",
+      "Print, digital and social campaigns built around one message and one visual system, not a different agency's version of each.",
   },
   {
     title: "Digital Marketing",
     description:
-      "Creating high-converting creative assets for Meta Ads, Google Ads, email marketing, landing pages and social media.",
+      "Creative for Meta Ads, Google Ads, email and landing pages, built to be tested and iterated, not just delivered once.",
   },
   {
     title: "Website Design",
     description:
-      "Designing modern, responsive websites that combine aesthetics, usability and conversion-focused user experiences.",
+      "Responsive websites where the layout serves the funnel, not just the mood board.",
   },
   {
     title: "AI Creative",
     description:
-      "Leveraging AI tools to accelerate creative production, concept development, image generation and marketing workflows.",
+      "Adobe Firefly, Midjourney and ChatGPT worked directly into concepting and production where they save real time, not as a gimmick layer on top.",
   },
   {
     title: "Print & Production",
     description:
-      "Preparing production-ready artwork for magazines, packaging, large-format printing and commercial offset production.",
+      "Production-ready artwork for magazines, packaging and large-format print — the unglamorous half of the job that keeps the glamorous half honest.",
   },
 ];
 

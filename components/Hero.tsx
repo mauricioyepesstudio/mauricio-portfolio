@@ -95,10 +95,10 @@ sm:leading-8
 text-bone
 "
               >
-                I create premium brand identities, digital experiences,
-                advertising campaigns and marketing systems that help
-                companies stand out, grow and connect with the right
-                audience.
+                Twenty years directing brand identities, advertising
+                campaigns and lead-generation systems — from a South
+                Florida home-improvement publication's ad network to
+                product launches for international beauty brands.
               </motion.p>
 
               <motion.div

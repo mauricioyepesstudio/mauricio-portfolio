@@ -39,7 +39,7 @@ const seafoodDelight: Project = {
   },
 
   excerpt:
-    "Fresh branding and promotional campaigns designed for Seafood Delight, highlighting premium seafood dishes through vibrant visuals and engaging marketing materials.",
+    "Brand identity, packaging and e-commerce design for Seafood Delight, a frozen-seafood retailer, built around one nautical mark and a repeatable packaging template.",
 
   services: [
     "Creative Direction",

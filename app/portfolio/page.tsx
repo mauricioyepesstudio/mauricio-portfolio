@@ -18,17 +18,17 @@ export default function PortfolioPage() {
             <p className="eyebrow mb-5">Portfolio</p>
 
             <h1 className="font-sans text-5xl font-semibold leading-[0.92] text-paper md:text-7xl">
-              Creative work
+              Every project here
               <br />
-              driven by strategy,
+              ships with the process
               <br />
-              crafted for results.
+              behind it.
             </h1>
 
             <p className="mt-8 max-w-3xl text-xl leading-9 text-bone">
-              A curated collection of branding, editorial, advertising,
-              digital marketing and web design projects developed over more
-              than two decades of professional experience.
+              Branding, editorial design, lead-generation systems and
+              product launches — each case study broken down by problem,
+              approach and outcome, not just a gallery of final assets.
             </p>
           </div>
         </Reveal>

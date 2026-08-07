@@ -110,18 +110,20 @@ export default function AboutPage() {
 
               <Reveal delay={0.1}>
                 <p>
-                  My expertise combines branding, editorial design, print
-                  production, digital marketing, web design and AI-assisted
-                  creative workflows. Every project is guided by strategy,
-                  creativity and measurable business results.
+                  My work spans branding, editorial design, print production,
+                  digital marketing, web design and AI-assisted creative
+                  workflows, usually on the same project, since most clients
+                  don't have the budget for five separate specialists.
                 </p>
               </Reveal>
 
               <Reveal delay={0.15}>
                 <p>
-                  I believe great design is more than aesthetics. It creates
-                  trust, communicates clearly and helps companies grow through
-                  meaningful experiences that connect with people.
+                  Design that doesn't get used doesn't do anything. I care
+                  less about a piece looking good in isolation than about
+                  whether the client can actually run it, as an ad, a
+                  landing page, a magazine spread or a lead-generation
+                  system that keeps working after I hand it off.
                 </p>
               </Reveal>
 

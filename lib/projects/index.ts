@@ -6,6 +6,7 @@ import seafoodDelight from "./seafood-delight";
 
 export type ProjectSection = {
   title: string;
+  description?: string;
   images: string[];
 };
 

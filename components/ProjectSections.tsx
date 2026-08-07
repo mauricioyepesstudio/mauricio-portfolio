@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { altFromPath } from "@/lib/utils";
-
-type Section = {
-  title: string;
-  images: string[];
-};
+import type { ProjectSection } from "@/lib/projects";
 
 type Props = {
-  sections?: Section[];
+  sections?: ProjectSection[];
 };
 
 export default function ProjectSections({ sections }: Props) {
@@ -32,6 +28,12 @@ export default function ProjectSections({ sections }: Props) {
               <h2 className="text-paper text-display-md font-semibold">
                 {section.title}
               </h2>
+
+              {section.description && (
+                <p className="mt-4 max-w-2xl text-lg text-bone">
+                  {section.description}
+                </p>
+              )}
 
             </div>
 
