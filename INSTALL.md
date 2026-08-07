@@ -31,16 +31,18 @@ npm start
 
 ## 4. Before you launch
 
-- Replace the placeholder social links in `components/Footer.tsx` and
-  `app/contact/page.tsx` (LinkedIn, Behance) with your real profile URLs.
-- Replace `hello@mauricioyepes.com` with your real contact email throughout
-  the site.
+- Contact email, LinkedIn and Behance links are already set to their real
+  values (`rgentertainmentmanagement@gmail.com`,
+  `linkedin.com/in/mauricio-yepes-lotero`, `behance.net/mauricioyepes01`)
+  across the Contact page, Footer and Resume page. If any of these change,
+  update them in `components/Footer.tsx`, `app/contact/page.tsx`,
+  `app/resume/page.tsx`, and `components/ContactForm.tsx`.
 - Update `siteUrl` in `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts`
-  to your real production domain.
-- Connect `app/api/contact/route.ts` to a real email service (Resend,
-  SendGrid, Postmark) or CRM webhook — it currently only logs submissions
-  to the server console. A commented example using Resend is included in
-  that file.
+  to your real production domain if `mauricioyepes.com` is not it.
+- `app/api/contact/route.ts` is already connected to Resend and requires a
+  `RESEND_API_KEY` environment variable. Verify a custom sending domain in
+  Resend so outgoing mail doesn't come from the shared `onboarding@resend.dev`
+  sandbox address.
 - Swap `public/resume.pdf` for an updated version any time your resume
   changes — the download link on the Home and Resume pages points directly
   to this file path.

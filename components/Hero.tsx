@@ -189,7 +189,7 @@ mx-auto
 
               <div>
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-paper">
-                  300+
+                  Hundreds of
                 </h3>
                 <p className="mt-3 text-sm uppercase tracking-[0.3em] text-bone">
                   Projects Delivered

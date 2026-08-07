@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { altFromPath } from "@/lib/utils";
 
 type ProjectGalleryProps = {
   title: string;
@@ -56,7 +57,7 @@ export default function ProjectGallery({
 
                 <Image
                   src={image}
-                  alt={`${title} ${index + 1}`}
+                  alt={`${altFromPath(image, title)} — ${title}`}
                   width={1600}
                   height={1200}
                   sizes="(max-width:768px) 100vw,

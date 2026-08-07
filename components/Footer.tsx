@@ -49,15 +49,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="mailto:hello@mauricioyepes.com"
+                  href="mailto:rgentertainmentmanagement@gmail.com"
                   className="flex items-center gap-2 text-bone hover:text-paper transition-colors"
                 >
-                  <Mail size={16} /> hello@mauricioyepes.com
+                  <Mail size={16} /> rgentertainmentmanagement@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/mauricio-yepes-lotero/?locale=en"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-bone hover:text-paper transition-colors"
@@ -67,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.behance.net/"
+                  href="https://www.behance.net/mauricioyepes01"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-bone hover:text-paper transition-colors"

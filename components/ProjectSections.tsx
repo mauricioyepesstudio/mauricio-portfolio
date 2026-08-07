@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { altFromPath } from "@/lib/utils";
 
 type Section = {
   title: string;
@@ -46,7 +47,7 @@ export default function ProjectSections({ sections }: Props) {
 
                   <Image
                     src={image}
-                    alt={section.title}
+                    alt={`${altFromPath(image, section.title)} — ${section.title}`}
                     width={1400}
                     height={1000}
                     className="w-full h-auto transition duration-700 hover:scale-105"

@@ -76,7 +76,7 @@ export default function ResumePage() {
 
                 <div className="flex items-center gap-3 text-bone">
                   <Mail size={18} />
-                  <span>hello@mauricioyepes.com</span>
+                  <span>rgentertainmentmanagement@gmail.com</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-bone">

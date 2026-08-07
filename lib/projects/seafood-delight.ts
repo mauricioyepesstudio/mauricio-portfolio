@@ -11,54 +11,16 @@ const seafoodDelight: Project = {
 
   year: "2022",
 
-  heroImage: "/projects/seafood-delight/Artboard 1.png",
+  heroImage:
+    "/projects/seafood-delight/web/Seafood-Delight-Freshness-Meal-Tilapia-Fillets-Mahi-Mahi-Sea-Bass-Natural-Ingredients-Homemade.jpg",
 
   gallery: [
-    "/projects/seafood-delight/Artboard 1.png",
-    "/projects/seafood-delight/Artboard 10.png",
-    "/projects/seafood-delight/Artboard 11.jpg",
-    "/projects/seafood-delight/Artboard 12.png",
-    "/projects/seafood-delight/Artboard 13.png",
-    "/projects/seafood-delight/Artboard 14.png",
-    "/projects/seafood-delight/Artboard 15.png",
-    "/projects/seafood-delight/Artboard 16.png",
-    "/projects/seafood-delight/Artboard 17.png",
-    "/projects/seafood-delight/Artboard 18.png",
-    "/projects/seafood-delight/Artboard 19.png",
-    "/projects/seafood-delight/Artboard 20.png",
-    "/projects/seafood-delight/Artboard 21.png",
-    "/projects/seafood-delight/Artboard 22.png",
-    "/projects/seafood-delight/Artboard 23.png",
-    "/projects/seafood-delight/Artboard 24.png",
-    "/projects/seafood-delight/Artboard 25.png",
-    "/projects/seafood-delight/Artboard 26.png"
+    "/projects/seafood-delight/logo/seafood-delight-logo.svg",
+    "/projects/seafood-delight/packaging/Seafood-Delight-Mahi-Mahi-Pistachio-Macadamia-Frozen.png",
+    "/projects/seafood-delight/packaging/Seafood-Delight-Tiger-Prawns-Chipotle-Sauce-Frozen-Seafood.png",
   ],
 
-  sections: [
-    {
-      title: "Portfolio",
-      images: [
-        "/projects/seafood-delight/Artboard 1.png",
-        "/projects/seafood-delight/Artboard 10.png",
-        "/projects/seafood-delight/Artboard 11.jpg",
-        "/projects/seafood-delight/Artboard 12.png",
-        "/projects/seafood-delight/Artboard 13.png",
-        "/projects/seafood-delight/Artboard 14.png",
-        "/projects/seafood-delight/Artboard 15.png",
-        "/projects/seafood-delight/Artboard 16.png",
-        "/projects/seafood-delight/Artboard 17.png",
-        "/projects/seafood-delight/Artboard 18.png",
-        "/projects/seafood-delight/Artboard 19.png",
-        "/projects/seafood-delight/Artboard 20.png",
-        "/projects/seafood-delight/Artboard 21.png",
-        "/projects/seafood-delight/Artboard 22.png",
-        "/projects/seafood-delight/Artboard 23.png",
-        "/projects/seafood-delight/Artboard 24.png",
-        "/projects/seafood-delight/Artboard 25.png",
-        "/projects/seafood-delight/Artboard 26.png"
-      ],
-    },
-  ],
+  sections: [],
 
   deliverables: [
     "Creative Direction",
@@ -90,16 +52,16 @@ const seafoodDelight: Project = {
   ],
 
   problem:
-    "Create an inviting restaurant identity capable of attracting new customers while showcasing the freshness and quality of the menu.",
+    "Seafood Delight needed a packaging and brand system that could read as premium and trustworthy on a frozen-food shelf, plus a storefront that presented the product range clearly online.",
 
   strategy:
-    "Develop colorful promotional campaigns centered on premium food photography, clean layouts and compelling offers across digital and printed media.",
+    "Build a simple, nautical brand mark and a repeatable packaging template that could scale across the full product line — salmon, mahi-mahi, sea bass, tilapia, tiger prawns and octopus — paired with a clean e-commerce layout to bring the same system online.",
 
   solution:
-    "Designed menus, advertising campaigns, promotional graphics and social media content that created a consistent and appetizing brand experience.",
+    "Designed the Seafood Delight logo, a repeatable packaging system across the frozen product line, and the layout for the brand's e-commerce site.",
 
   result:
-    "Delivered a recognizable visual identity supported by effective marketing materials that increased brand visibility and strengthened customer engagement.",
+    "Established a consistent shelf-to-screen identity for the brand's product range, with a packaging template ready to extend to future flavors and SKUs.",
 
   metrics: [
     {

@@ -48,12 +48,21 @@ export const metadata: Metadata = {
     description:
       "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
     siteName: "Mauricio Yepes",
+    images: [
+      {
+        url: "/images/mauricio.png",
+        width: 900,
+        height: 1200,
+        alt: "Mauricio Yepes — Creative Director",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mauricio Yepes — Creative Director & Brand Strategist",
     description:
       "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
+    images: ["/images/mauricio.png"],
   },
   robots: {
     index: true,
@@ -64,6 +73,29 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Mauricio Yepes",
+  jobTitle: "Creative Director",
+  url: siteUrl,
+  image: `${siteUrl}/images/mauricio.png`,
+  worksFor: {
+    "@type": "Organization",
+    name: "Real Group Entertainment LLC",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Miami",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/mauricio-yepes-lotero/",
+    "https://www.behance.net/mauricioyepes01",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -72,6 +104,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${instrument.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-ink focus:px-4 focus:py-2 focus:rounded"

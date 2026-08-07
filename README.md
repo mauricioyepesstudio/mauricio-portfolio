@@ -30,15 +30,18 @@ public/resume.pdf           Downloadable resume
 
 ## Editing Content
 
-- **Case studies / portfolio:** `lib/projects.ts`
-- **Services, experience, testimonials, skills:** `lib/content.ts`
+- **Case studies / portfolio:** `lib/projects/*.ts` (registered in `lib/projects/index.ts`). Each project can render its imagery either as a flat `gallery` array or as chaptered `sections`, and can optionally include a `videos` array (native HTML5 video, rendered by `components/ProjectVideos.tsx`).
+- **Services, experience, skills:** `lib/content.ts`. The `testimonials` export is intentionally empty and reserved for real client quotes when available — it is not currently rendered anywhere.
 - **Resume PDF:** regenerate from your own source, or edit `public/resume.pdf` directly.
 
 ## Contact Form
 
-`app/api/contact/route.ts` currently logs submissions to the server console.
-Wire it up to a real email provider (Resend, SendGrid, Postmark) or a webhook
-before going to production — see the commented example in that file.
+`app/api/contact/route.ts` is wired to [Resend](https://resend.com) and sends
+submissions to `rgentertainmentmanagement@gmail.com`. Requires a
+`RESEND_API_KEY` environment variable (see `.env.local`). The `from` address
+currently uses Resend's shared sandbox domain (`onboarding@resend.dev`) —
+verify a custom sending domain in Resend before relying on this for
+production deliverability.
 
 ## Deployment
 

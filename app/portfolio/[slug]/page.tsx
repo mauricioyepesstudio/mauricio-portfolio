@@ -8,6 +8,7 @@ import ProjectOverview from "@/components/ProjectOverview";
 import ProjectMetrics from "@/components/ProjectMetrics";
 import ProjectGallery from "@/components/ProjectGallery";
 import ProjectSections from "@/components/ProjectSections";
+import ProjectVideos from "@/components/ProjectVideos";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
@@ -124,7 +125,7 @@ export default async function CaseStudyPage({
           result={project.result}
         />
 
-        {project.sections ? (
+        {project.sections?.length ? (
           <ProjectSections sections={project.sections} />
         ) : (
           <ProjectGallery
@@ -132,6 +133,8 @@ export default async function CaseStudyPage({
             images={project.gallery}
           />
         )}
+
+        <ProjectVideos videos={project.videos} />
 
         <ProjectNavigation
           previous={

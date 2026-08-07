@@ -40,7 +40,7 @@ export default function PortfolioPage() {
             </p>
 
             <p className="text-sm text-bone">
-              {projects.length} Case Studies • 20+ Years • 500+ Projects
+              {projects.length} Case Studies • 20+ Years • Hundreds of Projects
             </p>
           </div>
         </Reveal>

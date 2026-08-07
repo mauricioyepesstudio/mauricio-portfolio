@@ -11,52 +11,23 @@ const evenflo: Project = {
 
   year: "2024",
 
-  heroImage: "/projects/evenflo/Artboard 1.png",
+  heroImage:
+    "/projects/evenflo/evenflo-blonde-to-brunette-ink-campaign/hero/Evenflo-Colours-Blonde2brunette-Hybrid-Formula-REACH-Compliance.png",
 
   gallery: [
-    "/projects/evenflo/Artboard 1.png",
-    "/projects/evenflo/Artboard 10.png",
-    "/projects/evenflo/Artboard 11.png",
-    "/projects/evenflo/Artboard 12.png",
-    "/projects/evenflo/Artboard 13.png",
-    "/projects/evenflo/Artboard 14.png",
-    "/projects/evenflo/Artboard 15.png",
-    "/projects/evenflo/Artboard 16.png",
-    "/projects/evenflo/Artboard 17.png",
-    "/projects/evenflo/Artboard 18.png",
-    "/projects/evenflo/Artboard 19.png",
-    "/projects/evenflo/Artboard 20.png",
-    "/projects/evenflo/Artboard 21.png",
-    "/projects/evenflo/Artboard 22.png",
-    "/projects/evenflo/Artboard 23.png",
-    "/projects/evenflo/Artboard 24.png",
-    "/projects/evenflo/Artboard 25.png"
+    "/projects/evenflo/evenflo-blonde-to-brunette-ink-campaign/newsletter/Evenflo-Colours-Blonde2Brunette-Hybrid-Formula-REACH-Compliant-Pigments.png",
+    "/projects/evenflo/evenflo-blonde-to-brunette-ink-campaign/social/Evenflo-Colours-Blonde2-Brunette.png",
+    "/projects/evenflo/evenflo-blonde-to-brunette-ink-campaign/logo/blonre-2-brunette-ink-logo-svg.png",
+    "/projects/evenflo/evenflo-its-raining-gold-ink-campaign/hero/Gold-Promotion.png",
+    "/projects/evenflo/evenflo-its-raining-gold-ink-campaign/social/Brow-Daddy-Gold-Collection-Sets-Singles-20-Off.png",
+    "/projects/evenflo/evenflo-pinker-ink-campaign/hero/Evenflo-Intensify-Cool-Shades-Lip-Blends.png",
+    "/projects/evenflo/evenflo-pinker-ink-campaign/social/Microbeau-Lip-Blends-Cool-Shades-Evenflo-Pinker.png",
+    "/projects/evenflo/evenflo-true-lips-ink-campaign/social/Evenflo True Lips Unisex Pigments 1.png",
+    "/projects/evenflo/evenflo-true-lips-ink-campaign/social/Evenflo True Lips Unisex Pigments 2.png",
+    "/projects/evenflo/evenflo-true-lips-ink-campaign/newsletter/Evenflo-PMU-True-Lips-Colors.png",
   ],
 
-  sections: [
-    {
-      title: "Portfolio",
-      images: [
-        "/projects/evenflo/Artboard 1.png",
-        "/projects/evenflo/Artboard 10.png",
-        "/projects/evenflo/Artboard 11.png",
-        "/projects/evenflo/Artboard 12.png",
-        "/projects/evenflo/Artboard 13.png",
-        "/projects/evenflo/Artboard 14.png",
-        "/projects/evenflo/Artboard 15.png",
-        "/projects/evenflo/Artboard 16.png",
-        "/projects/evenflo/Artboard 17.png",
-        "/projects/evenflo/Artboard 18.png",
-        "/projects/evenflo/Artboard 19.png",
-        "/projects/evenflo/Artboard 20.png",
-        "/projects/evenflo/Artboard 21.png",
-        "/projects/evenflo/Artboard 22.png",
-        "/projects/evenflo/Artboard 23.png",
-        "/projects/evenflo/Artboard 24.png",
-        "/projects/evenflo/Artboard 25.png"
-      ],
-    },
-  ],
+  sections: [],
 
   deliverables: [
     "Creative Direction",
@@ -88,16 +59,16 @@ const evenflo: Project = {
   ],
 
   problem:
-    "Communicate product innovation and premium quality while educating PMU artists through engaging visual campaigns across multiple digital platforms.",
+    "Evenflo Colours needed to launch new REACH-compliant pigment formulas to a technical, global PMU artist audience, where trust in formulation detail matters as much as visual appeal.",
 
   strategy:
-    "Create a modern and consistent visual language focused on product education, lifestyle imagery, and high-impact promotional campaigns.",
+    "Pair clean, editorial-style launch creative with visible compliance and formulation information — REACH certification marks, shade breakdowns and mixing guidance — and lean on working PMU educators in the creative to keep the brand credible with practicing artists.",
 
   solution:
-    "Designed product launch campaigns, promotional graphics, social media assets, educational visuals, email marketing pieces, and digital advertisements aligned with the Evenflo global brand.",
+    "Directed and designed launch campaigns for four pigment lines — Blonde2Brunette, It's Raining Gold, Pinker and True Lips — including hero creative, social content and email/newsletter assets, several featuring PMU educator Lulu Siciliano.",
 
   result:
-    "Delivered a cohesive visual identity across campaigns that strengthened brand recognition and supported new product launches in international markets.",
+    "Shipped a consistent launch framework across four product lines, giving Evenflo Colours a repeatable way to introduce new pigment formulas to its international artist network.",
 
   metrics: [
     {

@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/projects";
+
+const MotionImage = motion(Image);
 
 export default function ProjectCard({
   project,
@@ -28,9 +31,11 @@ export default function ProjectCard({
 
         <div className="relative aspect-[16/10] overflow-hidden">
 
-          <motion.img
+          <MotionImage
             src={project.heroImage}
             alt={project.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="absolute inset-0 h-full w-full object-cover"
             whileHover={{
               scale: 1.08,

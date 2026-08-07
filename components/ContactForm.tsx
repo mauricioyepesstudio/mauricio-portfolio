@@ -163,8 +163,8 @@ export default function ContactForm() {
             exit={{ opacity: 0 }}
             className="text-sm text-red-400"
           >
-            Something went wrong. Please email hello@mauricioyepes.com
-            directly.
+            Something went wrong. Please email
+            rgentertainmentmanagement@gmail.com directly.
           </motion.p>
         )}
       </AnimatePresence>

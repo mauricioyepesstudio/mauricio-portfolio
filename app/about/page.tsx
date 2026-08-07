@@ -152,7 +152,7 @@ export default function AboutPage() {
 
                   <div>
                     <h3 className="text-5xl font-semibold text-paper">
-                      500+
+                      Hundreds of
                     </h3>
 
                     <p className="mt-3 text-sm text-bone">
