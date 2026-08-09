@@ -20,9 +20,9 @@ export default function ProjectNavigation({
 }: ProjectNavigationProps) {
   return (
     <Reveal delay={0.2}>
-      <section className="mt-40">
+      <section className="mt-28 sm:mt-40">
 
-        <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-[#121212] to-[#090909] p-10 md:p-16">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#121212] to-[#090909] p-6 sm:rounded-[40px] sm:p-10 md:p-16">
 
           <div className="mb-12">
 
@@ -30,7 +30,7 @@ export default function ProjectNavigation({
               Continue Exploring
             </p>
 
-            <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-paper md:text-5xl">
+            <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-paper sm:text-4xl md:text-5xl">
               Discover more case studies and creative work.
             </h2>
 
@@ -44,7 +44,7 @@ export default function ProjectNavigation({
 
               <Link
                 href={`/portfolio/${previous.slug}`}
-                className="group rounded-[28px] border border-white/10 bg-white/[0.02] p-8 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.04]"
+                className="group min-h-44 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:rounded-[28px] sm:p-8"
               >
 
                 <div className="mb-10 flex items-center gap-3 text-bone">
@@ -73,7 +73,7 @@ export default function ProjectNavigation({
 
               <Link
                 href={`/portfolio/${next.slug}`}
-                className="group rounded-[28px] border border-white/10 bg-white/[0.02] p-8 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.04]"
+                className="group min-h-44 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:rounded-[28px] sm:p-8"
               >
 
                 <div className="mb-10 flex items-center justify-end gap-3 text-bone">

@@ -22,10 +22,10 @@ export default function ProjectHero({
 }: ProjectHeroProps) {
   return (
     <Reveal delay={0.1}>
-      <section className="mt-12">
-        <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-[#0b0b0b]">
+      <section className="mt-4 sm:mt-8 md:mt-12">
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[36px]">
 
-          <div className="relative h-[68vh] min-h-[620px]">
+          <div className="relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]">
 
             {image ? (
               <>
@@ -53,7 +53,7 @@ export default function ProjectHero({
               />
             )}
 
-            <div className="absolute inset-x-0 bottom-0 p-8 md:p-14 xl:p-20">
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20">
 
               <div className="max-w-5xl">
 
@@ -61,22 +61,22 @@ export default function ProjectHero({
                   Case Study
                 </span>
 
-                <p className="mt-8 text-sm uppercase tracking-[0.35em] text-white/60">
+                <p className="mt-6 max-w-full text-[10px] uppercase tracking-[0.25em] text-white/70 sm:mt-8 sm:text-sm sm:tracking-[0.35em]">
                   {category}
                 </p>
 
-                <h1 className="mt-4 text-5xl font-semibold leading-[0.9] tracking-[-0.04em] text-white md:text-7xl xl:text-8xl">
+                <h1 className="mt-4 break-words text-[clamp(2.65rem,13vw,6rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-white">
                   {title}
                 </h1>
 
-                <div className="mt-12 grid grid-cols-3 gap-10 max-w-2xl">
+                <div className="mt-8 grid max-w-2xl grid-cols-2 gap-x-5 gap-y-6 border-t border-white/20 pt-6 sm:mt-12 sm:grid-cols-3 sm:gap-10 sm:border-0 sm:pt-0">
 
                   <div>
                     <p className="text-xs uppercase tracking-[0.3em] text-white/50">
                       Client
                     </p>
 
-                    <p className="mt-2 text-lg text-white">
+                    <p className="mt-2 text-sm text-white sm:text-lg">
                       {client}
                     </p>
                   </div>
@@ -86,7 +86,7 @@ export default function ProjectHero({
                       Year
                     </p>
 
-                    <p className="mt-2 text-lg text-white">
+                    <p className="mt-2 text-sm text-white sm:text-lg">
                       {year}
                     </p>
                   </div>
@@ -96,7 +96,7 @@ export default function ProjectHero({
                       Role
                     </p>
 
-                    <p className="mt-2 text-lg text-white">
+                    <p className="mt-2 text-sm text-white sm:text-lg">
                       Creative Director
                     </p>
                   </div>

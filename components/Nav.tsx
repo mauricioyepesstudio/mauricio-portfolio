@@ -39,7 +39,7 @@ export default function Nav() {
   }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-6 z-50 flex justify-center px-6">
+    <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-6 sm:px-6">
 
       <motion.div
         animate={{
@@ -48,20 +48,20 @@ export default function Nav() {
         transition={{
           duration: .35,
         }}
-        className={`max-w-[1450px] rounded-full border transition-all duration-500 ${
+        className={`max-w-[1450px] rounded-[28px] border transition-all duration-500 sm:rounded-full ${
           scrolled
             ? "border-white/10 bg-[#0b0b0bcc] backdrop-blur-2xl shadow-2xl"
             : "border-transparent bg-transparent"
         }`}
       >
 
-        <nav className="flex h-20 items-center justify-between px-8">
+        <nav className="flex h-16 items-center justify-between px-5 sm:h-20 sm:px-8">
 
           {/* LOGO */}
 
           <Link
             href="/"
-            className="font-serif text-3xl italic tracking-tight text-paper transition hover:text-gold"
+            className="rounded p-1 font-serif text-2xl italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-3xl"
           >
             MY
           </Link>
@@ -121,7 +121,9 @@ export default function Nav() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="text-paper md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold md:hidden"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
           >
             {open ? (
               <X size={28} />
@@ -165,7 +167,7 @@ export default function Nav() {
 
                       <Link
                         href={link.href}
-                        className={`text-3xl font-serif ${
+                        className={`block rounded py-2 text-3xl font-serif focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold ${
                           pathname.startsWith(link.href)
                             ? "text-gold"
                             : "text-paper"

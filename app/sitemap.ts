@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 
 const siteUrl = "https://mauricioyepes.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const projects = getProjects();
   const staticRoutes = ["", "/portfolio", "/about", "/resume", "/contact"].map(
     (route) => ({
       url: `${siteUrl}${route}`,

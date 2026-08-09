@@ -16,7 +16,7 @@ export default function ProjectOverview({
   result,
 }: ProjectOverviewProps) {
   return (
-    <section className="mt-36">
+    <section className="mt-24 sm:mt-36">
 
       <Reveal>
 
@@ -26,7 +26,7 @@ export default function ProjectOverview({
             Case Study
           </p>
 
-          <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] text-paper md:text-7xl">
+          <h2 className="max-w-4xl text-[clamp(2.35rem,8vw,4.5rem)] font-semibold leading-[0.94] tracking-[-0.035em] text-paper">
             Every successful project begins with understanding
             the business before designing the solution.
           </h2>
@@ -35,7 +35,7 @@ export default function ProjectOverview({
 
       </Reveal>
 
-      <div className="mt-24 grid gap-20 lg:grid-cols-12">
+      <div className="mt-14 grid gap-12 sm:mt-24 sm:gap-20 lg:grid-cols-12">
 
         {/* LEFT */}
 
@@ -47,7 +47,7 @@ export default function ProjectOverview({
               Project Summary
             </p>
 
-            <p className="mt-8 max-w-md text-2xl leading-10 text-paper">
+            <p className="mt-6 max-w-md text-xl leading-8 text-paper sm:mt-8 sm:text-2xl sm:leading-10">
               {excerpt}
             </p>
 
@@ -61,7 +61,7 @@ export default function ProjectOverview({
 
           <Reveal delay={0.05}>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.02] p-8">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:rounded-[28px] sm:p-8">
 
               <p className="mb-6 text-xs uppercase tracking-[0.35em] text-gold">
                 Challenge
@@ -77,7 +77,7 @@ export default function ProjectOverview({
 
           <Reveal delay={0.1}>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.02] p-8">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:rounded-[28px] sm:p-8">
 
               <p className="mb-6 text-xs uppercase tracking-[0.35em] text-gold">
                 Strategy
@@ -93,7 +93,7 @@ export default function ProjectOverview({
 
           <Reveal delay={0.15}>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.02] p-8">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:rounded-[28px] sm:p-8">
 
               <p className="mb-6 text-xs uppercase tracking-[0.35em] text-gold">
                 Solution
@@ -109,7 +109,7 @@ export default function ProjectOverview({
 
           <Reveal delay={0.2}>
 
-            <div className="rounded-[28px] border border-gold/20 bg-gradient-to-br from-[#151515] to-[#0d0d0d] p-8">
+            <div className="rounded-2xl border border-gold/20 bg-gradient-to-br from-[#151515] to-[#0d0d0d] p-6 sm:rounded-[28px] sm:p-8">
 
               <p className="mb-6 text-xs uppercase tracking-[0.35em] text-gold">
                 Results

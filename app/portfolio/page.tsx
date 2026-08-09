@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -10,14 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
+  const projects = getProjects();
   return (
-    <div className="pt-40 pb-32">
+    <div className="pb-24 pt-28 sm:pt-36 md:pb-32 md:pt-40">
       <div className="container-px mx-auto max-w-content">
         <Reveal>
           <div className="max-w-5xl">
             <p className="eyebrow mb-5">Portfolio</p>
 
-            <h1 className="font-sans text-5xl font-semibold leading-[0.92] text-paper md:text-7xl">
+            <h1 className="font-sans text-[clamp(2.7rem,10vw,4.75rem)] font-semibold leading-[0.94] tracking-[-0.04em] text-paper">
               Every project here
               <br />
               ships with the process
@@ -25,7 +26,7 @@ export default function PortfolioPage() {
               behind it.
             </h1>
 
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-bone">
+            <p className="mt-6 max-w-3xl text-base leading-7 text-bone sm:mt-8 sm:text-xl sm:leading-9">
               Branding, editorial design, lead-generation systems and
               product launches — each case study broken down by problem,
               approach and outcome, not just a gallery of final assets.
@@ -34,18 +35,18 @@ export default function PortfolioPage() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-16 mb-20 flex flex-col gap-4 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
+          <div className="mb-12 mt-12 flex flex-col gap-4 border-t border-line pt-6 sm:mb-20 sm:mt-16 md:flex-row md:items-center md:justify-between">
             <p className="text-xs uppercase tracking-[0.35em] text-bone">
               Selected Projects
             </p>
 
             <p className="text-sm text-bone">
-              {projects.length} Case Studies • 20+ Years • Hundreds of Projects
+              {projects.length} focused case studies
             </p>
           </div>
         </Reveal>
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-6 sm:gap-10 md:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 0.04}>
               <ProjectCard project={project} />

@@ -10,9 +10,9 @@ export default function ProjectVideoPlayer({
   caption,
 }: ProjectVideoPlayerProps) {
   return (
-    <div className="overflow-hidden rounded-[28px] border border-line bg-[#0d0d0d]">
+    <figure className="min-w-0 overflow-hidden rounded-2xl border border-line bg-[#0d0d0d] sm:rounded-[28px]">
       <video
-        className="h-auto w-full bg-black"
+        className="aspect-video h-auto max-h-[78vh] w-full bg-black object-contain"
         controls
         playsInline
         preload="metadata"
@@ -25,6 +25,6 @@ export default function ProjectVideoPlayer({
       {caption && (
         <p className="px-6 py-5 text-sm text-bone">{caption}</p>
       )}
-    </div>
+    </figure>
   );
 }

@@ -6,15 +6,14 @@ import { ArrowLeft } from "lucide-react";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectOverview from "@/components/ProjectOverview";
 import ProjectMetrics from "@/components/ProjectMetrics";
-import ProjectGallery from "@/components/ProjectGallery";
 import ProjectSections from "@/components/ProjectSections";
-import ProjectVideos from "@/components/ProjectVideos";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
-import { projects, getProject } from "@/lib/projects";
+import { getProject, getProjects } from "@/lib/projects";
 
 export function generateStaticParams() {
+  const projects = getProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
@@ -52,6 +51,8 @@ export default async function CaseStudyPage({
     notFound();
   }
 
+  const projects = getProjects();
+
   const currentIndex = projects.findIndex(
     (item) => item.slug === project.slug
   );
@@ -65,13 +66,13 @@ export default async function CaseStudyPage({
       : undefined;
 
   return (
-    <article className="pt-40 pb-28 md:pb-40">
+    <article className="pb-24 pt-28 sm:pt-36 md:pb-40 md:pt-40">
       <div className="container-px max-w-content mx-auto">
 
         <Reveal>
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm text-bone hover:text-paper transition-colors mb-12"
+            className="mb-8 inline-flex min-h-11 items-center gap-2 rounded-full px-1 text-sm text-bone transition-colors hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:mb-12"
           >
             <ArrowLeft size={16} />
             All Case Studies
@@ -88,7 +89,7 @@ export default async function CaseStudyPage({
           to={project.cover.to}
         />
 
-        <div className="mt-20 grid lg:grid-cols-3 gap-16">
+        <div className="mt-14 grid gap-12 sm:mt-20 lg:grid-cols-3 lg:gap-16">
 
           <Reveal>
             <div className="sticky top-32">
@@ -125,16 +126,7 @@ export default async function CaseStudyPage({
           result={project.result}
         />
 
-        {project.sections?.length ? (
-          <ProjectSections sections={project.sections} />
-        ) : (
-          <ProjectGallery
-            title={project.title}
-            images={project.gallery}
-          />
-        )}
-
-        <ProjectVideos videos={project.videos} />
+        <ProjectSections campaigns={project.campaigns} brand={project.title} />
 
         <ProjectNavigation
           previous={

@@ -1,11 +1,44 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function escapeHtml(value: string) {
+  return value.replace(/[&<>'"]/g, (character) => {
+    const entities: Record<string, string> = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "'": "&#39;",
+      '"': "&quot;",
+    };
+    return entities[character];
+  });
+}
 
 export async function POST(req: Request) {
   try {
-    const { name, email, company, budget, message } = await req.json();
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { success: false, message: "Contact service is not configured." },
+        { status: 503 }
+      );
+    }
+
+    const body = await req.json();
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim() : "";
+    const company = typeof body.company === "string" ? body.company.trim() : "";
+    const budget = typeof body.budget === "string" ? body.budget.trim() : "";
+    const message = typeof body.message === "string" ? body.message.trim() : "";
+
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { success: false, message: "Name, email and message are required." },
+        { status: 400 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
@@ -15,17 +48,17 @@ export async function POST(req: Request) {
       html: `
         <h2>New Contact Form Submission</h2>
 
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
 
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
 
-        <p><strong>Company:</strong> ${company || "-"}</p>
+        <p><strong>Company:</strong> ${escapeHtml(company || "-")}</p>
 
-        <p><strong>Budget:</strong> ${budget || "-"}</p>
+        <p><strong>Budget:</strong> ${escapeHtml(budget || "-")}</p>
 
         <hr/>
 
-        <p>${message.replace(/\n/g, "<br/>")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
       `,
     });
 

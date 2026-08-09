@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import type { Project } from "@/lib/projects";
+import type { Project } from "@/lib/projects/types";
 
 const MotionImage = motion(Image);
 
@@ -16,7 +16,7 @@ export default function ProjectCard({
   return (
     <Link
       href={`/portfolio/${project.slug}`}
-      className="group block"
+      className="group block rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:rounded-[38px]"
     >
       <motion.article
         whileHover={{
@@ -25,7 +25,7 @@ export default function ProjectCard({
         transition={{
           duration: 0.45,
         }}
-        className="overflow-hidden rounded-[38px] border border-white/10 bg-[#0d0d0d] transition-all duration-500 hover:border-white/20"
+        className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] transition-all duration-500 hover:border-white/20 sm:rounded-[38px]"
       >
         {/* IMAGE */}
 
@@ -49,7 +49,7 @@ export default function ProjectCard({
 
           {/* CATEGORY */}
 
-          <div className="absolute left-8 top-8">
+          <div className="absolute left-4 top-4 sm:left-8 sm:top-8">
 
             <span className="rounded-full border border-white/20 bg-black/40 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white backdrop-blur-md">
               {project.category}
@@ -64,16 +64,16 @@ export default function ProjectCard({
               rotate: 45,
               scale: 1.08,
             }}
-            className="absolute right-8 top-8 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black sm:right-8 sm:top-8 sm:h-14 sm:w-14"
           >
             <ArrowUpRight size={22} />
           </motion.div>
 
           {/* TITLE */}
 
-          <div className="absolute bottom-0 left-0 right-0 p-8">
+          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
 
-            <h3 className="text-[44px] font-semibold leading-[0.95] tracking-[-0.03em] text-white">
+            <h3 className="text-3xl font-semibold leading-[0.95] tracking-[-0.03em] text-white sm:text-[44px]">
               {project.title}
             </h3>
 
@@ -87,7 +87,7 @@ export default function ProjectCard({
 
         {/* CONTENT */}
 
-        <div className="px-8 py-8">
+        <div className="px-5 py-6 sm:px-8 sm:py-8">
 
           <p className="text-[17px] leading-8 text-white/70">
             {project.excerpt}
@@ -130,7 +130,7 @@ export default function ProjectCard({
               whileHover={{
                 x: 8,
               }}
-              className="flex items-center gap-3 font-medium text-gold"
+              className="flex items-center gap-2 text-sm font-medium text-gold sm:gap-3 sm:text-base"
             >
               View Case Study
 

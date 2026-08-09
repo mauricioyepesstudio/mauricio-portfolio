@@ -13,19 +13,19 @@ export default function ProjectMetrics({
   metrics,
 }: ProjectMetricsProps) {
   return (
-    <section className="mt-32">
+    <section className="mt-0">
 
       <Reveal>
 
-        <div className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#171717] via-[#111111] to-[#0b0b0b] shadow-[0_30px_80px_rgba(0,0,0,.35)]">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#171717] via-[#111111] to-[#0b0b0b] shadow-[0_30px_80px_rgba(0,0,0,.35)] sm:rounded-[40px]">
 
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
             {metrics.map((metric, index) => (
 
               <div
                 key={metric.label}
-                className={`relative overflow-hidden p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.03] ${
+                className={`relative min-w-0 overflow-hidden p-6 transition-all duration-500 hover:bg-white/[0.03] sm:p-8 xl:p-10 ${
                   index !== metrics.length - 1
                     ? "border-b border-white/10 lg:border-b-0 lg:border-r"
                     : ""
@@ -43,7 +43,7 @@ export default function ProjectMetrics({
                   <p
                     className={`font-semibold leading-none tracking-tight text-paper ${
                       metric.value.length > 15
-                        ? "text-2xl"
+                        ? "break-words text-xl sm:text-2xl"
                         : metric.value.length > 8
                         ? "text-4xl"
                         : "text-6xl"

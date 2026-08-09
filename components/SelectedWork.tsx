@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import ProjectCard from "./ProjectCard";
-import { projects, type Project } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 
 export default function SelectedWork() {
+  const projects = getProjects();
   return (
     <section
       id="work"
@@ -34,7 +35,7 @@ export default function SelectedWork() {
         </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          {projects.slice(0, 4).map((project: Project, index: number) => (
+          {projects.slice(0, 4).map((project, index) => (
             <Reveal
               key={project.slug}
               delay={index * 0.08}
