@@ -63,12 +63,13 @@ export default function Hero() {
                 Miami • Creative Direction • Branding
               </motion.span>
 
-              <div className="space-y-2">
+              <h1 className="space-y-2">
                 {words.map((word) => (
-                  <motion.h1
+                  <motion.span
                     key={word}
                     variants={line}
                     className="
+block
 text-5xl
 sm:text-6xl
 md:text-7xl
@@ -80,9 +81,9 @@ text-paper
 "
                   >
                     {word}
-                  </motion.h1>
+                  </motion.span>
                 ))}
-              </div>
+              </h1>
 
               <motion.p
                 variants={line}

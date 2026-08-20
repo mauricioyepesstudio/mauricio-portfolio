@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -115,11 +116,13 @@ export default function RootLayout({
           Skip to content
         </a>
         <div className="grain-overlay" aria-hidden="true" />
-        <Nav />
-        <PageTransition>
-          <main id="main-content">{children}</main>
-        </PageTransition>
-        <Footer />
+        <MotionConfig reducedMotion="user">
+          <Nav />
+          <PageTransition>
+            <main id="main-content">{children}</main>
+          </PageTransition>
+          <Footer />
+        </MotionConfig>
       </body>
     </html>
   );

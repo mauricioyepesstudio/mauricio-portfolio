@@ -9,8 +9,15 @@ import ProjectMetrics from "@/components/ProjectMetrics";
 import ProjectSections from "@/components/ProjectSections";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
+import EvenfloCaseStudy from "@/components/case-study/EvenfloCaseStudy";
 
 import { getProject, getProjects } from "@/lib/projects";
+import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
+
+// Slugs with a hand-curated case-study template instead of the generic
+// filesystem-driven campaign renderer. Every other slug keeps using the
+// generic pipeline below untouched.
+const CURATED_SLUGS = new Set(["evenflo"]);
 
 export function generateStaticParams() {
   const projects = getProjects();
@@ -32,9 +39,22 @@ export async function generateMetadata({
     return {};
   }
 
+  const heroImage = slug === "evenflo" ? evenfloCaseStudy.heroImage : project.heroImage;
+
   return {
     title: `${project.title} — Case Study`,
     description: project.excerpt,
+    openGraph: {
+      title: `${project.title} — Case Study`,
+      description: project.excerpt,
+      images: heroImage ? [{ url: heroImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Case Study`,
+      description: project.excerpt,
+      images: heroImage ? [heroImage] : undefined,
+    },
   };
 }
 
@@ -64,6 +84,13 @@ export default async function CaseStudyPage({
     currentIndex < projects.length - 1
       ? projects[currentIndex + 1]
       : undefined;
+
+  const previousLink = previous ? { slug: previous.slug, title: previous.title } : undefined;
+  const nextLink = next ? { slug: next.slug, title: next.title } : undefined;
+
+  if (CURATED_SLUGS.has(project.slug)) {
+    return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
 
   return (
     <article className="pb-24 pt-28 sm:pt-36 md:pb-40 md:pt-40">

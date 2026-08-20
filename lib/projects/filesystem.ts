@@ -30,6 +30,7 @@ const SECTION_ORDER: MediaKind[] = ["logo", "packaging", "product", "print", "ev
 const CAMPAIGN_PRIORITY: Record<string, string[]> = {
   "resource-living": ["magazine", "ad-sales", "pool-leads", "c2-miltimedia", "c2-multimedia", "your-business-here", "social", "videos"],
   getlost: ["hero", "logos", "packaging", "new-products", "events", "web-site", "social", "estationery"],
+  evenflo: ["true-lips", "blonde-to-brunette"],
 };
 
 function naturalCompare(a: string, b: string) {
@@ -119,11 +120,18 @@ function scanBrand(slug: string): { campaigns: Campaign[]; heroImage: string } {
   const directory = path.join(PROJECTS_ROOT, slug);
   if (!fs.existsSync(directory)) return { campaigns: [], heroImage: "" };
   const children = fs.readdirSync(directory, { withFileTypes: true }).filter((entry) => entry.isDirectory());
-  const campaigns = children
-    .map((entry) => campaignFromDirectory(slug, path.join(directory, entry.name), entry.name))
-    .filter((campaign): campaign is Campaign => Boolean(campaign))
-    .sort((a, b) => campaignRank(slug, a.slug) - campaignRank(slug, b.slug) || naturalCompare(a.title, b.title));
-  const rootAssets = collectFiles(directory).filter((asset) => asset.kind === "hero");
+
+  // Brands with no campaign subfolders (a flat dump of files directly in the
+  // brand directory) get treated as a single implicit "Selected Work" campaign
+  // instead of being silently dropped for lacking a heroImage.
+  const campaigns = children.length
+    ? children
+        .map((entry) => campaignFromDirectory(slug, path.join(directory, entry.name), entry.name))
+        .filter((campaign): campaign is Campaign => Boolean(campaign))
+        .sort((a, b) => campaignRank(slug, a.slug) - campaignRank(slug, b.slug) || naturalCompare(a.title, b.title))
+    : [campaignFromDirectory(slug, directory, "selected-work")].filter((campaign): campaign is Campaign => Boolean(campaign));
+
+  const rootAssets = children.length ? collectFiles(directory).filter((asset) => asset.kind === "hero") : [];
   const heroImage = campaigns.find((campaign) => campaign.hero)?.hero?.src ?? rootAssets[0]?.src ?? campaigns.flatMap((campaign) => campaign.sections.flatMap((section) => section.assets))[0]?.src ?? "";
   return { campaigns, heroImage };
 }
