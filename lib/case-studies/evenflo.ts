@@ -1,30 +1,8 @@
 import "server-only";
 
-export type CuratedAsset = {
-  src: string;
-  alt: string;
-};
+import type { CampaignChapterData, SocialPick } from "./types";
 
-export type CampaignChapter = {
-  slug: string;
-  eyebrow: string;
-  title: string;
-  intro: string;
-  hero: CuratedAsset;
-  logo: CuratedAsset;
-  packaging: CuratedAsset;
-  newsletter: CuratedAsset & { note: string; width: number; height: number };
-  posts: CuratedAsset[];
-  stories: CuratedAsset[];
-  video: { src: string; caption: string };
-};
-
-export type SocialPick = CuratedAsset & {
-  campaign: string;
-  size: "feature" | "tall" | "support";
-};
-
-const b2b: CampaignChapter = {
+const b2b: CampaignChapterData = {
   slug: "blonde-to-brunette",
   eyebrow: "05 — Campaign",
   title: "Blonde2Brunette Ink",
@@ -57,13 +35,21 @@ const b2b: CampaignChapter = {
     src: `/projects/evenflo/blonde-to-brunette-campaign/social/stories/evenflo-b2b-social-story-${n}.jpg`,
     alt: `Blonde2Brunette Ink social story ${n}`,
   })),
-  video: {
-    src: "/projects/evenflo/blonde-to-brunette-campaign/video/evenflo-b2b-campaign-video.mp4",
-    caption: "Blonde2Brunette Ink — Campaign Film",
-  },
+  videos: [
+    {
+      src: "/projects/evenflo/blonde-to-brunette-campaign/video/evenflo-b2b-campaign-video.mp4",
+      caption: "Blonde2Brunette Ink — Campaign Film",
+      orientation: "landscape",
+    },
+    {
+      src: "/projects/evenflo/blonde-to-brunette-campaign/video/evenflo-b2b-campaign-video-2.mp4",
+      caption: "Blonde2Brunette Ink — Social Cutdown",
+      orientation: "landscape",
+    },
+  ],
 };
 
-const trueLips: CampaignChapter = {
+const trueLips: CampaignChapterData = {
   slug: "true-lips",
   eyebrow: "06 — Campaign",
   title: "True Lips",
@@ -96,30 +82,33 @@ const trueLips: CampaignChapter = {
     src: `/projects/evenflo/true-lips-campaign/social/stories/evenflo-true-lips-social-story-${n}.jpg`,
     alt: `True Lips social story ${n}`,
   })),
-  video: {
-    src: "/projects/evenflo/true-lips-campaign/video/evenflo-true-lips-campaign-video.mp4",
-    caption: "True Lips — Campaign Film",
-  },
+  videos: [
+    {
+      src: "/projects/evenflo/true-lips-campaign/video/evenflo-true-lips-campaign-video.mp4",
+      caption: "True Lips — Campaign Film",
+      orientation: "landscape",
+    },
+  ],
 };
 
 export const evenfloCaseStudy = {
   heroImage: trueLips.hero.src,
   campaigns: [b2b, trueLips] as const,
   brandPackaging: [
-    { asset: b2b.logo, label: "Blonde2Brunette Ink", kind: "Identity" },
-    { asset: trueLips.logo, label: "True Lips", kind: "Identity" },
-    { asset: b2b.packaging, label: "Blonde2Brunette Ink", kind: "Packaging" },
-    { asset: trueLips.packaging, label: "True Lips", kind: "Packaging" },
+    { asset: b2b.logo!, label: "Blonde2Brunette Ink", kind: "Identity" },
+    { asset: trueLips.logo!, label: "True Lips", kind: "Identity" },
+    { asset: b2b.packaging!, label: "Blonde2Brunette Ink", kind: "Packaging" },
+    { asset: trueLips.packaging!, label: "True Lips", kind: "Packaging" },
   ],
   social: [
-    { ...trueLips.stories[0], campaign: "True Lips", size: "feature" },
-    { ...b2b.posts[0], campaign: "Blonde2Brunette Ink", size: "support" },
-    { ...b2b.stories[0], campaign: "Blonde2Brunette Ink", size: "tall" },
-    { ...trueLips.posts[0], campaign: "True Lips", size: "support" },
-    { ...trueLips.posts[1], campaign: "True Lips", size: "support" },
-    { ...b2b.posts[1], campaign: "Blonde2Brunette Ink", size: "support" },
-    { ...trueLips.stories[1], campaign: "True Lips", size: "tall" },
-    { ...b2b.posts[2], campaign: "Blonde2Brunette Ink", size: "support" },
+    { ...trueLips.stories![0], campaign: "True Lips", size: "feature" },
+    { ...b2b.posts![0], campaign: "Blonde2Brunette Ink", size: "support" },
+    { ...b2b.stories![0], campaign: "Blonde2Brunette Ink", size: "tall" },
+    { ...trueLips.posts![0], campaign: "True Lips", size: "support" },
+    { ...trueLips.posts![1], campaign: "True Lips", size: "support" },
+    { ...b2b.posts![1], campaign: "Blonde2Brunette Ink", size: "support" },
+    { ...trueLips.stories![1], campaign: "True Lips", size: "tall" },
+    { ...b2b.posts![2], campaign: "Blonde2Brunette Ink", size: "support" },
   ] satisfies SocialPick[],
-  motion: [b2b, trueLips].map((c) => ({ ...c.video, campaign: c.title })),
+  motion: [b2b, trueLips].flatMap((c) => c.videos!.map((v) => ({ ...v, campaign: c.title }))),
 };

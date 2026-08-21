@@ -61,9 +61,10 @@ export default function Nav() {
 
           <Link
             href="/"
-            className="rounded p-1 font-serif text-2xl italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-3xl"
+            aria-label="Mauricio Yepes — home"
+            className="whitespace-nowrap rounded p-1 font-serif text-base italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-xl md:text-2xl lg:text-[1.7rem]"
           >
-            MY
+            Mauricio Yepes
           </Link>
 
           {/* MENU */}

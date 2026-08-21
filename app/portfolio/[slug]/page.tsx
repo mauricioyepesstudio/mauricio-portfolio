@@ -10,14 +10,25 @@ import ProjectSections from "@/components/ProjectSections";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 import EvenfloCaseStudy from "@/components/case-study/EvenfloCaseStudy";
+import CaseStudyTemplate from "@/components/case-study/CaseStudyTemplate";
 
 import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
+import { resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
+import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
+import { getlostCaseStudy } from "@/lib/case-studies/getlost";
+import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
 
 // Slugs with a hand-curated case-study template instead of the generic
 // filesystem-driven campaign renderer. Every other slug keeps using the
 // generic pipeline below untouched.
-const CURATED_SLUGS = new Set(["evenflo"]);
+const CURATED_SLUGS = new Set(["evenflo", "resource-living", "microbeau", "getlost"]);
+
+const CURATED_DATA: Record<string, CaseStudyData> = {
+  "resource-living": resourceLivingCaseStudy,
+  microbeau: microbeauCaseStudy,
+  getlost: getlostCaseStudy,
+};
 
 export function generateStaticParams() {
   const projects = getProjects();
@@ -39,7 +50,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const heroImage = slug === "evenflo" ? evenfloCaseStudy.heroImage : project.heroImage;
+  const heroImage = slug === "evenflo" ? evenfloCaseStudy.heroImage : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
 
   return {
     title: `${project.title} — Case Study`,
@@ -88,8 +99,19 @@ export default async function CaseStudyPage({
   const previousLink = previous ? { slug: previous.slug, title: previous.title } : undefined;
   const nextLink = next ? { slug: next.slug, title: next.title } : undefined;
 
-  if (CURATED_SLUGS.has(project.slug)) {
+  if (project.slug === "evenflo") {
     return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
+
+  if (CURATED_SLUGS.has(project.slug)) {
+    return (
+      <CaseStudyTemplate
+        project={project}
+        data={CURATED_DATA[project.slug]}
+        previous={previousLink}
+        next={nextLink}
+      />
+    );
   }
 
   return (

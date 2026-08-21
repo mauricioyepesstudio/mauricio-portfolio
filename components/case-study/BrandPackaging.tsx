@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import type { CuratedAsset } from "@/lib/case-studies/evenflo";
+import type { CuratedAsset } from "@/lib/case-studies/types";
 
 type Item = { asset: CuratedAsset; label: string; kind: string };
 
@@ -26,7 +26,19 @@ function Tile({ item, index }: { item: Item; index: number }) {
   );
 }
 
-export default function BrandPackaging({ items }: { items: Item[] }) {
+type Props = {
+  items: Item[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export default function BrandPackaging({
+  items,
+  eyebrow = "04 — Brand & Packaging",
+  title = "One system, two launches.",
+  description = "Blonde2Brunette Ink and True Lips share one identity and packaging template — the anchor that keeps both launches unmistakably Evenflo Colours.",
+}: Props) {
   const identity = items.filter((item) => item.kind === "Identity");
   const packaging = items.filter((item) => item.kind === "Packaging");
 
@@ -34,13 +46,11 @@ export default function BrandPackaging({ items }: { items: Item[] }) {
     <section className="mt-24 sm:mt-36">
       <Reveal>
         <div className="mb-10 border-t border-white/10 pt-7 sm:mb-14">
-          <p className="eyebrow mb-3">04 — Brand &amp; Packaging</p>
+          <p className="eyebrow mb-3">{eyebrow}</p>
           <h2 className="max-w-3xl text-[clamp(2.35rem,7vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
-            One system, two launches.
+            {title}
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-bone">
-            Blonde2Brunette Ink and True Lips share one identity and packaging template — the anchor that keeps both launches unmistakably Evenflo Colours.
-          </p>
+          <p className="mt-6 max-w-xl text-base leading-7 text-bone">{description}</p>
         </div>
       </Reveal>
 

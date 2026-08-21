@@ -35,14 +35,14 @@ export default function NewsletterFrame({
         tabIndex={0}
         role="region"
         aria-label={`${campaign} ${note} — scrollable, full length`}
-        className="relative h-[440px] overflow-y-auto focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-gold sm:h-[560px]"
+        className="relative h-[620px] overflow-y-auto overscroll-contain focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-gold md:h-[720px] lg:h-[800px] min-[1440px]:h-[890px] min-[1920px]:h-[940px]"
       >
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
-          sizes="(max-width: 1024px) 92vw, 620px"
+          sizes="(max-width: 1024px) 92vw, 1200px"
           className="h-auto w-full"
         />
       </div>

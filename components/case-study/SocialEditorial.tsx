@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import type { SocialPick } from "@/lib/case-studies/evenflo";
+import type { SocialPick } from "@/lib/case-studies/types";
 
 const SIZE_CLASS: Record<SocialPick["size"], string> = {
   feature: "sm:col-span-2 sm:row-span-2 aspect-[4/5] sm:aspect-auto",
@@ -8,18 +8,28 @@ const SIZE_CLASS: Record<SocialPick["size"], string> = {
   support: "aspect-[4/5] sm:aspect-auto",
 };
 
-export default function SocialEditorial({ picks }: { picks: SocialPick[] }) {
+type Props = {
+  picks: SocialPick[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export default function SocialEditorial({
+  picks,
+  eyebrow = "07 — Social Campaign System",
+  title = "The strongest moments, side by side.",
+  description = "Feed and story executions from both launches, curated into one editorial sequence rather than a full export dump.",
+}: Props) {
   return (
     <section className="mt-24 sm:mt-36">
       <Reveal>
         <div className="mb-10 border-t border-white/10 pt-7 sm:mb-14">
-          <p className="eyebrow mb-3">07 — Social Campaign System</p>
+          <p className="eyebrow mb-3">{eyebrow}</p>
           <h2 className="max-w-3xl text-[clamp(2.35rem,7vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
-            The strongest moments, side by side.
+            {title}
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-bone">
-            Feed and story executions from both launches, curated into one editorial sequence rather than a full export dump.
-          </p>
+          <p className="mt-6 max-w-xl text-base leading-7 text-bone">{description}</p>
         </div>
       </Reveal>
 
