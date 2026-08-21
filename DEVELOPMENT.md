@@ -151,12 +151,21 @@ Regenerate Seafood Delight logo from source:
 node scripts/derive-seafood-delight-logo.mjs
 ```
 
-## Dev / QA scripts (optional, untracked by default)
+## Dev / QA scripts (optional tooling)
 
-Generic helpers in `scripts/`:
+Maintained in `scripts/`:
 
-- `derive-seafood-delight-logo.mjs` — white transparent logo from supplied PNG
-- `qa-hero-tablet.mjs`, `qa-hero-typography.mjs`, `qa-client-logos-polish.mjs` — Playwright checks (requires `playwright` installed locally, not in package.json)
+| Script | Purpose |
+|--------|---------|
+| `derive-seafood-delight-logo.mjs` | Reproducible white-on-transparent logo from supplied PNG |
+| `qa-client-logos.mjs` | Client logo wall breakpoint checks |
+| `qa-client-logos-polish.mjs` | Extended logo-wall + spacing checks |
+| `qa-hero-tablet.mjs` | Hero portrait overflow checks (700–1024px) |
+| `qa-hero-typography.mjs` | Hero typography / spacing checks |
+
+Requires local `playwright` (`npm install --no-save playwright`); not in `package.json`.
+
+**Not maintained:** one-off capture/diagnostic scripts (e.g. `capture-home-qa.mjs`) — keep untracked locally if needed.
 
 Screenshots and QA output: `qa-screenshots/` (gitignored)
 
@@ -168,14 +177,16 @@ Screenshots and QA output: `qa-screenshots/` (gitignored)
 
 ## Home workstation sync
 
+**Important:** The home workstation may contain **uncommitted work from a prior session**. Do not assume a clean tree.
+
 ```bash
 cd C:\Users\17543\Desktop\mauricio-portfolio
 git status
 ```
 
-If local home changes exist: **do not** `git pull` automatically — reconcile first.
+**If the home working tree is NOT clean:** do **not** `git pull`, `git reset`, or discard anything. Stop and reconcile local changes with `origin/main` safely first.
 
-If working tree is clean:
+**If the home working tree IS clean:**
 
 ```bash
 git fetch origin
