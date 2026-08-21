@@ -25,15 +25,16 @@ const siteUrl = "https://mauricioyepes.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Mauricio Yepes — Creative Director & Brand Strategist",
+    default:
+      "Mauricio Yepes — Creative Director, Marketing Specialist & Multidisciplinary Designer",
     template: "%s — Mauricio Yepes",
   },
   description:
-    "Mauricio Yepes is a Miami-based Creative Director and Brand Strategist with 12+ years of experience in branding, packaging, editorial design, advertising, and AI-powered creative for international brands.",
+    "Mauricio Yepes is a Miami-based Creative Director, Marketing Specialist and Multidisciplinary Designer with 12+ years of experience in branding, editorial design, advertising, lead generation and AI-powered creative for international brands.",
   keywords: [
     "Creative Director",
-    "Brand Strategist",
-    "Marketing Designer",
+    "Marketing Specialist",
+    "Multidisciplinary Designer",
     "Brand Identity Designer Miami",
     "Packaging Design",
     "Editorial Design",
@@ -45,9 +46,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Mauricio Yepes — Creative Director & Brand Strategist",
+    title:
+      "Mauricio Yepes — Creative Director, Marketing Specialist & Multidisciplinary Designer",
     description:
-      "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
+      "Helping brands grow through creative direction, marketing strategy, design, advertising and AI-powered production.",
     siteName: "Mauricio Yepes",
     images: [
       {
@@ -60,9 +62,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mauricio Yepes — Creative Director & Brand Strategist",
+    title:
+      "Mauricio Yepes — Creative Director, Marketing Specialist & Multidisciplinary Designer",
     description:
-      "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
+      "Helping brands grow through creative direction, marketing strategy, design, advertising and AI-powered production.",
     images: ["/images/mauricio.png"],
   },
   robots: {

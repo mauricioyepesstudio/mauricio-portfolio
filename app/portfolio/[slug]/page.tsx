@@ -10,14 +10,19 @@ import ProjectSections from "@/components/ProjectSections";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 import EvenfloCaseStudy from "@/components/case-study/EvenfloCaseStudy";
+import ResourceLivingCaseStudy from "@/components/case-study/ResourceLivingCaseStudy";
 
 import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
+import { resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
 
 // Slugs with a hand-curated case-study template instead of the generic
 // filesystem-driven campaign renderer. Every other slug keeps using the
 // generic pipeline below untouched.
-const CURATED_SLUGS = new Set(["evenflo"]);
+const CURATED_HERO: Record<string, string> = {
+  evenflo: evenfloCaseStudy.heroImage,
+  "resource-living": resourceLivingCaseStudy.heroImage,
+};
 
 export function generateStaticParams() {
   const projects = getProjects();
@@ -39,7 +44,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const heroImage = slug === "evenflo" ? evenfloCaseStudy.heroImage : project.heroImage;
+  const heroImage = CURATED_HERO[slug] ?? project.heroImage;
 
   return {
     title: `${project.title} — Case Study`,
@@ -88,8 +93,14 @@ export default async function CaseStudyPage({
   const previousLink = previous ? { slug: previous.slug, title: previous.title } : undefined;
   const nextLink = next ? { slug: next.slug, title: next.title } : undefined;
 
-  if (CURATED_SLUGS.has(project.slug)) {
+  if (project.slug === "evenflo") {
     return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
+
+  if (project.slug === "resource-living") {
+    return (
+      <ResourceLivingCaseStudy project={project} previous={previousLink} next={nextLink} />
+    );
   }
 
   return (

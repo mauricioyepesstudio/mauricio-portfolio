@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import BrandWordmark from "@/components/BrandWordmark";
 
 const links = [
   { href: "/portfolio", label: "Work" },
@@ -30,8 +31,7 @@ export default function Nav() {
       passive: true,
     });
 
-    return () =>
-      window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -40,56 +40,36 @@ export default function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-6 sm:px-6">
-
       <motion.div
         animate={{
           width: scrolled ? "92%" : "96%",
         }}
         transition={{
-          duration: .35,
+          duration: 0.35,
         }}
         className={`max-w-[1450px] rounded-[28px] border transition-all duration-500 sm:rounded-full ${
           scrolled
-            ? "border-white/10 bg-[#0b0b0bcc] backdrop-blur-2xl shadow-2xl"
+            ? "border-white/10 bg-[#0b0b0bcc] shadow-2xl backdrop-blur-2xl"
             : "border-transparent bg-transparent"
         }`}
       >
-
-        <nav className="flex h-16 items-center justify-between px-5 sm:h-20 sm:px-8">
-
-          {/* LOGO */}
-
-          <Link
-            href="/"
-            className="rounded p-1 font-serif text-2xl italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-3xl"
-          >
-            MY
-          </Link>
-
-          {/* MENU */}
+        <nav className="flex h-16 items-center justify-between gap-4 px-4 sm:h-20 sm:px-8">
+          <BrandWordmark />
 
           <ul className="hidden items-center gap-10 md:flex">
-
             {links.map((link) => {
-
               const active =
                 pathname === link.href ||
-                (link.href === "/portfolio" &&
-                  pathname.startsWith("/portfolio"));
+                (link.href === "/portfolio" && pathname.startsWith("/portfolio"));
 
               return (
-
                 <li key={link.href}>
-
                   <Link
                     href={link.href}
                     className={`relative text-sm uppercase tracking-[0.25em] transition-colors ${
-                      active
-                        ? "text-paper"
-                        : "text-bone hover:text-paper"
+                      active ? "text-paper" : "text-bone hover:text-paper"
                     }`}
                   >
-
                     {link.label}
 
                     {active && (
@@ -98,46 +78,31 @@ export default function Nav() {
                         className="absolute -bottom-3 left-0 right-0 h-px bg-gold"
                       />
                     )}
-
                   </Link>
-
                 </li>
-
               );
             })}
-
           </ul>
-
-          {/* BUTTON */}
 
           <Link
             href="/contact"
             className="hidden rounded-full border border-white/10 px-6 py-3 text-xs uppercase tracking-[0.28em] text-paper transition-all duration-300 hover:scale-105 hover:bg-paper hover:text-black md:inline-flex"
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
-
-          {/* MOBILE */}
 
           <button
             onClick={() => setOpen(!open)}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold md:hidden"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold md:hidden"
             aria-label={open ? "Close navigation" : "Open navigation"}
             aria-expanded={open}
           >
-            {open ? (
-              <X size={28} />
-            ) : (
-              <Menu size={28} />
-            )}
+            {open ? <X size={28} /> : <Menu size={28} />}
           </button>
-
         </nav>
 
         <AnimatePresence>
-
           {open && (
-
             <motion.div
               initial={{
                 opacity: 0,
@@ -152,19 +117,14 @@ export default function Nav() {
                 height: 0,
               }}
               transition={{
-                duration: .35,
+                duration: 0.35,
               }}
               className="overflow-hidden md:hidden"
             >
-
               <div className="border-t border-white/10 px-8 py-8">
-
                 <ul className="space-y-6">
-
                   {links.map((link) => (
-
                     <li key={link.href}>
-
                       <Link
                         href={link.href}
                         className={`block rounded py-2 text-3xl font-serif focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold ${
@@ -175,23 +135,14 @@ export default function Nav() {
                       >
                         {link.label}
                       </Link>
-
                     </li>
-
                   ))}
-
                 </ul>
-
               </div>
-
             </motion.div>
-
           )}
-
         </AnimatePresence>
-
       </motion.div>
-
     </header>
   );
 }

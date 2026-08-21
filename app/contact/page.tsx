@@ -73,8 +73,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-8 max-w-md text-xl leading-9 text-bone">
-              Whether you're looking for a Creative Director,
-              Senior Designer or Brand Strategist, I'd love to
+              Whether you&apos;re looking for a Creative Director,
+              Marketing Specialist or Multidisciplinary Designer, I&apos;d love to
               hear about your next project or opportunity.
             </p>
 

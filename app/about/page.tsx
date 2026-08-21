@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import BrandStatsGrid from "@/components/BrandStatsGrid";
 import { skills, languages } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Creative Director, Brand Strategist and Marketing Designer based in Miami with more than 20 years of experience creating memorable brands and digital experiences.",
+    "Creative Director, Marketing Specialist and Multidisciplinary Designer based in Miami with 12+ years of experience creating memorable brands and digital experiences.",
 };
 
 export default function AboutPage() {
@@ -88,8 +89,8 @@ export default function AboutPage() {
               <Reveal>
                 <p>
                   I'm a <strong className="text-paper">Creative Director</strong>,
-                  Brand Strategist and Marketing Designer with more than
-                  <strong className="text-paper"> 20 years of experience</strong>
+                  Marketing Specialist and Multidisciplinary Designer with
+                  <strong className="text-paper"> 12+ years of experience</strong>
                   creating brands, advertising campaigns, editorial publications,
                   websites and digital experiences that help businesses grow.
                 </p>
@@ -141,37 +142,7 @@ export default function AboutPage() {
               {/* STATS */}
 
               <Reveal delay={0.25}>
-                <div className="grid grid-cols-3 gap-8 border-t border-line pt-14 mt-14">
-                  <div>
-                    <h3 className="text-5xl font-semibold text-paper">
-                      20+
-                    </h3>
-
-                    <p className="mt-3 text-sm text-bone">
-                      Years of Experience
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-5xl font-semibold text-paper">
-                      Hundreds of
-                    </h3>
-
-                    <p className="mt-3 text-sm text-bone">
-                      Creative Projects
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-5xl font-semibold text-paper">
-                      100+
-                    </h3>
-
-                    <p className="mt-3 text-sm text-bone">
-                      Brands & Clients
-                    </p>
-                  </div>
-                </div>
+                <BrandStatsGrid className="mt-14 pt-0" />
               </Reveal>
             </div>
           </div>
