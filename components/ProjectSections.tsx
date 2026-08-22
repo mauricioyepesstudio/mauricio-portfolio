@@ -30,7 +30,7 @@ export default function ProjectSections({ campaigns, brand }: Props) {
             <header className="mb-8 grid gap-5 border-t border-white/10 pt-7 sm:mb-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.55fr)] lg:items-end">
               <div>
                 <p className="eyebrow mb-3">Campaign {String(campaignIndex + 1).padStart(2, "0")}</p>
-                <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">{campaign.title}</h2>
+                <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">{campaign.title}</h2>
               </div>
               <p className="max-w-xl text-sm leading-7 text-bone sm:text-base">A curated chapter organized directly from the campaign’s available creative system.</p>
             </header>

@@ -94,7 +94,7 @@ export default function ProjectHero({
                   {category}
                 </p>
 
-                <h1 className="mt-4 break-words text-[clamp(2.65rem,13vw,6rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-white">
+                <h1 className="mt-4 break-words text-[clamp(2.65rem,13vw,7rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-white lg:text-[7.5rem] min-[1440px]:text-[8.75rem] min-[1920px]:text-[10rem]">
                   {title}
                 </h1>
 

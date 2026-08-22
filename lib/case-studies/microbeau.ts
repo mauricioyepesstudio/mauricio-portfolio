@@ -26,7 +26,7 @@ const beautyInAuthenticity: CampaignChapterData = {
     alt: "Beauty in Authenticity campaign email",
     note: "Campaign Email",
     width: 600,
-    height: 2200,
+    height: 7116,
   },
   posts: [1, 2, 3, 4].map((n) => ({
     src: `/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-${n}.jpg`,
@@ -77,7 +77,7 @@ const vertixPico: CampaignChapterData = {
     alt: "Vertix Pico configuration email",
     note: "Configuration Email",
     width: 600,
-    height: 2200,
+    height: 3188,
   },
   posts: [1, 2, 3, 4].map((n) => ({
     src: `/projects/microbeau/vertix-pico/social/posts/microbeau-vertix-pico-post-${n}.jpg`,
@@ -118,8 +118,8 @@ const kickstartVertix: CampaignChapterData = {
     src: "/projects/microbeau/kickstart-vertix/newsletter/microbeau-kickstart-vertix-newsletter.jpg",
     alt: "Kickstart Vertix campaign email",
     note: "Launch Email",
-    width: 600,
-    height: 2200,
+    width: 1161,
+    height: 5970,
   },
   posts: [1, 2, 3, 4].map((n) => ({
     src: `/projects/microbeau/kickstart-vertix/social/posts/microbeau-kickstart-vertix-post-${n}.jpg`,
@@ -206,8 +206,8 @@ const killSwitch: CampaignChapterData = {
     src: "/projects/microbeau/kill-switch/newsletter/microbeau-kill-switch-newsletter.jpg",
     alt: "Kill Switch Black Friday campaign email",
     note: "Promotional Email",
-    width: 600,
-    height: 2200,
+    width: 1024,
+    height: 12006,
   },
   stories: [1, 2, 3, 4, 5, 6].map((n) => ({
     src: `/projects/microbeau/kill-switch/social/stories/microbeau-kill-switch-story-${n}.jpg`,
@@ -216,7 +216,10 @@ const killSwitch: CampaignChapterData = {
 };
 
 export const microbeauCaseStudy: CaseStudyData = {
-  heroImage: beautyInAuthenticity.hero.src,
+  // Flux Mini's product render replaces the Beauty in Authenticity hero: that
+  // asset has "Beauty in Authenticity" script typography baked into the JPEG,
+  // which collided with the page's own ProjectHero title rendered on top of it.
+  heroImage: "/projects/microbeau/flux-mini/hero/microbeau-flux-mini-hero.webp",
   campaigns: [beautyInAuthenticity, vertixPico, kickstartVertix, fluxMini, fluxMax, killSwitch],
   brandPackagingCopy: {
     eyebrow: "04 — Brand System",

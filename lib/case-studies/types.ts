@@ -50,6 +50,8 @@ export type CampaignChapterData = {
   videos?: CampaignVideo[];
   /** Extra media that doesn't fit the named slots — print, event photography, colorway breakdowns, etc. */
   gallery?: GallerySection[];
+  /** Section ordering within the chapter. "social-close" moves the newsletter earlier and lets social close the chapter instead — used to vary rhythm when consecutive chapters would otherwise render in an identical sequence. Defaults to "default" (hero → packaging → social → newsletter → motion). */
+  layout?: "default" | "social-close";
 };
 
 export type SocialPick = CuratedAsset & {

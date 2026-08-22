@@ -78,9 +78,15 @@ export default function ResourceLivingCaseStudy({ project, previous, next }: Pro
           outcome={study.narrative.outcome}
         />
 
-        <section className="mt-24 sm:mt-36">
-          <CaseStudySectionHeader intro={study.brandEditorial} />
-          <IdentityGrid items={[...study.publicationSystem]} />
+        <section className="mt-24 border-t border-white/10 pt-7 sm:mt-36">
+          <div className="grid gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
+            <div className="lg:col-span-1">
+              <CaseStudySectionHeader intro={study.brandEditorial} bare />
+            </div>
+            <div className="lg:col-span-2">
+              <IdentityGrid items={[...study.publicationSystem]} />
+            </div>
+          </div>
         </section>
 
         {study.chapters.map((chapter) => (

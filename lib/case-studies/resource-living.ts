@@ -16,8 +16,8 @@ const c2Multimedia: EditorialChapter = {
     src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/newsletter/C2-multimedia-lead-network-newsletter.jpg",
     alt: "C2 Multimedia Lead Network newsletter",
     note: "Advertiser Newsletter",
-    width: 600,
-    height: 2200,
+    width: 1080,
+    height: 15042,
   },
   social: [
     { src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/social/Kitchen-Cabinets.png", alt: "C2 Multimedia kitchen cabinets lead ad" },

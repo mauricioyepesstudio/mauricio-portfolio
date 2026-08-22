@@ -55,6 +55,10 @@ const trueLips: CampaignChapterData = {
   title: "True Lips",
   intro:
     "A consumer-facing companion launch for the True Lips pigment line, carrying the same brand system into a warmer, editorial social and email presentation.",
+  // Varies the section rhythm against b2b above it — without this, both
+  // chapters render hero → packaging → social → newsletter → motion back to
+  // back and the page reads as a stack of identical cards.
+  layout: "social-close",
   hero: {
     src: "/projects/evenflo/true-lips-campaign/hero/evenflo-true-lips-campaign-hero.jpg",
     alt: "True Lips campaign hero — Evenflo",

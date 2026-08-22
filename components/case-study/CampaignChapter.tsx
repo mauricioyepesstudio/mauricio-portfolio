@@ -66,13 +66,36 @@ export default function CampaignChapter({
   const landscapeVideos = chapter.videos?.filter((v) => (v.orientation ?? "landscape") === "landscape") ?? [];
   const verticalVideos = chapter.videos?.filter((v) => v.orientation === "vertical") ?? [];
 
+  const socialSection = (chapter.posts?.length || chapter.stories?.length) ? (
+    <div className="mb-14 space-y-12 sm:mb-20 sm:space-y-16">
+      {chapter.posts?.length ? <SocialRow title="Social — Feed" assets={chapter.posts} aspect="aspect-[4/5]" brand={brand} /> : null}
+      {chapter.stories?.length ? <SocialRow title="Social — Stories" assets={chapter.stories} aspect="aspect-[9/16]" brand={brand} /> : null}
+    </div>
+  ) : null;
+
+  const newsletterSection = chapter.newsletter ? (
+    <div className="mb-14 sm:mb-20">
+      <SectionLabel title="Email & Newsletter" />
+      <Reveal>
+        <NewsletterFrame
+          src={chapter.newsletter.src}
+          alt={chapter.newsletter.alt}
+          note={chapter.newsletter.note}
+          campaign={chapter.title}
+          width={chapter.newsletter.width}
+          height={chapter.newsletter.height}
+        />
+      </Reveal>
+    </div>
+  ) : null;
+
   return (
     <article id={chapter.slug} className="mt-24 scroll-mt-32 sm:mt-36">
       <Reveal>
         <header className="mb-10 grid gap-5 border-t border-white/10 pt-7 sm:mb-14 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.5fr)] lg:items-end">
           <div>
             <p className="eyebrow mb-3">{chapter.eyebrow}</p>
-            <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
+            <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
               {chapter.title}
             </h2>
           </div>
@@ -128,29 +151,20 @@ export default function CampaignChapter({
         </div>
       ) : null}
 
-      {/* Social */}
-      {(chapter.posts?.length || chapter.stories?.length) && (
-        <div className="mb-14 space-y-12 sm:mb-20 sm:space-y-16">
-          {chapter.posts?.length ? <SocialRow title="Social — Feed" assets={chapter.posts} aspect="aspect-[4/5]" brand={brand} /> : null}
-          {chapter.stories?.length ? <SocialRow title="Social — Stories" assets={chapter.stories} aspect="aspect-[9/16]" brand={brand} /> : null}
-        </div>
-      )}
-
-      {/* Newsletter — full width scroll frame */}
-      {chapter.newsletter && (
-        <div className="mb-14 sm:mb-20">
-          <SectionLabel title="Email & Newsletter" />
-          <Reveal>
-            <NewsletterFrame
-              src={chapter.newsletter.src}
-              alt={chapter.newsletter.alt}
-              note={chapter.newsletter.note}
-              campaign={chapter.title}
-              width={chapter.newsletter.width}
-              height={chapter.newsletter.height}
-            />
-          </Reveal>
-        </div>
+      {/* Social and Newsletter — order depends on chapter.layout so consecutive
+          chapters don't always render the identical section sequence. Default
+          closes on the newsletter; "social-close" moves the newsletter earlier
+          and lets social close the chapter instead. */}
+      {chapter.layout === "social-close" ? (
+        <>
+          {newsletterSection}
+          {socialSection}
+        </>
+      ) : (
+        <>
+          {socialSection}
+          {newsletterSection}
+        </>
       )}
 
       {/* Website — full width scroll frame, with supporting shots below */}

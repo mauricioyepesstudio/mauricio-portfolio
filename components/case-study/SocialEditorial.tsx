@@ -26,7 +26,7 @@ export default function SocialEditorial({
       <Reveal>
         <div className="mb-10 border-t border-white/10 pt-7 sm:mb-14">
           <p className="eyebrow mb-3">{eyebrow}</p>
-          <h2 className="max-w-3xl text-[clamp(2.35rem,7vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
+          <h2 className="max-w-3xl text-[clamp(2.35rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
             {title}
           </h2>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone">{description}</p>

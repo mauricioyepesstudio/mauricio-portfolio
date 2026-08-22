@@ -65,7 +65,7 @@ export default function EditorialChapter({
         <header className="mb-10 grid gap-5 border-t border-white/10 pt-7 sm:mb-14 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.5fr)] lg:items-end">
           <div>
             <p className="eyebrow mb-3">{chapter.eyebrow}</p>
-            <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
+            <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
               {chapter.title}
             </h2>
           </div>
@@ -88,7 +88,11 @@ export default function EditorialChapter({
       </Reveal>
 
       {hasSecondaryColumn && (
-        <div className="grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-2">
+        // Only split into two columns when both a spotlight image and a newsletter exist side
+        // by side. A chapter with just one of the two (e.g. newsletter alone) would otherwise
+        // still reserve a lg:grid-cols-2 track for the missing element, leaving an empty column
+        // beside the email — the "unused black area" the desktop layout pass was fixing.
+        <div className={`grid min-w-0 gap-6 sm:gap-8 ${chapter.spotlight && chapter.newsletter ? "lg:grid-cols-2" : ""}`}>
           {chapter.spotlight && (
             <Reveal delay={0.05}>
               <figure className="min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
