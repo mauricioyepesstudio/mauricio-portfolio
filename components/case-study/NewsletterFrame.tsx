@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 
 type NewsletterFrameProps = {
   src: string;
@@ -31,28 +30,14 @@ export default function NewsletterFrame({
         </p>
       </div>
 
-      <div
-        tabIndex={0}
-        role="region"
-        aria-label={`${campaign} ${note} — scrollable, full length`}
-        className="relative h-[1800px] overflow-x-hidden overflow-y-auto overscroll-contain focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-gold md:h-[1450px] lg:h-[1300px] min-[1440px]:h-[1500px]"
-      >
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          sizes="(max-width: 1024px) 92vw, 1200px"
-          className="h-auto w-full"
-        />
-      </div>
-
-      <div className="pointer-events-none relative -mt-14 h-14 bg-gradient-to-t from-[#0d0d0d] to-transparent" />
-
-      <figcaption className="flex items-center gap-2 px-5 py-4 text-xs text-bone">
-        <ChevronDown size={14} className="text-gold" aria-hidden="true" />
-        Scroll within the frame to view the full email
-      </figcaption>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes="(max-width: 1024px) 92vw, 1200px"
+        className="h-auto w-full"
+      />
     </figure>
   );
 }

@@ -120,11 +120,6 @@ const website: CampaignChapterData = {
 
 export const getlostCaseStudy: CaseStudyData = {
   heroImage: blackRollingPapers.hero.src,
-  heroInset: {
-    src: "/projects/getlost/events/gallery/cities/getlost-event-vegas.webp",
-    alt: "Get Lost event activation — Las Vegas",
-    label: "Live Events",
-  },
   campaigns: [packagingAndPrint, blackRollingPapers, events, newProducts, website],
   brandPackagingCopy: {
     eyebrow: "01 — Brand Identity",

@@ -9,7 +9,9 @@ export default function Footer() {
       <div className="container-px max-w-content mx-auto py-16">
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           <div>
-            <p className="font-sans text-sm font-semibold uppercase tracking-[0.24em] text-paper">
+            {/* Nav already carries the name persistently on mobile, so it's hidden
+                here to avoid the footer reading as a repeat of the identity. */}
+            <p className="hidden sm:block font-sans text-sm font-semibold uppercase tracking-[0.24em] text-paper">
               Mauricio Yepes
             </p>
             <p className="text-bone text-sm mt-3 max-w-xs">

@@ -38,6 +38,30 @@ export default function Nav() {
     setOpen(false);
   }, [pathname]);
 
+  // Locks page scroll and closes the menu on Escape while it's open.
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  // The mobile menu needs an opaque backdrop to be visible/usable — without
+  // this, opening it while `scrolled` is still false (e.g. at the very top of
+  // a page) rendered the links over a fully transparent background, blending
+  // into whatever content sat behind the nav.
+  const solidBackground = scrolled || open;
+
   return (
     <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-6 sm:px-6">
       <motion.div
@@ -48,7 +72,7 @@ export default function Nav() {
           duration: 0.35,
         }}
         className={`max-w-[1450px] rounded-[28px] border transition-all duration-500 sm:rounded-full ${
-          scrolled
+          solidBackground
             ? "border-white/10 bg-[#0b0b0bcc] shadow-2xl backdrop-blur-2xl"
             : "border-transparent bg-transparent"
         }`}
