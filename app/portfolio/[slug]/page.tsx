@@ -11,6 +11,7 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 import EvenfloCaseStudy from "@/components/case-study/EvenfloCaseStudy";
 import CaseStudyTemplate from "@/components/case-study/CaseStudyTemplate";
+import ResourceLivingCaseStudy from "@/components/case-study/ResourceLivingCaseStudy";
 
 import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
@@ -19,13 +20,12 @@ import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
 import { getlostCaseStudy } from "@/lib/case-studies/getlost";
 import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
 
-// Slugs with a hand-curated case-study template instead of the generic
-// filesystem-driven campaign renderer. Every other slug keeps using the
-// generic pipeline below untouched.
-const CURATED_SLUGS = new Set(["evenflo", "resource-living", "microbeau", "getlost"]);
+// Slugs rendered through the generic CaseStudyTemplate + CaseStudyData.
+// "evenflo" and "resource-living" are handled separately above via their
+// own bespoke presentation components.
+const CURATED_SLUGS = new Set(["microbeau", "getlost"]);
 
 const CURATED_DATA: Record<string, CaseStudyData> = {
-  "resource-living": resourceLivingCaseStudy,
   microbeau: microbeauCaseStudy,
   getlost: getlostCaseStudy,
 };
@@ -50,7 +50,12 @@ export async function generateMetadata({
     return {};
   }
 
-  const heroImage = slug === "evenflo" ? evenfloCaseStudy.heroImage : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
+  const heroImage =
+    slug === "evenflo"
+      ? evenfloCaseStudy.heroImage
+      : slug === "resource-living"
+        ? resourceLivingCaseStudy.heroImage
+        : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
 
   return {
     title: `${project.title} — Case Study`,
@@ -101,6 +106,10 @@ export default async function CaseStudyPage({
 
   if (project.slug === "evenflo") {
     return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
+
+  if (project.slug === "resource-living") {
+    return <ResourceLivingCaseStudy project={project} previous={previousLink} next={nextLink} />;
   }
 
   if (CURATED_SLUGS.has(project.slug)) {

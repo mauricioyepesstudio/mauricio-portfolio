@@ -6,7 +6,7 @@ import { experience, skills, languages } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Resume of Mauricio Yepes — Creative Director, Brand Strategist and Marketing Designer based in Miami, Florida.",
+    "Resume of Mauricio Yepes — Creative Director, Marketing Specialist and Multidisciplinary Designer based in Miami, Florida.",
 };
 
 export default function ResumePage() {
@@ -20,7 +20,7 @@ export default function ResumePage() {
             <p className="eyebrow mb-4">Resume</p>
 
             <h1 className="font-sans font-semibold text-display-lg text-paper">
-              20+ years creating
+              12+ years creating
               <br />
               brands, campaigns and
               <span className="font-serif italic text-gold">
@@ -57,11 +57,11 @@ export default function ResumePage() {
               </h2>
 
               <p className="mt-3 text-xl text-bone">
-                Creative Director • Brand Strategist • Marketing Designer
+                Creative Director • Marketing Specialist • Multidisciplinary Designer
               </p>
 
               <p className="mt-5 max-w-3xl leading-8 text-bone">
-                Creative Director with more than 20 years of experience
+                Creative Director with 12+ years of experience
                 developing branding systems, editorial publications,
                 advertising campaigns, websites and digital marketing
                 strategies for companies throughout the United States and
@@ -114,7 +114,7 @@ export default function ResumePage() {
               </p>
 
               <p className="max-w-5xl text-xl leading-10 text-bone">
-                Twenty years directing creative for magazines, product
+                Twelve years directing creative for magazines, product
                 launches and marketing campaigns across the United States
                 and Latin America. My work spans strategy, editorial
                 design, digital marketing and AI-assisted production,

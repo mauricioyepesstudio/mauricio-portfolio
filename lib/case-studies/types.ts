@@ -62,3 +62,43 @@ export type BrandPackagingItem = {
   label: string;
   kind: string;
 };
+
+// --- Editorial section types ---
+// Resource Living's narrative-driven presentation shares primitives with the
+// generic campaign architecture above (CuratedAsset, NewsletterAsset,
+// CampaignVideo) but needs its own section/chapter shapes rather than
+// stretching CampaignChapterData to fit a different editorial layout.
+
+/** Heading block used by every full-width editorial section (eyebrow + title + optional supporting copy). */
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+};
+
+/** Same tile shape as BrandPackagingItem — aliased so both the generic BrandPackaging grid and the editorial IdentityGrid consume one canonical type. */
+export type IdentityTile = BrandPackagingItem;
+
+export type MotionItem = {
+  src: string;
+  caption: string;
+  campaign: string;
+  orientation?: "landscape" | "vertical";
+};
+
+// A narrative "chapter" inside Resource Living's editorial case study — a
+// sibling of CampaignChapterData, not an extension of it. It groups social
+// into one unified array (no posts/stories split) and uses a single labeled
+// "spotlight" image instead of packaging/banners/gallery, so it needs its
+// own shape rather than forcing CampaignChapterData's fields to fit.
+export type EditorialChapter = {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  hero: CuratedAsset;
+  spotlight?: CuratedAsset & { label: string };
+  newsletter?: NewsletterAsset;
+  social?: CuratedAsset[];
+  videos?: CampaignVideo[];
+};

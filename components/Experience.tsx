@@ -8,7 +8,7 @@ export default function Experience() {
         <Reveal>
           <p className="eyebrow mb-4">Experience</p>
           <h2 className="font-sans font-semibold text-display-md text-paper mb-16 max-w-2xl">
-            20+ years directing brands across two continents.
+            12+ years directing brands across two continents.
           </h2>
         </Reveal>
 

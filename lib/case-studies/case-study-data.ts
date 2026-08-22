@@ -1,10 +1,7 @@
-import type { BrandPackagingItem, CampaignChapterData, SocialPick } from "./types";
+import type { BrandPackagingItem, CampaignChapterData, MotionItem, SectionIntro, SocialPick } from "./types";
 
-export type SectionCopy = {
-  eyebrow?: string;
-  title?: string;
-  description?: string;
-};
+/** Alias kept for this module's existing call sites — canonical shape now lives in ./types as SectionIntro. */
+export type SectionCopy = SectionIntro;
 
 export type CaseStudyData = {
   heroImage: string;
@@ -15,6 +12,6 @@ export type CaseStudyData = {
   brandPackagingCopy?: SectionCopy;
   social?: SocialPick[];
   socialCopy?: SectionCopy;
-  motion?: { src: string; caption: string; campaign: string; orientation?: "landscape" | "vertical" }[];
+  motion?: MotionItem[];
   motionCopy?: SectionCopy;
 };
