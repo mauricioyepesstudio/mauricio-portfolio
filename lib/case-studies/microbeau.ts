@@ -9,9 +9,12 @@ const beautyInAuthenticity: CampaignChapterData = {
   title: "Beauty in Authenticity",
   intro:
     "A brand-storytelling campaign built around real PMU artists, pairing an editorial hero and packaging system with a full social and email rollout that let the work speak for itself.",
+  // Swapped from the flower/script-only graphic to the real wide banner
+  // featuring the four artists — the same campaign's strongest portrait
+  // storytelling, previously sitting unused in a legacy asset folder.
   hero: {
-    src: "/projects/microbeau/beauty-in-authenticity/hero/microbeau-beauty-in-authenticity-hero.jpg",
-    alt: "Beauty in Authenticity campaign hero — Microbeau",
+    src: "/projects/microbeau/beauty-in-authenticity-campaign/web-banner/Beauty-Authenticity.png",
+    alt: "Beauty in Authenticity campaign hero — four real PMU artists — Microbeau",
   },
   logo: {
     src: "/projects/microbeau/beauty-in-authenticity/logo/microbeau-beauty-in-authenticity-logo.jpg",
@@ -28,10 +31,16 @@ const beautyInAuthenticity: CampaignChapterData = {
     width: 600,
     height: 7116,
   },
-  posts: [1, 2, 3, 4].map((n) => ({
-    src: `/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-${n}.jpg`,
-    alt: `Beauty in Authenticity social feed post ${n}`,
-  })),
+  posts: [
+    ...[1, 2, 3, 4].map((n) => ({
+      src: `/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-${n}.jpg`,
+      alt: `Beauty in Authenticity social feed post ${n}`,
+    })),
+    // Real additional artist portraits from the same campaign's legacy asset
+    // folder — strengthens the portrait storytelling the chapter is meant to lead with.
+    { src: "/projects/microbeau/beauty-in-authenticity-campaign/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png", alt: "Beauty in Authenticity — Ari Schweiger portrait" },
+    { src: "/projects/microbeau/beauty-in-authenticity-campaign/social/Liv-Seidel-Beauty-Authentic-Beauty.png", alt: "Beauty in Authenticity — Liv Seidel portrait" },
+  ],
   stories: [1, 2, 3].map((n) => ({
     src: `/projects/microbeau/beauty-in-authenticity/social/stories/microbeau-beauty-in-authenticity-story-${n}.jpg`,
     alt: `Beauty in Authenticity social story ${n}`,
@@ -56,9 +65,12 @@ const vertixPico: CampaignChapterData = {
   title: "Vertix Pico",
   intro:
     "A precision-focused product launch for the Vertix Pico machine, translating a technical feature set into a clean hero, packaging and configuration story for working artists.",
+  // Promoted from the banner gallery: the widest, cleanest single asset in the
+  // campaign (macro hand shot + cartridge box + logo), stronger than the
+  // original hero for opening the chapter at full width.
   hero: {
-    src: "/projects/microbeau/vertix-pico/hero/microbeau-vertix-pico-hero.jpg",
-    alt: "Vertix Pico campaign hero — Microbeau",
+    src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-1.jpg",
+    alt: "Vertix Pico campaign key visual — cartridge box, needle detail and application macro — Microbeau",
   },
   logo: {
     src: "/projects/microbeau/vertix-pico/logo/microbeau-vertix-pico-logo.jpg",
@@ -69,7 +81,7 @@ const vertixPico: CampaignChapterData = {
     alt: "Vertix Pico packaging mockup",
   },
   banners: [
-    { src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-1.jpg", alt: "Vertix Pico web banner 1" },
+    { src: "/projects/microbeau/vertix-pico/hero/microbeau-vertix-pico-hero.jpg", alt: "Vertix Pico application macro — hand, needle and ink tube" },
     { src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-2.jpg", alt: "Vertix Pico web banner 2" },
   ],
   newsletter: {
@@ -94,6 +106,18 @@ const vertixPico: CampaignChapterData = {
       orientation: "landscape",
     },
   ],
+  // Real educational/technical asset from the pico-needle configuration
+  // material — proof the campaign also translated technical specs for
+  // working artists, not just product photography.
+  gallery: [
+    {
+      title: "Needle Configuration Guide",
+      assets: [
+        { src: "/projects/microbeau/pico-needle-campaign/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png", alt: "Vertix Pico needle configuration comparison — round shader vs. curved magnum" },
+      ],
+      emphasis: "large",
+    },
+  ],
 };
 
 const kickstartVertix: CampaignChapterData = {
@@ -102,18 +126,16 @@ const kickstartVertix: CampaignChapterData = {
   title: "Kickstart Vertix",
   intro:
     "A launch-moment companion campaign that introduced the wider Vertix line, carrying its own hero and email direction across feed, story and web banner placements.",
+  // Swapped from a text-only glitter card to the real five-device campaign
+  // key visual — the same image the campaign already leans on everywhere else.
   hero: {
-    src: "/projects/microbeau/kickstart-vertix/hero/microbeau-kickstart-vertix-hero.jpg",
-    alt: "Kickstart Vertix campaign hero — Microbeau",
+    src: "/projects/microbeau/kickstart-vertix/gallery/web-banners/microbeau-kickstart-vertix-web-banner-1.jpg",
+    alt: "Kickstart Vertix campaign key visual — five-device colorway lineup — Microbeau",
   },
   logo: {
     src: "/projects/microbeau/kickstart-vertix/logo/microbeau-kickstart-vertix-logo.jpg",
     alt: "Kickstart Vertix campaign logo lockup",
   },
-  banners: [1, 2].map((n) => ({
-    src: `/projects/microbeau/kickstart-vertix/gallery/web-banners/microbeau-kickstart-vertix-web-banner-${n}.jpg`,
-    alt: `Kickstart Vertix web banner ${n}`,
-  })),
   newsletter: {
     src: "/projects/microbeau/kickstart-vertix/newsletter/microbeau-kickstart-vertix-newsletter.jpg",
     alt: "Kickstart Vertix campaign email",
@@ -121,7 +143,9 @@ const kickstartVertix: CampaignChapterData = {
     width: 1161,
     height: 5970,
   },
-  posts: [1, 2, 3, 4].map((n) => ({
+  // post-1 was the same five-device lineup as the new hero (square-crop
+  // variant) — dropped to avoid an immediate near-duplicate at equal prominence.
+  posts: [2, 3, 4].map((n) => ({
     src: `/projects/microbeau/kickstart-vertix/social/posts/microbeau-kickstart-vertix-post-${n}.jpg`,
     alt: `Kickstart Vertix social feed post ${n}`,
   })),
@@ -129,6 +153,17 @@ const kickstartVertix: CampaignChapterData = {
     src: `/projects/microbeau/kickstart-vertix/social/stories/microbeau-kickstart-vertix-story-${n}.jpg`,
     alt: `Kickstart Vertix social story ${n}`,
   })),
+  // The second web banner closes the chapter as standalone digital-advertising
+  // proof rather than sitting redundantly beside the hero.
+  gallery: [
+    {
+      title: "Web Banner",
+      assets: [
+        { src: "/projects/microbeau/kickstart-vertix/gallery/web-banners/microbeau-kickstart-vertix-web-banner-2.jpg", alt: "Kickstart Vertix web banner 2" },
+      ],
+      emphasis: "large",
+    },
+  ],
 };
 
 const fluxMini: CampaignChapterData = {
@@ -173,9 +208,12 @@ const fluxMax: CampaignChapterData = {
   title: "Flux Max",
   intro:
     "The flagship machine in the Flux line, introduced through a bolder hero treatment and colorway-driven social content aimed at working professionals.",
+  // Swapped from a testimonial text screenshot to the real "Oudwood" studio
+  // product shot — the strongest individual product photography in the
+  // entire Microbeau archive.
   hero: {
-    src: "/projects/microbeau/flux-max/hero/microbeau-flux-max-hero.jpg",
-    alt: "Flux Max campaign hero — Microbeau",
+    src: "/projects/microbeau/flux-max/gallery/social/microbeau-flux-max-social-1.jpg",
+    alt: "Flux Max S — Oudwood colorway studio product shot — Microbeau",
   },
   logo: {
     src: "/projects/microbeau/flux-max/logo/microbeau-flux-max-logo.jpg",
@@ -183,11 +221,21 @@ const fluxMax: CampaignChapterData = {
   },
   gallery: [
     {
-      title: "Colorways & Social",
-      assets: [1, 2, 3].map((n) => ({
-        src: `/projects/microbeau/flux-max/gallery/social/microbeau-flux-max-social-${n}.jpg`,
-        alt: `Flux Max colorway/social asset ${n}`,
-      })),
+      // "Rouge" pairs with the Oudwood hero as the chapter's secondary
+      // editorial product moment — same studio treatment, different colorway.
+      title: "Rouge Colorway",
+      assets: [
+        { src: "/projects/microbeau/flux-max/gallery/social/microbeau-flux-max-social-2.jpg", alt: "Flux Max S — Rouge colorway studio product shot" },
+      ],
+      emphasis: "large",
+    },
+    {
+      // Digital placement proof — kept visually smaller/standard, evidence
+      // the work shipped in a real channel rather than a hero-scale visual.
+      title: "Digital Placement",
+      assets: [
+        { src: "/projects/microbeau/flux-max/gallery/social/microbeau-flux-max-social-3.jpg", alt: "Flux Max S — mobile digital ad placement" },
+      ],
     },
   ],
 };
@@ -198,9 +246,11 @@ const killSwitch: CampaignChapterData = {
   title: "Kill Switch — Black Friday",
   intro:
     "A high-contrast promotional push for the brand's Black Friday moment, built for speed — a single hero and email paired with a fast-moving story sequence.",
+  // Swapped from a neon text-only card to the real three-colorway product
+  // shot — the only product photography this chapter has, now leading it.
   hero: {
-    src: "/projects/microbeau/kill-switch/hero/microbeau-kill-switch-hero.jpg",
-    alt: "Kill Switch Black Friday campaign hero — Microbeau",
+    src: "/projects/microbeau/kill-switch/social/stories/microbeau-kill-switch-story-1.jpg",
+    alt: "Killswitch wireless footswitch — three-colorway product shot — Microbeau",
   },
   newsletter: {
     src: "/projects/microbeau/kill-switch/newsletter/microbeau-kill-switch-newsletter.jpg",
@@ -209,7 +259,8 @@ const killSwitch: CampaignChapterData = {
     width: 1024,
     height: 12006,
   },
-  stories: [1, 2, 3, 4, 5, 6].map((n) => ({
+  // story-1 is now the hero — dropped here to avoid repeating it immediately after.
+  stories: [2, 3, 4, 5, 6].map((n) => ({
     src: `/projects/microbeau/kill-switch/social/stories/microbeau-kill-switch-story-${n}.jpg`,
     alt: `Kill Switch social story ${n}`,
   })),
