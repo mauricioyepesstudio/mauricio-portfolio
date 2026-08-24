@@ -24,7 +24,7 @@ export default function MotionGallerySection({
       <div className="grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-2">
         {videos.map((video, index) => (
           <Reveal key={video.src} delay={index * 0.08} className="min-w-0">
-            <ProjectVideoPlayer src={video.src} caption={`${video.campaign} — ${video.caption}`} />
+            <ProjectVideoPlayer src={video.src} caption={`${video.campaign} — ${video.caption}`} orientation={video.orientation} />
           </Reveal>
         ))}
       </div>

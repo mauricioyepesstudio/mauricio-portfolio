@@ -87,6 +87,29 @@ export default function EditorialChapter({
         </div>
       </Reveal>
 
+      {chapter.featureVisual && (
+        <Reveal>
+          <div className="mb-12 sm:mb-16">
+            {chapter.featureVisual.label && (
+              <div className="mb-5 flex items-center gap-4">
+                <h4 className="text-sm uppercase tracking-[0.28em] text-bone">{chapter.featureVisual.label}</h4>
+                <span className="h-px flex-1 bg-white/10" />
+              </div>
+            )}
+            <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
+              <Image
+                src={chapter.featureVisual.src}
+                alt={chapter.featureVisual.alt}
+                width={chapter.featureVisual.width}
+                height={chapter.featureVisual.height}
+                sizes="(max-width: 1024px) 92vw, 1200px"
+                className="h-auto w-full"
+              />
+            </figure>
+          </div>
+        </Reveal>
+      )}
+
       {hasSecondaryColumn && (
         // Only split into two columns when both a spotlight image and a newsletter exist side
         // by side. A chapter with just one of the two (e.g. newsletter alone) would otherwise
@@ -146,7 +169,7 @@ export default function EditorialChapter({
               }`}
             >
               {chapter.videos.map((video) => (
-                <ProjectVideoPlayer key={video.src} src={video.src} caption={video.caption} />
+                <ProjectVideoPlayer key={video.src} src={video.src} caption={video.caption} orientation={video.orientation} />
               ))}
             </div>
           </div>
