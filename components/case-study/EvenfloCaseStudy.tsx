@@ -76,20 +76,25 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
         />
 
         {/* 04 — Brand & Packaging */}
-        <BrandPackaging items={[...evenfloCaseStudy.brandPackaging]} />
+        <BrandPackaging
+          items={[...evenfloCaseStudy.brandPackaging]}
+          eyebrow="04 — Brand & Packaging"
+          title="Two color lines, one identity."
+          description="Blonde2Brunette Ink and True Lips share one identity and packaging template — the anchor that keeps both launches unmistakably Evenflo Colours."
+        />
 
-        {/* 05 & 06 — Campaign Chapters */}
+        {/* 05, 06 & 07 — Campaign Chapters (05 Blonde2Brunette Ink, 06 True Lips, 07 System Recap) */}
         {evenfloCaseStudy.campaigns.map((chapter) => (
           <CampaignChapter key={chapter.slug} chapter={chapter} brand={project.title} />
         ))}
 
-        {/* 07 — Social Campaign System */}
-        <SocialEditorial picks={[...evenfloCaseStudy.social]} />
+        {/* 08 — Social Campaign System */}
+        <SocialEditorial picks={[...evenfloCaseStudy.social]} eyebrow="08 — Social Campaign System" />
 
-        {/* 08 — Motion */}
-        <MotionGallery videos={[...evenfloCaseStudy.motion]} />
+        {/* 09 — Motion */}
+        <MotionGallery videos={[...evenfloCaseStudy.motion]} eyebrow="09 — Motion" />
 
-        {/* 09 — Final Navigation / CTA */}
+        {/* 10 — Final Navigation / CTA */}
         <ProjectNavigation previous={previous} next={next} />
       </div>
     </article>
