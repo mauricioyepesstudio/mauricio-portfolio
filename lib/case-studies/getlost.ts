@@ -3,55 +3,33 @@ import "server-only";
 import type { CampaignChapterData } from "./types";
 import type { CaseStudyData } from "./case-study-data";
 
-// 02 — Packaging & Print. Not a literal marketing "campaign," but reuses the
-// chapter component so the packaging system gets the same large, editorial
-// presentation as every other section instead of being buried in a tile grid.
-const packagingAndPrint: CampaignChapterData = {
-  slug: "packaging-print",
-  eyebrow: "02 — Packaging & Print",
-  title: "Packaging & Print",
-  intro:
-    "The Black Rolling Papers packaging system, built to stand out on shelf and carried consistently through business collateral and a magazine placement.",
-  hero: {
-    src: "/projects/getlost/black-rolling-papers/packaging/getlost-black-rolling-papers-packaging-2.webp",
-    alt: "Black Rolling Papers packaging system — Get Lost",
-  },
-  gallery: [
-    {
-      title: "Packaging",
-      emphasis: "large",
-      assets: [1, 2, 3, 4].map((n) => ({
-        src: `/projects/getlost/black-rolling-papers/packaging/getlost-black-rolling-papers-packaging-${n}.webp`,
-        alt: `Black Rolling Papers packaging variant ${n}`,
-      })),
-    },
-    {
-      title: "Print & Collateral",
-      emphasis: "large",
-      assets: [
-        { src: "/projects/getlost/black-rolling-papers/print/getlost-business-card-front.webp", alt: "Get Lost business card — front" },
-        { src: "/projects/getlost/black-rolling-papers/print/getlost-business-card-back.webp", alt: "Get Lost business card — back" },
-        { src: "/projects/getlost/black-rolling-papers/print/getlost-magazine-ad.webp", alt: "Get Lost magazine advertisement" },
-        { src: "/projects/getlost/black-rolling-papers/print/getlost-post-card.webp", alt: "Get Lost postcard" },
-      ],
-    },
-  ],
-};
-
+// 02 — The Campaign. Leads with the strongest advertising photography in the
+// archive instead of packaging paperwork — hero + a large, uncropped
+// editorial pairing carry the chapter before the smaller supporting grid.
 const blackRollingPapers: CampaignChapterData = {
   slug: "black-rolling-papers",
-  eyebrow: "03 — Campaign",
+  eyebrow: "02 — The Campaign",
   title: "Black Rolling Papers",
   intro:
-    "The flagship product line's launch moment — hero imagery and a coordinated social push introducing the packaging system to the feed.",
+    "The flagship product line's advertising campaign — model-led photography and a coordinated social push carrying the packaging system's identity into the feed.",
   hero: {
-    src: "/projects/getlost/black-rolling-papers/hero/getlost-black-rolling-papers-hero.jpg",
-    alt: "Black Rolling Papers campaign hero — Get Lost",
+    src: "/projects/getlost/black-rolling-papers/social/posts/getlost-black-rolling-papers-post-1.png",
+    alt: "Black Rolling Papers campaign — Get Lost",
   },
-  posts: [1, 2, 3, 4, 5, 6].map((n) => ({
+  posts: [2, 5, 6].map((n) => ({
     src: `/projects/getlost/black-rolling-papers/social/posts/getlost-black-rolling-papers-post-${n}.png`,
     alt: `Black Rolling Papers social post ${n}`,
   })),
+  gallery: [
+    {
+      title: "The Campaign — Editorial",
+      emphasis: "large",
+      assets: [
+        { src: "/projects/getlost/black-rolling-papers/social/posts/getlost-black-rolling-papers-post-3.png", alt: "Black Rolling Papers social post 3" },
+        { src: "/projects/getlost/black-rolling-papers/social/posts/getlost-black-rolling-papers-post-4.png", alt: "Black Rolling Papers social post 4 — retail display" },
+      ],
+    },
+  ],
   videos: [
     {
       src: "/projects/getlost/black-rolling-papers/video/getlost-black-rolling-papers-video.mp4",
@@ -61,66 +39,137 @@ const blackRollingPapers: CampaignChapterData = {
   ],
 };
 
+// 03 — Culture & Events. Leads with the highest-resolution photograph in the
+// archive; a substantial environmental moment and a split-editorial pairing
+// follow before the lower-resolution activations, which sit at proof scale.
 const events: CampaignChapterData = {
   slug: "events",
-  eyebrow: "04 — Events & Lifestyle",
-  title: "On the Road",
+  eyebrow: "03 — Culture & Events",
+  title: "Culture on the Road",
   intro:
-    "Booth and city activations carried the brand's identity into live environments — Atlantic City, Miami, Texas and Las Vegas — each documented for the social feed.",
+    "Real trade-show and city activations carried the brand's identity into live environments across Miami, Atlantic City, Las Vegas and Texas — booth builds, team presence and product in hand.",
   hero: {
-    src: "/projects/getlost/events/hero/getlost-events-hero.webp",
-    alt: "Get Lost event activation — Las Vegas",
+    src: "/projects/getlost/events/gallery/cities/getlost-event-miami.webp",
+    alt: "Get Lost event activation — Miami",
   },
   gallery: [
     {
-      title: "City Activations",
+      title: "Trade Show Presence",
+      emphasis: "large",
+      assets: [{ src: "/projects/getlost/events/gallery/cities/getlost-event-booth-2.png", alt: "Get Lost trade show booth build" }],
+    },
+    {
+      title: "On the Road",
+      emphasis: "large",
       assets: [
         { src: "/projects/getlost/events/gallery/cities/getlost-event-atlantic-city.webp", alt: "Get Lost event — Atlantic City" },
-        { src: "/projects/getlost/events/gallery/cities/getlost-event-miami.webp", alt: "Get Lost event — Miami" },
-        { src: "/projects/getlost/events/gallery/cities/getlost-event-texas.webp", alt: "Get Lost event — Texas" },
         { src: "/projects/getlost/events/gallery/cities/getlost-event-vegas.webp", alt: "Get Lost event — Las Vegas" },
-        { src: "/projects/getlost/events/gallery/cities/getlost-event-booth-1.webp", alt: "Get Lost trade show booth 1" },
-        { src: "/projects/getlost/events/gallery/cities/getlost-event-booth-2.png", alt: "Get Lost trade show booth 2" },
+      ],
+    },
+    {
+      title: "Additional Activations",
+      assets: [
+        { src: "/projects/getlost/events/gallery/cities/getlost-event-booth-1.webp", alt: "Get Lost trade show booth" },
+        { src: "/projects/getlost/events/gallery/cities/getlost-event-texas.webp", alt: "Get Lost event — Texas" },
       ],
     },
   ],
 };
 
+// 04 — Product Universe. The lunar gift-set composite leads; the backpack
+// lineup gets a large, uncropped featured moment instead of sitting equal
+// to five other tiles.
 const newProducts: CampaignChapterData = {
   slug: "new-products",
-  eyebrow: "05 — Product & Social",
-  title: "New Product Drops",
+  eyebrow: "04 — Product Universe",
+  title: "The Product Universe",
   intro:
-    "A recurring social format for introducing new accessories and hardware to the line — backpacks, grinders, torches and trays — keeping the feed current between major launches.",
+    "The illustrated identity expanded into a coherent product line — backpacks, grinders, torches and trays carrying the same cosmic system.",
   hero: {
     src: "/projects/getlost/new-products/hero/getlost-new-products-hero.webp",
     alt: "Get Lost new products hero",
   },
-  posts: [1, 2, 3, 4, 5, 6].map((n) => ({
+  gallery: [
+    {
+      title: "The Product System",
+      emphasis: "large",
+      assets: [{ src: "/projects/getlost/new-products/social/posts/getlost-new-products-post-1.webp", alt: "Get Lost product lineup — bags and packs" }],
+    },
+  ],
+  posts: [2, 3, 4, 5, 6].map((n) => ({
     src: `/projects/getlost/new-products/social/posts/getlost-new-products-post-${n}.webp`,
     alt: `Get Lost new product post ${n}`,
   })),
 };
 
+// 05 — Production & Print. Reframed as production/process evidence rather
+// than a photography showcase — the finished print collateral leads, the
+// manufacturer dielines appear only at small, proof scale, and the chapter
+// is intentionally shorter than the others.
+const packagingAndPrint: CampaignChapterData = {
+  slug: "packaging-print",
+  eyebrow: "05 — Production & Print",
+  title: "Production & Print",
+  intro:
+    "Real production reference and finished print collateral behind the Black Rolling Papers line — manufacturing specifications paired with the business cards, magazine placement and postcard that carried the identity into print.",
+  hero: {
+    src: "/projects/getlost/black-rolling-papers/print/getlost-magazine-ad.webp",
+    alt: "Get Lost magazine advertisement",
+  },
+  gallery: [
+    {
+      title: "Print Collateral",
+      assets: [
+        { src: "/projects/getlost/black-rolling-papers/print/getlost-business-card-front.webp", alt: "Get Lost business card — front" },
+        { src: "/projects/getlost/black-rolling-papers/print/getlost-business-card-back.webp", alt: "Get Lost business card — back" },
+        { src: "/projects/getlost/black-rolling-papers/print/getlost-post-card.webp", alt: "Get Lost postcard" },
+      ],
+    },
+    {
+      title: "Production Reference",
+      assets: [
+        { src: "/projects/getlost/black-rolling-papers/packaging/getlost-black-rolling-papers-packaging-1.webp", alt: "Black Rolling Papers production reference — cone tube" },
+        { src: "/projects/getlost/black-rolling-papers/packaging/getlost-black-rolling-papers-packaging-3.webp", alt: "Black Rolling Papers production reference — booklet and display" },
+      ],
+    },
+  ],
+};
+
+// 06 — Storefront. The chapter hero uses the header capture so the full
+// homepage scroll can carry the chapter as the primary digital visual
+// without duplicating an image already shown elsewhere in the chapter. The
+// trademark sits as a small, late credibility beat, followed by a concise
+// closing callback to the brand mark that opened the case study.
 const website: CampaignChapterData = {
   slug: "website",
-  eyebrow: "06 — Website & Digital Experience",
-  title: "Storefront Design",
-  intro: "The online storefront extends the same illustrated identity into a full e-commerce experience — homepage, product certification and category navigation.",
+  eyebrow: "06 — Storefront",
+  title: "The Storefront",
+  intro:
+    "The online storefront extends the same illustrated identity into a full e-commerce experience — homepage, category navigation and a real federal trademark registration behind the brand.",
   hero: {
-    src: "/projects/getlost/website/hero/getlost-website-hero.webp",
-    alt: "Get Lost website design hero",
+    src: "/projects/getlost/website/gallery/pages/getlost-website-header.webp",
+    alt: "Get Lost website header",
   },
   website: [
     { src: "/projects/getlost/website/gallery/pages/getlost-website-home.webp", alt: "Get Lost website homepage — full scroll", label: "Homepage — Full Scroll" },
-    { src: "/projects/getlost/website/gallery/pages/getlost-website-header.webp", alt: "Get Lost website header", label: "Header" },
-    { src: "/projects/getlost/website/gallery/pages/getlost-website-certification.webp", alt: "Get Lost website certification page", label: "Certification Page" },
+  ],
+  gallery: [
+    {
+      title: "Trademark Registration",
+      emphasis: "large",
+      assets: [{ src: "/projects/getlost/website/gallery/pages/getlost-website-certification.webp", alt: "Get Lost federal trademark registration certificate" }],
+    },
+    {
+      title: "Brand World — Closing",
+      emphasis: "large",
+      assets: [{ src: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp", alt: "Get Lost logo mark" }],
+    },
   ],
 };
 
 export const getlostCaseStudy: CaseStudyData = {
-  heroImage: blackRollingPapers.hero.src,
-  campaigns: [packagingAndPrint, blackRollingPapers, events, newProducts, website],
+  heroImage: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp",
+  campaigns: [blackRollingPapers, events, newProducts, packagingAndPrint, website],
   brandPackagingCopy: {
     eyebrow: "01 — Brand Identity",
     title: "One illustrated world, every touchpoint.",
