@@ -5,10 +5,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line">
+    <footer className="overflow-x-clip border-t border-line">
       <div className="container-px max-w-content mx-auto py-16">
-        <div className="grid md:grid-cols-3 gap-12 md:gap-8">
-          <div>
+        <div className="grid min-w-0 gap-12 md:grid-cols-3 md:gap-8">
+          <div className="min-w-0">
             {/* Nav already carries the name persistently on mobile, so it's hidden
                 here to avoid the footer reading as a repeat of the identity. */}
             <p className="hidden sm:block font-sans text-sm font-semibold uppercase tracking-[0.24em] text-paper">
@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow mb-4">Navigate</p>
             <ul className="space-y-2 text-sm">
               <li>
@@ -46,7 +46,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="eyebrow mb-4">Connect</p>
             <ul className="space-y-3 text-sm">
               <li>
@@ -81,9 +81,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-line flex flex-col md:flex-row justify-between gap-4 text-xs text-bone">
-          <p>© {year} Mauricio Yepes. All rights reserved.</p>
-          <p>Miami, FL · Available for select engagements</p>
+        <div className="mt-16 flex min-w-0 flex-col gap-4 border-t border-line pt-8 text-xs text-bone md:flex-row md:justify-between">
+          <p className="min-w-0">© {year} Mauricio Yepes. All rights reserved.</p>
+          <p className="min-w-0 shrink-0">Miami, FL · Available for select engagements</p>
         </div>
       </div>
     </footer>

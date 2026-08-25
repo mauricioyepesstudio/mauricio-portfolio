@@ -26,6 +26,32 @@ function Tile({ item, index }: { item: Item; index: number }) {
   );
 }
 
+function DisciplineBlock({
+  title,
+  items,
+  startIndex,
+}: {
+  title: string;
+  items: Item[];
+  startIndex: number;
+}) {
+  if (!items.length) return null;
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center gap-4">
+        <h3 className="text-sm uppercase tracking-[0.28em] text-bone">{title}</h3>
+        <span className="h-px flex-1 bg-white/10" />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        {items.map((item, index) => (
+          <Tile key={item.asset.src} item={item} index={startIndex + index} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 type Props = {
   items: Item[];
   eyebrow?: string;
@@ -41,6 +67,7 @@ export default function BrandPackaging({
 }: Props) {
   const identity = items.filter((item) => item.kind === "Identity");
   const packaging = items.filter((item) => item.kind === "Packaging");
+  const showDisciplineHeaders = identity.length > 0 && packaging.length > 0;
 
   return (
     <section className="mt-24 sm:mt-36">
@@ -54,14 +81,18 @@ export default function BrandPackaging({
         </div>
       </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-        {identity.map((item, index) => (
-          <Tile key={item.asset.src} item={item} index={index} />
-        ))}
-        {packaging.map((item, index) => (
-          <Tile key={item.asset.src} item={item} index={index + identity.length} />
-        ))}
-      </div>
+      {showDisciplineHeaders ? (
+        <div className="space-y-12 sm:space-y-16">
+          <DisciplineBlock title="Identity / Brand System" items={identity} startIndex={0} />
+          <DisciplineBlock title="Packaging" items={packaging} startIndex={identity.length} />
+        </div>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+          {items.map((item, index) => (
+            <Tile key={item.asset.src} item={item} index={index} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

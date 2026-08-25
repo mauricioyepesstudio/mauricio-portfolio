@@ -1,15 +1,33 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import BannerFrame from "@/components/case-study/BannerFrame";
 import NewsletterFrame from "@/components/case-study/NewsletterFrame";
 import WebsiteFrame from "@/components/case-study/WebsiteFrame";
 import ProjectVideoPlayer from "@/components/ProjectVideoPlayer";
-import type { CampaignChapterData } from "@/lib/case-studies/types";
+import type { CampaignChapterData, GallerySection } from "@/lib/case-studies/types";
+
+function isBannerGallery(section: GallerySection) {
+  return /banner|advertising|digital ad/i.test(section.title);
+}
 
 function SectionLabel({ title }: { title: string }) {
   return (
     <div className="mb-5 flex items-center gap-4">
       <h4 className="text-sm uppercase tracking-[0.28em] text-bone">{title}</h4>
       <span className="h-px flex-1 bg-white/10" />
+    </div>
+  );
+}
+
+function BannerGallery({ title, assets }: { title: string; assets: GallerySection["assets"] }) {
+  return (
+    <div className="mb-14 space-y-8 sm:mb-20 sm:space-y-10">
+      <SectionLabel title={title} />
+      {assets.map((banner, index) => (
+        <Reveal key={banner.src} delay={Math.min(index * 0.05, 0.2)}>
+          <BannerFrame src={banner.src} alt={banner.alt} />
+        </Reveal>
+      ))}
     </div>
   );
 }
@@ -142,10 +160,7 @@ export default function CampaignChapter({
           <SectionLabel title="Web & Digital Advertising" />
           {chapter.banners.map((banner, index) => (
             <Reveal key={banner.src} delay={Math.min(index * 0.05, 0.2)}>
-              <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={banner.src} alt={banner.alt} loading="lazy" className="block h-auto w-full" />
-              </figure>
+              <BannerFrame src={banner.src} alt={banner.alt} />
             </Reveal>
           ))}
         </div>
@@ -192,11 +207,15 @@ export default function CampaignChapter({
       ) : null}
 
       {/* Generic supporting galleries — print, events, colorways, etc. */}
-      {chapter.gallery?.map((section) => (
-        <div key={section.title} className="mb-14 sm:mb-20">
-          <SocialRow title={section.title} assets={section.assets} aspect="aspect-[4/3]" brand={brand} emphasis={section.emphasis} />
-        </div>
-      ))}
+      {chapter.gallery?.map((section) =>
+        isBannerGallery(section) ? (
+          <BannerGallery key={section.title} title={section.title} assets={section.assets} />
+        ) : (
+          <div key={section.title} className="mb-14 sm:mb-20">
+            <SocialRow title={section.title} assets={section.assets} aspect="aspect-[4/3]" brand={brand} emphasis={section.emphasis} />
+          </div>
+        ),
+      )}
 
       {/* Motion — landscape films full width, vertical reels in a controlled grid */}
       {chapter.videos?.length ? (

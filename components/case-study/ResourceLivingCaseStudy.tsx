@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -13,6 +12,7 @@ import IdentityGrid from "@/components/case-study/IdentityGrid";
 import MotionGallerySection from "@/components/case-study/MotionGallerySection";
 import ResourceLivingOverview from "@/components/case-study/ResourceLivingOverview";
 import SocialEditorialGrid from "@/components/case-study/SocialEditorialGrid";
+import TallVisualFrame from "@/components/case-study/TallVisualFrame";
 
 import { resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
 import type { Brand } from "@/lib/projects/types";
@@ -96,17 +96,13 @@ export default function ResourceLivingCaseStudy({ project, previous, next }: Pro
         <section className="mt-24 sm:mt-36">
           <CaseStudySectionHeader intro={study.openingVisual} />
           <Reveal>
-            <figure className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
-              <Image
-                src={study.openingFeature.src}
-                alt={study.openingFeature.alt}
-                width={study.openingFeature.width}
-                height={study.openingFeature.height}
-                sizes="(max-width: 1024px) 92vw, 768px"
-                className="h-auto w-full"
-                priority
-              />
-            </figure>
+            <TallVisualFrame
+              src={study.openingFeature.src}
+              alt={study.openingFeature.alt}
+              label="Placement Mockup — Full Resolution"
+              width={study.openingFeature.width}
+              height={study.openingFeature.height}
+            />
           </Reveal>
         </section>
 

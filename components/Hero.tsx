@@ -66,20 +66,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
 
       <div className="container-px relative z-10 mx-auto w-full max-w-[1600px] pb-24 pt-[6.25rem] sm:pb-28 sm:pt-32 lg:pb-32 lg:pt-32">
-        <div className="grid grid-cols-12 items-center gap-y-8 lg:gap-x-20 lg:gap-y-10">
+        <div className="grid grid-cols-12 items-center gap-y-6 sm:gap-y-8 lg:gap-x-20 lg:gap-y-10">
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="max-lg:contents lg:col-span-5 lg:space-y-8"
+            className="max-lg:contents lg:col-span-5 lg:flex lg:flex-col lg:gap-8"
           >
-            <motion.div
-              variants={line}
-              className="order-1 col-span-12 lg:order-none lg:col-span-auto"
-            >
+            <motion.div variants={line} className="order-1 col-span-12">
               <motion.span
                 variants={line}
-                className="mb-8 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.3em] text-bone lg:mb-8"
+                className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.3em] text-bone sm:mb-8"
               >
                 Miami • Creative Direction • Marketing
               </motion.span>
@@ -114,7 +111,7 @@ export default function Hero() {
             <HeroCTAs variants={line} />
           </motion.div>
 
-          <div className="relative order-2 col-span-12 flex min-h-[260px] w-full max-w-full items-end justify-center overflow-x-clip sm:min-h-[420px] md:min-h-[480px] lg:col-span-7 lg:min-h-[760px] lg:overflow-visible lg:justify-end">
+          <div className="relative order-2 col-span-12 flex min-h-[240px] w-full max-w-full items-end justify-center overflow-x-clip sm:min-h-[380px] md:min-h-[480px] lg:order-none lg:col-span-7 lg:min-h-[760px] lg:overflow-visible lg:justify-end">
             <div className="hero-portrait-glow absolute left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-white/5 blur-[140px] sm:h-[400px] sm:w-[400px] lg:h-[620px] lg:w-[620px]" />
 
             <Image

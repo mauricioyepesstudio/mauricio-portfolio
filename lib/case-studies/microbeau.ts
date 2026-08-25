@@ -153,16 +153,8 @@ const kickstartVertix: CampaignChapterData = {
     src: `/projects/microbeau/kickstart-vertix/social/stories/microbeau-kickstart-vertix-story-${n}.jpg`,
     alt: `Kickstart Vertix social story ${n}`,
   })),
-  // The second web banner closes the chapter as standalone digital-advertising
-  // proof rather than sitting redundantly beside the hero.
-  gallery: [
-    {
-      title: "Web Banner",
-      assets: [
-        { src: "/projects/microbeau/kickstart-vertix/gallery/web-banners/microbeau-kickstart-vertix-web-banner-2.jpg", alt: "Kickstart Vertix web banner 2" },
-      ],
-      emphasis: "large",
-    },
+  banners: [
+    { src: "/projects/microbeau/kickstart-vertix/gallery/web-banners/microbeau-kickstart-vertix-web-banner-2.jpg", alt: "Kickstart Vertix web banner 2" },
   ],
 };
 

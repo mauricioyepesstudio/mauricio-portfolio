@@ -9,10 +9,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SelectedClients />
       <SelectedWork />
       <Services />
       <Experience />
-      <SelectedClients />
       <ContactCTA />
     </>
   );

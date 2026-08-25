@@ -15,7 +15,7 @@ export default function ResumePage() {
       <div className="container-px max-w-content mx-auto">
         {/* HERO */}
 
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-24">
+        <div className="grid min-w-0 gap-8 items-end mb-24 md:grid-cols-12">
           <Reveal className="md:col-span-8">
             <p className="eyebrow mb-4">Resume</p>
 
@@ -44,11 +44,11 @@ export default function ResumePage() {
 
         {/* RESUME CARD */}
 
-        <div className="rounded-[36px] border border-line bg-[#101010] p-8 md:p-16">
+        <div className="min-w-0 overflow-x-clip rounded-[36px] border border-line bg-[#101010] p-8 md:p-16">
 
           {/* HEADER */}
 
-          <div className="grid md:grid-cols-12 gap-10 border-b border-line pb-12">
+          <div className="grid min-w-0 gap-10 border-b border-line pb-12 md:grid-cols-12">
 
             <Reveal className="md:col-span-8">
 
@@ -70,13 +70,13 @@ export default function ResumePage() {
 
             </Reveal>
 
-            <Reveal delay={0.05} className="md:col-span-4">
+            <Reveal delay={0.05} className="min-w-0 md:col-span-4">
 
               <div className="space-y-5">
 
-                <div className="flex items-center gap-3 text-bone">
-                  <Mail size={18} />
-                  <span>rgentertainmentmanagement@gmail.com</span>
+                <div className="flex min-w-0 items-start gap-3 text-bone">
+                  <Mail size={18} className="mt-0.5 shrink-0" />
+                  <span className="break-all">rgentertainmentmanagement@gmail.com</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-bone">

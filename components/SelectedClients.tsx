@@ -6,7 +6,7 @@ import ClientLogoWall from "./ClientLogoWall";
 export default function SelectedClients() {
   return (
     <section
-      className="border-t border-line pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-28 lg:pb-36"
+      className="border-t border-line pt-12 pb-20 md:pt-16 md:pb-28 lg:pt-20 lg:pb-32"
       id="clients"
     >
       <div className="container-px mx-auto max-w-content">

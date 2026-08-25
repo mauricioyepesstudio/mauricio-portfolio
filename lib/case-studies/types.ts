@@ -101,7 +101,7 @@ export type EditorialChapter = {
   hero: CuratedAsset;
   spotlight?: CuratedAsset & { label: string };
   newsletter?: NewsletterAsset;
-  /** A single full-width, natural-aspect visual for a standout tall/wide asset (a system diagram, an oversized mockup) that shouldn't be cropped, shrunk into a square "spotlight" frame, or wrapped in newsletter chrome. Renders at intrinsic aspect ratio with the page owning scroll — no internal scroll trap. */
+  /** A single full-width tall/wide asset (system diagram, oversized mockup) rendered in TallVisualFrame with internal scroll — not newsletter chrome. */
   featureVisual?: CuratedAsset & { label?: string; width: number; height: number };
   social?: CuratedAsset[];
   videos?: CampaignVideo[];

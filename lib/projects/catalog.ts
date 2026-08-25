@@ -11,7 +11,7 @@ export const brandCatalog: BrandCopy[] = [
     year: "Ongoing",
     deliverables: ["Creative Direction", "Editorial Design", "Campaign Systems", "Lead Generation", "Social Media", "Email Marketing"],
     cover: { from: "#1d2b22", to: "#a78753" },
-    excerpt: "An integrated editorial and lead-generation ecosystem connecting print, advertising, landing experiences, email and social content for South Florida homeowners and service businesses.",
+    excerpt: "An integrated advertising and lead-generation ecosystem — editorial, campaign systems, social, email and video connecting South Florida homeowners, advertisers and service businesses.",
     services: ["Creative Direction", "Editorial", "Advertising", "Digital Strategy"],
     problem: "Resource Living needed its magazine, advertiser acquisition and homeowner lead programs to feel like parts of one trusted publication rather than disconnected marketing pieces.",
     strategy: "Organize the work around distinct audience journeys: build authority through editorial, attract advertisers with a clear media proposition, and turn homeowner interest into qualified service inquiries.",
