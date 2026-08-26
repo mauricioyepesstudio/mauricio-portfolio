@@ -3,12 +3,12 @@ import "server-only";
 import type { CampaignChapterData } from "./types";
 import type { CaseStudyData } from "./case-study-data";
 
-// 03 — Campaign. Leads with the strongest advertising photography in the
+// 02 — The Campaign. Leads with the strongest advertising photography in the
 // archive instead of packaging paperwork — hero + a large, uncropped
 // editorial pairing carry the chapter before the smaller supporting grid.
 const blackRollingPapers: CampaignChapterData = {
   slug: "black-rolling-papers",
-  eyebrow: "03 — Campaign",
+  eyebrow: "02 — The Campaign",
   title: "Black Rolling Papers",
   intro:
     "The flagship product line's advertising campaign — model-led photography and a coordinated social push carrying the packaging system's identity into the feed.",
@@ -39,12 +39,12 @@ const blackRollingPapers: CampaignChapterData = {
   ],
 };
 
-// 04 — Culture & Events. Leads with the highest-resolution photograph in the
+// 03 — Culture & Events. Leads with the highest-resolution photograph in the
 // archive; a substantial environmental moment and a split-editorial pairing
 // follow before the lower-resolution activations, which sit at proof scale.
 const events: CampaignChapterData = {
   slug: "events",
-  eyebrow: "04 — Events & Lifestyle",
+  eyebrow: "03 — Culture & Events",
   title: "Culture on the Road",
   intro:
     "Real trade-show and city activations carried the brand's identity into live environments across Miami, Atlantic City, Las Vegas and Texas — booth builds, team presence and product in hand.",
@@ -76,12 +76,12 @@ const events: CampaignChapterData = {
   ],
 };
 
-// 05 — Product Universe. The lunar gift-set composite leads; the backpack
+// 04 — Product Universe. The lunar gift-set composite leads; the backpack
 // lineup gets a large, uncropped featured moment instead of sitting equal
 // to five other tiles.
 const newProducts: CampaignChapterData = {
   slug: "new-products",
-  eyebrow: "05 — Product & Social",
+  eyebrow: "04 — Product Universe",
   title: "The Product Universe",
   intro:
     "The illustrated identity expanded into a coherent product line — backpacks, grinders, torches and trays carrying the same cosmic system.",
@@ -102,13 +102,14 @@ const newProducts: CampaignChapterData = {
   })),
 };
 
-// 02 — Packaging & Print. Production reference and finished print collateral
-// behind the Black Rolling Papers line — intentionally separated from the
-// identity system above and the advertising campaign that follows.
+// 05 — Production & Print. Reframed as production/process evidence rather
+// than a photography showcase — the finished print collateral leads, the
+// manufacturer dielines appear only at small, proof scale, and the chapter
+// is intentionally shorter than the others.
 const packagingAndPrint: CampaignChapterData = {
   slug: "packaging-print",
-  eyebrow: "02 — Packaging & Print",
-  title: "Packaging & Print",
+  eyebrow: "05 — Production & Print",
+  title: "Production & Print",
   intro:
     "Real production reference and finished print collateral behind the Black Rolling Papers line — manufacturing specifications paired with the business cards, magazine placement and postcard that carried the identity into print.",
   hero: {
@@ -135,10 +136,13 @@ const packagingAndPrint: CampaignChapterData = {
 };
 
 // 06 — Storefront. The chapter hero uses the header capture so the full
-// homepage scroll can carry the chapter as the primary digital visual.
+// homepage scroll can carry the chapter as the primary digital visual
+// without duplicating an image already shown elsewhere in the chapter. The
+// trademark sits as a small, late credibility beat, followed by a concise
+// closing callback to the brand mark that opened the case study.
 const website: CampaignChapterData = {
   slug: "website",
-  eyebrow: "06 — Website & Digital Experience",
+  eyebrow: "06 — Storefront",
   title: "The Storefront",
   intro:
     "The online storefront extends the same illustrated identity into a full e-commerce experience — homepage, category navigation and a real federal trademark registration behind the brand.",
@@ -155,17 +159,17 @@ const website: CampaignChapterData = {
       emphasis: "large",
       assets: [{ src: "/projects/getlost/website/gallery/pages/getlost-website-certification.webp", alt: "Get Lost federal trademark registration certificate" }],
     },
+    {
+      title: "Brand World — Closing",
+      emphasis: "large",
+      assets: [{ src: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp", alt: "Get Lost logo mark" }],
+    },
   ],
 };
 
 export const getlostCaseStudy: CaseStudyData = {
-  heroImage: "/projects/getlost/brand/hero/getlost-brand-hero.webp",
-  heroInset: {
-    src: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp",
-    alt: "Get Lost primary mark",
-    label: "Primary Mark",
-  },
-  campaigns: [packagingAndPrint, blackRollingPapers, events, newProducts, website],
+  heroImage: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp",
+  campaigns: [blackRollingPapers, events, newProducts, packagingAndPrint, website],
   brandPackagingCopy: {
     eyebrow: "01 — Brand Identity",
     title: "One illustrated world, every touchpoint.",

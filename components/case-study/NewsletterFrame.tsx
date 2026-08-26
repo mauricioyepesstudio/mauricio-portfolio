@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import ScrollFrameCore from "@/components/case-study/ScrollFrameCore";
 
 type NewsletterFrameProps = {
   src: string;
@@ -12,9 +9,6 @@ type NewsletterFrameProps = {
   height: number;
 };
 
-const VIEWPORT_HEIGHT =
-  "h-[1920px] md:h-[1100px] lg:h-[1200px] xl:h-[1300px] 2xl:h-[1400px]";
-
 export default function NewsletterFrame({
   src,
   alt,
@@ -24,31 +18,26 @@ export default function NewsletterFrame({
   height,
 }: NewsletterFrameProps) {
   return (
-    <ScrollFrameCore
-      viewportClassName={VIEWPORT_HEIGHT}
-      scrollHint="Scroll within the frame to view the full email"
-      ariaLabel={`${campaign} ${note} — scrollable email artwork`}
-      header={
-        <div className="flex items-center gap-3 border-b border-white/10 bg-[#111]/90 px-5 py-4">
-          <span className="flex gap-1.5" aria-hidden="true">
-            <span className="h-2 w-2 rounded-full bg-white/15" />
-            <span className="h-2 w-2 rounded-full bg-white/15" />
-            <span className="h-2 w-2 rounded-full bg-white/15" />
-          </span>
-          <p className="text-xs uppercase tracking-[0.28em] text-bone">
-            {campaign} — <span className="text-gold">{note}</span>
-          </p>
-        </div>
-      }
-    >
+    <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] sm:rounded-[28px]">
+      <div className="flex items-center gap-3 border-b border-white/10 bg-[#111]/90 px-5 py-4">
+        <span className="flex gap-1.5" aria-hidden="true">
+          <span className="h-2 w-2 rounded-full bg-white/15" />
+          <span className="h-2 w-2 rounded-full bg-white/15" />
+          <span className="h-2 w-2 rounded-full bg-white/15" />
+        </span>
+        <p className="text-xs uppercase tracking-[0.28em] text-bone">
+          {campaign} — <span className="text-gold">{note}</span>
+        </p>
+      </div>
+
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        sizes="(max-width: 1024px) 100vw, 1200px"
-        className="block h-auto w-full max-w-full"
+        sizes="(max-width: 1024px) 92vw, 1200px"
+        className="h-auto w-full"
       />
-    </ScrollFrameCore>
+    </figure>
   );
 }

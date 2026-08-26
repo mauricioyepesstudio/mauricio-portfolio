@@ -26,6 +26,18 @@ const b2b: CampaignChapterData = {
     width: 600,
     height: 4594,
   },
+  gallery: [
+    {
+      title: "Color System",
+      emphasis: "large",
+      assets: [
+        {
+          src: "/projects/_source-assets/Evenflo/B2B Brand Campaign/B2B Campaign Social/B2B Campaing Storys/Artboard 6.jpg",
+          alt: "Blonde2Brunette Ink shade system — Deep Brown, Bronzed Brown, Dark Blonde, Gold Blonde",
+        },
+      ],
+    },
+  ],
   posts: [2, 3, 4].map((n) => ({
     src: `/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-${n}.jpg`,
     alt: `Blonde2Brunette Ink social feed post ${n}`,
@@ -72,6 +84,17 @@ const trueLips: CampaignChapterData = {
     width: 600,
     height: 6713,
   },
+  gallery: [
+    {
+      title: "Color System",
+      assets: [
+        {
+          src: "/projects/_source-assets/Evenflo/B2B Brand Campaign/B2B Campaign Social/B2B Campaing Storys/Artboard 4.jpg",
+          alt: "True Lips product and color system",
+        },
+      ],
+    },
+  ],
   posts: [2, 3, 4].map((n) => ({
     src: `/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-${n}.jpg`,
     alt: `True Lips social feed post ${n}`,
