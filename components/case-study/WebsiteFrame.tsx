@@ -31,7 +31,6 @@ export default function WebsiteFrame({ src, alt, label, project }: WebsiteFrameP
         </div>
       }
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}
