@@ -3,45 +3,43 @@ project:
   id: portfolio
   name: Mauricio Portfolio
   repository: mauricioyepesstudio/mauricio-portfolio
+  visibility: public
   canonical_path_windows: C:\\Projects\\mauricio-portfolio
   ai_ops_worktree_windows: C:\\AI-OPS\\portfolio
-
 git:
   canonical_branch: main
   canonical_commit_at_registration: b2332b903bc70054dfa04769528629373d5d4b3e
   control_plane_branch: work/ai-control-plane-v1
-  production_branch: null
+  production_branch: main
   merge_requires_owner_approval: true
   force_push: blocked
-
 runtime:
   framework: nextjs
-  local_port: null
-  local_port_status: requires-verification
-
+  reserved_local_port: 3001
+  dev_command: npm run dev -- --port 3001
+  build_command: npm run build
+  lint_command: npm run lint
 services:
   vercel:
     project_id: null
-    status: requires-verification
+    org_id: null
+    status: not-linked-locally
     production_deploy_requires_owner_approval: true
-
+verification:
+  deterministic:
+    - npm run build
+  conditional:
+    - npm run lint
 boundaries:
   allowed_repository: mauricioyepesstudio/mauricio-portfolio
-  forbidden_projects:
-    - belong
-    - pros360era
-    - marketing-ai-platform
+  forbidden_projects: [belong, pros360era, marketing-ai-platform]
   cross_project_write: blocked
   secrets_read: blocked
-  external_publish: owner-approval
   public_application_submit: owner-approval
   portfolio_publish: owner-approval
-
 activation:
   state: registry-only
   autonomous_execution: false
-  required_before_activation:
-    - service identities verified
-    - deterministic validation commands recorded
-    - security review passes
-    - owner approves activation
+  blockers:
+    - Vercel identity unresolved
+    - lint script compatibility must be verified
