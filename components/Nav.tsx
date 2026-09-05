@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -62,9 +63,18 @@ export default function Nav() {
 
           <Link
             href="/"
-            className="rounded p-1 font-serif text-2xl italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-3xl"
+            className="flex items-center gap-2 rounded p-1 transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
           >
-            RGE
+            <Image
+              src="/brand/rge/rge-mark-white.svg"
+              alt="Real Group Entertainment"
+              width={32}
+              height={35}
+              className="h-8 w-auto"
+            />
+            <span className="hidden text-sm uppercase tracking-[0.25em] text-paper sm:inline">
+              RGE
+            </span>
           </Link>
 
           {/* MENU */}

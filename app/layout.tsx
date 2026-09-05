@@ -25,14 +25,18 @@ const siteUrl = "https://mauricioyepes.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Real Group Entertainment — Venture Studio",
+    default: "Real Group Entertainment — Creative Agency",
     template: "%s — Real Group Entertainment",
   },
   description:
-    "Real Group Entertainment is a Miami-based venture studio building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
+    "Real Group Entertainment is a Miami-based full-service creative agency — video, graphic design, web development, and photography — and the team behind two of our own live products, EVOLUSA and BELONG.",
   keywords: [
     "Real Group Entertainment",
-    "Venture Studio",
+    "Creative Agency Miami",
+    "Video Production",
+    "Graphic Design",
+    "Web Development",
+    "Photography",
     "EVOLUSA",
     "BELONG",
     "Creative Director",
@@ -44,25 +48,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Real Group Entertainment — Venture Studio",
+    title: "Real Group Entertainment — Creative Agency",
     description:
-      "Building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
+      "Full-service creative agency — video, graphic design, web development, photography — and the team behind EVOLUSA and BELONG.",
     siteName: "Real Group Entertainment",
     images: [
       {
-        url: "/images/mauricio.png",
-        width: 900,
-        height: 1200,
-        alt: "Real Group Entertainment",
+        url: "/images/rge-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Real Group Entertainment by Mauricio Yepes",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Group Entertainment — Venture Studio",
+    title: "Real Group Entertainment — Creative Agency",
     description:
-      "Building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
-    images: ["/images/mauricio.png"],
+      "Full-service creative agency — video, graphic design, web development, photography — and the team behind EVOLUSA and BELONG.",
+    images: ["/images/rge-og.png"],
   },
   robots: {
     index: true,
@@ -81,7 +85,7 @@ const personJsonLd = {
       "@id": `${siteUrl}/#organization`,
       name: "Real Group Entertainment",
       url: siteUrl,
-      logo: `${siteUrl}/images/mauricio.png`,
+      logo: `${siteUrl}/brand/rge/rge-mark-white.svg`,
       founder: { "@id": `${siteUrl}/#person` },
       address: {
         "@type": "PostalAddress",
