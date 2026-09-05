@@ -66,7 +66,9 @@ const SECTION_ORDER: MediaKind[] = ["logo", "packaging", "product", "print", "ev
 
 /** Fallback ordering when a campaign has no explicit editorial `priority`. Substring-matched against the campaign slug. */
 const CAMPAIGN_PRIORITY: Record<string, string[]> = {
-  "resource-living": ["magazine", "ad-sales", "pool-leads", "c2-multimedia", "your-business-here"],
+  "resource-living": ["magazine", "ad-sales", "pool-leads", "c2-miltimedia", "c2-multimedia", "your-business-here", "social", "videos"],
+  getlost: ["hero", "logos", "packaging", "new-products", "events", "web-site", "social", "estationery"],
+  evenflo: ["true-lips", "blonde-to-brunette"],
 };
 
 function naturalCompare(a: string, b: string) {

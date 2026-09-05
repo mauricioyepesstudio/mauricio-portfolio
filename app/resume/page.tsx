@@ -6,7 +6,7 @@ import { experience, skills, languages } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Resume of Mauricio Yepes — Creative Director, Brand Strategist and Marketing Designer based in Miami, Florida.",
+    "Resume of Mauricio Yepes — Creative Director, Marketing Specialist and Multidisciplinary Designer based in Miami, Florida.",
 };
 
 export default function ResumePage() {
@@ -15,12 +15,12 @@ export default function ResumePage() {
       <div className="container-px max-w-content mx-auto">
         {/* HERO */}
 
-        <div className="grid md:grid-cols-12 gap-8 items-end mb-24">
+        <div className="grid min-w-0 gap-8 items-end mb-24 md:grid-cols-12">
           <Reveal className="md:col-span-8">
             <p className="eyebrow mb-4">Resume</p>
 
             <h1 className="font-sans font-semibold text-display-lg text-paper">
-              20+ years creating
+              12+ years creating
               <br />
               brands, campaigns and
               <span className="font-serif italic text-gold">
@@ -44,11 +44,11 @@ export default function ResumePage() {
 
         {/* RESUME CARD */}
 
-        <div className="rounded-[36px] border border-line bg-[#101010] p-8 md:p-16">
+        <div className="min-w-0 overflow-x-clip rounded-[36px] border border-line bg-[#101010] p-8 md:p-16">
 
           {/* HEADER */}
 
-          <div className="grid md:grid-cols-12 gap-10 border-b border-line pb-12">
+          <div className="grid min-w-0 gap-10 border-b border-line pb-12 md:grid-cols-12">
 
             <Reveal className="md:col-span-8">
 
@@ -57,11 +57,11 @@ export default function ResumePage() {
               </h2>
 
               <p className="mt-3 text-xl text-bone">
-                Creative Director • Brand Strategist • Marketing Designer
+                Creative Director • Marketing Specialist • Multidisciplinary Designer
               </p>
 
               <p className="mt-5 max-w-3xl leading-8 text-bone">
-                Creative Director with more than 20 years of experience
+                Creative Director with 12+ years of experience
                 developing branding systems, editorial publications,
                 advertising campaigns, websites and digital marketing
                 strategies for companies throughout the United States and
@@ -70,13 +70,13 @@ export default function ResumePage() {
 
             </Reveal>
 
-            <Reveal delay={0.05} className="md:col-span-4">
+            <Reveal delay={0.05} className="min-w-0 md:col-span-4">
 
               <div className="space-y-5">
 
-                <div className="flex items-center gap-3 text-bone">
-                  <Mail size={18} />
-                  <span>rgentertainmentmanagement@gmail.com</span>
+                <div className="flex min-w-0 items-start gap-3 text-bone">
+                  <Mail size={18} className="mt-0.5 shrink-0" />
+                  <span className="break-all">rgentertainmentmanagement@gmail.com</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-bone">
@@ -114,7 +114,7 @@ export default function ResumePage() {
               </p>
 
               <p className="max-w-5xl text-xl leading-10 text-bone">
-                Twenty years directing creative for magazines, product
+                Twelve years directing creative for magazines, product
                 launches and marketing campaigns across the United States
                 and Latin America. My work spans strategy, editorial
                 design, digital marketing and AI-assisted production,

@@ -76,7 +76,7 @@ export default function ContactForm() {
             id="name"
             type="text"
             {...register("name")}
-            className="w-full bg-transparent border-b border-line focus:border-gold outline-none py-3 text-paper mt-2 transition-colors"
+            className="w-full bg-transparent border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "name-error" : undefined}
           />
@@ -94,7 +94,7 @@ export default function ContactForm() {
             id="email"
             type="email"
             {...register("email")}
-            className="w-full bg-transparent border-b border-line focus:border-gold outline-none py-3 text-paper mt-2 transition-colors"
+            className="w-full bg-transparent border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
@@ -115,7 +115,7 @@ export default function ContactForm() {
             id="company"
             type="text"
             {...register("company")}
-            className="w-full bg-transparent border-b border-line focus:border-gold outline-none py-3 text-paper mt-2 transition-colors"
+            className="w-full bg-transparent border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors"
           />
         </div>
         <div>
@@ -125,7 +125,7 @@ export default function ContactForm() {
           <select
             id="budget"
             {...register("budget")}
-            className="w-full bg-ink border-b border-line focus:border-gold outline-none py-3 text-paper mt-2 transition-colors"
+            className="w-full bg-ink border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors"
           >
             <option value="">Select a range</option>
             <option value="<5k">Under $5,000</option>
@@ -144,7 +144,7 @@ export default function ContactForm() {
           id="message"
           rows={5}
           {...register("message")}
-          className="w-full bg-transparent border-b border-line focus:border-gold outline-none py-3 text-paper mt-2 transition-colors resize-none"
+          className="w-full bg-transparent border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors resize-none"
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? "message-error" : undefined}
         />

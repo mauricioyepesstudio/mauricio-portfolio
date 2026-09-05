@@ -143,6 +143,61 @@ main {
   background-size:220px;
 }
 
+/* ---------- Hero portrait (tablet overflow fix) ---------- */
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hero-portrait-mark {
+    width: min(430px, calc(100vw - 4rem)) !important;
+    max-width: min(430px, calc(100vw - 4rem)) !important;
+    height: auto !important;
+  }
+
+  .hero-portrait-glow {
+    width: min(460px, calc(100vw - 3rem)) !important;
+    height: min(460px, calc(100vw - 3rem)) !important;
+  }
+}
+
+/* ---------- Client logo wall ---------- */
+
+.client-logo-mark {
+  width: auto !important;
+  height: auto !important;
+  max-width: var(--logo-max-w-mobile) !important;
+  max-height: var(--logo-max-h-mobile) !important;
+}
+
+@media (min-width: 1024px) {
+  .client-logo-mark {
+    max-width: var(--logo-max-w) !important;
+    max-height: var(--logo-max-h) !important;
+  }
+}
+
+/* ---------- Case-study scroll frames ---------- */
+
+.scroll-frame-viewport {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.scroll-frame-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-frame-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-frame-viewport::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.scroll-frame-viewport::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
 /* ---------- Reveal ---------- */
 
 .reveal {

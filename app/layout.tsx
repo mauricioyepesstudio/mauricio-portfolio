@@ -25,11 +25,11 @@ const siteUrl = "https://mauricioyepes.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Real Group Entertainment — Creative Agency",
+    default: "Real Group Entertainment — Mauricio Yepes Creative Agency",
     template: "%s — Real Group Entertainment",
   },
   description:
-    "Real Group Entertainment is a Miami-based full-service creative agency — video, graphic design, web development, and photography — and the team behind two of our own live products, EVOLUSA and BELONG.",
+    "Real Group Entertainment is Mauricio Yepes' Miami-based full-service creative agency — video, graphic design, web development, and photography — with 12+ years directing brands, plus the team behind two of our own live products, EVOLUSA and BELONG.",
   keywords: [
     "Real Group Entertainment",
     "Creative Agency Miami",
@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     "BELONG",
     "Creative Director",
     "Brand Strategist",
+    "Marketing Specialist",
+    "Multidisciplinary Designer",
+    "Brand Identity Designer Miami",
+    "Packaging Design",
+    "Editorial Design",
     "Mauricio Yepes",
   ],
   authors: [{ name: "Mauricio Yepes" }],
@@ -48,9 +53,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Real Group Entertainment — Creative Agency",
+    title: "Real Group Entertainment — Mauricio Yepes Creative Agency",
     description:
-      "Full-service creative agency — video, graphic design, web development, photography — and the team behind EVOLUSA and BELONG.",
+      "Full-service creative agency — video, graphic design, web development, photography — led by Mauricio Yepes, plus the team behind EVOLUSA and BELONG.",
     siteName: "Real Group Entertainment",
     images: [
       {
@@ -63,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Group Entertainment — Creative Agency",
+    title: "Real Group Entertainment — Mauricio Yepes Creative Agency",
     description:
-      "Full-service creative agency — video, graphic design, web development, photography — and the team behind EVOLUSA and BELONG.",
+      "Full-service creative agency — video, graphic design, web development, photography — led by Mauricio Yepes, plus the team behind EVOLUSA and BELONG.",
     images: ["/images/rge-og.png"],
   },
   robots: {

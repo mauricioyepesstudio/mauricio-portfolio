@@ -25,7 +25,7 @@ export default function ProjectMetrics({
 
               <div
                 key={metric.label}
-                className={`relative min-w-0 overflow-hidden p-6 transition-all duration-500 hover:bg-white/[0.03] sm:p-8 xl:p-10 ${
+                className={`relative min-w-0 overflow-hidden p-6 transition-all duration-500 hover:bg-white/[0.03] sm:p-8 xl:px-6 xl:py-9 ${
                   index !== metrics.length - 1
                     ? "border-b border-white/10 lg:border-b-0 lg:border-r"
                     : ""
@@ -40,13 +40,17 @@ export default function ProjectMetrics({
 
                 <div className="mt-8">
 
+                  {/* Sizing is tuned for the 4-column desktop grid (lg:grid-cols-4), where columns are
+                      narrow enough that text-4xl/xl wraps mid-phrase for common two-word values like
+                      "Campaign System" or "2 Campaign Launches". Mobile/tablet keep the original sizes
+                      since the 1-2 column layout there already has room. */}
                   <p
-                    className={`font-semibold leading-none tracking-tight text-paper ${
-                      metric.value.length > 15
+                    className={`text-balance font-semibold leading-tight tracking-tight text-paper ${
+                      metric.value.length > 17
                         ? "break-words text-xl sm:text-2xl"
                         : metric.value.length > 8
-                        ? "text-4xl"
-                        : "text-6xl"
+                        ? "text-4xl lg:text-xl xl:text-lg"
+                        : "text-6xl lg:text-4xl"
                     }`}
                   >
                     {metric.value}

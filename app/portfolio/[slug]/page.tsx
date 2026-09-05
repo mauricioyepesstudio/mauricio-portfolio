@@ -10,8 +10,26 @@ import ProjectSections from "@/components/ProjectSections";
 import ProjectResult from "@/components/ProjectResult";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
+import EvenfloCaseStudy from "@/components/case-study/EvenfloCaseStudy";
+import CaseStudyTemplate from "@/components/case-study/CaseStudyTemplate";
+import ResourceLivingCaseStudy from "@/components/case-study/ResourceLivingCaseStudy";
 
 import { getProject, getProjects } from "@/lib/projects";
+import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
+import { resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
+import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
+import { getlostCaseStudy } from "@/lib/case-studies/getlost";
+import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
+
+// Slugs rendered through the generic CaseStudyTemplate + CaseStudyData.
+// "evenflo" and "resource-living" are handled separately above via their
+// own bespoke presentation components.
+const CURATED_SLUGS = new Set(["microbeau", "getlost"]);
+
+const CURATED_DATA: Record<string, CaseStudyData> = {
+  microbeau: microbeauCaseStudy,
+  getlost: getlostCaseStudy,
+};
 
 export function generateStaticParams() {
   const projects = getProjects();
@@ -33,9 +51,27 @@ export async function generateMetadata({
     return {};
   }
 
+  const heroImage =
+    slug === "evenflo"
+      ? evenfloCaseStudy.heroImage
+      : slug === "resource-living"
+        ? resourceLivingCaseStudy.heroImage
+        : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
+
   return {
     title: `${project.title} — Case Study`,
     description: project.excerpt,
+    openGraph: {
+      title: `${project.title} — Case Study`,
+      description: project.excerpt,
+      images: heroImage ? [{ url: heroImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Case Study`,
+      description: project.excerpt,
+      images: heroImage ? [heroImage] : undefined,
+    },
   };
 }
 
@@ -65,6 +101,28 @@ export default async function CaseStudyPage({
     currentIndex < projects.length - 1
       ? projects[currentIndex + 1]
       : undefined;
+
+  const previousLink = previous ? { slug: previous.slug, title: previous.title } : undefined;
+  const nextLink = next ? { slug: next.slug, title: next.title } : undefined;
+
+  if (project.slug === "evenflo") {
+    return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
+
+  if (project.slug === "resource-living") {
+    return <ResourceLivingCaseStudy project={project} previous={previousLink} next={nextLink} />;
+  }
+
+  if (CURATED_SLUGS.has(project.slug)) {
+    return (
+      <CaseStudyTemplate
+        project={project}
+        data={CURATED_DATA[project.slug]}
+        previous={previousLink}
+        next={nextLink}
+      />
+    );
+  }
 
   return (
     <article className="pb-24 pt-28 sm:pt-36 md:pb-40 md:pt-40">

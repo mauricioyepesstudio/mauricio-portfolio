@@ -205,7 +205,7 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
                 </p>
                 <div>
                   <p className="eyebrow mb-3">{campaign.eyebrow ?? `Chapter ${String(campaignIndex + 1).padStart(2, "0")}`}</p>
-                  <h2 className="max-w-3xl break-words text-[clamp(2.1rem,5.5vw,4rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-paper">
+                  <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
                     {campaign.title}
                   </h2>
                 </div>
