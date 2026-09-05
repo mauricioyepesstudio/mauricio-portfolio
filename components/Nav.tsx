@@ -7,9 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { href: "/evolusa", label: "EVOLUSA" },
+  { href: "/belong", label: "BELONG" },
   { href: "/portfolio", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/resume", label: "Resume" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +64,7 @@ export default function Nav() {
             href="/"
             className="rounded p-1 font-serif text-2xl italic tracking-tight text-paper transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:text-3xl"
           >
-            MY
+            RGE
           </Link>
 
           {/* MENU */}

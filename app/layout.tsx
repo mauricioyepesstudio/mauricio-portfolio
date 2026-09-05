@@ -25,19 +25,18 @@ const siteUrl = "https://mauricioyepes.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Mauricio Yepes — Creative Director & Brand Strategist",
-    template: "%s — Mauricio Yepes",
+    default: "Real Group Entertainment — Venture Studio",
+    template: "%s — Real Group Entertainment",
   },
   description:
-    "Mauricio Yepes is a Miami-based Creative Director and Brand Strategist with 12+ years of experience in branding, packaging, editorial design, advertising, and AI-powered creative for international brands.",
+    "Real Group Entertainment is a Miami-based venture studio building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
   keywords: [
+    "Real Group Entertainment",
+    "Venture Studio",
+    "EVOLUSA",
+    "BELONG",
     "Creative Director",
     "Brand Strategist",
-    "Marketing Designer",
-    "Brand Identity Designer Miami",
-    "Packaging Design",
-    "Editorial Design",
-    "Freelance Creative Director",
     "Mauricio Yepes",
   ],
   authors: [{ name: "Mauricio Yepes" }],
@@ -45,24 +44,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Mauricio Yepes — Creative Director & Brand Strategist",
+    title: "Real Group Entertainment — Venture Studio",
     description:
-      "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
-    siteName: "Mauricio Yepes",
+      "Building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
+    siteName: "Real Group Entertainment",
     images: [
       {
         url: "/images/mauricio.png",
         width: 900,
         height: 1200,
-        alt: "Mauricio Yepes — Creative Director",
+        alt: "Real Group Entertainment",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mauricio Yepes — Creative Director & Brand Strategist",
+    title: "Real Group Entertainment — Venture Studio",
     description:
-      "Helping brands grow through strategy, design, advertising and AI-powered creativity.",
+      "Building real products — EVOLUSA and BELONG — backed by 20+ years of brand strategy and creative direction.",
     images: ["/images/mauricio.png"],
   },
   robots: {
@@ -76,24 +75,40 @@ export const metadata: Metadata = {
 
 const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Mauricio Yepes",
-  jobTitle: "Creative Director",
-  url: siteUrl,
-  image: `${siteUrl}/images/mauricio.png`,
-  worksFor: {
-    "@type": "Organization",
-    name: "Real Group Entertainment LLC",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Miami",
-    addressRegion: "FL",
-    addressCountry: "US",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/mauricio-yepes-lotero/",
-    "https://www.behance.net/mauricioyepes01",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Real Group Entertainment",
+      url: siteUrl,
+      logo: `${siteUrl}/images/mauricio.png`,
+      founder: { "@id": `${siteUrl}/#person` },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Miami",
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Mauricio Yepes",
+      jobTitle: "Creative Director",
+      url: `${siteUrl}/about`,
+      image: `${siteUrl}/images/mauricio.png`,
+      worksFor: { "@id": `${siteUrl}/#organization` },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Miami",
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/mauricio-yepes-lotero/",
+        "https://www.behance.net/mauricioyepes01",
+      ],
+    },
   ],
 };
 
