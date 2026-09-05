@@ -2,6 +2,152 @@ import type { Brand } from "./types";
 
 export type BrandCopy = Omit<Brand, "heroImage" | "campaigns">;
 
+export type CampaignEditorial = {
+  /** Overrides the auto-derived (folder-name-based) title. */
+  title?: string;
+  /** Short category label shown above the title, replacing the default "Campaign NN" numbering. */
+  eyebrow?: string;
+  /** One-sentence professional context for the chapter. Describes real, observable deliverables — never a metric or result. */
+  context?: string;
+  /** Explicit display order within the project. Lower renders first. Falls back to filesystem.ts's CAMPAIGN_PRIORITY / alphabetical order when omitted. */
+  priority?: number;
+};
+
+/**
+ * Editorial control for individual campaign chapters, keyed by brand slug then campaign
+ * (folder) slug. Filesystem discovery still owns which media exists — this only controls
+ * how a chapter is titled, labeled and ordered. Chapters without an entry here render with
+ * their auto-derived title and default ordering.
+ */
+export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> = {
+  "resource-living": {
+    "01-ad-sales": {
+      title: "Ad Sales Campaign",
+      eyebrow: "Advertising · Lead Generation",
+      context:
+        "Advertiser-facing creative built to bring South Florida service businesses into the magazine's advertising and digital lead program.",
+      priority: 0,
+    },
+    "02-pool-leads": {
+      title: "Pool Leads Campaign",
+      eyebrow: "Digital Marketing · Lead Generation",
+      context:
+        "Homeowner-facing creative pairing lifestyle photography with direct calls to action for pool and outdoor-living consultations.",
+      priority: 1,
+    },
+    "03-c2-multimedia-lead-network": {
+      title: "C2 Multimedia Lead Network",
+      eyebrow: "Brand System · Digital Marketing",
+      context:
+        "A dedicated lead-network identity and campaign system extending Resource Living's advertiser program into its own multimedia product.",
+      priority: 2,
+    },
+    "04-your-business-here-services": {
+      title: "Your Business Here / Services",
+      eyebrow: "Advertising · Social Media",
+      context:
+        "A repeatable service-category ad system — kitchens, pools, roofing, windows, landscaping — giving contractors a consistent way to advertise inside the publication.",
+      priority: 3,
+    },
+  },
+  evenflo: {
+    "01-blonde-to-brunette-ink": {
+      title: "Blonde 2 Brunette",
+      eyebrow: "Product Launch · Beauty",
+      context: "Launch creative for the hybrid-formula, REACH-compliant Blonde 2 Brunette pigment collection.",
+      priority: 0,
+    },
+    "02-its-raining-gold-ink": {
+      title: "It's Raining Gold",
+      eyebrow: "Promotion · Beauty",
+      context: "Promotional creative for the Gold pigment collection, paired with a sets-and-singles offer.",
+      priority: 1,
+    },
+    "03-pinker-ink": {
+      title: "Pinker",
+      eyebrow: "Product Launch · Beauty",
+      context: "Launch creative for the Pinker cool-shade lip pigment line.",
+      priority: 2,
+    },
+    "04-true-lips-ink": {
+      title: "True Lips",
+      eyebrow: "Product Launch · Beauty",
+      context: "Launch creative for the True Lips unisex pigment collection.",
+      priority: 3,
+    },
+  },
+  getlost: {
+    logos: {
+      title: "Brand Identity",
+      eyebrow: "Identity",
+      priority: 0,
+    },
+    "black-rolling-papers-packaging": {
+      title: "Black Rolling Papers — Packaging",
+      eyebrow: "Packaging",
+      priority: 1,
+    },
+    "new-products-social-feed": {
+      title: "New Product Launches",
+      eyebrow: "Product · Social",
+      priority: 2,
+    },
+    "events-social-feed": {
+      title: "Events",
+      eyebrow: "Experiential · Social",
+      priority: 3,
+    },
+    "web-site-design": {
+      title: "Website Design",
+      eyebrow: "Digital",
+      priority: 4,
+    },
+    "black-rolling-papers-social-feed": {
+      title: "Black Rolling Papers — Social",
+      eyebrow: "Social Media",
+      priority: 5,
+    },
+    "estationery-business-print": {
+      title: "Print & Stationery",
+      eyebrow: "Editorial & Print",
+      priority: 6,
+    },
+  },
+  microbeau: {
+    "01-beauty-in-authenticity": {
+      title: "Beauty in Authenticity",
+      eyebrow: "Brand Campaign",
+      context:
+        "An artist-storytelling campaign spotlighting real PMU professionals, pairing editorial-style portraits with supporting social and web creative.",
+    },
+    "07-mystique-brows-by-jenny-lind-brows": {
+      title: "Mystique Brows × Jenny Lind",
+      eyebrow: "Artist Partnership",
+      context: "Co-branded creative for a Microbeau artist partnership, built around a hero visual and matching social execution.",
+    },
+    "08-pico-needle": {
+      title: "Pico Needle Launch",
+      eyebrow: "Product Launch",
+      context: "Product-education creative introducing the Pico needle line, balancing technical detail with the brand's visual language.",
+    },
+    "11-twelve-days-of-beauty": {
+      title: "Twelve Days of Beauty",
+      eyebrow: "Seasonal Promotion",
+      context: "A holiday promotional series spanning hero and social formats across multiple product lines.",
+    },
+    "02-blak-friday": {
+      title: "Black Friday",
+      eyebrow: "Promotional",
+      context: "Seasonal sale creative built for fast, high-visibility distribution across social channels.",
+    },
+  },
+  "seafood-delight": {
+    logo: { eyebrow: "Brand Identity" },
+    packaging: { eyebrow: "Packaging System" },
+    web: { eyebrow: "Digital" },
+  },
+};
+
 export const brandCatalog: BrandCopy[] = [
   {
     slug: "resource-living",

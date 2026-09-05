@@ -7,6 +7,7 @@ import ProjectHero from "@/components/ProjectHero";
 import ProjectOverview from "@/components/ProjectOverview";
 import ProjectMetrics from "@/components/ProjectMetrics";
 import ProjectSections from "@/components/ProjectSections";
+import ProjectResult from "@/components/ProjectResult";
 import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
@@ -123,10 +124,15 @@ export default async function CaseStudyPage({
           problem={project.problem}
           strategy={project.strategy}
           solution={project.solution}
-          result={project.result}
         />
 
-        <ProjectSections campaigns={project.campaigns} brand={project.title} />
+        <ProjectSections
+          campaigns={project.campaigns}
+          supportingWork={project.supportingWork}
+          brand={project.title}
+        />
+
+        <ProjectResult result={project.result} />
 
         <ProjectNavigation
           previous={

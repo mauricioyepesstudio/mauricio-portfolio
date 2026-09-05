@@ -5,7 +5,6 @@ type ProjectOverviewProps = {
   problem: string;
   strategy: string;
   solution: string;
-  result: string;
 };
 
 export default function ProjectOverview({
@@ -13,7 +12,6 @@ export default function ProjectOverview({
   problem,
   strategy,
   solution,
-  result,
 }: ProjectOverviewProps) {
   return (
     <section className="mt-24 sm:mt-36">
@@ -67,7 +65,7 @@ export default function ProjectOverview({
                 Challenge
               </p>
 
-              <p className="text-lg leading-9 text-bone">
+              <p className="max-w-prose text-lg leading-9 text-bone">
                 {problem}
               </p>
 
@@ -83,7 +81,7 @@ export default function ProjectOverview({
                 Strategy
               </p>
 
-              <p className="text-lg leading-9 text-bone">
+              <p className="max-w-prose text-lg leading-9 text-bone">
                 {strategy}
               </p>
 
@@ -99,24 +97,8 @@ export default function ProjectOverview({
                 Solution
               </p>
 
-              <p className="text-lg leading-9 text-bone">
+              <p className="max-w-prose text-lg leading-9 text-bone">
                 {solution}
-              </p>
-
-            </div>
-
-          </Reveal>
-
-          <Reveal delay={0.2}>
-
-            <div className="rounded-2xl border border-gold/20 bg-gradient-to-br from-[#151515] to-[#0d0d0d] p-6 sm:rounded-[28px] sm:p-8">
-
-              <p className="mb-6 text-xs uppercase tracking-[0.35em] text-gold">
-                Results
-              </p>
-
-              <p className="text-lg leading-9 text-paper">
-                {result}
               </p>
 
             </div>
