@@ -85,7 +85,7 @@ const personJsonLd = {
       "@id": `${siteUrl}/#organization`,
       name: "Real Group Entertainment",
       url: siteUrl,
-      logo: `${siteUrl}/brand/rge/rge-mark-white.svg`,
+      logo: `${siteUrl}/brand/rge/rge-mark-white.png`,
       founder: { "@id": `${siteUrl}/#person` },
       address: {
         "@type": "PostalAddress",

@@ -66,7 +66,7 @@ export default function Nav() {
             className="flex items-center gap-2 rounded p-1 transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
           >
             <Image
-              src="/brand/rge/rge-mark-white.svg"
+              src="/brand/rge/rge-mark-white.png"
               alt="Real Group Entertainment"
               width={32}
               height={35}

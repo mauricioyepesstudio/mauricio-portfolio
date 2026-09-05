@@ -38,7 +38,7 @@ export default function RGEHero() {
         >
           <motion.div variants={line} className="flex items-center gap-4">
             <Image
-              src="/brand/rge/rge-mark-white.svg"
+              src="/brand/rge/rge-mark-white.png"
               alt="Real Group Entertainment"
               width={56}
               height={62}
