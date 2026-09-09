@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import ContactCTA from "@/components/ContactCTA";
 
 type ProjectNavigationProps = {
   previous?: {
@@ -19,8 +20,11 @@ export default function ProjectNavigation({
   next,
 }: ProjectNavigationProps) {
   return (
-    <Reveal delay={0.2}>
-      <section className="mt-28 sm:mt-40">
+    <>
+      <ContactCTA />
+
+      <Reveal delay={0.2}>
+        <section className="mt-28 sm:mt-40">
 
         <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#121212] to-[#090909] p-6 sm:rounded-[40px] sm:p-10 md:p-16">
 
@@ -112,6 +116,7 @@ export default function ProjectNavigation({
         </div>
 
       </section>
-    </Reveal>
+      </Reveal>
+    </>
   );
 }
