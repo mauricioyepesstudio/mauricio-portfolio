@@ -1,10 +1,31 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
+const belongDescription =
+  "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture in active development.";
+
 export const metadata: Metadata = {
   title: "BELONG",
-  description:
-    "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture in active development.",
+  description: belongDescription,
+  openGraph: {
+    type: "website",
+    title: "BELONG — Real Group Entertainment",
+    description: belongDescription,
+    images: [
+      {
+        url: "/images/rge-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Real Group Entertainment",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BELONG — Real Group Entertainment",
+    description: belongDescription,
+    images: ["/images/rge-og.png"],
+  },
 };
 
 const pillars = [

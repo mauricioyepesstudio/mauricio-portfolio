@@ -5,7 +5,7 @@ const siteUrl = "https://mauricioyepes.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getProjects();
-  const staticRoutes = ["", "/portfolio", "/about", "/resume", "/contact"].map(
+  const staticRoutes = ["", "/portfolio", "/about", "/resume", "/contact", "/evolusa", "/belong"].map(
     (route) => ({
       url: `${siteUrl}${route}`,
       lastModified: new Date(),
