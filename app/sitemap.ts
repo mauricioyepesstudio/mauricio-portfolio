@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/projects";
 
-const siteUrl = "https://mauricioyepes.com";
+const siteUrl = "https://mauricio-portfolio-v2.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getProjects();

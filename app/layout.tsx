@@ -20,7 +20,7 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteUrl = "https://mauricioyepes.com";
+const siteUrl = "https://mauricio-portfolio-v2.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

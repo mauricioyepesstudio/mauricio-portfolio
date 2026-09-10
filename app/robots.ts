@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mauricioyepes.com/sitemap.xml",
+    sitemap: "https://mauricio-portfolio-v2.vercel.app/sitemap.xml",
   };
 }
