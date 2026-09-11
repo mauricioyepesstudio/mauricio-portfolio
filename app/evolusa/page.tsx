@@ -88,6 +88,21 @@ export default function EvolusaPage() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.08}>
+          <div className="mt-12 overflow-hidden rounded-2xl border border-line">
+            <Image
+              src="/brand/live-product/evolusa-live-homepage.png"
+              alt="EVOLUSA live product — evolusa.vercel.app homepage"
+              width={1440}
+              height={900}
+              className="w-full"
+            />
+          </div>
+          <p className="mt-3 text-xs uppercase tracking-[0.2em] text-bone">
+            Live at evolusa.vercel.app — real product, not a mockup
+          </p>
+        </Reveal>
+
         <Reveal delay={0.1}>
           <div className="mt-20 rounded-2xl bg-white/[0.03] p-8 sm:p-10">
             <p className="text-2xl sm:text-3xl font-semibold text-paper">
@@ -106,13 +121,22 @@ export default function EvolusaPage() {
               Marketing &amp; Social Presence
             </p>
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-xl border border-line px-5 py-4">
-                <p className="text-paper font-semibold">Launch creative system</p>
-                <p className="mt-2 text-sm leading-6 text-bone">
-                  A photo-band layout pattern built for legibility across
-                  WhatsApp, social feeds and stories — one visual system
-                  carried across the full launch creative set.
-                </p>
+              <div className="overflow-hidden rounded-xl border border-line">
+                <Image
+                  src="/brand/live-product/evolusa-hero-creative.webp"
+                  alt="EVOLUSA launch hero creative"
+                  width={800}
+                  height={533}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <div className="px-5 py-4">
+                  <p className="text-paper font-semibold">Launch creative system</p>
+                  <p className="mt-2 text-sm leading-6 text-bone">
+                    A photo-band layout pattern built for legibility across
+                    WhatsApp, social feeds and stories — one visual system
+                    carried across the full launch creative set.
+                  </p>
+                </div>
               </div>
               <div className="rounded-xl border border-line px-5 py-4">
                 <p className="text-paper font-semibold">Professional presence</p>

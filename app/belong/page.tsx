@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { ArrowUpRight } from "lucide-react";
 
 const belongDescription =
-  "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture in active development.";
+  "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture, live and taking members.";
 
 export const metadata: Metadata = {
   title: "BELONG",
@@ -71,7 +73,7 @@ export default function BelongPage() {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7c3aed] text-2xl font-bold text-white">
               B
             </span>
-            <p className="eyebrow">BELONG — In Development</p>
+            <p className="eyebrow">BELONG — Live</p>
           </div>
 
           <h1 className="font-sans text-[clamp(2.7rem,10vw,4.75rem)] font-semibold leading-[0.94] tracking-[-0.04em] text-paper max-w-4xl">
@@ -84,14 +86,40 @@ export default function BelongPage() {
             connecting builders, communities, projects, and events around
             what each person is actually trying to create.
           </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="https://belong-ruddy.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-paper px-8 py-4 text-sm font-medium text-black transition hover:scale-105"
+            >
+              Join BELONG <ArrowUpRight size={16} />
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.08}>
+          <div className="mt-12 overflow-hidden rounded-2xl border border-line">
+            <Image
+              src="/brand/live-product/belong-live-homepage.png"
+              alt="BELONG live product — belong-ruddy.vercel.app homepage"
+              width={1440}
+              height={900}
+              className="w-full"
+            />
+          </div>
+          <p className="mt-3 text-xs uppercase tracking-[0.2em] text-bone">
+            Live at belong-ruddy.vercel.app — real product, not a mockup
+          </p>
         </Reveal>
 
         <Reveal delay={0.1}>
           <div className="mt-16 rounded-2xl bg-white/[0.03] p-8 sm:p-10">
             <p className="text-lg text-paper">
-              BELONG is currently in active development — not yet publicly
-              live. This page will link to the real product as soon as
-              there&apos;s something real to show, not before.
+              BELONG is live and taking members — an early, active build. The
+              product ships in public: what you see today is real, running
+              product, not a mockup.
             </p>
           </div>
         </Reveal>
@@ -102,7 +130,20 @@ export default function BelongPage() {
               Recent Development
             </p>
             <div className="grid gap-6 sm:grid-cols-3">
-              {recentProgress.map((item) => (
+              <div className="overflow-hidden rounded-xl border border-line">
+                <Image
+                  src="/brand/live-product/belong-login-oauth.png"
+                  alt="BELONG sign-in screen with Google and Apple OAuth"
+                  width={600}
+                  height={400}
+                  className="aspect-[3/2] w-full object-cover object-top"
+                />
+                <div className="px-6 py-5">
+                  <h3 className="text-paper font-semibold">{recentProgress[0].title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-bone">{recentProgress[0].body}</p>
+                </div>
+              </div>
+              {recentProgress.slice(1).map((item) => (
                 <div key={item.title} className="rounded-xl border border-line px-6 py-5">
                   <h3 className="text-paper font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-bone">{item.body}</p>
