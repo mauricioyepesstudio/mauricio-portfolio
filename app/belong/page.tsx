@@ -7,6 +7,21 @@ export const metadata: Metadata = {
     "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture in active development.",
 };
 
+const recentProgress = [
+  {
+    title: "Google & Apple sign-in",
+    body: "One-tap OAuth on login and registration, removing password friction from first contact with the product.",
+  },
+  {
+    title: "Accountability circles, hardened",
+    body: "Small-group accountability circles — a core Mission Engine feature — rebuilt for reliability under real concurrent use.",
+  },
+  {
+    title: "Dedicated growth & brand practice",
+    body: "A standing growth-strategy, external-content and brand-taste practice now runs alongside engineering, separate from and never touching the in-app social features themselves.",
+  },
+];
+
 const pillars = [
   {
     title: "Mission-first identity",
@@ -57,6 +72,22 @@ export default function BelongPage() {
               live. This page will link to the real product as soon as
               there&apos;s something real to show, not before.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.13}>
+          <div className="mt-20 border-t border-line pt-10">
+            <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
+              Recent Development
+            </p>
+            <div className="grid gap-6 sm:grid-cols-3">
+              {recentProgress.map((item) => (
+                <div key={item.title} className="rounded-xl border border-line px-6 py-5">
+                  <h3 className="text-paper font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-bone">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Reveal>
 

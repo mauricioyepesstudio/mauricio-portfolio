@@ -78,6 +78,40 @@ export default function EvolusaPage() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.13}>
+          <div className="mt-20 border-t border-line pt-10">
+            <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
+              Marketing &amp; Social Presence
+            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border border-line px-5 py-4">
+                <p className="text-paper font-semibold">Launch creative system</p>
+                <p className="mt-2 text-sm leading-6 text-bone">
+                  A photo-band layout pattern built for legibility across
+                  WhatsApp, social feeds and stories — one visual system
+                  carried across the full launch creative set.
+                </p>
+              </div>
+              <div className="rounded-xl border border-line px-5 py-4">
+                <p className="text-paper font-semibold">Professional presence</p>
+                <p className="mt-2 text-sm leading-6 text-bone">
+                  Active LinkedIn, Instagram and Facebook accounts under
+                  Real Group Entertainment carry EVOLUSA&apos;s organic
+                  content and professional-network outreach.
+                </p>
+              </div>
+              <div className="rounded-xl border border-line px-5 py-4">
+                <p className="text-paper font-semibold">Ongoing growth practice</p>
+                <p className="mt-2 text-sm leading-6 text-bone">
+                  A dedicated growth, social-content and brand-taste
+                  practice reviews positioning and content for EVOLUSA on
+                  a recurring basis, alongside product development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <Reveal delay={0.15}>
           <div className="mt-20 border-t border-line pt-10">
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">

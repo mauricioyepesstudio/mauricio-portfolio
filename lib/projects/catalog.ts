@@ -49,6 +49,13 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
         "A repeatable service-category ad system — kitchens, pools, roofing, windows, landscaping — giving contractors a consistent way to advertise inside the publication.",
       priority: 3,
     },
+    "05-broward-palm-beach-meta-campaign": {
+      title: "Broward – Palm Beach Lead Campaign",
+      eyebrow: "Paid Social · Meta Ads · Lead Generation",
+      context:
+        "A single Meta Ads campaign covering Broward and Palm Beach counties, segmented into service-category ad sets (AC, Bathrooms, Pavers, Roofing, Windows & Doors, Landscaping, Kitchens, Pools and more) — each with its own creative, targeting and Meta lead-generation form. Performance insights and cost-per-lead breakdowns will be added here once the campaign is live and reporting.",
+      priority: 4,
+    },
   },
   evenflo: {
     "01-blonde-to-brunette-ink": {

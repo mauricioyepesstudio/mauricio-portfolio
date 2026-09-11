@@ -12,22 +12,22 @@ const adSales: EditorialChapter = {
   intro:
     "The pitch to prospective advertisers — a direct-response campaign proving Resource Living's reach into 180K+ South Florida homes, backed by a short-form video reel.",
   hero: {
-    src: "/projects/resource-living/resource-living-ad-sales-campaign/hero/resource-living-ad-sales-campaign-hero.png",
+    src: "/projects/resource-living/campaigns/01-ad-sales/hero/resource-living-ad-sales-campaign-hero.png",
     alt: "Resource Living advertiser acquisition campaign hero",
   },
   social: [
-    { src: "/projects/resource-living/resource-living-ad-sales-campaign/social/Local-Homes-Marketing-Reach-180K-Homes.png", alt: "Advertising services — reach 180K homes" },
-    { src: "/projects/resource-living/resource-living-ad-sales-campaign/social/Advertising-Services-Business-Growth.png", alt: "Advertising services — business growth" },
-    { src: "/projects/resource-living/resource-living-ad-sales-campaign/social/Advertising-Services-Stand-Out-Be-Seen-Consistent-Calls.png", alt: "Advertising services — stand out, be seen" },
+    { src: "/projects/resource-living/campaigns/01-ad-sales/social/Local-Homes-Marketing-Reach-180K-Homes.png", alt: "Advertising services — reach 180K homes" },
+    { src: "/projects/resource-living/campaigns/01-ad-sales/social/Advertising-Services-Business-Growth.png", alt: "Advertising services — business growth" },
+    { src: "/projects/resource-living/campaigns/01-ad-sales/social/Advertising-Services-Stand-Out-Be-Seen-Consistent-Calls.png", alt: "Advertising services — stand out, be seen" },
   ],
   videos: [
     {
-      src: "/projects/resource-living/resource-living-ad-sales-campaign/VIDEOS/resource_living_pro_ad.mp4",
+      src: "/projects/resource-living/campaigns/01-ad-sales/motion/resource_living_pro_ad.mp4",
       caption: "Advertiser Acquisition — Campaign Reel",
       orientation: "vertical",
     },
     {
-      src: "/projects/resource-living/resource-living-ad-sales-campaign/VIDEOS/final_meta_reel.mp4",
+      src: "/projects/resource-living/campaigns/01-ad-sales/motion/final_meta_reel.mp4",
       caption: "Advertiser Acquisition — Meta Placement Reel",
       orientation: "vertical",
     },
@@ -46,18 +46,18 @@ const c2Multimedia: EditorialChapter = {
   intro:
     "The real, documented mechanism behind Resource Living's advertiser lead network — ad creation, landing pages, CRM lead capture, organic social amplification and performance reporting, walked through step by step rather than described.",
   hero: {
-    src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/hero/C2-multimedia-lead-network-hero.webp",
+    src: "/projects/resource-living/campaigns/03-c2-multimedia-lead-network/hero/C2-multimedia-lead-network-hero.webp",
     alt: "C2 Multimedia Lead Network campaign hero — Resource Living",
   },
   featureVisual: {
-    src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/newsletter/C2-multimedia-lead-network-newsletter.jpg",
+    src: "/projects/resource-living/campaigns/03-c2-multimedia-lead-network/email/C2-multimedia-lead-network-newsletter.jpg",
     alt: "C2 Multimedia lead-generation system — ad, landing page, CRM, social amplification and analytics",
     label: "Lead-Generation System Documentation",
     width: 1080,
     height: 15042,
   },
   social: [
-    { src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/social/Kitchen-Cabinets.png", alt: "C2 Multimedia kitchen cabinets lead ad" },
+    { src: "/projects/resource-living/campaigns/03-c2-multimedia-lead-network/social/Kitchen-Cabinets.png", alt: "C2 Multimedia kitchen cabinets lead ad" },
   ],
 };
 
@@ -71,23 +71,23 @@ const poolLeads: EditorialChapter = {
   intro:
     "A homeowner-facing lead campaign for South Florida pool and outdoor-living builders, pairing lifestyle imagery with a direct consultation call to action.",
   hero: {
-    src: "/projects/resource-living/resource-living-pool-leads-campaign/hero/South-Florida-Living-Luxury-Comfort-Memories-Free-Consultation-hero.png",
+    src: "/projects/resource-living/campaigns/02-pool-leads/hero/South-Florida-Living-Luxury-Comfort-Memories-Free-Consultation-hero.png",
     alt: "Pool Leads campaign hero — Resource Living",
   },
   featureVisual: {
-    src: "/projects/resource-living/resource-living-pool-leads-campaign/social/Luxury-Pools.png",
+    src: "/projects/resource-living/campaigns/02-pool-leads/social/Luxury-Pools.png",
     alt: "Luxury pools lead ad — South Florida lifestyle photography",
     width: 1080,
     height: 1920,
   },
   social: [
-    { src: "/projects/resource-living/resource-living-pool-leads-campaign/social/Pool-Builders-Dream-Backyard-Design-Top-Pool-Builders-Free-Consultation.png", alt: "Pool builders — dream backyard design" },
-    { src: "/projects/resource-living/resource-living-pool-leads-campaign/social/South-Florida-Outdoor-Living-Backyard-Design-Evolution.png", alt: "Outdoor living — backyard design evolution" },
-    { src: "/projects/resource-living/resource-living-pool-leads-campaign/social/Vacation-Living.png", alt: "Vacation living lead ad" },
+    { src: "/projects/resource-living/campaigns/02-pool-leads/social/Pool-Builders-Dream-Backyard-Design-Top-Pool-Builders-Free-Consultation.png", alt: "Pool builders — dream backyard design" },
+    { src: "/projects/resource-living/campaigns/02-pool-leads/social/South-Florida-Outdoor-Living-Backyard-Design-Evolution.png", alt: "Outdoor living — backyard design evolution" },
+    { src: "/projects/resource-living/campaigns/02-pool-leads/social/Vacation-Living.png", alt: "Vacation living lead ad" },
   ],
   videos: [
     {
-      src: "/projects/resource-living/resource-living-pool-leads-campaign/videos/Final Pools.mp4",
+      src: "/projects/resource-living/campaigns/02-pool-leads/motion/Final Pools.mp4",
       caption: "Pool Leads — Campaign Video",
       orientation: "vertical",
     },
@@ -100,10 +100,10 @@ const yourBusinessHereStories = [1, 2, 3, 4, 5, 6].map((n) => ({
 }));
 
 const yourBusinessHerePosts: CuratedAsset[] = [
-  { src: "/projects/resource-living/resource-living-your-business-here-services-campaign/Best-Home-Improvements-post-1.png", alt: "Best home improvements placement" },
-  { src: "/projects/resource-living/resource-living-your-business-here-services-campaign/Hurricane-Protection.png", alt: "Hurricane protection placement" },
-  { src: "/projects/resource-living/resource-living-your-business-here-services-campaign/Landscaping-Services-Business-Placement-Client-Visibility.png", alt: "Landscaping services placement" },
-  { src: "/projects/resource-living/resource-living-your-business-here-services-campaign/Pool-Patio-Renovations.png", alt: "Pool & patio renovations placement" },
+  { src: "/projects/resource-living/campaigns/04-your-business-here-services/advertising/Best-Home-Improvements-post-1.png", alt: "Best home improvements placement" },
+  { src: "/projects/resource-living/campaigns/04-your-business-here-services/advertising/Hurricane-Protection.png", alt: "Hurricane protection placement" },
+  { src: "/projects/resource-living/campaigns/04-your-business-here-services/advertising/Landscaping-Services-Business-Placement-Client-Visibility.png", alt: "Landscaping services placement" },
+  { src: "/projects/resource-living/campaigns/04-your-business-here-services/advertising/Pool-Patio-Renovations.png", alt: "Pool & patio renovations placement" },
 ];
 
 // 08 — Campaign. Story-1's phone-mockup treatment — the highest-resolution,
@@ -117,7 +117,7 @@ const yourBusinessHere: EditorialChapter = {
   intro:
     "A modular lead-generation system spanning five home-service categories — kitchens, windows, roofing, patios and HVAC — sharing one placement format that scales to any local business.",
   hero: {
-    src: "/projects/resource-living/resource-living-your-business-here-services-campaign/Kitchen-Restorations.png",
+    src: "/projects/resource-living/campaigns/04-your-business-here-services/advertising/Kitchen-Restorations.png",
     alt: "Your Business Here — kitchen restorations placement",
   },
   featureVisual: {
@@ -130,7 +130,7 @@ const yourBusinessHere: EditorialChapter = {
   social: [...yourBusinessHerePosts, yourBusinessHereStories[1], yourBusinessHereStories[2]],
   videos: [
     {
-      src: "/projects/resource-living/videos/MIZNER PAVERS.mp4",
+      src: "/projects/resource-living/motion/MIZNER PAVERS.mp4",
       caption: "Mizner Pavers — Category Campaign Video",
       orientation: "vertical",
     },
@@ -149,14 +149,39 @@ const categoryNetwork: EditorialChapter = {
   intro:
     "Five home-service categories sharing one modular placement system — previously shown only as a disconnected grid at the bottom of the page.",
   hero: {
-    src: "/projects/resource-living/social/windows/social/Impact-Windows-Doors-Elegance-Security-Hurricane-Protection.png",
+    src: "/projects/resource-living/social/Impact-Windows-Doors-Elegance-Security-Hurricane-Protection.png",
     alt: "Impact windows & doors category highlight",
   },
   social: [
-    { src: "/projects/resource-living/social/patios/social/Backyard-Oasis-Design-Build-1.png", alt: "Backyard patio category highlight" },
-    { src: "/projects/resource-living/social/ac/social/Air-Conditioning-Services.png", alt: "Air conditioning services category highlight" },
-    { src: "/projects/resource-living/social/kitchens/social/Kitchen-Remodeling-New-Kitchen-1.png", alt: "Kitchen remodeling category highlight" },
-    { src: "/projects/resource-living/social/roofers/Roofing-Decra-Villa-Tile-Shingle-Shake.png", alt: "Roofing category highlight" },
+    { src: "/projects/resource-living/social/Backyard-Oasis-Design-Build-1.png", alt: "Backyard patio category highlight" },
+    { src: "/projects/resource-living/social/Air-Conditioning-Services.png", alt: "Air conditioning services category highlight" },
+    { src: "/projects/resource-living/social/Kitchen-Remodeling-New-Kitchen-1.png", alt: "Kitchen remodeling category highlight" },
+    { src: "/projects/resource-living/social/Roofing-Decra-Villa-Tile-Shingle-Shake.png", alt: "Roofing category highlight" },
+  ],
+};
+
+// 13 — Campaign. The current, live-in-progress track: a single Meta Ads
+// campaign (not a print/editorial placement) covering Broward and Palm
+// Beach counties, segmented into per-category ad sets. Strategy and report
+// exist now; performance insights get added here once the campaign is live
+// and reporting real cost-per-lead data.
+const browardPalmBeach: EditorialChapter = {
+  slug: "broward-palm-beach-campaign",
+  eyebrow: "13 — Campaign",
+  title: "Broward – Palm Beach Lead Campaign",
+  intro:
+    "The current track: one Meta Ads lead-generation campaign covering Broward and Palm Beach counties, structured as a single campaign segmented into service-category ad sets — AC, bathrooms, pavers, roofing, windows & doors, landscaping, kitchens, pools and more — each with its own creative and a dedicated Meta lead form. Strategy, audience targeting and the creative system are built and approved; live cost-per-lead and conversion insights will be added here once the campaign is running.",
+  hero: {
+    src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/hero/broward-palm-beach-campaign-hero.png",
+    alt: "Broward – Palm Beach Meta Ads lead campaign hero — kitchens category creative",
+  },
+  social: [
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/kitchens-ad-creative.png", alt: "Kitchens category ad creative — Broward Palm Beach campaign" },
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/bathrooms-ad-creative.png", alt: "Bathrooms category ad creative — Broward Palm Beach campaign" },
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/pools-ad-creative.png", alt: "Pools category ad creative — Broward Palm Beach campaign" },
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/roofing-ad-creative.png", alt: "Roofing category ad creative — Broward Palm Beach campaign" },
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/windows-and-doors-ad-creative.png", alt: "Windows & doors category ad creative — Broward Palm Beach campaign" },
+    { src: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/advertising/landscaping-ad-creative.jpg", alt: "Landscaping category ad creative — Broward Palm Beach campaign" },
   ],
 };
 
@@ -169,12 +194,12 @@ const brandEditorial: SectionIntro = {
 
 const publicationSystem: IdentityTile[] = [
   {
-    asset: { src: "/projects/resource-living/c2-miltimedia-lead-network-campaign/logo/C2-multimedia-lead-network-logo.svg", alt: "C2 Multimedia Lead Network logo" },
+    asset: { src: "/projects/resource-living/campaigns/03-c2-multimedia-lead-network/identity/C2-multimedia-lead-network-logo.svg", alt: "C2 Multimedia Lead Network logo" },
     label: "C2 Multimedia",
     kind: "Identity",
   },
   {
-    asset: { src: "/projects/resource-living/resource-living-ad-sales-campaign/logo/ResourceLivingAppLogo.jpg", alt: "Resource Living app logo" },
+    asset: { src: "/projects/resource-living/campaigns/01-ad-sales/identity/ResourceLivingAppLogo.jpg", alt: "Resource Living app logo" },
     label: "Resource Living App",
     kind: "Identity",
   },
@@ -257,7 +282,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
     creativeSystem:
       "A modular design system — consistent typography, color and layout rules — lets the advertiser outreach, homeowner lead campaigns and the category-placement network all read as one connected Resource Living ecosystem instead of separate marketing efforts.",
     campaignExecution:
-      "Directed four connected campaign tracks: the C2 Multimedia advertiser lead network (with a documented ad-to-analytics system), an advertiser-acquisition push proving reach into 180K+ South Florida homes, homeowner-facing pool and outdoor-living lead generation, and a modular 'Your Business Here' system spanning five home-service categories.",
+      "Directed five connected campaign tracks: the C2 Multimedia advertiser lead network (with a documented ad-to-analytics system), an advertiser-acquisition push proving reach into 180K+ South Florida homes, homeowner-facing pool and outdoor-living lead generation, a modular 'Your Business Here' system spanning five home-service categories, and the current live track — a single Meta Ads campaign for Broward and Palm Beach segmented into per-category ad sets with dedicated lead forms.",
     channels: "Print advertising, direct-response social, homeowner and advertiser email, short-form vertical video, and a recurring social content calendar across five service categories.",
     outcome:
       "The four tracks now share one visual and messaging system, giving Resource Living a repeatable framework it can extend to new service categories without starting from scratch.",
@@ -266,7 +291,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
   publicationSystem,
   openingVisual,
   openingFeature,
-  chapters: [adSales, c2Multimedia, poolLeads, yourBusinessHere, categoryNetwork],
+  chapters: [adSales, c2Multimedia, poolLeads, yourBusinessHere, categoryNetwork, browardPalmBeach],
   closingSystem,
   socialSection,
   social,
