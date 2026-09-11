@@ -81,7 +81,7 @@ export default function ResumePage() {
 
                 <div className="flex items-center gap-3 text-bone">
                   <Globe size={18} />
-                  <span>www.mauricioyepes.com</span>
+                  <span>mauricio-portfolio-v2.vercel.app</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-bone">
