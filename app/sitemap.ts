@@ -5,7 +5,7 @@ const siteUrl = "https://mauricio-portfolio-v2.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getProjects();
-  const staticRoutes = ["", "/portfolio", "/about", "/resume", "/contact", "/evolusa", "/belong"].map(
+  const staticRoutes = ["", "/portfolio", "/about", "/resume", "/contact", "/evolusa", "/belong", "/real-group-entertainment"].map(
     (route) => ({
       url: `${siteUrl}${route}`,
       lastModified: new Date(),

@@ -153,6 +153,15 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
     packaging: { eyebrow: "Packaging System" },
     web: { eyebrow: "Digital" },
   },
+  "real-group-entertainment": {
+    "01-2026-ventures": {
+      title: "2026 Ventures — EvoluSA, Resource Living, BELONG",
+      eyebrow: "Venture Studio · 2026",
+      context:
+        "The current build-in-public phase: three live ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
+      priority: 0,
+    },
+  },
 };
 
 export const brandCatalog: BrandCopy[] = [
@@ -328,20 +337,20 @@ export const brandCatalog: BrandCopy[] = [
     slug: "real-group-entertainment",
     title: "Real Group Entertainment",
     client: "Real Group Entertainment LLC",
-    category: "Creative Agency",
+    category: "Venture Studio",
     year: "Ongoing",
-    deliverables: ["Brand Identity", "Capability Deck", "Web Development", "Digital Marketing"],
+    deliverables: ["Brand Identity", "Product Strategy", "Web Development", "Digital Marketing", "Paid & Organic Growth"],
     cover: { from: "#111827", to: "#0EA5E9" },
-    excerpt: "The identity and capabilities presentation for my own creative agency, Real Group Entertainment — covering web development, graphic design and photography services.",
-    services: ["Brand Identity", "Creative Direction", "Web Development", "Digital Marketing"],
-    problem: "Real Group Entertainment needed its own identity and a clear way to present its service range to prospective clients.",
-    strategy: "Design a simple mark and a service-deck format that shows real client work, like the Microbeau website, as proof for each capability.",
-    solution: "Designed the agency logo and a capabilities presentation covering web development, graphic design and photography, illustrated with completed client work.",
-    result: "A self-contained capabilities deck the agency can share directly with prospective clients.",
+    excerpt: "From a single capabilities deck to a working venture studio — RGE now operates three live products (EvoluSA, Resource Living, BELONG), each with real users, real creative and real growth channels.",
+    services: ["Brand Identity", "Creative Direction", "Web Development", "Digital Marketing", "Product Strategy"],
+    problem: "Real Group Entertainment started as an identity and capabilities presentation. The real challenge became bigger: take that same creative-direction discipline and use it to actually build and grow multiple ventures at once, not just pitch them.",
+    strategy: "Treat each venture (EvoluSA, Resource Living, BELONG) as its own product with its own audience, while keeping one shared creative and operational system underneath — one place where strategy, creative production and growth automation live for all three.",
+    solution: "Shipped real, running product for all three ventures: EvoluSA's professional-to-client marketplace with a live $25-per-connection revenue model, Resource Living's Meta Ads lead-generation system across Broward and Palm Beach, and BELONG's mission-first community platform — plus the organic content and paid campaigns that introduce each one to the world.",
+    result: "Three live ventures, each with working product, real creative in market, and its own growth channel — proof that the same creative-direction discipline scales from a single deck to a portfolio of real businesses.",
     metrics: [
-      { label: "Type", value: "Own Agency" },
+      { label: "Type", value: "Venture Studio" },
       { label: "Founded", value: "2021" },
-      { label: "Services", value: "Design + Web + Marketing" },
+      { label: "Active Ventures", value: "3" },
       { label: "Role", value: "Founder & Creative Director" },
     ],
   },
