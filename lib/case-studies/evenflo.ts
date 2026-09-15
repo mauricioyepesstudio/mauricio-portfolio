@@ -32,8 +32,8 @@ const b2b: CampaignChapterData = {
       emphasis: "large",
       assets: [
         {
-          src: "/projects/_source-assets/Evenflo/B2B Brand Campaign/B2B Campaign Social/B2B Campaing Storys/Artboard 6.jpg",
-          alt: "Blonde2Brunette Ink shade system — Deep Brown, Bronzed Brown, Dark Blonde, Gold Blonde",
+          src: "/projects/evenflo/campaigns/01-blonde-to-brunette-ink/hero/Evenflo-Colours-Blonde2brunette-Hybrid-Formula-REACH-Compliance.png",
+          alt: "Blonde2Brunette Ink shade system — Morena, Castaña, Bonita, Rubia pigment drawdown card",
         },
       ],
     },
@@ -89,8 +89,8 @@ const trueLips: CampaignChapterData = {
       title: "Color System",
       assets: [
         {
-          src: "/projects/_source-assets/Evenflo/B2B Brand Campaign/B2B Campaign Social/B2B Campaing Storys/Artboard 4.jpg",
-          alt: "True Lips product and color system",
+          src: "/projects/evenflo/campaigns/04-true-lips-ink/social/Evenflo True Lips Unisex Pigments 1.png",
+          alt: "True Lips product and color system — Dirty French, Naturalista, Royal Mauve",
         },
       ],
     },

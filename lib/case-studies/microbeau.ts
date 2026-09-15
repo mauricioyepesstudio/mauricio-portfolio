@@ -13,7 +13,7 @@ const beautyInAuthenticity: CampaignChapterData = {
   // featuring the four artists — the same campaign's strongest portrait
   // storytelling, previously sitting unused in a legacy asset folder.
   hero: {
-    src: "/projects/microbeau/beauty-in-authenticity-campaign/web-banner/Beauty-Authenticity.png",
+    src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/advertising/Beauty-Authenticity.png",
     alt: "Beauty in Authenticity campaign hero — four real PMU artists — Microbeau",
   },
   logo: {
@@ -38,8 +38,8 @@ const beautyInAuthenticity: CampaignChapterData = {
     })),
     // Real additional artist portraits from the same campaign's legacy asset
     // folder — strengthens the portrait storytelling the chapter is meant to lead with.
-    { src: "/projects/microbeau/beauty-in-authenticity-campaign/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png", alt: "Beauty in Authenticity — Ari Schweiger portrait" },
-    { src: "/projects/microbeau/beauty-in-authenticity-campaign/social/Liv-Seidel-Beauty-Authentic-Beauty.png", alt: "Beauty in Authenticity — Liv Seidel portrait" },
+    { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png", alt: "Beauty in Authenticity — Ari Schweiger portrait" },
+    { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Liv-Seidel-Beauty-Authentic-Beauty.png", alt: "Beauty in Authenticity — Liv Seidel portrait" },
   ],
   stories: [1, 2, 3].map((n) => ({
     src: `/projects/microbeau/beauty-in-authenticity/social/stories/microbeau-beauty-in-authenticity-story-${n}.jpg`,
@@ -113,7 +113,7 @@ const vertixPico: CampaignChapterData = {
     {
       title: "Needle Configuration Guide",
       assets: [
-        { src: "/projects/microbeau/pico-needle-campaign/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png", alt: "Vertix Pico needle configuration comparison — round shader vs. curved magnum" },
+        { src: "/projects/microbeau/campaigns/08-pico-needle/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png", alt: "Vertix Pico needle configuration comparison — round shader vs. curved magnum" },
       ],
       emphasis: "large",
     },
