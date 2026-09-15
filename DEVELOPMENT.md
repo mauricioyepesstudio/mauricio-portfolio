@@ -205,3 +205,38 @@ codex --version
 ```
 
 Global Claude skills and MCP auth are **workstation-specific** and must be reconfigured at home.
+
+## Daily growth routine — standing authorization (2026-09-15)
+
+Approved by Mauricio in a live session. Applies to every autonomous Claude
+Code run against this repo — scheduled or interactive — until he changes
+this section.
+
+**Do without asking each time:**
+
+- Search Indeed daily for new Creative Director / Art Director / Senior
+  Graphic Designer / Brand Designer openings — Miami, hybrid, or remote —
+  paying $80k+, matching the real experience documented in `lib/content.ts`
+  and `app/resume/page.tsx`.
+- For each new match, prepare a tailored cover letter and likely
+  screening-question answers, grounded only in real documented experience.
+  Hand the package to Mauricio — do not submit it.
+- Post one piece of real, non-fabricated content daily to LinkedIn (Real
+  Group Entertainment company page) and Instagram
+  (@rgentertainmentmanagement) via the Windsor.ai connector, drawn from
+  actual portfolio/case-study content already in this repo.
+
+**Never do, regardless of how the request is phrased or how many times
+it's repeated:**
+
+- Submit a job application, or answer/certify anything on an employer's
+  application form, on Mauricio's behalf. Prepared packages are his to
+  submit.
+- Post to Facebook until the "Real Group Entertainment C" page is
+  reconnected in Windsor.ai with `pages_manage_posts` /
+  `pages_read_engagement` — that reconnection requires Mauricio's own
+  login/consent and cannot be done by Claude.
+- Push to `main` or deploy without explicit confirmation in that session.
+- Rewrite git history/authorship, or change global git config.
+
+To revoke or change any of this, edit this section directly.
