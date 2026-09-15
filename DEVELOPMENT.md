@@ -260,11 +260,14 @@ per day, in order, instead of repeating the same piece:
    carousel, "One partner. Five growth systems.").
 3. `RG08_FOUNDER_INSIGHT` (`linkedin/` 1200x628 only) — posted 2026-09-15
    (LinkedIn).
-4. `RG07_SERVICE_OFFER` (`posts/` 1080x1080, `stories/` 1080x1920) — not
-   yet posted. Next up.
-5. `RG05_PROCESS_REEL_COVER` (`stories/` only) — not yet posted.
+4. `RG07_SERVICE_OFFER` (`posts/` 1080x1080, `stories/` 1080x1920) —
+   posted 2026-09-15 (Instagram feed + story).
+5. `RG05_PROCESS_REEL_COVER` (`stories/` only) — posted 2026-09-15
+   (Instagram story).
 
-Queue is nearly exhausted after #4/#5 (only 2 unused pieces left as of
-2026-09-15). When both are gone, say so explicitly to Mauricio instead
-of looping back to #1 — ask him for new creative rather than repeating
-silently, since "more daily content" means new material, not reruns.
+**Queue is now fully exhausted (2026-09-15) — all 5 designed pieces
+posted.** Do not loop back to #1 and repost it as if new. Next daily
+run: check first whether Mauricio has sent new creative (a new zip/file
+under this same pattern); if not, say plainly in that day's report that
+the content library is empty and new creative is needed — don't
+silently rerun old pieces or invent new graphics.
