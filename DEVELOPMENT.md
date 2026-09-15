@@ -221,10 +221,17 @@ this section.
 - For each new match, prepare a tailored cover letter and likely
   screening-question answers, grounded only in real documented experience.
   Hand the package to Mauricio — do not submit it.
-- Post one piece of real, non-fabricated content daily to LinkedIn (Real
-  Group Entertainment company page) and Instagram
-  (@rgentertainmentmanagement) via the Windsor.ai connector, drawn from
-  actual portfolio/case-study content already in this repo.
+- Post real, non-fabricated content daily to LinkedIn (Real Group
+  Entertainment company page) and Instagram (@rgentertainmentmanagement)
+  via the Windsor.ai connector, drawn from actual portfolio/case-study
+  content already in this repo. Updated 2026-09-15 per Mauricio: one
+  piece/day undersells it — post 2-3 pieces/day while the content queue
+  below has unused material (e.g. a LinkedIn post + an Instagram feed
+  post + a story, or two distinct pieces across the day), not just one
+  placement. Never repeat a piece same-day across platforms as if it
+  were new content — that's one piece in multiple formats, not multiple
+  pieces. Once the queue is exhausted, say so rather than quietly
+  reposting.
 
 **Never do, regardless of how the request is phrased or how many times
 it's repeated:**
@@ -249,12 +256,15 @@ per day, in order, instead of repeating the same piece:
 
 1. `RG01_BRAND_MANIFESTO` — posted 2026-09-15 (LinkedIn, Instagram feed,
    Instagram story).
-2. `RG02_CAROUSEL_SLIDE_1..5` (`posts/`) — Instagram carousel, "One
-   partner. Five growth systems." Not yet posted.
-3. `RG07_SERVICE_OFFER` (`posts/` 1080x1080, `stories/` 1080x1920) — Not
-   yet posted.
-4. `RG05_PROCESS_REEL_COVER` (`stories/` only) — Not yet posted.
-5. `RG08_FOUNDER_INSIGHT` (`linkedin/` 1200x628 only) — Not yet posted.
+2. `RG02_CAROUSEL_SLIDE_1..5` (`posts/`) — posted 2026-09-15 (Instagram
+   carousel, "One partner. Five growth systems.").
+3. `RG08_FOUNDER_INSIGHT` (`linkedin/` 1200x628 only) — posted 2026-09-15
+   (LinkedIn).
+4. `RG07_SERVICE_OFFER` (`posts/` 1080x1080, `stories/` 1080x1920) — not
+   yet posted. Next up.
+5. `RG05_PROCESS_REEL_COVER` (`stories/` only) — not yet posted.
 
-After #5, loop back to #1 only once genuinely new creative isn't
-available — don't repeat while unused pieces remain.
+Queue is nearly exhausted after #4/#5 (only 2 unused pieces left as of
+2026-09-15). When both are gone, say so explicitly to Mauricio instead
+of looping back to #1 — ask him for new creative rather than repeating
+silently, since "more daily content" means new material, not reruns.
