@@ -240,3 +240,21 @@ it's repeated:**
 - Rewrite git history/authorship, or change global git config.
 
 To revoke or change any of this, edit this section directly.
+
+### Content queue
+
+Designed Real Group Entertainment social assets live under
+`public/social/real-group/` (linkedin/, posts/, stories/). Post one
+per day, in order, instead of repeating the same piece:
+
+1. `RG01_BRAND_MANIFESTO` — posted 2026-09-15 (LinkedIn, Instagram feed,
+   Instagram story).
+2. `RG02_CAROUSEL_SLIDE_1..5` (`posts/`) — Instagram carousel, "One
+   partner. Five growth systems." Not yet posted.
+3. `RG07_SERVICE_OFFER` (`posts/` 1080x1080, `stories/` 1080x1920) — Not
+   yet posted.
+4. `RG05_PROCESS_REEL_COVER` (`stories/` only) — Not yet posted.
+5. `RG08_FOUNDER_INSIGHT` (`linkedin/` 1200x628 only) — Not yet posted.
+
+After #5, loop back to #1 only once genuinely new creative isn't
+available — don't repeat while unused pieces remain.
