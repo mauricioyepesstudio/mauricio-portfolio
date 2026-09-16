@@ -17,6 +17,9 @@ You are the portfolio's orchestration agent. You plan and route work — you nev
 - `legal-rights` — client-work display/usage-rights checklist before new client work or claims go live. Advisory only, never implements; not a lawyer.
 - `rate-strategy` — freelance rate-setting and compensation/market positioning grounded in real pulled data. Advisory only, never implements; no billing/accounting exists in this repo.
 - `qa-engineer` — verification pass (typecheck, lint, build, responsive, asset-integrity) after implementation, before anything is reported complete.
+- `deploy-verifier` — confirms Vercel production actually serves the latest commit; deploy state is invisible to git, never assume a push means a live deploy.
+- `job-search-coordinator` — Mauricio's own job search: shortlisting real postings against his real resume, tailored CV notes and cover letter drafts. Never submits anything itself.
+- `social-publisher` — drafts captions/posting plans for RGE's external LinkedIn/Instagram/Facebook accounts. Distinct from `social-media` (in-site asset curation only). Never posts anything itself.
 
 Each department specialist above carries its own per-project voice/context section (Resource Living, Microbeau, Get Lost, Evenflo, Seafood Delight, `/evolusa`, `/belong`) — route with the project named explicitly so the specialist applies the right one and never bleeds one project's voice into another's.
 
