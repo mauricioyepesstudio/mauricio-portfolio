@@ -109,7 +109,12 @@ const yourBusinessHerePosts: CuratedAsset[] = [
 // 08 — Campaign. Story-1's phone-mockup treatment — the highest-resolution,
 // highest-craft asset in the archive — gets a dedicated large presentation
 // instead of sitting in a six-up equal-weight story grid. Only two of the
-// remaining five stories are shown as supporting proof.
+// remaining five stories are shown as supporting proof. The Impact
+// Windows & Doors highlight (originally the hero of a since-removed
+// "Category Network" chapter — see below) is folded in here as a seventh
+// supporting asset since it's on-theme and high-resolution; the three
+// low-resolution (772px) tiles that chapter also used are dropped, not
+// upscaled — no higher-resolution originals exist anywhere in the archive.
 const yourBusinessHere: EditorialChapter = {
   slug: "your-business-here",
   eyebrow: "08 — Campaign",
@@ -127,47 +132,22 @@ const yourBusinessHere: EditorialChapter = {
     width: 4500,
     height: 8000,
   },
-  social: [...yourBusinessHerePosts, yourBusinessHereStories[1], yourBusinessHereStories[2]],
-  videos: [
-    {
-      src: "/projects/resource-living/motion/MIZNER PAVERS.mp4",
-      caption: "Mizner Pavers — Category Campaign Video",
-      orientation: "vertical",
-    },
-  ],
-};
-
-// 09 — Campaign. Folds the previously orphaned category-highlight grid
-// (rendered disconnected from any narrative chapter at the bottom of the
-// page) into a proper chapter. Windows leads at hero scale — the strongest,
-// highest-resolution highlight; the three lower-resolution tiles (AC,
-// Kitchen, Roofing) sit at small supporting scale rather than major visuals.
-const categoryNetwork: EditorialChapter = {
-  slug: "category-network",
-  eyebrow: "09 — Campaign",
-  title: "The Category Network",
-  intro:
-    "Five home-service categories sharing one modular placement system — previously shown only as a disconnected grid at the bottom of the page.",
-  hero: {
-    src: "/projects/resource-living/social/Impact-Windows-Doors-Elegance-Security-Hurricane-Protection.png",
-    alt: "Impact windows & doors category highlight",
-  },
   social: [
-    { src: "/projects/resource-living/social/Backyard-Oasis-Design-Build-1.png", alt: "Backyard patio category highlight" },
-    { src: "/projects/resource-living/social/Air-Conditioning-Services.png", alt: "Air conditioning services category highlight" },
-    { src: "/projects/resource-living/social/Kitchen-Remodeling-New-Kitchen-1.png", alt: "Kitchen remodeling category highlight" },
-    { src: "/projects/resource-living/social/Roofing-Decra-Villa-Tile-Shingle-Shake.png", alt: "Roofing category highlight" },
+    ...yourBusinessHerePosts,
+    yourBusinessHereStories[1],
+    yourBusinessHereStories[2],
+    { src: "/projects/resource-living/social/Impact-Windows-Doors-Elegance-Security-Hurricane-Protection.png", alt: "Impact windows & doors category highlight" },
   ],
 };
 
-// 13 — Campaign. The current, live-in-progress track: a single Meta Ads
+// 09 — Campaign. The current, live-in-progress track: a single Meta Ads
 // campaign (not a print/editorial placement) covering Broward and Palm
 // Beach counties, segmented into per-category ad sets. Strategy and report
 // exist now; performance insights get added here once the campaign is live
 // and reporting real cost-per-lead data.
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
-  eyebrow: "13 — Campaign",
+  eyebrow: "09 — Campaign",
   title: "Broward – Palm Beach Lead Campaign",
   intro:
     "The current track: one Meta Ads lead-generation campaign covering Broward and Palm Beach counties, structured as a single campaign segmented into service-category ad sets — AC, bathrooms, pavers, roofing, windows & doors, landscaping, kitchens, pools and more — each with its own creative and a dedicated Meta lead form. Strategy, audience targeting and the creative system are built and approved; live cost-per-lead and conversion insights will be added here once the campaign is running.",
@@ -227,7 +207,7 @@ const closingSystem: SectionIntro = {
   eyebrow: "12 — Closing",
   title: "One commercial system, not a set of ads.",
   description:
-    "Advertiser acquisition, the C2 lead-generation system, homeowner-facing pool leads, the modular Your Business Here placements and the category network share one creative system and one commercial mechanism.",
+    "Advertiser acquisition, the C2 lead-generation system, homeowner-facing pool leads, the modular Your Business Here placements and the live Broward–Palm Beach campaign share one creative system and one commercial mechanism.",
 };
 
 const socialSection: SectionIntro = {
@@ -252,7 +232,7 @@ const motionSection: SectionIntro = {
   title: "Four campaigns, in motion.",
 };
 
-const motion: MotionItem[] = [adSales, poolLeads, yourBusinessHere].flatMap((c) =>
+const motion: MotionItem[] = [adSales, poolLeads].flatMap((c) =>
   c.videos!.map((v) => ({ ...v, campaign: c.title }))
 );
 
@@ -285,13 +265,13 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
       "Directed five connected campaign tracks: the C2 Multimedia advertiser lead network (with a documented ad-to-analytics system), an advertiser-acquisition push proving reach into 180K+ South Florida homes, homeowner-facing pool and outdoor-living lead generation, a modular 'Your Business Here' system spanning five home-service categories, and the current live track — a single Meta Ads campaign for Broward and Palm Beach segmented into per-category ad sets with dedicated lead forms.",
     channels: "Print advertising, direct-response social, homeowner and advertiser email, short-form vertical video, and a recurring social content calendar across five service categories.",
     outcome:
-      "The four tracks now share one visual and messaging system, giving Resource Living a repeatable framework it can extend to new service categories without starting from scratch.",
+      "The five tracks now share one visual and messaging system, giving Resource Living a repeatable framework it can extend to new service categories without starting from scratch.",
   },
   brandEditorial,
   publicationSystem,
   openingVisual,
   openingFeature,
-  chapters: [adSales, c2Multimedia, poolLeads, yourBusinessHere, categoryNetwork, browardPalmBeach],
+  chapters: [adSales, c2Multimedia, poolLeads, yourBusinessHere, browardPalmBeach],
   closingSystem,
   socialSection,
   social,
