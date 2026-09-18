@@ -106,6 +106,7 @@ export default function Nav() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    aria-current={active ? "page" : undefined}
                     className={`relative text-sm uppercase tracking-[0.25em] transition-colors ${
                       active ? "text-paper" : "text-bone hover:text-paper"
                     }`}
@@ -167,6 +168,7 @@ export default function Nav() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
+                        aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                         className={`block rounded py-2 text-3xl font-serif focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold ${
                           pathname.startsWith(link.href)
                             ? "text-gold"
