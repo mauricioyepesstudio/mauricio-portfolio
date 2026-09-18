@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Download, Mail, Globe, Briefcase } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { experience, skills, languages } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Resume",
@@ -81,7 +82,9 @@ export default function ResumePage() {
 
                 <div className="flex items-center gap-3 text-bone">
                   <Globe size={18} />
-                  <span>mauricio-portfolio-v2.vercel.app</span>
+                  <a href={SITE_URL} className="hover:text-gold">
+                    {SITE_URL.replace("https://", "")}
+                  </a>
                 </div>
 
                 <div className="flex items-center gap-3 text-bone">

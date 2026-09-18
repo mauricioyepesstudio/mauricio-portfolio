@@ -16,6 +16,7 @@ export default function ProjectCard({
   return (
     <Link
       href={`/portfolio/${project.slug}`}
+      aria-label={`View ${project.title} case study`}
       className="group block rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:rounded-[38px]"
     >
       <motion.article
@@ -116,7 +117,7 @@ export default function ProjectCard({
 
             <div>
 
-              <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                 YEAR
               </p>
 
