@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,10 +21,8 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const siteUrl = "https://mauricio-portfolio-v2.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Real Group Entertainment — Mauricio Yepes Creative Agency",
     template: "%s — Real Group Entertainment",
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
   creator: "Mauricio Yepes",
   openGraph: {
     type: "website",
-    url: siteUrl,
+    url: SITE_URL,
     title: "Real Group Entertainment — Mauricio Yepes Creative Agency",
     description:
       "Full-service creative agency — video, graphic design, web development, photography — led by Mauricio Yepes, plus the team behind EVOLUSA and BELONG.",
@@ -87,11 +86,11 @@ const personJsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
+      "@id": `${SITE_URL}/#organization`,
       name: "Real Group Entertainment",
-      url: siteUrl,
-      logo: `${siteUrl}/brand/rge/rge-mark-white.png`,
-      founder: { "@id": `${siteUrl}/#person` },
+      url: SITE_URL,
+      logo: `${SITE_URL}/brand/rge/rge-mark-white.png`,
+      founder: { "@id": `${SITE_URL}/#person` },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Miami",
@@ -101,12 +100,12 @@ const personJsonLd = {
     },
     {
       "@type": "Person",
-      "@id": `${siteUrl}/#person`,
+      "@id": `${SITE_URL}/#person`,
       name: "Mauricio Yepes",
       jobTitle: "Creative Director",
-      url: `${siteUrl}/about`,
-      image: `${siteUrl}/images/mauricio.png`,
-      worksFor: { "@id": `${siteUrl}/#organization` },
+      url: `${SITE_URL}/about`,
+      image: `${SITE_URL}/images/mauricio.png`,
+      worksFor: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Miami",
