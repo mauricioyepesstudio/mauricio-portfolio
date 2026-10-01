@@ -43,11 +43,11 @@ export default function RGEVentures() {
 
         <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-10">
           {ventures.map((v, i) => (
-            <Reveal key={v.name} delay={i * 0.08}>
-              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white/[0.02] p-8 sm:p-10 transition hover:border-white/20">
+            <Reveal key={v.name} delay={i * 0.08} className="min-w-0">
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white/[0.02] p-6 sm:p-10 transition hover:border-white/20">
                 <div>
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex min-w-0 items-center gap-3">
                       {v.logo ? (
                         <Image
                           src={v.logo}
@@ -69,7 +69,7 @@ export default function RGEVentures() {
                       </span>
                     </div>
                     <span
-                      className="rounded-full border px-3 py-1 text-[11px] uppercase tracking-[0.2em]"
+                      className="whitespace-nowrap rounded-full border px-3 py-1 text-[11px] uppercase tracking-[0.2em]"
                       style={{ borderColor: v.accent, color: v.accent }}
                     >
                       {v.status}

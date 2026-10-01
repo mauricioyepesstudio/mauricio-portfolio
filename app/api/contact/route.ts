@@ -14,13 +14,20 @@ function escapeHtml(value: string) {
   });
 }
 
+// Remitente con dominio propio. Requiere mauricioyepes.com verificado en Resend;
+// si Resend lo rechaza, se reintenta con el remitente de pruebas para no perder el mensaje.
+const FROM_PRIMARY =
+  process.env.CONTACT_FROM_EMAIL ??
+  "Mauricio Yepes <contacto@mauricioyepes.com>";
+const FROM_FALLBACK = "Portfolio <onboarding@resend.dev>";
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
         { success: false, message: "Contact service is not configured." },
-        { status: 503 }
+        { status: 503 },
       );
     }
 
@@ -34,18 +41,19 @@ export async function POST(req: Request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { success: false, message: "Name, email and message are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const resend = new Resend(apiKey);
 
-    const { error } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
-      to: "rgentertainmentmanagement@gmail.com",
-      replyTo: email,
-      subject: `New Portfolio Inquiry from ${name}`,
-      html: `
+    const send = (from: string) =>
+      resend.emails.send({
+        from,
+        to: "rgentertainmentmanagement@gmail.com",
+        replyTo: email,
+        subject: `New Portfolio Inquiry from ${name}`,
+        html: `
         <h2>New Contact Form Submission</h2>
 
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
@@ -60,7 +68,13 @@ export async function POST(req: Request) {
 
         <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
       `,
-    });
+      });
+
+    let { error } = await send(FROM_PRIMARY);
+    if (error && FROM_PRIMARY !== FROM_FALLBACK) {
+      console.error("Contact send failed with primary sender, retrying", error);
+      ({ error } = await send(FROM_FALLBACK));
+    }
 
     if (error) {
       return NextResponse.json(error, { status: 500 });
@@ -78,7 +92,7 @@ export async function POST(req: Request) {
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }
