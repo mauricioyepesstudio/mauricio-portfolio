@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Download, Mail, Globe, Briefcase } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { experience, skills, languages } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Resume",
   description:
     "Resume of Mauricio Yepes — Creative Director, Marketing Specialist and Multidisciplinary Designer based in Miami, Florida.",
-};
+  path: "/resume",
+});
 
 export default function ResumePage() {
   return (

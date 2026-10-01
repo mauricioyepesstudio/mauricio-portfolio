@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import { FEATURED_CASE_STUDY_SLUGS, getProjects } from "@/lib/projects";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Portfolio",
   description:
     "Creative work by Mauricio Yepes including branding, editorial design, advertising campaigns, digital marketing and web design.",
-};
+  path: "/portfolio",
+});
 
 export default function PortfolioPage() {
   const projects = getProjects();

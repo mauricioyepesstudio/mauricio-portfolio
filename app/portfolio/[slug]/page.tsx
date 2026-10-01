@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -58,21 +59,12 @@ export async function generateMetadata({
         ? resourceLivingCaseStudy.heroImage
         : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
 
-  return {
+  return pageMetadata({
     title: `${project.title} — Case Study`,
     description: project.excerpt,
-    openGraph: {
-      title: `${project.title} — Case Study`,
-      description: project.excerpt,
-      images: heroImage ? [{ url: heroImage }] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${project.title} — Case Study`,
-      description: project.excerpt,
-      images: heroImage ? [heroImage] : undefined,
-    },
-  };
+    path: `/portfolio/${slug}`,
+    image: heroImage ? { url: heroImage, alt: project.title } : undefined,
+  });
 }
 
 export default async function CaseStudyPage({

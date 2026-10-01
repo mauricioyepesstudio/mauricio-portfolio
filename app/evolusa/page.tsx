@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { ArrowUpRight } from "lucide-react";
@@ -7,29 +8,18 @@ const evolusaTitle = "EVOLUSA";
 const evolusaDescription =
   "EVOLUSA connects Spanish-speaking immigrants in the U.S. with verified professionals — a Real Group Entertainment venture.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: evolusaTitle,
   description: evolusaDescription,
-  openGraph: {
-    type: "website",
-    title: "EVOLUSA — Real Group Entertainment",
-    description: evolusaDescription,
-    images: [
-      {
-        url: "/brand/evolusa/EVOLUSA_Profile_1080x1080.png",
-        width: 1080,
-        height: 1080,
-        alt: "EVOLUSA",
-      },
-    ],
+  path: "/evolusa",
+  ogTitle: "EVOLUSA — Real Group Entertainment",
+  image: {
+    url: "/brand/evolusa/EVOLUSA_Profile_1080x1080.png",
+    width: 1080,
+    height: 1080,
+    alt: "EVOLUSA",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "EVOLUSA — Real Group Entertainment",
-    description: evolusaDescription,
-    images: ["/brand/evolusa/EVOLUSA_Profile_1080x1080.png"],
-  },
-};
+});
 
 const categories = [
   { name: "Marketing & Digital Presence", status: "Live" },

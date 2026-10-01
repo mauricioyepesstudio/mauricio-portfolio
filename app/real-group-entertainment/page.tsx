@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
@@ -7,29 +8,12 @@ import { ArrowUpRight } from "lucide-react";
 const description =
   "Real Group Entertainment is a venture studio — EvoluSA, Resource Living and BELONG, three live products built and grown under one creative and operational system.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Real Group Entertainment",
   description,
-  openGraph: {
-    type: "website",
-    title: "Real Group Entertainment — Venture Studio",
-    description,
-    images: [
-      {
-        url: "/images/rge-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Real Group Entertainment",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Real Group Entertainment — Venture Studio",
-    description,
-    images: ["/images/rge-og.png"],
-  },
-};
+  path: "/real-group-entertainment",
+  ogTitle: "Real Group Entertainment — Venture Studio",
+});
 
 const ventures = [
   {
