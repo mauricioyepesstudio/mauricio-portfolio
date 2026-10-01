@@ -6,16 +6,22 @@
 Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
 
 ## Siguiente (máx. 3, una por PR)
-1. **Casos de estudio EVOLUSA y BELONG** — las páginas `/evolusa` y `/belong` existen pero son páginas de producto; convertirlas en casos de estudio (reto, solución, estado real, capturas actuales). Sin métricas inventadas; requiere textos/capturas de Mauricio.
-2. **Reforzar el contacto** — confirmar que `RESEND_API_KEY` está en Vercel, cambiar el remitente `onboarding@resend.dev` por un dominio verificado, añadir CTA de contacto visible en home/casos y un plan B (mailto) si el envío falla. Corregir el overflow horizontal de la home a 360px.
+Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
+
+1. **Casos de estudio EVOLUSA y BELONG** — convertir `/evolusa` y `/belong` en casos de estudio. **Espera las capturas que entregará Mauricio.** Sin cifras ni métricas; lo no confirmado se marca "por confirmar".
+   - EVOLUSA: plataforma en español para orientar a latinos en EE. UU. a encontrar su próximo paso y conectar con profesionales aprobados. Next.js, Supabase y Stripe. Rol: producto, diseño, desarrollo y automatización. En línea, red en crecimiento.
+   - BELONG: app de comunidad con círculos de accountability, marketplace y misiones. Next.js y Supabase, con arquitectura reconstruida por engines. En desarrollo.
+2. **Reforzar el contacto** — `RESEND_API_KEY` ya existe en Vercel (producción y preview) y el contacto funciona (confirmado por Mauricio). Pendiente: arreglar el overflow de 28px de la home a 360px; cambiar el remitente de `onboarding@resend.dev` a `contacto@mauricioyepes.com` **cuando el dominio esté verificado en Resend (requiere al dueño: DNS)**; CTA de contacto visible en home y casos; plan B mailto si falla el envío.
 3. **SEO básico** — títulos/descripciones únicos por caso, OG por proyecto, `lastModified` real en sitemap, y volver al dominio propio cuando exista DNS.
 
-**Requiere permiso del cliente** (no publicar/destacar sin autorización): Resource Living (hoy es caso estrella, primero en `featured.ts`), Laura / 1MIGRATION (no está en el sitio).
+## Clientes y permisos
+- **Resource Living:** se mantiene como caso, **ANÓNIMO** ("Revista de mejoras del hogar del sur de Florida"), sin logo, nombre ni cifras, hasta tener permiso escrito (**requiere permiso**). Hoy el sitio todavía muestra el nombre y los assets con marca: anonimizarlo es trabajo pendiente (va en una PR propia, antes de promocionar el sitio).
+- **Laura / 1MIGRATION:** no se muestra (**requiere permiso**).
 
 ## Auditoría 2026-10-01 (sin cambios de código)
 - **Casos de estudio:** 4 destacados (Resource Living, Microbeau, Get Lost, Evenflo) + Seafood Delight, Loana, Stilo Group, Brand Identity Collection, Real Group Entertainment, Stamina/Hercules, Cinemark; 13 rutas de proyecto. Páginas propias: /evolusa, /belong, /real-group-entertainment, /about, /resume, /contact.
 - **Desactualizado:** fechas "Ongoing"/"Recent" sin año real; Get Lost 2023, Seafood Delight 2022, Stamina 2021, Cinemark 2017 → poco "reciente"; EVOLUSA/BELONG no tienen caso de estudio completo y no están en el catálogo de proyectos; Resource Living es cliente y aparece sin permiso verificado; hay carpetas en `public/projects/` sin caso (biker, bloom, car-wash, fk-irons, leciel, onebike, pizza-tacum, tropical-breeze, a-better-copy, clave-estrategica) — no añadir sin revisión.
-- **Contacto:** formulario → `/api/contact` (Resend) → rgentertainmentmanagement@gmail.com; además mailto y LinkedIn. En local responde 503 sin `RESEND_API_KEY` (el formulario muestra error correctamente). **No pude comprobar producción** (el sandbox no alcanza el dominio de Vercel): falta confirmar la variable en Vercel. Remitente actual `onboarding@resend.dev` (de pruebas; puede ir a spam o limitar destinatarios).
+- **Contacto:** formulario → `/api/contact` (Resend) → rgentertainmentmanagement@gmail.com; además mailto y LinkedIn. En local responde 503 sin `RESEND_API_KEY` (el formulario muestra error correctamente). No pude comprobar producción desde el sandbox; Mauricio confirmó después que la variable existe en Vercel y el contacto funciona. Remitente actual `onboarding@resend.dev` (de pruebas; puede ir a spam o limitar destinatarios).
 - **Móvil (360/390/768, build local):** sin 404 ni errores de consola; sin overflow en /contact, /evolusa, /belong, /portfolio, Resource Living y Microbeau. **Fallo:** la home desborda 28px a 360px. tsc y `npm run build` pasan.
 
 ## Hecho (desde git log)
@@ -27,4 +33,6 @@ Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
 
 ## Bloqueos
 - Dominio propio sin DNS configurado (se usa el dominio de Vercel como canonical).
-- Autorización de clientes pendiente (Resource Living, Laura/1MIGRATION).
+- Permiso escrito de Resource Living (mientras tanto, anónimo) y de Laura/1MIGRATION (no se muestra).
+- DNS/verificación del dominio en Resend para `contacto@mauricioyepes.com` (requiere al dueño).
+- Capturas de EVOLUSA y BELONG (las entrega Mauricio).
