@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
 const description =
-  "Real Group Entertainment is a venture studio — EvoluSA, Resource Living and BELONG, three live products built and grown under one creative and operational system.";
+  "Real Group Entertainment is a venture studio — EvoluSA and BELONG, two products built and grown under one creative and operational system.";
 
 export const metadata: Metadata = {
   title: "Real Group Entertainment",
@@ -41,14 +41,6 @@ const ventures = [
     external: "https://evolusa.vercel.app",
   },
   {
-    name: "Resource Living",
-    tagline: "Meta Ads lead-generation system for South Florida home-improvement contractors.",
-    status: "Live campaign — Broward & Palm Beach",
-    image: "/projects/resource-living/campaigns/05-broward-palm-beach-meta-campaign/hero/broward-palm-beach-campaign-hero.png",
-    href: "/portfolio/resource-living",
-    external: null,
-  },
-  {
     name: "BELONG",
     tagline: "Mission-first community platform for builders.",
     status: "Live — taking members",
@@ -82,15 +74,14 @@ export default function RealGroupEntertainmentPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-bone sm:mt-8 sm:text-xl sm:leading-9">
-            Real Group Entertainment is the studio behind three live ventures —
-            EvoluSA, Resource Living and BELONG. One creative and operational
-            system, three real products, each with its own users, creative and
-            growth channel.
+            Real Group Entertainment is the studio behind two ventures —
+            EvoluSA and BELONG. One creative and operational system, two real
+            products, each with its own creative and growth channel.
           </p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
             {ventures.map((v) => (
               <div key={v.name} className="overflow-hidden rounded-2xl border border-line">
                 <Image
@@ -133,16 +124,8 @@ export default function RealGroupEntertainmentPage() {
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Building in Public
             </p>
+            {/* The RGE LinkedIn post is hidden: it names a client that has not given permission. */}
             <div className="grid gap-6 sm:grid-cols-2">
-              <div className="overflow-hidden rounded-2xl border border-line">
-                <Image
-                  src="/brand/live-product/linkedin-post-rge.png"
-                  alt="Real Group Entertainment LinkedIn update post"
-                  width={800}
-                  height={640}
-                  className="w-full"
-                />
-              </div>
               <div className="overflow-hidden rounded-2xl border border-line">
                 <Image
                   src="/brand/live-product/linkedin-post-evolusa.png"

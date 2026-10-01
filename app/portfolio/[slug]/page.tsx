@@ -16,13 +16,13 @@ import ResourceLivingCaseStudy from "@/components/case-study/ResourceLivingCaseS
 
 import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
-import { resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
+import { ANONYMOUS_SLUG, resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
 import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
 import { getlostCaseStudy } from "@/lib/case-studies/getlost";
 import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
 
 // Slugs rendered through the generic CaseStudyTemplate + CaseStudyData.
-// "evenflo" and "resource-living" are handled separately above via their
+// "evenflo" and the anonymous home-magazine case are handled separately above via their
 // own bespoke presentation components.
 const CURATED_SLUGS = new Set(["microbeau", "getlost"]);
 
@@ -54,7 +54,7 @@ export async function generateMetadata({
   const heroImage =
     slug === "evenflo"
       ? evenfloCaseStudy.heroImage
-      : slug === "resource-living"
+      : slug === ANONYMOUS_SLUG
         ? resourceLivingCaseStudy.heroImage
         : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
 
@@ -109,7 +109,7 @@ export default async function CaseStudyPage({
     return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
   }
 
-  if (project.slug === "resource-living") {
+  if (project.slug === ANONYMOUS_SLUG) {
     return <ResourceLivingCaseStudy project={project} previous={previousLink} next={nextLink} />;
   }
 

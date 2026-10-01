@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -9,8 +8,6 @@ import Reveal from "@/components/Reveal";
 
 import CaseStudySectionHeader from "@/components/case-study/CaseStudySectionHeader";
 import EditorialChapter from "@/components/case-study/EditorialChapter";
-import IdentityGrid from "@/components/case-study/IdentityGrid";
-import MotionGallerySection from "@/components/case-study/MotionGallerySection";
 import ResourceLivingOverview from "@/components/case-study/ResourceLivingOverview";
 import SocialEditorialGrid from "@/components/case-study/SocialEditorialGrid";
 
@@ -78,45 +75,11 @@ export default function ResourceLivingCaseStudy({ project, previous, next }: Pro
           outcome={study.narrative.outcome}
         />
 
-        <section className="mt-24 border-t border-white/10 pt-7 sm:mt-36">
-          <div className="grid gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
-            <div className="lg:col-span-1">
-              <CaseStudySectionHeader intro={study.brandEditorial} bare />
-            </div>
-            <div className="lg:col-span-2">
-              <IdentityGrid items={[...study.publicationSystem]} />
-            </div>
-          </div>
-        </section>
-
-        {/* Opening — Story-1's phone-mockup treatment shown full-width and
-            uncropped. It's a 9:16 image far too tall for ProjectHero's wide
-            banner aspect without destructive cropping, so it renders here
-            instead, immediately after the brand section. */}
-        <section className="mt-24 sm:mt-36">
-          <CaseStudySectionHeader intro={study.openingVisual} />
-          <Reveal>
-            <figure className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
-              <Image
-                src={study.openingFeature.src}
-                alt={study.openingFeature.alt}
-                width={study.openingFeature.width}
-                height={study.openingFeature.height}
-                sizes="(max-width: 1024px) 92vw, 768px"
-                className="h-auto w-full"
-                priority
-              />
-            </figure>
-          </Reveal>
-        </section>
-
         {study.chapters.map((chapter) => (
           <EditorialChapter key={chapter.slug} chapter={chapter} brand={project.title} />
         ))}
 
         <SocialEditorialGrid intro={study.socialSection} picks={[...study.social]} />
-
-        <MotionGallerySection intro={study.motionSection} videos={[...study.motion]} />
 
         <section className="mt-24 border-t border-white/10 pt-7 sm:mt-36">
           <CaseStudySectionHeader intro={study.closingSystem} />

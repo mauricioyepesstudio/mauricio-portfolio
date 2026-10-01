@@ -9,6 +9,8 @@ import type { Brand, Campaign, MediaAsset, MediaKind, MediaSection } from "./typ
 const PROJECTS_ROOT = path.join(process.cwd(), "public", "projects");
 const MEDIA_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".svg", ".mp4", ".webm", ".mov"]);
 const VIDEO_EXTENSIONS = new Set([".mp4", ".webm", ".mov"]);
+// Files that stay unpublished until the client gives written permission (they show the client's name).
+const PERMISSION_PENDING = new Set(["linkedin-post-rge.png"]);
 const EXCLUDED = /(^|[-_.\s])(copy|backup|draft|temp|tmp|old|thumb|thumbnail|duplicate)([-_.\s]|$)|\.ds_store/i;
 
 /** The standard project-level folder set (public/projects/<slug>/...). "hero" is reserved for the
@@ -66,7 +68,7 @@ const SECTION_ORDER: MediaKind[] = ["logo", "packaging", "product", "print", "ev
 
 /** Fallback ordering when a campaign has no explicit editorial `priority`. Substring-matched against the campaign slug. */
 const CAMPAIGN_PRIORITY: Record<string, string[]> = {
-  "resource-living": ["magazine", "ad-sales", "pool-leads", "c2-miltimedia", "c2-multimedia", "your-business-here", "social", "videos"],
+  "south-florida-home-magazine": ["pool-leads", "broward-palm-beach"],
   getlost: ["hero", "logos", "packaging", "new-products", "events", "web-site", "social", "estationery"],
   evenflo: ["true-lips", "blonde-to-brunette"],
 };
@@ -97,7 +99,7 @@ function collectFilesWithKind(directory: string, kind: MediaKind): MediaAsset[] 
   const entries = fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => naturalCompare(a.name, b.name));
 
   return entries.flatMap((entry) => {
-    if (entry.name.startsWith(".") || EXCLUDED.test(entry.name)) return [];
+    if (entry.name.startsWith(".") || EXCLUDED.test(entry.name) || PERMISSION_PENDING.has(entry.name)) return [];
     const absolute = path.join(directory, entry.name);
     if (entry.isDirectory()) return collectFilesWithKind(absolute, kind);
     const extension = path.extname(entry.name).toLowerCase();
@@ -139,7 +141,7 @@ function dedupeAndLimit(assets: MediaAsset[], brandSlug: string, campaignSlug: s
     if (seen.has(normalized)) continue;
     seen.add(normalized);
     const current = grouped.get(asset.kind) ?? [];
-    const specialLimit = brandSlug === "resource-living" && /your-business-here/.test(campaignSlug) ? Math.min(LIMITS[asset.kind], 4) : LIMITS[asset.kind];
+    const specialLimit = LIMITS[asset.kind];
     if (current.length < specialLimit) grouped.set(asset.kind, [...current, asset]);
   }
   return grouped;
@@ -190,8 +192,8 @@ function campaignRank(brandSlug: string, slug: string) {
 
 type BrandScan = { campaigns: Campaign[]; heroImage: string; supportingWork: MediaSection[] };
 
-function scanBrand(slug: string): BrandScan {
-  const directory = path.join(PROJECTS_ROOT, slug);
+function scanBrand(slug: string, assetDir = slug): BrandScan {
+  const directory = path.join(PROJECTS_ROOT, assetDir);
   if (!fs.existsSync(directory)) return { campaigns: [], heroImage: "", supportingWork: [] };
 
   const children = fs.readdirSync(directory, { withFileTypes: true }).filter((entry) => entry.isDirectory());
@@ -237,7 +239,15 @@ function scanBrand(slug: string): BrandScan {
 let cachedProjects: Brand[] | null = null;
 
 function computeProjects(): Brand[] {
-  return brandCatalog.map((copy) => ({ ...copy, ...scanBrand(copy.slug) })).filter((brand) => brand.heroImage);
+  return brandCatalog
+    .map(({ assetDir, heroImage, ...copy }) => {
+      const scan = scanBrand(copy.slug, assetDir);
+      // A case served from another folder is anonymous: it shows only its curated
+      // case-study data, never the raw discovered files (they carry the client's name).
+      if (assetDir) return { ...copy, campaigns: [], supportingWork: [], heroImage: heroImage ?? scan.heroImage };
+      return { ...copy, ...scan, heroImage: heroImage ?? scan.heroImage };
+    })
+    .filter((brand) => brand.heroImage);
 }
 
 export function getProjects(): Brand[] {
