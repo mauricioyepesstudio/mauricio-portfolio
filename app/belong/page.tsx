@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { ArrowUpRight } from "lucide-react";
@@ -6,29 +7,11 @@ import { ArrowUpRight } from "lucide-react";
 const belongDescription =
   "BELONG is a mission-first community platform for builders — a Real Group Entertainment venture, live and taking members.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "BELONG",
   description: belongDescription,
-  openGraph: {
-    type: "website",
-    title: "BELONG — Real Group Entertainment",
-    description: belongDescription,
-    images: [
-      {
-        url: "/images/rge-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Real Group Entertainment",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "BELONG — Real Group Entertainment",
-    description: belongDescription,
-    images: ["/images/rge-og.png"],
-  },
-};
+  path: "/belong",
+});
 
 const recentProgress = [
   {

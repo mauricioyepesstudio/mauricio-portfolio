@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import BrandStatsGrid from "@/components/BrandStatsGrid";
 import { skills, languages } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
     "Creative Director, Marketing Specialist and Multidisciplinary Designer based in Miami with 12+ years of experience creating memorable brands and digital experiences.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

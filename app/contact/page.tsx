@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import {
   Mail,
   Linkedin,
@@ -9,11 +10,12 @@ import {
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
     "Get in touch with Mauricio Yepes for Creative Direction, Branding, Marketing and Design opportunities.",
-};
+  path: "/contact",
+});
 
 const email = {
   label: "Email",
