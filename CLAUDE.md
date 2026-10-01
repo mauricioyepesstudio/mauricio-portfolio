@@ -1,3 +1,17 @@
+# Segundo cerebro — resumen
+
+**Proyecto estacionado; lo resume el cerebro central (AI-Projects-Control-Plane) cada lunes.**
+
+- **Qué es:** portfolio oficial de Mauricio Yepes (Senior Graphic Designer / Art Director / Creative Director). Repo oficial: `mauricioyepesstudio/mauricio-portfolio` (el repo `mauricioyepes` está archivado).
+- **Stack:** Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion; desplegado en Vercel.
+- **Reglas:** el trabajo es el protagonista (editorial, premium, sin plantillas SaaS); descubrimiento de assets solo server-side (fs/path); no inventar contenido ni métricas; responsive y accesibilidad obligatorios; validar con `npx tsc --noEmit` y `npm run build` antes de dar algo por terminado.
+- **No se toca:** assets originales en `public/projects/` (no borrar, renombrar ni reorganizar sin aprobación); no agregar proyectos viejos al portfolio sin revisarlos; no cambiar el stack sin razón técnica fuerte.
+- **Estado vivo:** ver `ESTADO.md`.
+
+---
+
+*A continuación, la especificación maestra completa del proyecto (sin cambios).*
+
 # MAURICIO YEPES — PORTFOLIO MASTER SPECIFICATION
 
 ## PRIMARY GOAL
