@@ -17,6 +17,19 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // Anonymous case study: serve its source folder under a neutral path so the
+  // client's name never appears in a public URL (requires written permission).
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/projects/south-florida-home-magazine/:path*",
+          destination: "/projects/resource-living/:path*",
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;

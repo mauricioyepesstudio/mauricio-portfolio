@@ -1,6 +1,6 @@
 /** Flagship case studies — deep curated storytelling. Order reflects portfolio priority. */
 export const FEATURED_CASE_STUDY_SLUGS = [
-  "resource-living",
+  "south-florida-home-magazine",
   "microbeau",
   "getlost",
   "evenflo",

@@ -1,6 +1,11 @@
 import type { Brand } from "./types";
 
-export type BrandCopy = Omit<Brand, "heroImage" | "campaigns">;
+export type BrandCopy = Omit<Brand, "heroImage" | "campaigns"> & {
+  /** Folder under public/projects/ when it differs from the public slug (anonymous cases). */
+  assetDir?: string;
+  /** Explicit card/hero image; otherwise the first discovered hero is used. */
+  heroImage?: string;
+};
 
 export type CampaignEditorial = {
   /** Overrides the auto-derived (folder-name-based) title. */
@@ -20,41 +25,20 @@ export type CampaignEditorial = {
  * their auto-derived title and default ordering.
  */
 export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> = {
-  "resource-living": {
-    "01-ad-sales": {
-      title: "Ad Sales Campaign",
-      eyebrow: "Advertising · Lead Generation",
-      context:
-        "Advertiser-facing creative built to bring South Florida service businesses into the magazine's advertising and digital lead program.",
-      priority: 0,
-    },
+  "south-florida-home-magazine": {
     "02-pool-leads": {
       title: "Pool Leads Campaign",
       eyebrow: "Digital Marketing · Lead Generation",
       context:
         "Homeowner-facing creative pairing lifestyle photography with direct calls to action for pool and outdoor-living consultations.",
-      priority: 1,
-    },
-    "03-c2-multimedia-lead-network": {
-      title: "C2 Multimedia Lead Network",
-      eyebrow: "Brand System · Digital Marketing",
-      context:
-        "A dedicated lead-network identity and campaign system extending Resource Living's advertiser program into its own multimedia product.",
-      priority: 2,
-    },
-    "04-your-business-here-services": {
-      title: "Your Business Here / Services",
-      eyebrow: "Advertising · Social Media",
-      context:
-        "A repeatable service-category ad system — kitchens, pools, roofing, windows, landscaping — giving contractors a consistent way to advertise inside the publication.",
-      priority: 3,
+      priority: 0,
     },
     "05-broward-palm-beach-meta-campaign": {
       title: "Broward – Palm Beach Lead Campaign",
       eyebrow: "Paid Social · Meta Ads · Lead Generation",
       context:
-        "A single Meta Ads campaign covering Broward and Palm Beach counties, segmented into service-category ad sets (AC, Bathrooms, Pavers, Roofing, Windows & Doors, Landscaping, Kitchens, Pools and more) — each with its own creative, targeting and Meta lead-generation form. Performance insights and cost-per-lead breakdowns will be added here once the campaign is live and reporting.",
-      priority: 4,
+        "A single Meta Ads campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — each with its own creative, targeting and Meta lead-generation form.",
+      priority: 1,
     },
   },
   evenflo: {
@@ -155,10 +139,10 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
   },
   "real-group-entertainment": {
     "01-2026-ventures": {
-      title: "2026 Ventures — EvoluSA, Resource Living, BELONG",
+      title: "2026 Ventures — EvoluSA, BELONG",
       eyebrow: "Venture Studio · 2026",
       context:
-        "The current build-in-public phase: three live ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
+        "The current build-in-public phase: two ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
       priority: 0,
     },
   },
@@ -166,19 +150,23 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
 
 export const brandCatalog: BrandCopy[] = [
   {
-    slug: "resource-living",
-    title: "Resource Living",
-    client: "Resource Living",
+    // ANONYMOUS until written permission: no client name, logo or figures.
+    slug: "south-florida-home-magazine",
+    assetDir: "resource-living",
+    heroImage:
+      "/projects/south-florida-home-magazine/campaigns/05-broward-palm-beach-meta-campaign/hero/broward-palm-beach-campaign-hero.png",
+    title: "South Florida Home-Improvement Magazine",
+    client: "Confidential client",
     category: "Editorial & Integrated Marketing",
     year: "Ongoing",
-    deliverables: ["Creative Direction", "Editorial Design", "Campaign Systems", "Lead Generation", "Social Media", "Email Marketing"],
+    deliverables: ["Creative Direction", "Campaign Systems", "Lead Generation", "Social Media", "Paid Social"],
     cover: { from: "#1d2b22", to: "#a78753" },
-    excerpt: "An integrated advertising and lead-generation ecosystem — editorial, campaign systems, social, email and video connecting South Florida homeowners, advertisers and service businesses.",
-    services: ["Creative Direction", "Editorial", "Advertising", "Digital Strategy"],
-    problem: "Resource Living needed its magazine, advertiser acquisition and homeowner lead programs to feel like parts of one trusted publication rather than disconnected marketing pieces.",
-    strategy: "Organize the work around distinct audience journeys: build authority through editorial, attract advertisers with a clear media proposition, and turn homeowner interest into qualified service inquiries.",
-    solution: "Directed a connected system spanning magazine advertising, advertiser outreach, category-specific lead campaigns, landing and email experiences, and recurring social content.",
-    result: "The resulting system gives the brand a consistent structure that can be extended by campaign and service category without rebuilding the creative framework each time.",
+    excerpt: "Homeowner lead generation for a South Florida home-improvement magazine — pool and outdoor-living campaigns and a Meta Ads system segmented by service category.",
+    services: ["Creative Direction", "Advertising", "Lead Generation", "Digital Strategy"],
+    problem: "A South Florida home-improvement magazine needed its homeowner lead programs to feel like parts of one trusted publication rather than disconnected marketing pieces.",
+    strategy: "Organize the work around homeowner journeys: lifestyle-led campaigns build desire, and category-specific ad sets turn that interest into qualified service inquiries.",
+    solution: "Directed a connected lead-generation system spanning pool and outdoor-living campaigns, category-specific Meta ad sets with dedicated lead forms, and recurring social content.",
+    result: "The resulting system gives the publication a consistent structure that can be extended by campaign and service category without rebuilding the creative framework each time.",
     metrics: [
       { label: "Industry", value: "Home & Living" },
       { label: "Scope", value: "Integrated" },
@@ -341,12 +329,12 @@ export const brandCatalog: BrandCopy[] = [
     year: "Ongoing",
     deliverables: ["Brand Identity", "Product Strategy", "Web Development", "Digital Marketing", "Paid & Organic Growth"],
     cover: { from: "#111827", to: "#0EA5E9" },
-    excerpt: "From a single capabilities deck to a working venture studio — RGE now operates three live products (EvoluSA, Resource Living, BELONG), each with real users, real creative and real growth channels.",
+    excerpt: "From a single capabilities deck to a working venture studio — RGE now operates two products of its own (EvoluSA and BELONG), each with real creative and its own growth channel.",
     services: ["Brand Identity", "Creative Direction", "Web Development", "Digital Marketing", "Product Strategy"],
     problem: "Real Group Entertainment started as an identity and capabilities presentation. The real challenge became bigger: take that same creative-direction discipline and use it to actually build and grow multiple ventures at once, not just pitch them.",
-    strategy: "Treat each venture (EvoluSA, Resource Living, BELONG) as its own product with its own audience, while keeping one shared creative and operational system underneath — one place where strategy, creative production and growth automation live for all three.",
-    solution: "Shipped real, running product for all three ventures: EvoluSA's professional-to-client marketplace with a live $25-per-connection revenue model, Resource Living's Meta Ads lead-generation system across Broward and Palm Beach, and BELONG's mission-first community platform — plus the organic content and paid campaigns that introduce each one to the world.",
-    result: "Three live ventures, each with working product, real creative in market, and its own growth channel — proof that the same creative-direction discipline scales from a single deck to a portfolio of real businesses.",
+    strategy: "Treat each venture (EvoluSA, BELONG) as its own product with its own audience, while keeping one shared creative and operational system underneath — one place where strategy, creative production and growth automation live for both.",
+    solution: "Shipped real, running product for both ventures: EvoluSA's professional-to-client marketplace with a live $25-per-connection revenue model and BELONG's mission-first community platform — plus the organic content and paid campaigns that introduce each one to the world.",
+    result: "Two ventures, each with working product, real creative in market, and its own growth channel — proof that the same creative-direction discipline scales from a single deck to a portfolio of real businesses.",
     metrics: [
       { label: "Type", value: "Venture Studio" },
       { label: "Founded", value: "2021" },
