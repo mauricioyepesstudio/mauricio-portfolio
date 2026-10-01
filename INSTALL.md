@@ -37,8 +37,10 @@ npm start
   across the Contact page, Footer and Resume page. If any of these change,
   update them in `components/Footer.tsx`, `app/contact/page.tsx`,
   `app/resume/page.tsx`, and `components/ContactForm.tsx`.
-- Update `siteUrl` in `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts`
-  to your real production domain if `mauricioyepes.com` is not it.
+- The canonical URL lives in `lib/site.ts`. It defaults to the Vercel URL;
+  set `NEXT_PUBLIC_SITE_URL` in Vercel once a custom domain exists. The contact
+  sender defaults to `onboarding@resend.dev`; set `CONTACT_FROM_EMAIL` once a
+  domain is verified in Resend.
 - `app/api/contact/route.ts` is already connected to Resend and requires a
   `RESEND_API_KEY` environment variable. Verify a custom sending domain in
   Resend so outgoing mail doesn't come from the shared `onboarding@resend.dev`
