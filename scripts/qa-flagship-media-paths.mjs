@@ -56,7 +56,8 @@ function exists(rel) {
 let failed = false;
 
 for (const [project, filePath] of Object.entries(flagshipFiles)) {
-  const text = fs.readFileSync(path.join(root, filePath), "utf8");
+  // The anonymous case builds paths from an ASSETS alias that next.config rewrites to its folder.
+  const text = fs.readFileSync(path.join(root, filePath), "utf8").replaceAll("${ASSETS}", `/projects/${project}`);
   const refs = expandTemplateLiterals(text).filter((rel) => rel.startsWith(project));
 
   const missing = refs.filter((rel) => !exists(rel)).sort();
