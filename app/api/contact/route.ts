@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { contactSchema } from "@/lib/contact";
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>'"]/g, (character) => {
@@ -31,19 +32,15 @@ export async function POST(req: Request) {
       );
     }
 
-    const body = await req.json();
-    const name = typeof body.name === "string" ? body.name.trim() : "";
-    const email = typeof body.email === "string" ? body.email.trim() : "";
-    const company = typeof body.company === "string" ? body.company.trim() : "";
-    const budget = typeof body.budget === "string" ? body.budget.trim() : "";
-    const message = typeof body.message === "string" ? body.message.trim() : "";
-
-    if (!name || !email || !message) {
+    const body = await req.json().catch(() => undefined);
+    const parsed = contactSchema.safeParse(body);
+    if (!parsed.success) {
       return NextResponse.json(
-        { success: false, message: "Name, email and message are required." },
+        { success: false, message: "Please provide valid contact details and project information." },
         { status: 400 },
       );
     }
+    const { name, email, company = "", budget = "", message } = parsed.data;
 
     const resend = new Resend(apiKey);
 
