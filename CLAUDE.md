@@ -9,7 +9,7 @@
 - **Stack:** Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion; desplegado en Vercel.
 - **Reglas:** el trabajo es el protagonista (editorial, premium, sin plantillas SaaS); descubrimiento de assets solo server-side (fs/path); no inventar contenido ni métricas; responsive y accesibilidad obligatorios; validar con `npx tsc --noEmit` y `npm run build` antes de dar algo por terminado.
 - **No se toca:** assets originales en `public/projects/` (no borrar, renombrar ni reorganizar sin aprobación); no agregar proyectos viejos al portfolio sin revisarlos; no cambiar el stack sin razón técnica fuerte.
-- **Estado vivo:** ver `ESTADO.md`.
+- **Estado vivo:** ver `ESTADO.md`. Decisiones, marca y negocio: `docs/cerebro/`. Al cerrar una sesión o fusionar un PR, usa el agente `estado-keeper`.
 
 ---
 
