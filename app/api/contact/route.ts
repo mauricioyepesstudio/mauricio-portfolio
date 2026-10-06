@@ -15,12 +15,12 @@ function escapeHtml(value: string) {
   });
 }
 
-// Remitente con dominio propio. Requiere mauricioyepes.com verificado en Resend;
-// si Resend lo rechaza, se reintenta con el remitente de pruebas para no perder el mensaje.
-const FROM_PRIMARY =
-  process.env.CONTACT_FROM_EMAIL ??
-  "Mauricio Yepes <contacto@mauricioyepes.com>";
+// Remitente: no hay dominio propio todavía, así que por defecto se usa el de pruebas
+// de Resend. Cuando exista un dominio verificado en Resend, basta con definir
+// CONTACT_FROM_EMAIL en Vercel (p. ej. "Mauricio Yepes <contacto@tudominio.com>").
+// Si Resend rechaza ese remitente, se reintenta con el de pruebas para no perder el mensaje.
 const FROM_FALLBACK = "Portfolio <onboarding@resend.dev>";
+const FROM_PRIMARY = process.env.CONTACT_FROM_EMAIL || FROM_FALLBACK;
 
 export async function POST(req: Request) {
   try {
