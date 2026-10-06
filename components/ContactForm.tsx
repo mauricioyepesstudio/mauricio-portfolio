@@ -4,16 +4,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { contactSchema as schema } from "@/lib/contact";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, CheckCircle2 } from "lucide-react";
-
-const schema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Please enter a valid email"),
-  company: z.string().optional(),
-  budget: z.string().optional(),
-  message: z.string().min(10, "Tell me a bit more about the project"),
-});
 
 type FormData = z.infer<typeof schema>;
 
@@ -164,7 +157,7 @@ export default function ContactForm() {
             className="text-sm text-red-400"
           >
             Something went wrong. Please email
-            rgentertainmentmanagement@gmail.com directly.
+            <a href="mailto:rgentertainmentmanagement@gmail.com" className="underline">rgentertainmentmanagement@gmail.com</a> directly.
           </motion.p>
         )}
       </AnimatePresence>
