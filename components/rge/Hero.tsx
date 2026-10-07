@@ -32,7 +32,7 @@ export default function RGEHero() {
       <div className="container-px max-w-[1600px] mx-auto w-full relative z-10 pt-36 pb-20 lg:pt-32 lg:pb-20">
         <div className="grid grid-cols-12 gap-y-10 lg:gap-x-20 items-center">
           {/* LEFT */}
-          <div className="col-span-12 lg:col-span-6">
+          <div className="col-span-12 min-w-0 lg:col-span-6">
             <motion.div
               variants={container}
               initial="hidden"
@@ -45,10 +45,10 @@ export default function RGEHero() {
                   alt="Real Group Entertainment"
                   width={56}
                   height={62}
-                  className="h-12 w-auto sm:h-14"
+                  className="h-12 w-auto shrink-0 sm:h-14"
                 />
-                <div>
-                  <p className="text-sm uppercase tracking-[0.2em] text-paper">
+                <div className="min-w-0">
+                  <p className="break-words text-sm uppercase tracking-[0.2em] text-paper">
                     Real Group Entertainment
                   </p>
                   <p className="text-xs text-bone">by Mauricio Yepes</p>
@@ -57,7 +57,7 @@ export default function RGEHero() {
 
               <motion.span
                 variants={line}
-                className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.3em] text-bone"
+                className="inline-flex max-w-full items-center gap-2 rounded-full border border-line px-4 py-2 text-center text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-bone"
               >
                 Miami • Full-Service Agency
               </motion.span>
