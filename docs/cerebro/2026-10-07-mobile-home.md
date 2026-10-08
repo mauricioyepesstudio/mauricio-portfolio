@@ -28,3 +28,15 @@ AGENTS.md no existe en checkout actual. Leídos CLAUDE.md, ESTADO.md y perfiles 
 La pieza equivalente del 2026-10-06 sigue reciente: exec-a39d1551-653d-4da0-9b44-7301d1cc885d.png. Objetivo: promover trabajo creativo y contacto con URL Vercel comprobada. Estado producido / listo para compartir aquí; no publicado en redes. Registro central brands-content-batch-20261006. No se genera duplicado ni se usan Resource Living/Laura.
 
 Próximo objetivo: completar QA responsive del PR y, solo si pasa, integrar y verificar SHA de producción. No se envió un correo de prueba ni se afirma recepción.
+
+## Revisión 2026-10-08 — bloqueo confirmado
+
+PR12 sigue draft/open, head 70338db52d070a256a20437ed17ed6dae2601d10. Los dos checks GitHub Actions `Lint, typecheck, build` terminaron success; Vercel Preview Comments success. Esto no sustituye QA responsive.
+
+Producción: Vercel READY dpl_7cBUgZFFadGRx4iTRajEUHr23dEe, commit df47dee4531236123adee3ca8151775aef0c9c94 (sin el parche). Navegador real comprobó home → Let's Talk → /contact; formulario, email, LinkedIn y Behance visibles. No se envió correo ni se comprobó recepción.
+
+La API de navegador revisada el 8 de octubre no ofrece ajuste de viewport ni emulación de reduced-motion. Por tanto siguen pendientes los ocho anchos exigidos por CLAUDE.md y qa-engineer. No se modificó código ni se creó otro PR. AGENTS.md remoto devuelve404; perfiles frontend-engineer, qa-engineer y ui-ux-pro leídos. El clone aislado no terminó y se canceló; no se afirma disponer de checkout completo ni haber repetido pruebas locales.
+
+Para desbloquear: usar un navegador de QA con viewport configurable sobre el preview de PR12, medir clientWidth/scrollWidth a360,390,430,768,1024,1280,1440,1920; confirmar título/logo/badge/CTA, consola y medios, repetir reduced-motion y revisar el diff. Solo entonces integrar y verificar SHA exacto de producción. Portfolio continúa ACTIVO; se pausa únicamente la ejecución recurrente bloqueada, no el producto.
+
+Contenido reciente equivalente de Oct6 retenido (mismo archivo/objetivo/estado registrado arriba); no se genera duplicado ni se publica externamente.
