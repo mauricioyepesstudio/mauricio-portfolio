@@ -177,11 +177,21 @@ export default function EditorialChapter({
             </div>
             <div
               className={`grid min-w-0 gap-6 sm:gap-8 ${
-                chapter.videos.length > 1 ? "lg:grid-cols-2" : "max-w-2xl"
+                chapter.videos.length === 1
+                  ? "max-w-2xl"
+                  : chapter.videos.length > 2 && chapter.videos.every((video) => video.orientation === "vertical")
+                    ? "sm:grid-cols-2 lg:grid-cols-3"
+                    : "lg:grid-cols-2"
               }`}
             >
               {chapter.videos.map((video) => (
-                <ProjectVideoPlayer key={video.src} src={video.src} caption={video.caption} orientation={video.orientation} />
+                <ProjectVideoPlayer
+                  key={video.src}
+                  src={video.src}
+                  poster={video.poster}
+                  caption={video.caption}
+                  orientation={video.orientation}
+                />
               ))}
             </div>
           </div>

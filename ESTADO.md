@@ -15,7 +15,7 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
 3. **SEO básico** — títulos/descripciones únicos por caso, OG por proyecto, `lastModified` real en sitemap, y fijar `NEXT_PUBLIC_SITE_URL` cuando exista un dominio propio.
 
 ## Clientes y permisos
-- **Resource Living:** se mantiene como caso, **ANÓNIMO** ("Revista de mejoras del hogar del sur de Florida"), sin logo, nombre ni cifras, hasta tener permiso escrito (**requiere permiso**). Anonimizado (2026-10-01): caso en `/portfolio/south-florida-home-magazine`, solo piezas sin logo/nombre/URL (Pool Leads y Broward–Palm Beach); fuera ad-sales, C2 Multimedia, "Your Business Here", stories y el video de piscinas porque llevan la marca; nombre retirado de about, resume, RGE y logo wall; la URL de los assets usa un alias (rewrite en `next.config.mjs`). Pendiente de revisar a mano: `public/resume.pdf` (el texto no lo menciona, pero no revisé su diseño).
+- **Resource Living:** caso con nombre real desde 2026-10-09 (el usuario confirmó que tiene permiso: gestiona al cliente vía Real Group Entertainment). URL `/portfolio/resource-living`; la anónima redirige ahí. Galería nueva: campaña Broward–Palm Beach de oct. 2026 (7 anuncios por categoría, 9 videos verticales de 3 s, fotos orgánicas) en `public/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026/`, copiada de `N:\C2 Multimedia\Social Media\New Resource Living Campaign Oct 2026`. Sigue sin cifras.
 - **Laura / 1MIGRATION:** no se muestra (**requiere permiso**).
 
 ## Auditoría 2026-10-01 (sin cambios de código)

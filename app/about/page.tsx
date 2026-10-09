@@ -105,7 +105,8 @@ export default function AboutPage() {
                   <span className="text-paper"> FK Irons</span>,
                   <span className="text-paper"> Microbeau</span>,
                   <span className="text-paper"> Grupo Nutresa</span>,
-                  <span className="text-paper"> Evenflo Colours</span>
+                  <span className="text-paper"> Evenflo Colours</span>,
+                  <span className="text-paper"> Resource Living</span>
                   and many businesses across the United States and Latin America.
                 </p>
               </Reveal>
