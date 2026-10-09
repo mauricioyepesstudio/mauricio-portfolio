@@ -16,6 +16,8 @@ export type WebsiteAsset = CuratedAsset & {
 
 export type CampaignVideo = {
   src: string;
+  /** Still frame shown before playback. */
+  poster?: string;
   caption: string;
   /** Controls aspect ratio and grid sizing. Defaults to "landscape". */
   orientation?: "landscape" | "vertical";
@@ -56,6 +58,7 @@ export type CampaignChapterData = {
 
 export type SocialPick = CuratedAsset & {
   campaign: string;
+  /** Tile size in SocialEditorial's mosaic; SocialEditorialGrid renders uniform tiles and ignores it. */
   size: "feature" | "tall" | "support";
 };
 

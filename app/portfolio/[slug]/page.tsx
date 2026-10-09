@@ -17,7 +17,7 @@ import ResourceLivingCaseStudy from "@/components/case-study/ResourceLivingCaseS
 
 import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
-import { ANONYMOUS_SLUG, resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
+import { RESOURCE_LIVING_SLUG, resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
 import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
 import { getlostCaseStudy } from "@/lib/case-studies/getlost";
 import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
@@ -55,7 +55,7 @@ export async function generateMetadata({
   const heroImage =
     slug === "evenflo"
       ? evenfloCaseStudy.heroImage
-      : slug === ANONYMOUS_SLUG
+      : slug === RESOURCE_LIVING_SLUG
         ? resourceLivingCaseStudy.heroImage
         : (CURATED_DATA[slug]?.heroImage ?? project.heroImage);
 
@@ -101,7 +101,7 @@ export default async function CaseStudyPage({
     return <EvenfloCaseStudy project={project} previous={previousLink} next={nextLink} />;
   }
 
-  if (project.slug === ANONYMOUS_SLUG) {
+  if (project.slug === RESOURCE_LIVING_SLUG) {
     return <ResourceLivingCaseStudy project={project} previous={previousLink} next={nextLink} />;
   }
 
