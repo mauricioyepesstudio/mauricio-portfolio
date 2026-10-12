@@ -1,3 +1,4 @@
+import CampaignMenu from "./case-study/CampaignMenu";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import ProjectVideoPlayer from "@/components/ProjectVideoPlayer";
@@ -195,8 +196,9 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
 
   return (
     <section className="mt-24 space-y-28 sm:mt-36 sm:space-y-40">
+      <CampaignMenu chapters={campaigns} />
       {campaigns.map((campaign, campaignIndex) => (
-        <article key={campaign.slug} id={campaign.slug} className="scroll-mt-32">
+        <article key={campaign.slug} id={campaign.slug} className="scroll-mt-52">
           <Reveal>
             <header className="mb-8 grid gap-5 border-t border-white/10 pt-7 sm:mb-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.55fr)] lg:items-end">
               <div className="flex items-start gap-4 sm:gap-6">
@@ -238,7 +240,7 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
       ))}
 
       {supportingWork && supportingWork.length > 0 && (
-        <article className="scroll-mt-32">
+        <article className="scroll-mt-52">
           <Reveal>
             <header className="mb-8 border-t border-white/10 pt-7 sm:mb-12">
               <p className="eyebrow mb-3">Selected Supporting Work</p>

@@ -1,3 +1,4 @@
+import CampaignMenu from "./CampaignMenu";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -74,6 +75,8 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
           solution={project.solution}
           result={project.result}
         />
+
+        <CampaignMenu chapters={evenfloCaseStudy.campaigns} />
 
         {/* 04 — Brand & Packaging */}
         <BrandPackaging

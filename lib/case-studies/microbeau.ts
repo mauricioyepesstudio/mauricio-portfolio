@@ -78,6 +78,7 @@ const beautyInAuthenticity: CampaignChapterData = {
 
 const vertixPico: CampaignChapterData = {
   slug: "vertix-pico",
+  hideHero: true,
   eyebrow: "06 — Campaign",
   title: "Vertix Pico",
   intro:
@@ -121,18 +122,6 @@ const vertixPico: CampaignChapterData = {
       src: "/projects/microbeau/vertix-pico/video/microbeau-vertix-pico-video.mp4",
       caption: "Vertix Pico — Campaign Film",
       orientation: "landscape",
-    },
-  ],
-  // Real educational/technical asset from the pico-needle configuration
-  // material — proof the campaign also translated technical specs for
-  // working artists, not just product photography.
-  gallery: [
-    {
-      title: "Needle Configuration Guide",
-      assets: [
-        { src: "/projects/microbeau/campaigns/08-pico-needle/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png", alt: "Vertix Pico needle configuration comparison — round shader vs. curved magnum" },
-      ],
-      emphasis: "large",
     },
   ],
 };
@@ -201,6 +190,7 @@ const fluxMini: CampaignChapterData = {
   stories: [1, 2, 3].map((n) => ({
     src: `/projects/microbeau/flux-mini/social/stories/microbeau-flux-mini-story-${n}.webp`,
     alt: `Flux Mini social story ${n}`,
+    ...(n === 1 ? { fit: "contain" as const, background: "light" as const } : {}),
   })),
   videos: [
     {

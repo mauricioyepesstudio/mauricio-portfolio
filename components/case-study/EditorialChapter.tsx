@@ -69,7 +69,7 @@ export default function EditorialChapter({
   const hasSecondaryColumn = chapter.spotlight || chapter.newsletter;
 
   return (
-    <article id={chapter.slug} className="mt-24 scroll-mt-32 sm:mt-36">
+    <article id={chapter.slug} className="mt-24 scroll-mt-52 sm:mt-36">
       <Reveal>
         <header className="mb-10 grid gap-5 border-t border-white/10 pt-7 sm:mb-14 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.5fr)] lg:items-end">
           <div>

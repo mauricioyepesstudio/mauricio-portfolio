@@ -1,6 +1,9 @@
 export type CuratedAsset = {
   src: string;
   alt: string;
+  /** Per-asset presentation only; default styling remains unchanged. */
+  fit?: "cover" | "contain";
+  background?: "light";
 };
 
 export type NewsletterAsset = CuratedAsset & {
@@ -42,6 +45,8 @@ export type CampaignChapterData = {
   hero: CuratedAsset;
   /** "contain" shows the hero uncropped inside the 16:9 panel — for square/portrait or non-16:9 key visuals that would lose content under the default "cover" crop. */
   heroFit?: "cover" | "contain";
+  /** Keep the source but omit a requested hero from this campaign. */
+  hideHero?: boolean;
   logo?: CuratedAsset;
   packaging?: CuratedAsset;
   /** Horizontal web/display ad creative — always rendered full content width, uncropped. */
