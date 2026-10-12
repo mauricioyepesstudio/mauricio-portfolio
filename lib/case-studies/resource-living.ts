@@ -8,26 +8,22 @@ export const RESOURCE_LIVING_SLUG = "resource-living";
 const ASSETS = `/projects/${RESOURCE_LIVING_SLUG}`;
 const OCT_2026 = `${ASSETS}/campaigns/06-broward-palm-beach-oct-2026`;
 
+const POOL_LEADS = `${ASSETS}/campaigns/02-pool-leads/social/sep-2026`;
+
+// No hero or feature visual: the campaign's only wide/tall exports were small
+// files that looked blurry when blown up, so the chapter leads with its sharp
+// 4:5 feed ads instead.
 const poolLeads: EditorialChapter = {
   slug: "pool-leads",
   eyebrow: "04 — Campaign",
   title: "Pool Leads",
   intro:
-    "A homeowner-facing lead campaign for South Florida pool and outdoor-living builders, pairing lifestyle imagery with a direct consultation call to action.",
-  hero: {
-    src: `${ASSETS}/campaigns/02-pool-leads/hero/South-Florida-Living-Luxury-Comfort-Memories-Free-Consultation-hero.png`,
-    alt: "Pool Leads campaign hero — South Florida living",
-  },
-  featureVisual: {
-    src: `${ASSETS}/campaigns/02-pool-leads/social/Luxury-Pools.png`,
-    alt: "Luxury pools lead ad — South Florida lifestyle photography",
-    width: 1080,
-    height: 1920,
-  },
+    "A homeowner-facing lead campaign for South Florida pools and outdoor living, pairing resort-style backyard imagery with a direct free-estimates call to action.",
   social: [
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/Pool-Builders-Dream-Backyard-Design-Top-Pool-Builders-Free-Consultation.png`, alt: "Pool builders — dream backyard design" },
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/South-Florida-Outdoor-Living-Backyard-Design-Evolution.png`, alt: "Outdoor living — backyard design evolution" },
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/Vacation-Living.png`, alt: "Vacation living lead ad" },
+    { src: `${POOL_LEADS}/transform-your-backyard-pools.jpg`, alt: "Pools & outdoor living ad — Transform your backyard" },
+    { src: `${POOL_LEADS}/your-backyard-reimagined-pools.jpg`, alt: "Pools ad — Your backyard, reimagined" },
+    { src: `${POOL_LEADS}/pools-backyard-post.jpg`, alt: "Pools feed post — modern South Florida backyard" },
+    { src: `${POOL_LEADS}/beautiful-outdoor-spaces.jpg`, alt: "Outdoor spaces ad — Beautiful outdoor spaces, brighter days" },
   ],
 };
 
@@ -42,6 +38,8 @@ const categoryVideo = (file: string, caption: string) => ({
   orientation: "vertical" as const,
 });
 
+const BROWARD_PALM_BEACH_HERO = `${OCT_2026}/hero/biscayne-bay-living-room-hero.jpg`;
+
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
   eyebrow: "05 — Campaign",
@@ -49,7 +47,7 @@ const browardPalmBeach: EditorialChapter = {
   intro:
     "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — pools, kitchens, bathrooms, impact windows, roofing, pavers, pergolas, outdoor kitchens and more. The October 2026 refresh gives every category one editorial look: golden-hour South Florida homes, restrained serif headlines and a short vertical video per category.",
   hero: {
-    src: `${OCT_2026}/hero/biscayne-bay-living-room-hero.jpg`,
+    src: BROWARD_PALM_BEACH_HERO,
     alt: "Waterfront living room at golden hour overlooking Biscayne Bay",
   },
   social: [
@@ -112,7 +110,7 @@ export type ResourceLivingCaseStudyData = {
 };
 
 export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
-  heroImage: browardPalmBeach.hero.src,
+  heroImage: BROWARD_PALM_BEACH_HERO,
   narrative: {
     creativeSystem:
       "A modular design system — consistent typography, color and layout rules — lets every homeowner lead campaign and service category read as part of one trusted publication instead of separate marketing efforts.",

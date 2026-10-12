@@ -101,7 +101,8 @@ export type EditorialChapter = {
   eyebrow: string;
   title: string;
   intro: string;
-  hero: CuratedAsset;
+  /** Optional: a chapter whose source files have no sharp wide image skips the hero instead of upscaling a small one. */
+  hero?: CuratedAsset;
   spotlight?: CuratedAsset & { label: string };
   newsletter?: NewsletterAsset;
   /** A single full-width, natural-aspect visual for a standout tall/wide asset (a system diagram, an oversized mockup) that shouldn't be cropped, shrunk into a square "spotlight" frame, or wrapped in newsletter chrome. Renders at intrinsic aspect ratio with the page owning scroll — no internal scroll trap. */
