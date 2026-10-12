@@ -82,19 +82,21 @@ export default function EditorialChapter({
         </header>
       </Reveal>
 
-      <Reveal>
-        <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
-          <div className="relative aspect-[16/10] sm:aspect-[16/9]">
-            <Image
-              src={chapter.hero.src}
-              alt={chapter.hero.alt}
-              fill
-              sizes="(max-width: 1536px) 92vw, 1440px"
-              className="object-cover"
-            />
+      {chapter.hero && (
+        <Reveal>
+          <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9]">
+              <Image
+                src={chapter.hero.src}
+                alt={chapter.hero.alt}
+                fill
+                sizes="(max-width: 1536px) 92vw, 1440px"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      )}
 
       {chapter.featureVisual && (
         <Reveal>
