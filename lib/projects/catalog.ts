@@ -145,6 +145,22 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
         "The current build-in-public phase: two ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
       priority: 0,
     },
+    "02-belong-brand": {
+      title: "BELONG — Brand Identity",
+      eyebrow: "Brand Identity · 2026",
+      context:
+        "The visual identity for BELONG: a luminous B-and-star symbol, the JUST BELONG lockup and a family of banners built around one line — be seen, find your people, build what matters.",
+      priority: 1,
+    },
+  },
+  "personal-cfo": {
+    "01-brand-identity": {
+      title: "Brand Identity & Launch System",
+      eyebrow: "Identity · Social · Advertising",
+      context:
+        "One identity carried from the logo system to social profiles, a seven-post educational series and launch ads — every piece built on the same navy-and-mint palette and plain-language voice.",
+      priority: 0,
+    },
   },
 };
 
@@ -279,6 +295,27 @@ export const brandCatalog: BrandCopy[] = [
     ],
   },
   {
+    slug: "personal-cfo",
+    title: "Personal CFO",
+    client: "Personal CFO",
+    category: "Brand Identity · Personal Finance",
+    year: "2026",
+    deliverables: ["Brand Identity", "Logo System", "Brand Guidelines", "Social Media", "Advertising", "Profile Design"],
+    cover: { from: "#102A43", to: "#127C70" },
+    excerpt: "A calm, precise identity for a personal-finance app that explains what you own, what you owe and what changed each month — from the P-with-trajectory symbol to social, profiles and launch ads.",
+    services: ["Brand Identity", "Brand Guidelines", "Social Media", "Advertising"],
+    problem: "A personal-finance product needed to feel trustworthy and easy to read for non-experts, without the jargon, hype or alarm common in the category.",
+    strategy: "Build the brand around clarity: a single symbol (the P with a rising trajectory), a navy-and-mint palette checked for contrast, and a plain-language voice that always pairs color with a sign and a word.",
+    solution: "Designed the logo system in horizontal, symbol-only and single-ink versions, a brand manual, social profile covers, a seven-post educational series and launch ads in feed, Story and display formats.",
+    result: "One consistent identity that reads the same on an app icon, a social feed and a display ad.",
+    metrics: [
+      { label: "Industry", value: "Personal Finance" },
+      { label: "Scope", value: "Identity System" },
+      { label: "Channels", value: "Social + Ads" },
+      { label: "Role", value: "Brand Designer" },
+    ],
+  },
+  {
     slug: "stilogroup",
     title: "Stilo Group",
     client: "Stilo Group",
@@ -322,6 +359,7 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "real-group-entertainment",
+    heroImage: "/projects/real-group-entertainment/hero/rge-cover.jpg",
     title: "Real Group Entertainment",
     client: "Real Group Entertainment LLC",
     category: "Venture Studio",

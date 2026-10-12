@@ -8,22 +8,64 @@ export const RESOURCE_LIVING_SLUG = "resource-living";
 const ASSETS = `/projects/${RESOURCE_LIVING_SLUG}`;
 const OCT_2026 = `${ASSETS}/campaigns/06-broward-palm-beach-oct-2026`;
 
-const POOL_LEADS = `${ASSETS}/campaigns/02-pool-leads/social/sep-2026`;
+const POOL_LEADS = `${ASSETS}/campaigns/02-pool-leads/final-2026`;
+const FREE_ESTIMATES = `${ASSETS}/campaigns/07-get-3-free-estimates-2026`;
 
-// No hero or feature visual: the campaign's only wide/tall exports were small
-// files that looked blurry when blown up, so the chapter leads with its sharp
-// 4:5 feed ads instead.
+const verticalVideo = (base: string, file: string, caption: string) => ({
+  src: `${base}/video/${file}.mp4`,
+  poster: `${base}/video/${file}-poster.jpg`,
+  caption,
+  orientation: "vertical" as const,
+});
+
+// Final 2026 pool-builder lead creative. No wide hero exists for this
+// campaign, so the chapter leads with its feed ads and vertical videos.
 const poolLeads: EditorialChapter = {
   slug: "pool-leads",
   eyebrow: "04 — Campaign",
   title: "Pool Leads",
   intro:
-    "A homeowner-facing lead campaign for South Florida pools and outdoor living, pairing resort-style backyard imagery with a direct free-estimates call to action.",
+    "A homeowner-facing lead campaign that connects South Florida homeowners with vetted pool builders, pairing resort-style backyard imagery with a free-consultation and flexible-financing call to action.",
   social: [
-    { src: `${POOL_LEADS}/transform-your-backyard-pools.jpg`, alt: "Pools & outdoor living ad — Transform your backyard" },
-    { src: `${POOL_LEADS}/your-backyard-reimagined-pools.jpg`, alt: "Pools ad — Your backyard, reimagined" },
-    { src: `${POOL_LEADS}/pools-backyard-post.jpg`, alt: "Pools feed post — modern South Florida backyard" },
-    { src: `${POOL_LEADS}/beautiful-outdoor-spaces.jpg`, alt: "Outdoor spaces ad — Beautiful outdoor spaces, brighter days" },
+    { src: `${POOL_LEADS}/social/you-may-qualify-dream-pool.jpg`, alt: "Pool ad — You may qualify to build your dream pool" },
+    { src: `${POOL_LEADS}/social/empty-backyard-to-private-resort.jpg`, alt: "Before-and-after pool ad — From empty backyard to private resort" },
+    { src: `${POOL_LEADS}/social/build-your-dream-backyard.jpg`, alt: "Pool ad — Build your dream backyard" },
+    { src: `${POOL_LEADS}/social/get-matched-pool-builders.jpg`, alt: "Pool ad — Get matched with top pool builders in South Florida" },
+    { src: `${POOL_LEADS}/social/luxury-pools.jpg`, alt: "Luxury Pools campaign post" },
+    { src: `${POOL_LEADS}/social/outdoor-living.jpg`, alt: "Outdoor Living campaign post" },
+    { src: `${POOL_LEADS}/social/every-day-feels-like-vacation.jpg`, alt: "Pool ad — Live where every day feels like vacation" },
+    { src: `${POOL_LEADS}/social/magazine-download.jpg`, alt: "Resource Living magazine download ad" },
+  ],
+  videos: [
+    verticalVideo(POOL_LEADS, "empty-backyard-to-resort", "From empty backyard to private resort."),
+    verticalVideo(POOL_LEADS, "made-for-family", "Made for family, built for memories."),
+    verticalVideo(POOL_LEADS, "get-matched-vacation", "Get matched with top pool builders."),
+  ],
+};
+
+// "Get 3 Free Estimates" Meta lead kit: one feed post and one 6-second reel per
+// service category, all pointing to the same free-estimates offer.
+const freeEstimates: EditorialChapter = {
+  slug: "get-3-free-estimates",
+  eyebrow: "05 — Campaign",
+  title: "Get 3 Free Estimates",
+  intro:
+    "A Meta lead-generation kit for South Florida homeowners: one feed post, Story and 6-second vertical reel per service category, each built around the same offer — compare trusted local professionals and request up to three free estimates.",
+  social: [
+    { src: `${FREE_ESTIMATES}/social/kitchen-post.jpg`, alt: "Kitchen remodeling ad — The kitchen you keep imagining" },
+    { src: `${FREE_ESTIMATES}/social/closets-post.jpg`, alt: "Custom closets ad — Make room for the life you live" },
+    { src: `${FREE_ESTIMATES}/social/garage-post.jpg`, alt: "Garage solutions ad — Reclaim the space you already have" },
+    { src: `${FREE_ESTIMATES}/social/landscaping-post.jpg`, alt: "Landscaping ad — Turn your yard into the view" },
+    { src: `${FREE_ESTIMATES}/social/painting-post.jpg`, alt: "Painting ad — Change the color. Change the feel." },
+    { src: `${FREE_ESTIMATES}/social/pavers-post.jpg`, alt: "Pavers ad — Make every arrival feel impressive" },
+  ],
+  videos: [
+    verticalVideo(FREE_ESTIMATES, "kitchen-reel", "Kitchens — Imagine this as your kitchen."),
+    verticalVideo(FREE_ESTIMATES, "closets-reel", "Closets — Space, designed around you."),
+    verticalVideo(FREE_ESTIMATES, "garage-reel", "Garages — Your garage can do more."),
+    verticalVideo(FREE_ESTIMATES, "landscaping-reel", "Landscaping — Your dream yard starts here."),
+    verticalVideo(FREE_ESTIMATES, "painting-reel", "Painting — A fresh start for every room."),
+    verticalVideo(FREE_ESTIMATES, "pavers-reel", "Pavers — Curb appeal starts here."),
   ],
 };
 
@@ -31,18 +73,13 @@ const poolLeads: EditorialChapter = {
 // segmented into per-category ad sets. October 2026 refresh: a new editorial
 // photo system, typographic category ads and a 3-second vertical video per
 // category. Performance insights get added only once the campaign reports data.
-const categoryVideo = (file: string, caption: string) => ({
-  src: `${OCT_2026}/video/${file}.mp4`,
-  poster: `${OCT_2026}/video/${file}-poster.jpg`,
-  caption,
-  orientation: "vertical" as const,
-});
+const categoryVideo = (file: string, caption: string) => verticalVideo(OCT_2026, file, caption);
 
 const BROWARD_PALM_BEACH_HERO = `${OCT_2026}/hero/biscayne-bay-living-room-hero.jpg`;
 
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
-  eyebrow: "05 — Campaign",
+  eyebrow: "06 — Campaign",
   title: "Broward – Palm Beach Lead Campaign",
   intro:
     "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — pools, kitchens, bathrooms, impact windows, roofing, pavers, pergolas, outdoor kitchens and more. The October 2026 refresh gives every category one editorial look: golden-hour South Florida homes, restrained serif headlines and a short vertical video per category.",
@@ -74,14 +111,14 @@ const browardPalmBeach: EditorialChapter = {
 };
 
 const closingSystem: SectionIntro = {
-  eyebrow: "07 — Closing",
+  eyebrow: "08 — Closing",
   title: "One commercial system, not a set of ads.",
   description:
-    "Resource Living's pool and outdoor-living leads and the Broward–Palm Beach Meta campaign share one creative system and one lead-capture mechanism that extends to any new service category.",
+    "Resource Living's pool leads, the Get 3 Free Estimates kit and the Broward–Palm Beach Meta campaign share one creative system and one lead-capture mechanism that extends to any new service category.",
 };
 
 const socialSection: SectionIntro = {
-  eyebrow: "06 — Organic Content",
+  eyebrow: "07 — Organic Content",
   title: "One editorial look across every category.",
   description: "Organic posts from the October 2026 calendar — the same photography and light that carry the paid campaign, published as the magazine's own feed.",
 };
@@ -120,7 +157,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
     outcome:
       "The campaigns now share one visual and messaging system — a repeatable framework the publication can extend to new service categories without starting from scratch.",
   },
-  chapters: [poolLeads, browardPalmBeach],
+  chapters: [poolLeads, freeEstimates, browardPalmBeach],
   closingSystem,
   socialSection,
   social,
