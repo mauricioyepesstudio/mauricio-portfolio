@@ -8,6 +8,7 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
 import BrandPackaging from "@/components/case-study/BrandPackaging";
+import CampaignIndex from "./CampaignIndex";
 import CampaignChapter from "@/components/case-study/CampaignChapter";
 import SocialEditorial from "@/components/case-study/SocialEditorial";
 import MotionGallery from "@/components/case-study/MotionGallery";
@@ -45,6 +46,7 @@ export default function CaseStudyTemplate({ project, data, previous, next }: Pro
           from={project.cover.from}
           to={project.cover.to}
           inset={data.heroInset}
+          presentation={data.heroPresentation}
         />
 
         <div className="mt-14 grid gap-12 sm:mt-20 lg:grid-cols-3 lg:gap-16">
@@ -74,6 +76,8 @@ export default function CaseStudyTemplate({ project, data, previous, next }: Pro
           result={project.result}
         />
 
+        <CampaignIndex chapters={data.campaigns} />
+
         {data.brandPackaging?.length ? (
           <BrandPackaging items={data.brandPackaging} {...data.brandPackagingCopy} />
         ) : null}
@@ -85,6 +89,8 @@ export default function CaseStudyTemplate({ project, data, previous, next }: Pro
         {data.social?.length ? <SocialEditorial picks={data.social} {...data.socialCopy} /> : null}
 
         {data.motion?.length ? <MotionGallery videos={data.motion} {...data.motionCopy} /> : null}
+
+        {data.downloads?.length ? <section className="mt-20 border-t border-white/10 pt-8"><h2 className="text-2xl text-paper">Brand resources</h2><div className="mt-5 flex flex-wrap gap-4">{data.downloads.map((item) => <a key={item.href} href={item.href} className="inline-flex min-h-11 items-center rounded-lg border border-white/20 px-5 py-3 text-bone hover:border-gold" download>{item.label}</a>)}</div></section> : null}
 
         <ProjectNavigation previous={previous} next={next} />
       </div>

@@ -8,9 +8,8 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
 import BrandPackaging from "@/components/case-study/BrandPackaging";
+import CampaignIndex from "./CampaignIndex";
 import CampaignChapter from "@/components/case-study/CampaignChapter";
-import SocialEditorial from "@/components/case-study/SocialEditorial";
-import MotionGallery from "@/components/case-study/MotionGallery";
 
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
 import type { Brand } from "@/lib/projects/types";
@@ -75,6 +74,8 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
           result={project.result}
         />
 
+        <CampaignIndex chapters={evenfloCaseStudy.campaigns} />
+
         {/* 04 — Brand & Packaging */}
         <BrandPackaging
           items={[...evenfloCaseStudy.brandPackaging]}
@@ -87,12 +88,6 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
         {evenfloCaseStudy.campaigns.map((chapter) => (
           <CampaignChapter key={chapter.slug} chapter={chapter} brand={project.title} />
         ))}
-
-        {/* 08 — Social Campaign System */}
-        <SocialEditorial picks={[...evenfloCaseStudy.social]} eyebrow="08 — Social Campaign System" />
-
-        {/* 09 — Motion */}
-        <MotionGallery videos={[...evenfloCaseStudy.motion]} eyebrow="09 — Motion" />
 
         {/* 10 — Final Navigation / CTA */}
         <ProjectNavigation previous={previous} next={next} />

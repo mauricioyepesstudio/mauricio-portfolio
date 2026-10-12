@@ -19,17 +19,25 @@ import { getProject, getProjects } from "@/lib/projects";
 import { evenfloCaseStudy } from "@/lib/case-studies/evenflo";
 import { RESOURCE_LIVING_SLUG, resourceLivingCaseStudy } from "@/lib/case-studies/resource-living";
 import { microbeauCaseStudy } from "@/lib/case-studies/microbeau";
+import { belongCaseStudy } from "@/lib/case-studies/belong";
+import { personalCfoCaseStudy } from "@/lib/case-studies/personal-cfo";
+import { stiloGroupCaseStudy } from "@/lib/case-studies/stilo-group";
+import { staminaCaseStudy } from "@/lib/case-studies/stamina";
 import { getlostCaseStudy } from "@/lib/case-studies/getlost";
 import type { CaseStudyData } from "@/lib/case-studies/case-study-data";
 
 // Slugs rendered through the generic CaseStudyTemplate + CaseStudyData.
 // "evenflo" and the anonymous home-magazine case are handled separately above via their
 // own bespoke presentation components.
-const CURATED_SLUGS = new Set(["microbeau", "getlost"]);
+const CURATED_SLUGS = new Set(["microbeau", "getlost", "belong", "personal-cfo", "stamina", "stilogroup"]);
 
 const CURATED_DATA: Record<string, CaseStudyData> = {
   microbeau: microbeauCaseStudy,
   getlost: getlostCaseStudy,
+  belong: belongCaseStudy,
+  "personal-cfo": personalCfoCaseStudy,
+  stamina: staminaCaseStudy,
+  stilogroup: stiloGroupCaseStudy,
 };
 
 export function generateStaticParams() {

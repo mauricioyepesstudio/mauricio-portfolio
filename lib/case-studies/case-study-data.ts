@@ -5,6 +5,8 @@ export type SectionCopy = SectionIntro;
 
 export type CaseStudyData = {
   heroImage: string;
+  heroPresentation?: "image" | "logo";
+  downloads?: { href: string; label: string }[];
   /** Optional smaller layered image composited over the main hero for added editorial depth (e.g. a packaging or lifestyle shot). */
   heroInset?: { src: string; alt: string; label?: string };
   campaigns: CampaignChapterData[];

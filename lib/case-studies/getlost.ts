@@ -96,6 +96,7 @@ const newProducts: CampaignChapterData = {
       assets: [{ src: "/projects/getlost/new-products/social/posts/getlost-new-products-post-1.webp", alt: "Get Lost product lineup — bags and packs" }],
     },
   ],
+  videos: [1, 2, 3].map((n) => ({ src: `/projects/getlost/new-products/video/getlost-new-products-video-${n}.mp4`, caption: `Get Lost — new product film ${n}`, orientation: "vertical" })),
   posts: [2, 3, 4, 5, 6].map((n) => ({
     src: `/projects/getlost/new-products/social/posts/getlost-new-products-post-${n}.webp`,
     alt: `Get Lost new product post ${n}`,
@@ -169,6 +170,7 @@ const website: CampaignChapterData = {
 
 export const getlostCaseStudy: CaseStudyData = {
   heroImage: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp",
+  heroPresentation: "logo",
   campaigns: [blackRollingPapers, events, newProducts, packagingAndPrint, website],
   brandPackagingCopy: {
     eyebrow: "01 — Brand Identity",
@@ -184,15 +186,5 @@ export const getlostCaseStudy: CaseStudyData = {
     { asset: { src: "/projects/getlost/brand/icons/getlost-icon-porducts.png", alt: "Get Lost products icon" }, label: "Products", kind: "Identity" },
     { asset: { src: "/projects/getlost/brand/icons/getlost-icon-colaborate.png", alt: "Get Lost collaborate icon" }, label: "Collaborate", kind: "Identity" },
     { asset: { src: "/projects/getlost/brand/icons/getlost-icon-influencers.png", alt: "Get Lost influencers icon" }, label: "Influencers", kind: "Identity" },
-  ],
-  motionCopy: {
-    eyebrow: "07 — Motion",
-    title: "The brand, in motion.",
-  },
-  motion: [
-    { ...blackRollingPapers.videos![0], campaign: "Black Rolling Papers" },
-    { src: "/projects/getlost/new-products/video/getlost-new-products-video-1.mp4", caption: "New Product Drop — Feed Video", campaign: "New Products", orientation: "vertical" },
-    { src: "/projects/getlost/new-products/video/getlost-new-products-video-2.mp4", caption: "New Product Drop — Feed Video", campaign: "New Products", orientation: "vertical" },
-    { src: "/projects/getlost/new-products/video/getlost-new-products-video-3.mp4", caption: "New Product Drop — Feed Video", campaign: "New Products", orientation: "vertical" },
   ],
 };

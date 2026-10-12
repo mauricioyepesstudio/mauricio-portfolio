@@ -36,3 +36,16 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
 - Permiso escrito de Resource Living (mientras tanto, anónimo) y de Laura/1MIGRATION (no se muestra).
 - Remitente propio: requiere dominio nuevo verificado en Resend; luego definir `CONTACT_FROM_EMAIL`.
 - Capturas de EVOLUSA y BELONG (las entrega Mauricio).
+
+
+## Portfolio — actualización 12 octubre 2026
+
+- Campañas agrupadas sin capítulos duplicados; originales se conservan. Beauty in Authenticity y Blonde2Brunette incorporan los ZIP nuevos; Pico Needle se integra en Vertix Pico.
+- Microbeau: Flux Mini Anniversary añadida con originales recuperados. Black Friday se mantiene como campaña propia. Flux X pendiente: no se recibió un ZIP accesible con ese nombre.
+- Evenflo: It’s Raining Gold Ink y Pinker añadidos.
+- GetLost: el ZIP nuevo contiene exactamente las mismas piezas; se reutilizan. Header con logo completo, sin recorte; videos agrupados con su campaña.
+- Nuevos casos: BELONG (lanzamiento, contenido y producto) y Personal CFO (mig.zip: identidad, educación, anuncios, perfiles, manual y kit completo). Stamina se amplía en su URL existente con Hercules y Samson; Stilo Group se amplía en /portfolio/stilogroup.
+- Imágenes de campaña a proporción natural; logos contenidos. Pool Leads conserva las cuatro piezas nítidas y ahora tiene navegación por capítulos.
+- Validación: scripts/qa-curated-campaigns.cjs comprueba capítulos únicos, medios repetidos dentro de cada capítulo y todas las rutas utilizadas.
+
+- Stilo Group: ZIP recibido durante la ejecución; caso de identidad, papelería y presentación de servicios, sin clasificar las láminas como emails.
