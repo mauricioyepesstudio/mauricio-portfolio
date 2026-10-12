@@ -1,3 +1,4 @@
+import CampaignMenu from "./CampaignMenu";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -73,6 +74,8 @@ export default function CaseStudyTemplate({ project, data, previous, next }: Pro
           solution={project.solution}
           result={project.result}
         />
+
+        <CampaignMenu chapters={data.campaigns} />
 
         {data.brandPackaging?.length ? (
           <BrandPackaging items={data.brandPackaging} {...data.brandPackagingCopy} />

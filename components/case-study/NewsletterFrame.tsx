@@ -22,7 +22,7 @@ export default function NewsletterFrame({
 }: NewsletterFrameProps) {
   return (
     <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] sm:rounded-[28px]">
-      <div className="flex items-center gap-3 border-b border-white/10 bg-[#111]/90 px-5 py-4">
+      <div className={`flex items-center gap-3 border-b border-white/10 bg-[#111]/90 px-5 py-4 ${compact ? "min-h-20" : ""}`}>
         <span className="flex gap-1.5" aria-hidden="true">
           <span className="h-2 w-2 rounded-full bg-white/15" />
           <span className="h-2 w-2 rounded-full bg-white/15" />
