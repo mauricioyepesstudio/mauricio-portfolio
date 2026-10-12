@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CaseStudyImage from "./CaseStudyImage";
 import Reveal from "@/components/Reveal";
 import BannerFrame from "@/components/case-study/BannerFrame";
 import NewsletterFrame from "@/components/case-study/NewsletterFrame";
@@ -36,18 +35,18 @@ function BannerGallery({ title, assets }: { title: string; assets: GallerySectio
 function SocialRow({
   title,
   assets,
+  aspect,
   brand,
   emphasis = "standard",
 }: {
   title: string;
   assets: { src: string; alt: string }[];
+  aspect: string;
   brand: string;
   emphasis?: "standard" | "large";
 }) {
   const gridCols =
-    assets.length === 1
-      ? "grid-cols-1 max-w-2xl"
-      : emphasis === "large"
+    emphasis === "large"
       ? "grid-cols-1 sm:grid-cols-2"
       : assets.length > 3
         ? "grid-cols-2 lg:grid-cols-4"
@@ -59,8 +58,14 @@ function SocialRow({
       <div className={`grid gap-4 sm:gap-5 ${gridCols}`}>
         {assets.map((asset, index) => (
           <Reveal key={asset.src} delay={Math.min(index * 0.04, 0.16)}>
-            <figure className="overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:rounded-2xl">
-              <CaseStudyImage src={asset.src} alt={`${asset.alt} — ${brand}`} />
+            <figure className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:rounded-2xl ${aspect}`}>
+              <Image
+                src={asset.src}
+                alt={`${asset.alt} — ${brand}`}
+                fill
+                sizes={emphasis === "large" ? "(max-width: 640px) 92vw, 46vw" : "(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 22vw"}
+                className={`transition-transform duration-700 motion-safe:group-hover:scale-[1.03] ${emphasis === "large" ? "object-contain" : "object-cover"}`}
+              />
             </figure>
           </Reveal>
         ))}
@@ -81,8 +86,8 @@ export default function CampaignChapter({
 
   const socialSection = (chapter.posts?.length || chapter.stories?.length) ? (
     <div className="mb-14 space-y-12 sm:mb-20 sm:space-y-16">
-      {chapter.posts?.length ? <SocialRow title="Social — Feed" assets={chapter.posts} brand={brand} /> : null}
-      {chapter.stories?.length ? <SocialRow title="Social — Stories" assets={chapter.stories} brand={brand} /> : null}
+      {chapter.posts?.length ? <SocialRow title="Social — Feed" assets={chapter.posts} aspect="aspect-[4/5]" brand={brand} /> : null}
+      {chapter.stories?.length ? <SocialRow title="Social — Stories" assets={chapter.stories} aspect="aspect-[9/16]" brand={brand} /> : null}
     </div>
   ) : null;
 
@@ -119,7 +124,15 @@ export default function CampaignChapter({
       {/* Hero */}
       <Reveal>
         <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
-          <CaseStudyImage src={chapter.hero.src} alt={chapter.hero.alt} hero />
+          <div className="relative aspect-[16/9]">
+            <Image
+              src={chapter.hero.src}
+              alt={chapter.hero.alt}
+              fill
+              sizes="(max-width: 1536px) 92vw, 1440px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </Reveal>
 
@@ -199,7 +212,7 @@ export default function CampaignChapter({
           <BannerGallery key={section.title} title={section.title} assets={section.assets} />
         ) : (
           <div key={section.title} className="mb-14 sm:mb-20">
-            <SocialRow title={section.title} assets={section.assets} brand={brand} emphasis={section.emphasis} />
+            <SocialRow title={section.title} assets={section.assets} aspect="aspect-[4/3]" brand={brand} emphasis={section.emphasis} />
           </div>
         ),
       )}

@@ -30,14 +30,14 @@ export default function ProjectCard({
       >
         {/* IMAGE */}
 
-        <div className={`relative aspect-[16/10] overflow-hidden ${project.heroPresentation === "logo" ? "min-h-[340px]" : ""}`}>
+        <div className="relative aspect-[16/10] overflow-hidden">
 
           <MotionImage
             src={project.heroImage}
             alt={project.title}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className={project.heroPresentation === "logo" ? "absolute inset-0 h-full w-full object-contain px-10 pb-[140px] pt-20 sm:px-20" : "absolute inset-0 h-full w-full object-cover"}
+            className="absolute inset-0 h-full w-full object-cover"
             whileHover={{
               scale: 1.08,
             }}
@@ -46,13 +46,13 @@ export default function ProjectCard({
             }}
           />
 
-          {project.heroPresentation !== "logo" && <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
 
           {/* CATEGORY */}
 
-          <div className="absolute left-4 right-20 top-4 sm:left-8 sm:right-28 sm:top-8">
+          <div className="absolute left-4 top-4 sm:left-8 sm:top-8">
 
-            <span className="inline-block max-w-full rounded-full border border-white/20 bg-black/40 px-4 py-2 text-[10px] uppercase leading-5 tracking-[0.16em] text-white backdrop-blur-md sm:text-[11px]">
+            <span className="rounded-full border border-white/20 bg-black/40 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-white backdrop-blur-md">
               {project.category}
             </span>
 

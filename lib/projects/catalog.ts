@@ -149,109 +149,6 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
 };
 
 export const brandCatalog: BrandCopy[] = [
-
-{
-  "slug": "belong",
-  "title": "BELONG",
-  "client": "BELONG",
-  "category": "Brand Identity & Community Platform",
-  "year": "Ongoing",
-  "assetDir": "belong",
-  "heroImage": "/projects/belong/brand/belong-logo-2048.png",
-  "heroPresentation": "logo",
-  "deliverables": [
-    "Brand Identity",
-    "Creative Direction",
-    "Social Campaigns",
-    "Product Design",
-    "Digital Experience"
-  ],
-  "cover": {
-    "from": "#102A43",
-    "to": "#0b0b0b"
-  },
-  "excerpt": "A community identity expressed through social storytelling, channel-specific content and a working digital product.",
-  "services": [
-    "Branding",
-    "Product Design",
-    "Content",
-    "Art Direction"
-  ],
-  "problem": "The project needed a clear identity for belonging, collaboration and trust across its product and communications.",
-  "strategy": "Connect a recognizable brand mark with a concise editorial language and repeatable channel formats.",
-  "solution": "Created the identity, social content system and product presentation across feed, stories, LinkedIn and web.",
-  "result": "A consistent visual foundation connects the brand’s communications with its digital experience.",
-  "metrics": [
-    {
-      "label": "Industry",
-      "value": "Community"
-    },
-    {
-      "label": "Scope",
-      "value": "Brand System"
-    },
-    {
-      "label": "Channels",
-      "value": "Identity + Digital"
-    },
-    {
-      "label": "Role",
-      "value": "Design & Direction"
-    }
-  ]
-},
-{
-  "slug": "personal-cfo",
-  "title": "Personal CFO",
-  "client": "Personal CFO",
-  "category": "Brand Identity & Financial Education",
-  "year": "Ongoing",
-  "assetDir": "personal-cfo",
-  "heroImage": "/projects/personal-cfo/01-logos/logo-horizontal-dark.svg",
-  "heroPresentation": "logo",
-  "deliverables": [
-    "Brand Identity",
-    "Brand Manual",
-    "Educational Content",
-    "Social Templates",
-    "Display Advertising",
-    "Channel Assets"
-  ],
-  "cover": {
-    "from": "#102A43",
-    "to": "#0b0b0b"
-  },
-  "excerpt": "A complete financial-education identity spanning vector logo masters, educational content, campaign ads and channel assets.",
-  "services": [
-    "Branding",
-    "Art Direction",
-    "Campaign Design",
-    "Content Systems"
-  ],
-  "problem": "Financial concepts needed a clear, approachable visual language that could carry illustrative examples without confusing them with personal results.",
-  "strategy": "Build a compact symbol, restrained navy-and-mint palette and a repeatable hierarchy for educational content.",
-  "solution": "Developed the identity, seven educational content concepts in three formats, profile covers, display ads and a documented brand kit.",
-  "result": "One documented system keeps educational content, advertising and channel presentation visually consistent.",
-  "metrics": [
-    {
-      "label": "Industry",
-      "value": "Financial Education"
-    },
-    {
-      "label": "Scope",
-      "value": "Brand System"
-    },
-    {
-      "label": "Channels",
-      "value": "Identity + Digital"
-    },
-    {
-      "label": "Role",
-      "value": "Design & Direction"
-    }
-  ]
-},
-
   {
     // Curated in lib/case-studies/resource-living.ts; raw folder scans stay out.
     slug: "resource-living",
@@ -278,7 +175,6 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "microbeau",
-    heroImage: "/projects/microbeau/flux-mini/hero/microbeau-flux-mini-hero.webp",
     title: "Microbeau",
     client: "Microbeau",
     category: "Product Campaigns & Brand Marketing",
@@ -300,8 +196,6 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "getlost",
-    heroImage: "/projects/getlost/brand/logo/getlost-logo-galaxy.webp",
-    heroPresentation: "logo",
     title: "Get Lost",
     client: "Get Lost",
     category: "Brand Identity, Packaging & Retail",
@@ -323,22 +217,21 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "evenflo",
-    heroImage: "/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-1.jpg",
     title: "Evenflo Colours",
     client: "Evenflo Colours",
     category: "Beauty Product Launches",
     year: "Ongoing",
     deliverables: ["Campaign Direction", "Brand & Packaging Systems", "Social Media", "Email Marketing", "Motion", "Visual Systems"],
     cover: { from: "#5b21b6", to: "#db2777" },
-    excerpt: "A shared beauty campaign system spanning Blonde2Brunette Ink, True Lips, It’s Raining Gold and Pinker across identity, packaging, social, email and motion.",
+    excerpt: "A shared brand system carried across two pigment launches — Blonde2Brunette Ink and True Lips — from identity and packaging through social, email and motion.",
     services: ["Campaign Design", "Brand Systems", "Email", "Social", "Motion"],
-    problem: "Pigment launches and promotions needed distinctive campaign identities while retaining a consistent brand language.",
+    problem: "Two pigment launches, one trade-facing and one consumer-facing, needed their own campaign identity while still reading unmistakably as one Evenflo Colours system.",
     strategy: "Build one shared identity and packaging template, then let each launch express it through its own hero, social and email direction for its specific audience.",
-    solution: "Developed launch and promotional creative across hero imagery, packaging, social feed and stories, email and campaign video.",
-    result: "The launches and promotions share a recognizable visual system while retaining their individual campaign stories.",
+    solution: "Directed the Blonde2Brunette Ink and True Lips launches across hero imagery, packaging, social feed and story content, email and campaign video.",
+    result: "The two launches share one recognizable brand system while still reading as distinct campaigns for their trade and consumer audiences.",
     metrics: [
       { label: "Industry", value: "Beauty" },
-      { label: "Scope", value: "4 Campaigns" },
+      { label: "Scope", value: "2 Campaign Launches" },
       { label: "Audience", value: "PMU Artists" },
       { label: "Role", value: "Senior Designer" },
     ],
@@ -387,9 +280,6 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "stilogroup",
-    assetDir: "stilogroup",
-    heroImage: "/projects/stilogroup/imported-20261012/logo/Artboard 10.jpg",
-    heroPresentation: "logo",
     title: "Stilo Group",
     client: "Stilo Group",
     category: "Architecture & Interior Design",
@@ -453,24 +343,21 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "stamina",
-    assetDir: "stamina",
-    heroImage: "/projects/stamina/identity/hercules-samson-logo.png",
-    heroPresentation: "logo",
-    title: "Hercules & Samson",
-    client: "Hercules & Samson",
+    title: "Hercules",
+    client: "Hot Boutique",
     category: "Packaging Design",
     year: "2021",
     deliverables: ["Packaging Design", "Label Artwork", "Print Production"],
     cover: { from: "#111827", to: "#22C55E" },
-    excerpt: "Two packaging identities, combining the Hercules label-production work with Samson’s illustrated pack presentations and dielines.",
+    excerpt: "Print-ready label artwork for a dietary supplement, produced in two color variants to the manufacturer's exact carton specification.",
     services: ["Packaging Design", "Print Production"],
     problem: "The label artwork needed to fit a converter's exact die-line and regulatory panel requirements across two color variants.",
     strategy: "Work directly within the manufacturer's carton dimensions and required label panels — supplement facts, warnings and barcode — so the art fit without rework at press.",
-    solution: "Produced Hercules label graphics in two colorways and Samson packaging presentations and production dielines.",
-    result: "The original artwork documents two distinct packaging systems and their production requirements.",
+    solution: "Delivered label graphics for the red and green colorways, sized and paneled to the printer's die-line specification.",
+    result: "Print-ready artwork matched to the manufacturer's carton spec for both color variants.",
     metrics: [
       { label: "Category", value: "Supplement Packaging" },
-      { label: "Scope", value: "2 Packaging Systems" },
+      { label: "Variants", value: "2 Colorways" },
       { label: "Deliverable", value: "Print-Ready Label Art" },
       { label: "Role", value: "Packaging Designer" },
     ],

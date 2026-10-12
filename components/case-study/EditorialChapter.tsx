@@ -48,7 +48,7 @@ function SocialGrid({
                   alt={`${asset.alt} — ${brand}`}
                   fill
                   sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 22vw"
-                  className="object-contain transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
                 />
               </div>
             </figure>

@@ -67,7 +67,6 @@ export type Project = {
   category: string;
   year: string;
   heroImage: string;
-  heroPresentation?: "image" | "logo";
   deliverables: string[];
   cover: { from: string; to: string };
   excerpt: string;

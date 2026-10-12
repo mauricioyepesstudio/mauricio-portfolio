@@ -1,7 +1,6 @@
 import "server-only";
 
 import type { CampaignChapterData } from "./types";
-import { fluxMiniAnniversary } from "./microbeau-additions";
 import type { CaseStudyData } from "./case-study-data";
 
 const beautyInAuthenticity: CampaignChapterData = {
@@ -33,37 +32,19 @@ const beautyInAuthenticity: CampaignChapterData = {
     height: 7116,
   },
   posts: [
-  {
-    "src": "/projects/microbeau/beauty-in-authenticity-original/social/beauty-in-authenticity-social-post-ari-schweiger.webp",
-    "alt": "Ari Schweiger — Beauty in Authenticity"
-  },
-  {
-    "src": "/projects/microbeau/beauty-in-authenticity-original/social/Liv-Seidel-Beauty-Beauty.png",
-    "alt": "Liv Seidel — Beauty in Authenticity"
-  },
-  {
-    "src": "/projects/microbeau/beauty-in-authenticity-original/social/Miche-Reeve-Beauty.png",
-    "alt": "Miche Reeve — Beauty in Authenticity"
-  },
-  {
-    "src": "/projects/microbeau/beauty-in-authenticity-original/social/Nora-Stahl-Tattoo.png",
-    "alt": "Nora Stahl — Beauty in Authenticity"
-  }
-],
-  stories: [
-  {
-    "src": "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png",
-    "alt": "Ari Schweiger — artist story"
-  },
-  {
-    "src": "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Liv-Seidel-Beauty-Authentic-Beauty.png",
-    "alt": "Liv Seidel — artist story"
-  },
-  {
-    "src": "/projects/microbeau/beauty-in-authenticity-original/social/Miche-Reeve-Beauty-Tattoo.png",
-    "alt": "Miche Reeve — artist story"
-  }
-],
+    ...[1, 2, 3, 4].map((n) => ({
+      src: `/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-${n}.jpg`,
+      alt: `Beauty in Authenticity social feed post ${n}`,
+    })),
+    // Real additional artist portraits from the same campaign's legacy asset
+    // folder — strengthens the portrait storytelling the chapter is meant to lead with.
+    { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png", alt: "Beauty in Authenticity — Ari Schweiger portrait" },
+    { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Liv-Seidel-Beauty-Authentic-Beauty.png", alt: "Beauty in Authenticity — Liv Seidel portrait" },
+  ],
+  stories: [1, 2, 3].map((n) => ({
+    src: `/projects/microbeau/beauty-in-authenticity/social/stories/microbeau-beauty-in-authenticity-story-${n}.jpg`,
+    alt: `Beauty in Authenticity social story ${n}`,
+  })),
   videos: [
     {
       src: "/projects/microbeau/beauty-in-authenticity/video/microbeau-beauty-in-authenticity-video.mp4",
@@ -81,14 +62,14 @@ const beautyInAuthenticity: CampaignChapterData = {
 const vertixPico: CampaignChapterData = {
   slug: "vertix-pico",
   eyebrow: "06 — Campaign",
-  title: "Pico Needle — Vertix Pico",
+  title: "Vertix Pico",
   intro:
-    "A precision-focused cartridge campaign translating needle configurations into clear product education, application creative and a coordinated email system for working artists.",
+    "A precision-focused product launch for the Vertix Pico machine, translating a technical feature set into a clean hero, packaging and configuration story for working artists.",
   // Promoted from the banner gallery: the widest, cleanest single asset in the
   // campaign (macro hand shot + cartridge box + logo), stronger than the
   // original hero for opening the chapter at full width.
   hero: {
-    src: "/projects/microbeau/pico-needle/banner/Vertix-Membrane-Cartridges.png",
+    src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-1.jpg",
     alt: "Vertix Pico campaign key visual — cartridge box, needle detail and application macro — Microbeau",
   },
   logo: {
@@ -110,30 +91,14 @@ const vertixPico: CampaignChapterData = {
     width: 600,
     height: 3188,
   },
-  posts: [
-  {
-    "src": "/projects/microbeau/pico-needle/social/Microbeau-Vertix-Pico-Round-Shader-Curved-Magnum.png",
-    "alt": "Vertix Pico — round shader and curved magnum"
-  },
-  {
-    "src": "/projects/microbeau/pico-needle/social/Microbeau-PICO-Color-Shade-Round-Shader.png",
-    "alt": "Vertix Pico — color and shade"
-  }
-],
-  stories: [
-  {
-    "src": "/projects/microbeau/pico-needle/social/Tattoo-Supplies-Pico-Round-Shader-Curved-Magnum-Supplies.png",
-    "alt": "Vertix Pico — cartridge configuration story"
-  },
-  {
-    "src": "/projects/microbeau/pico-needle/social/Precision-Instruments-Pixel-Perfect-Clean-Lines-Curved-Magnum-025mm.png",
-    "alt": "Vertix Pico — clean lines story"
-  },
-  {
-    "src": "/projects/microbeau/pico-needle/social/Microbeau-Vertix-Pico-Needles-Taper-Shaders-Magnums.png",
-    "alt": "Vertix Pico — needle selection story"
-  }
-],
+  posts: [1, 2, 3, 4].map((n) => ({
+    src: `/projects/microbeau/vertix-pico/social/posts/microbeau-vertix-pico-post-${n}.jpg`,
+    alt: `Vertix Pico social feed post ${n}`,
+  })),
+  stories: [1, 2, 3].map((n) => ({
+    src: `/projects/microbeau/vertix-pico/social/stories/microbeau-vertix-pico-story-${n}.jpg`,
+    alt: `Vertix Pico social story ${n}`,
+  })),
   videos: [
     {
       src: "/projects/microbeau/vertix-pico/video/microbeau-vertix-pico-video.mp4",
@@ -270,7 +235,7 @@ const fluxMax: CampaignChapterData = {
 const killSwitch: CampaignChapterData = {
   slug: "kill-switch",
   eyebrow: "10 — Campaign",
-  title: "Black Friday — Kill Switch",
+  title: "Kill Switch — Black Friday",
   intro:
     "A high-contrast promotional push for the brand's Black Friday moment, built for speed — a single hero and email paired with a fast-moving story sequence.",
   // Swapped from a neon text-only card to the real three-colorway product
@@ -298,10 +263,10 @@ export const microbeauCaseStudy: CaseStudyData = {
   // asset has "Beauty in Authenticity" script typography baked into the JPEG,
   // which collided with the page's own ProjectHero title rendered on top of it.
   heroImage: "/projects/microbeau/flux-mini/hero/microbeau-flux-mini-hero.webp",
-  campaigns: [beautyInAuthenticity, vertixPico, kickstartVertix, fluxMini, fluxMiniAnniversary, fluxMax, killSwitch],
+  campaigns: [beautyInAuthenticity, vertixPico, kickstartVertix, fluxMini, fluxMax, killSwitch],
   brandPackagingCopy: {
     eyebrow: "04 — Brand System",
-    title: "Distinct campaigns, one recognizable system.",
+    title: "Six launches, one recognizable system.",
     description:
       "Every Microbeau campaign — from flagship product launches to fast-moving promotions — shares one identity language and packaging template, adapted for its own audience and moment.",
   },
@@ -314,4 +279,24 @@ export const microbeauCaseStudy: CaseStudyData = {
     { asset: beautyInAuthenticity.packaging!, label: "Beauty in Authenticity", kind: "Packaging" },
     { asset: vertixPico.packaging!, label: "Vertix Pico", kind: "Packaging" },
   ],
+  socialCopy: {
+    eyebrow: "11 — Social Campaign System",
+    title: "Six campaigns, one editorial sequence.",
+    description: "The strongest feed and story executions across every launch, curated side by side rather than shown as a full export dump.",
+  },
+  social: [
+    { ...beautyInAuthenticity.stories![0], campaign: "Beauty in Authenticity", size: "feature" },
+    { ...vertixPico.posts![0], campaign: "Vertix Pico", size: "support" },
+    { ...kickstartVertix.stories![0], campaign: "Kickstart Vertix", size: "tall" },
+    { ...fluxMini.posts![1], campaign: "Flux Mini", size: "support" },
+    { ...killSwitch.stories![0], campaign: "Kill Switch", size: "support" },
+    { ...beautyInAuthenticity.posts![1], campaign: "Beauty in Authenticity", size: "support" },
+    { ...vertixPico.stories![0], campaign: "Vertix Pico", size: "tall" },
+    { ...kickstartVertix.posts![0], campaign: "Kickstart Vertix", size: "support" },
+  ],
+  motionCopy: {
+    eyebrow: "12 — Motion",
+    title: "Product stories, in motion.",
+  },
+  motion: [beautyInAuthenticity, vertixPico, fluxMini].flatMap((c) => c.videos!.map((v) => ({ ...v, campaign: c.title }))),
 };

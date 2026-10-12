@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import path from "node:path";
-import { probeDimensions } from "@/lib/projects/probe-media";
 
 type HeroInset = {
   src: string;
@@ -19,7 +17,6 @@ type ProjectHeroProps = {
   to: string;
   /** Optional smaller layered image (e.g. packaging or lifestyle shot) composited over the main hero for added editorial depth. */
   inset?: HeroInset;
-  presentation?: "image" | "logo";
 };
 
 export default function ProjectHero({
@@ -31,40 +28,30 @@ export default function ProjectHero({
   from,
   to,
   inset,
-  presentation = "image",
 }: ProjectHeroProps) {
-  const dimensions = image && presentation === "logo"
-    ? probeDimensions(path.join(process.cwd(), "public", decodeURIComponent(image)), path.extname(image)) ?? { width: 1000, height: 600 }
-    : { width: 1000, height: 600 };
   return (
     <Reveal delay={0.1}>
       <section className="mt-4 sm:mt-8 md:mt-12">
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[36px]">
 
-          <div className={presentation === "logo" ? "relative min-h-[560px] sm:min-h-[620px]" : "relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]"}>
+          <div className="relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]">
 
             {image ? (
               <>
-                {presentation === "logo" ? (
-                  <div className="relative mx-8 mt-10 flex h-[150px] items-center justify-center sm:mx-16 sm:h-[230px]">
-                    <Image src={image} alt={title} width={dimensions.width} height={dimensions.height} priority
-                      sizes="(max-width: 640px) 75vw, 700px" className="h-full w-auto max-w-full object-contain"
-                      style={{ maxWidth: image.endsWith(".svg") ? undefined : dimensions.width }} />
-                  </div>
-                ) : <Image
+                <Image
                   src={image}
                   alt={title}
                   fill
                   priority
                   sizes="100vw"
                   className="object-cover"
-                />}
+                />
 
-                {presentation !== "logo" && <div className="absolute inset-0 bg-black/35" />}
+                <div className="absolute inset-0 bg-black/35" />
 
-                {presentation !== "logo" && <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-                {presentation !== "logo" && <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
 
                 {inset && (
                   <div className="absolute right-4 top-4 w-24 overflow-hidden rounded-lg border border-white/20 shadow-2xl shadow-black/50 sm:right-8 sm:top-8 sm:w-40 sm:rounded-xl md:right-12 md:top-12 md:w-52 lg:w-60">
@@ -95,7 +82,7 @@ export default function ProjectHero({
               />
             )}
 
-            <div className={presentation === "logo" ? "relative mt-6 p-5 sm:p-8 md:p-14 xl:p-20" : "absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20"}>
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20">
 
               <div className="max-w-5xl">
 
