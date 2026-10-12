@@ -99,7 +99,6 @@ const vertixPico: CampaignChapterData = {
     alt: "Vertix Pico packaging mockup",
   },
   banners: [
-    { src: "/projects/microbeau/vertix-pico/hero/microbeau-vertix-pico-hero.jpg", alt: "Vertix Pico application macro — hand, needle and ink tube" },
     { src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-2.jpg", alt: "Vertix Pico web banner 2" },
   ],
   newsletter: {
