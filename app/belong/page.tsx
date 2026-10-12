@@ -47,15 +47,34 @@ const pillars = [
   },
 ];
 
+const BRAND = "/projects/real-group-entertainment/campaigns/02-belong-brand";
+
+const brandMarks = [
+  { src: `${BRAND}/identity/just-belong-logo.jpg`, alt: "JUST BELONG logo lockup with tagline" },
+  { src: `${BRAND}/identity/belong-b-mark.jpg`, alt: "BELONG B symbol with star" },
+  { src: `${BRAND}/social/belong-star-mark.jpg`, alt: "BELONG crescent star mark" },
+];
+
+const brandBanners = [
+  { src: `${BRAND}/hero/belong-community-banner.jpg`, alt: "BELONG banner — Be seen. Find your people. Build what matters.", width: 1600, height: 607 },
+  { src: `${BRAND}/social/we-all-belong-banner.jpg`, alt: "BELONG banner — We all belong", width: 1600, height: 609 },
+  { src: `${BRAND}/social/just-belong-banner.jpg`, alt: "JUST BELONG banner with light trails", width: 1600, height: 608 },
+  { src: `${BRAND}/social/different-stories-banner.jpg`, alt: "BELONG banner — Different stories, shared humanity", width: 1600, height: 608 },
+];
+
 export default function BelongPage() {
   return (
     <div className="pb-24 pt-28 sm:pt-36 md:pb-32 md:pt-40">
       <div className="container-px mx-auto max-w-content">
         <Reveal>
           <div className="flex items-center gap-4 mb-6">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7c3aed] text-2xl font-bold text-white">
-              B
-            </span>
+            <Image
+              src={`${BRAND}/identity/belong-b-mark.jpg`}
+              alt="BELONG B symbol"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-2xl object-cover"
+            />
             <p className="eyebrow">BELONG — Live</p>
           </div>
 
@@ -104,6 +123,52 @@ export default function BelongPage() {
               product ships in public: what you see today is real, running
               product, not a mockup.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.12}>
+          <div className="mt-20 border-t border-line pt-10">
+            <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
+              Brand Identity
+            </p>
+            <div className="grid grid-cols-3 gap-3 sm:gap-6">
+              {brandMarks.map((mark) => (
+                <div key={mark.src} className="overflow-hidden rounded-xl border border-line">
+                  <Image
+                    src={mark.src}
+                    alt={mark.alt}
+                    width={1254}
+                    height={1254}
+                    sizes="(max-width: 640px) 31vw, 30vw"
+                    className="aspect-square w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 grid gap-3 sm:mt-6 sm:gap-6 lg:grid-cols-2">
+              {brandBanners.map((banner) => (
+                <div key={banner.src} className="overflow-hidden rounded-xl border border-line">
+                  <Image
+                    src={banner.src}
+                    alt={banner.alt}
+                    width={banner.width}
+                    height={banner.height}
+                    sizes="(max-width: 1024px) 92vw, 46vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 overflow-hidden rounded-xl border border-line sm:mt-6">
+              <Image
+                src={`${BRAND}/social/belong-event-scene.jpg`}
+                alt="BELONG community gathering concept with the illuminated B mark"
+                width={1600}
+                height={900}
+                sizes="(max-width: 1536px) 92vw, 1440px"
+                className="h-auto w-full"
+              />
+            </div>
           </div>
         </Reveal>
 
