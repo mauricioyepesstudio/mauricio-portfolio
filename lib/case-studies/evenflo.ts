@@ -1,6 +1,6 @@
 import "server-only";
 
-import type { CampaignChapterData, SocialPick } from "./types";
+import type { CampaignChapterData } from "./types";
 
 // 05 — Campaign. Leads with the packaging render (real product photography)
 // instead of the flat title-card hero; the color-swatch grid gets its own
@@ -38,14 +38,34 @@ const b2b: CampaignChapterData = {
       ],
     },
   ],
-  posts: [2, 3, 4].map((n) => ({
-    src: `/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-${n}.jpg`,
-    alt: `Blonde2Brunette Ink social feed post ${n}`,
-  })),
-  stories: [2, 3].map((n) => ({
-    src: `/projects/evenflo/blonde-to-brunette-campaign/social/stories/evenflo-b2b-social-story-${n}.jpg`,
-    alt: `Blonde2Brunette Ink social story ${n}`,
-  })),
+  posts: [
+  {
+    "src": "/projects/evenflo/blonde-to-brunette-original/social/Evenflo EU Blonde 2 Brunette Launch  Post 2.png",
+    "alt": "Blonde2Brunette — EU launch feed creative"
+  },
+  {
+    "src": "/projects/evenflo/blonde-to-brunette-original/social/Evenflo-Colours-Blonde2-Brunette-New-EU-Reach-Hybrid.png",
+    "alt": "Blonde2Brunette — hybrid formula feed creative"
+  },
+  {
+    "src": "/projects/evenflo/campaigns/01-blonde-to-brunette-ink/social/Evenflo-Colours-Blonde2-Brunette.png",
+    "alt": "Blonde2Brunette — collection feed creative"
+  }
+],
+  stories: [
+  {
+    "src": "/projects/evenflo/blonde-to-brunette-original/social/Evenflo EU Blonde 2 Brunette Launch Story 1.png",
+    "alt": "Blonde2Brunette — EU launch story"
+  },
+  {
+    "src": "/projects/evenflo/blonde-to-brunette-original/social/Evenflo EU Blonde 2 Brunette Launch Story 3.png",
+    "alt": "Blonde2Brunette — supporting launch story"
+  },
+  {
+    "src": "/projects/evenflo/blonde-to-brunette-original/social/Evenflo-Colours-Blonde-2-Brunette-Hybrid-Formula-Pigment.png",
+    "alt": "Blonde2Brunette — pigment education story"
+  }
+],
   videos: [
     {
       src: "/projects/evenflo/blonde-to-brunette-campaign/video/evenflo-b2b-campaign-video.mp4",
@@ -112,58 +132,67 @@ const trueLips: CampaignChapterData = {
   ],
 };
 
-// 07 — System Recap. A deliberately concise synthesis chapter — proves the
-// same creative system (photography concept, packaging language, color
-// education) carried across both real launches, using only assets already
-// established elsewhere on the page. No new social/newsletter content here
-// by design; this is a summary beat, not another gallery.
-const systemRecap: CampaignChapterData = {
-  slug: "campaign-system",
-  eyebrow: "07 — System Recap",
-  title: "One System, Two Launches",
-  intro:
-    "One creative system — model-led photography, a shared packaging language and consistent color-swatch education — carried across two real product launches without repeating itself.",
-  hero: {
-    src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg",
-    alt: "True Lips packaging — Evenflo",
+const gold: CampaignChapterData = {
+  "slug": "its-raining-gold",
+  "eyebrow": "07 — Campaign",
+  "title": "It’s Raining Gold Ink",
+  "intro": "A Gold collection promotion pairing a distinct key visual with sets-and-singles creative, social stories and a supporting email.",
+  "hero": {
+    "src": "/projects/evenflo/campaigns/02-its-raining-gold-ink/hero/Gold-Promotion.png",
+    "alt": "It’s Raining Gold — campaign key visual"
   },
-  gallery: [
+  "posts": [
     {
-      title: "One Identity, Two Color Lines",
-      emphasis: "large",
-      assets: [
-        { src: "/projects/evenflo/blonde-to-brunette-campaign/logo/evenflo-b2b-logo.jpg", alt: "Blonde2Brunette Ink campaign logo lockup" },
-        { src: "/projects/evenflo/true-lips-campaign/logo/evenflo-true-lips-logo.jpg", alt: "True Lips campaign logo lockup" },
-      ],
+      "src": "/projects/evenflo/its-raining-gold/social/653ed1180409579.650a5cde67c7e.png",
+      "alt": "Gold collection — feed creative"
     },
-  ],
-  videos: [
     {
-      src: "/projects/evenflo/blonde-to-brunette-campaign/video/evenflo-b2b-campaign-video-2.mp4",
-      caption: "Blonde2Brunette Ink — Social Cutdown",
-      orientation: "landscape",
-    },
+      "src": "/projects/evenflo/its-raining-gold/social/Microbeau-Brow-Daddy-Gold-Collection-Sets-Singles.png",
+      "alt": "Gold collection — feed creative"
+    }
   ],
+  "stories": [
+    {
+      "src": "/projects/evenflo/its-raining-gold/social/441f48180409579.650a5cdede208.png",
+      "alt": "Gold collection — story creative"
+    },
+    {
+      "src": "/projects/evenflo/campaigns/02-its-raining-gold-ink/social/Brow-Daddy-Gold-Collection-Sets-Singles-20-Off.png",
+      "alt": "Gold collection — story creative"
+    }
+  ],
+  "newsletter": {
+    "src": "/projects/evenflo/its-raining-gold/newsletter/Brow-Daddy-Birthday-Sale-SMS-Machines-Cartridges.png",
+    "alt": "Gold collection promotion email",
+    "note": "Promotional email",
+    "width": 600,
+    "height": 3214
+  }
+};
+const pinker: CampaignChapterData = {
+  "slug": "pinker",
+  "eyebrow": "08 — Campaign",
+  "title": "Pinker Ink",
+  "intro": "A dedicated launch visual and product-education creative for the Pinker pigment line.",
+  "hero": {
+    "src": "/projects/evenflo/campaigns/03-pinker-ink/hero/Evenflo-Intensify-Cool-Shades-Lip-Blends.png",
+    "alt": "Pinker — campaign key visual"
+  },
+  "posts": [
+    {
+      "src": "/projects/evenflo/campaigns/03-pinker-ink/social/Microbeau-Lip-Blends-Cool-Shades-Evenflo-Pinker.png",
+      "alt": "Pinker — pigment collection creative"
+    }
+  ]
 };
 
 export const evenfloCaseStudy = {
   heroImage: "/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-1.jpg",
-  campaigns: [b2b, trueLips, systemRecap] as const,
+  campaigns: [b2b, trueLips, gold, pinker] as const,
   brandPackaging: [
     { asset: b2b.logo!, label: "Blonde2Brunette Ink", kind: "Identity" },
     { asset: trueLips.logo!, label: "True Lips", kind: "Identity" },
     { asset: { src: "/projects/evenflo/blonde-to-brunette-campaign/packaging/evenflo-b2b-packaging-mockup.jpg", alt: "Blonde2Brunette Ink packaging mockup" }, label: "Blonde2Brunette Ink", kind: "Packaging" },
     { asset: { src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg", alt: "True Lips packaging mockup" }, label: "True Lips", kind: "Packaging" },
   ],
-  social: [
-    { ...trueLips.stories![0], campaign: "True Lips", size: "feature" },
-    { ...b2b.posts![0], campaign: "Blonde2Brunette Ink", size: "support" },
-    { ...b2b.stories![0], campaign: "Blonde2Brunette Ink", size: "tall" },
-    { ...trueLips.posts![0], campaign: "True Lips", size: "support" },
-    { ...trueLips.posts![1], campaign: "True Lips", size: "support" },
-    { ...b2b.posts![1], campaign: "Blonde2Brunette Ink", size: "support" },
-    { ...trueLips.stories![1], campaign: "True Lips", size: "tall" },
-    { ...b2b.posts![2], campaign: "Blonde2Brunette Ink", size: "support" },
-  ] satisfies SocialPick[],
-  motion: [b2b, trueLips, systemRecap].flatMap((c) => c.videos!.map((v) => ({ ...v, campaign: c.title }))),
 };

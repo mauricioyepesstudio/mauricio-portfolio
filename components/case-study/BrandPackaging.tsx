@@ -14,7 +14,7 @@ function Tile({ item, index }: { item: Item; index: number }) {
             alt={item.asset.alt}
             fill
             sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 22vw"
-            className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
+            className="object-contain p-4 transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
           />
         </div>
         <figcaption className="flex items-center justify-between border-t border-white/10 px-5 py-4">

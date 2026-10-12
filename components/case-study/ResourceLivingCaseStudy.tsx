@@ -7,6 +7,7 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 import Reveal from "@/components/Reveal";
 
 import CaseStudySectionHeader from "@/components/case-study/CaseStudySectionHeader";
+import CampaignIndex from "./CampaignIndex";
 import EditorialChapter from "@/components/case-study/EditorialChapter";
 import ResourceLivingOverview from "@/components/case-study/ResourceLivingOverview";
 import SocialEditorialGrid from "@/components/case-study/SocialEditorialGrid";
@@ -74,6 +75,8 @@ export default function ResourceLivingCaseStudy({ project, previous, next }: Pro
           channels={study.narrative.channels}
           outcome={study.narrative.outcome}
         />
+
+        <CampaignIndex chapters={study.chapters} />
 
         {study.chapters.map((chapter) => (
           <EditorialChapter key={chapter.slug} chapter={chapter} brand={project.title} />
