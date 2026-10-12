@@ -91,19 +91,25 @@ export default function CampaignChapter({
     </div>
   ) : null;
 
-  const newsletterSection = chapter.newsletter ? (
+  const newsletters = chapter.newsletter ? [chapter.newsletter, ...(chapter.extraNewsletters ?? [])] : [];
+  const newsletterSection = newsletters.length ? (
     <div className="mb-14 sm:mb-20">
       <SectionLabel title="Email & Newsletter" />
-      <Reveal>
-        <NewsletterFrame
-          src={chapter.newsletter.src}
-          alt={chapter.newsletter.alt}
-          note={chapter.newsletter.note}
-          campaign={chapter.title}
-          width={chapter.newsletter.width}
-          height={chapter.newsletter.height}
-        />
-      </Reveal>
+      <div className={newsletters.length > 1 ? "grid items-start gap-6 md:grid-cols-2 sm:gap-8" : ""}>
+        {newsletters.map((item, index) => (
+          <Reveal key={item.src} delay={Math.min(index * 0.05, 0.1)}>
+            <NewsletterFrame
+              src={item.src}
+              alt={item.alt}
+              note={item.note}
+              campaign={chapter.title}
+              width={item.width}
+              height={item.height}
+              compact={newsletters.length > 1}
+            />
+          </Reveal>
+        ))}
+      </div>
     </div>
   ) : null;
 
@@ -124,13 +130,13 @@ export default function CampaignChapter({
       {/* Hero */}
       <Reveal>
         <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
-          <div className="relative aspect-[16/9]">
+          <div className={`relative aspect-[16/9] ${chapter.heroFit === "contain" ? "bg-[#0a0a0a]" : ""}`}>
             <Image
               src={chapter.hero.src}
               alt={chapter.hero.alt}
               fill
               sizes="(max-width: 1536px) 92vw, 1440px"
-              className="object-cover"
+              className={chapter.heroFit === "contain" ? "object-contain" : "object-cover"}
             />
           </div>
         </div>

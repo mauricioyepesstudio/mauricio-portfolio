@@ -95,6 +95,14 @@ const newProducts: CampaignChapterData = {
       emphasis: "large",
       assets: [{ src: "/projects/getlost/new-products/social/posts/getlost-new-products-post-1.webp", alt: "Get Lost product lineup — bags and packs" }],
     },
+    {
+      title: "Water Pipe Gift Set — Alternate Artwork",
+      emphasis: "large",
+      assets: [
+        { src: "/projects/getlost/new-products/social/posts/getlost-new-products-post-7.webp", alt: "Get Lost water pipe gift set 8-in-1 — desert artwork" },
+        { src: "/projects/getlost/new-products/social/posts/getlost-new-products-post-8.webp", alt: "Get Lost water pipe gift set 8-in-1 — alien artwork" },
+      ],
+    },
   ],
   posts: [2, 3, 4, 5, 6].map((n) => ({
     src: `/projects/getlost/new-products/social/posts/getlost-new-products-post-${n}.webp`,

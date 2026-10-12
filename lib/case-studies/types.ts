@@ -40,6 +40,8 @@ export type CampaignChapterData = {
   title: string;
   intro: string;
   hero: CuratedAsset;
+  /** "contain" shows the hero uncropped inside the 16:9 panel — for square/portrait or non-16:9 key visuals that would lose content under the default "cover" crop. */
+  heroFit?: "cover" | "contain";
   logo?: CuratedAsset;
   packaging?: CuratedAsset;
   /** Horizontal web/display ad creative — always rendered full content width, uncropped. */
@@ -47,6 +49,8 @@ export type CampaignChapterData = {
   posts?: CuratedAsset[];
   stories?: CuratedAsset[];
   newsletter?: NewsletterAsset;
+  /** Additional emails from the same campaign. Shown side by side with `newsletter` (two columns on desktop, native width). */
+  extraNewsletters?: NewsletterAsset[];
   /** Website/landing-page screenshots. First item renders as the large scrollable frame; any additional items render as smaller supporting shots (e.g. a mobile view) below it. */
   website?: WebsiteAsset[];
   videos?: CampaignVideo[];

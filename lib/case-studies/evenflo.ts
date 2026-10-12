@@ -42,7 +42,7 @@ const b2b: CampaignChapterData = {
     src: `/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-${n}.jpg`,
     alt: `Blonde2Brunette Ink social feed post ${n}`,
   })),
-  stories: [2, 3].map((n) => ({
+  stories: [2, 3, 4].map((n) => ({
     src: `/projects/evenflo/blonde-to-brunette-campaign/social/stories/evenflo-b2b-social-story-${n}.jpg`,
     alt: `Blonde2Brunette Ink social story ${n}`,
   })),
@@ -112,14 +112,45 @@ const trueLips: CampaignChapterData = {
   ],
 };
 
-// 07 — System Recap. A deliberately concise synthesis chapter — proves the
+// 07 — Campaign. A short promotional chapter: the "It's Raining Gold" key
+// visual leads uncropped, followed by the 24-hour birthday sale and the Brow
+// Daddy Gold Collection offer across feed, story and email.
+const rainingGold: CampaignChapterData = {
+  slug: "its-raining-gold-ink",
+  eyebrow: "07 — Campaign",
+  title: "It's Raining Gold Ink",
+  intro:
+    "A gold-themed promotional campaign for the Brow Daddy Gold Collection — a floating-bottle key visual, a 24-hour birthday sale and a single clear offer carried through feed, story and email.",
+  hero: {
+    src: "/projects/evenflo/campaigns/02-its-raining-gold-ink/hero/Gold-Promotion.png",
+    alt: "It's Raining Gold Ink key visual — floating gold pigment bottles",
+  },
+  heroFit: "contain",
+  newsletter: {
+    src: "/projects/evenflo/its-raining-gold-ink-campaign/newsletter/evenflo-its-raining-gold-ink-newsletter.jpg",
+    alt: "Brow Daddy birthday sale email — machines and cartridges",
+    note: "Birthday Sale Email",
+    width: 600,
+    height: 3214,
+  },
+  posts: [1, 2].map((n) => ({
+    src: `/projects/evenflo/its-raining-gold-ink-campaign/social/posts/evenflo-its-raining-gold-ink-post-${n}.jpg`,
+    alt: n === 1 ? "Brow Daddy 24-hour birthday sale feed post" : "It's Raining Gold — Gold Collection 20% off feed post",
+  })),
+  stories: [
+    { src: "/projects/evenflo/its-raining-gold-ink-campaign/social/stories/evenflo-its-raining-gold-ink-story-1.jpg", alt: "Brow Daddy 24-hour birthday sale story" },
+    { src: "/projects/evenflo/campaigns/02-its-raining-gold-ink/social/Brow-Daddy-Gold-Collection-Sets-Singles-20-Off.png", alt: "It's Raining Gold — Gold Collection 20% off story" },
+  ],
+};
+
+// 08 — System Recap. A deliberately concise synthesis chapter — proves the
 // same creative system (photography concept, packaging language, color
 // education) carried across both real launches, using only assets already
 // established elsewhere on the page. No new social/newsletter content here
 // by design; this is a summary beat, not another gallery.
 const systemRecap: CampaignChapterData = {
   slug: "campaign-system",
-  eyebrow: "07 — System Recap",
+  eyebrow: "08 — System Recap",
   title: "One System, Two Launches",
   intro:
     "One creative system — model-led photography, a shared packaging language and consistent color-swatch education — carried across two real product launches without repeating itself.",
@@ -148,7 +179,7 @@ const systemRecap: CampaignChapterData = {
 
 export const evenfloCaseStudy = {
   heroImage: "/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-1.jpg",
-  campaigns: [b2b, trueLips, systemRecap] as const,
+  campaigns: [b2b, trueLips, rainingGold, systemRecap] as const,
   brandPackaging: [
     { asset: b2b.logo!, label: "Blonde2Brunette Ink", kind: "Identity" },
     { asset: trueLips.logo!, label: "True Lips", kind: "Identity" },
@@ -165,5 +196,5 @@ export const evenfloCaseStudy = {
     { ...trueLips.stories![1], campaign: "True Lips", size: "tall" },
     { ...b2b.posts![2], campaign: "Blonde2Brunette Ink", size: "support" },
   ] satisfies SocialPick[],
-  motion: [b2b, trueLips, systemRecap].flatMap((c) => c.videos!.map((v) => ({ ...v, campaign: c.title }))),
+  motion: [b2b, trueLips, rainingGold, systemRecap].flatMap((c) => (c.videos ?? []).map((v) => ({ ...v, campaign: c.title }))),
 };
