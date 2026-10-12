@@ -41,12 +41,12 @@ export default function ProjectHero({
       <section className="mt-4 sm:mt-8 md:mt-12">
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[36px]">
 
-          <div className="relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]">
+          <div className={presentation === "logo" ? "relative min-h-[560px] sm:min-h-[620px]" : "relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]"}>
 
             {image ? (
               <>
                 {presentation === "logo" ? (
-                  <div className="absolute inset-x-8 top-10 flex h-[150px] items-center justify-center sm:inset-x-16 sm:h-[230px]">
+                  <div className="relative mx-8 mt-10 flex h-[150px] items-center justify-center sm:mx-16 sm:h-[230px]">
                     <Image src={image} alt={title} width={dimensions.width} height={dimensions.height} priority
                       sizes="(max-width: 640px) 75vw, 700px" className="h-full w-auto max-w-full object-contain"
                       style={{ maxWidth: image.endsWith(".svg") ? undefined : dimensions.width }} />
@@ -95,7 +95,7 @@ export default function ProjectHero({
               />
             )}
 
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20">
+            <div className={presentation === "logo" ? "relative mt-6 p-5 sm:p-8 md:p-14 xl:p-20" : "absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20"}>
 
               <div className="max-w-5xl">
 

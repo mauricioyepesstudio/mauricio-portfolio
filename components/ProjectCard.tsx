@@ -30,14 +30,14 @@ export default function ProjectCard({
       >
         {/* IMAGE */}
 
-        <div className={`relative aspect-[16/10] overflow-hidden ${project.heroPresentation === "logo" ? "min-h-[300px]" : ""}`}>
+        <div className={`relative aspect-[16/10] overflow-hidden ${project.heroPresentation === "logo" ? "min-h-[340px]" : ""}`}>
 
           <MotionImage
             src={project.heroImage}
             alt={project.title}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className={project.heroPresentation === "logo" ? "absolute inset-0 h-full w-full object-contain px-10 pb-[120px] pt-20 sm:px-20" : "absolute inset-0 h-full w-full object-cover"}
+            className={project.heroPresentation === "logo" ? "absolute inset-0 h-full w-full object-contain px-10 pb-[140px] pt-20 sm:px-20" : "absolute inset-0 h-full w-full object-cover"}
             whileHover={{
               scale: 1.08,
             }}

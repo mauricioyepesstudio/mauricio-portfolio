@@ -278,6 +278,7 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "microbeau",
+    heroImage: "/projects/microbeau/flux-mini/hero/microbeau-flux-mini-hero.webp",
     title: "Microbeau",
     client: "Microbeau",
     category: "Product Campaigns & Brand Marketing",
@@ -322,6 +323,7 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "evenflo",
+    heroImage: "/projects/evenflo/blonde-to-brunette-campaign/social/posts/evenflo-b2b-social-post-1.jpg",
     title: "Evenflo Colours",
     client: "Evenflo Colours",
     category: "Beauty Product Launches",
