@@ -62,7 +62,7 @@ const brandBanners = [
   { src: `${BRAND}/social/different-stories-banner.jpg`, alt: "BELONG banner — Different stories, shared humanity", width: 1600, height: 608 },
 ];
 
-export default function BelongPage({ embedded = false }: { embedded?: boolean }) {
+export function BelongPageContent({ embedded = false }: { embedded?: boolean }) {
   return (
     <div className={embedded ? "pb-12 pt-10" : "pb-24 pt-28 sm:pt-36 md:pb-32 md:pt-40"}>
       <div className={embedded ? "" : "container-px mx-auto max-w-content"}>
@@ -217,3 +217,5 @@ export default function BelongPage({ embedded = false }: { embedded?: boolean })
     </div>
   );
 }
+
+export default function BelongPage() { return <BelongPageContent />; }
