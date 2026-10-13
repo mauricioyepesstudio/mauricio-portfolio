@@ -24,14 +24,6 @@ const FROM_PRIMARY = process.env.CONTACT_FROM_EMAIL || FROM_FALLBACK;
 
 export async function POST(req: Request) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { success: false, message: "Contact service is not configured." },
-        { status: 503 },
-      );
-    }
-
     const body = await req.json().catch(() => undefined);
     const parsed = contactSchema.safeParse(body);
     if (!parsed.success) {
@@ -41,6 +33,16 @@ export async function POST(req: Request) {
       );
     }
     const { name, email, company = "", budget = "", message } = parsed.data;
+
+    // Se valida antes de comprobar la configuración: una petición mal formada
+    // siempre recibe 400, aunque falte RESEND_API_KEY.
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { success: false, message: "Contact service is not configured." },
+        { status: 503 },
+      );
+    }
 
     const resend = new Resend(apiKey);
 
@@ -74,7 +76,8 @@ export async function POST(req: Request) {
     }
 
     if (error) {
-      return NextResponse.json(error, { status: 500 });
+      console.error("Contact send failed", error);
+      return NextResponse.json({ success: false }, { status: 500 });
     }
 
     return NextResponse.json({
