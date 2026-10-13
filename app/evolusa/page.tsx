@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import VentureShowcase from "@/components/VentureShowcase";
 import { ArrowUpRight } from "lucide-react";
 
 const evolusaTitle = "EVOLUSA";
@@ -79,7 +78,7 @@ export default function EvolusaPage() {
           </div>
         </Reveal>
 
-        <VentureShowcase venture="evolusa" />
+
 
         <Reveal delay={0.08}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-line">
@@ -113,7 +112,7 @@ export default function EvolusaPage() {
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Marketing &amp; Social Presence
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div className="overflow-hidden rounded-xl border border-line">
                 <Image
                   src="/brand/live-product/evolusa-hero-creative.webp"
@@ -131,22 +130,7 @@ export default function EvolusaPage() {
                   </p>
                 </div>
               </div>
-              <div className="rounded-xl border border-line px-5 py-4">
-                <p className="text-paper font-semibold">Professional presence</p>
-                <p className="mt-2 text-sm leading-6 text-bone">
-                  Active LinkedIn, Instagram and Facebook accounts under
-                  Real Group Entertainment carry EVOLUSA&apos;s organic
-                  content and professional-network outreach.
-                </p>
-              </div>
-              <div className="rounded-xl border border-line px-5 py-4">
-                <p className="text-paper font-semibold">Ongoing growth practice</p>
-                <p className="mt-2 text-sm leading-6 text-bone">
-                  A dedicated growth, social-content and brand-taste
-                  practice reviews positioning and content for EVOLUSA on
-                  a recurring basis, alongside product development.
-                </p>
-              </div>
+<div className="overflow-hidden rounded-xl border border-line bg-[#071C3B] p-8 sm:p-12"><div className="flex h-full min-h-80 flex-col justify-between"><p className="text-xs font-bold tracking-[0.24em] text-white">EVOL<span className="text-[#FF1739]">USA</span> / BRAND SYSTEM</p><div><p className="text-[clamp(2.8rem,5vw,5.5rem)] font-black leading-[0.95] tracking-tight text-white">TU PRÓXIMO<br/><span className="text-[#FF1739]">PASO.</span></p><p className="mt-6 max-w-xs text-lg text-white/80">De la idea a la acción. Tu sueño tiene un camino.</p></div><div className="mt-10 flex gap-3"><span className="h-10 w-10 rounded-full bg-[#FF1739]"/><span className="h-10 w-10 rounded-full bg-white"/><span className="h-10 w-10 rounded-full bg-[#071C3B] ring-1 ring-white/40"/></div></div></div>
             </div>
           </div>
         </Reveal>
