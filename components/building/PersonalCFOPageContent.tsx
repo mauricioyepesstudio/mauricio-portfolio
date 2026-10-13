@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, BarChart3, BookOpen, LayoutDashboard, ShieldCheck, TrendingUp } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({ title: "Personal CFO — Brand & Product", description: "Explore the identity, brandbook, experience and development roadmap for Personal CFO.", path: "/personal-cfo" });
 const palette = [
   { name: "Navy", hex: "#102A43", note: "Foundation" },{ name: "Mint", hex: "#72E3B2", note: "Accent" },
   { name: "Teal", hex: "#127C70", note: "Actions" },{ name: "Teal dark", hex: "#0B5147", note: "Contrast" },
