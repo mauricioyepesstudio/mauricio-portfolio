@@ -3,6 +3,19 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, BarChart3, BookOpen, LayoutDashboard, ShieldCheck, TrendingUp } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 
+export const metadata: Metadata = pageMetadata({ title: "Personal CFO — Brand & Product", description: "Explore the identity, brandbook, experience and development roadmap for Personal CFO.", path: "/personal-cfo" });
+const palette = [
+  { name: "Navy", hex: "#102A43", note: "Foundation" },{ name: "Mint", hex: "#72E3B2", note: "Accent" },
+  { name: "Teal", hex: "#127C70", note: "Actions" },{ name: "Teal dark", hex: "#0B5147", note: "Contrast" },
+  { name: "Muted", hex: "#526B7F", note: "Secondary" },{ name: "Loss", hex: "#A04F4A", note: "Warnings" },
+];
+const sections = [
+  { title: "Financial overview", description: "Net worth, assets and liabilities in a single overview.", Icon: LayoutDashboard },
+  { title: "Monthly movement", description: "Understand what changed from one month to the next.", Icon: TrendingUp },
+  { title: "Spending and cash flow", description: "See income, spending and category movement clearly.", Icon: BarChart3 },
+  { title: "Data and privacy", description: "Missing values stay unregistered rather than becoming zero; sensitive figures are never shown here.", Icon: ShieldCheck },
+];
+
 export function PersonalCFOPageContent({ embedded = false }: { embedded?: boolean }){
 return <div className={embedded ? "pb-12 pt-10" : "pb-28 pt-32 sm:pt-40"}><div className={embedded ? "" : "container-px mx-auto max-w-content"}>
 <Link href="/building#personal-cfo" className="inline-flex items-center gap-2 text-sm text-bone hover:text-gold"><ArrowLeft size={15}/> All projects</Link>
