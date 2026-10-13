@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import VentureShowcase from "@/components/VentureShowcase";
 import { ArrowUpRight } from "lucide-react";
 
 const belongDescription =
@@ -102,7 +101,7 @@ export default function BelongPage() {
           </div>
         </Reveal>
 
-        <VentureShowcase venture="belong" />
+
 
         <Reveal delay={0.08}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-line">
@@ -180,7 +179,7 @@ export default function BelongPage() {
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Recent Development
             </p>
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2">
               <div className="overflow-hidden rounded-xl border border-line">
                 <Image
                   src="/brand/live-product/belong-login-oauth.png"
@@ -194,12 +193,7 @@ export default function BelongPage() {
                   <p className="mt-2 text-sm leading-6 text-bone">{recentProgress[0].body}</p>
                 </div>
               </div>
-              {recentProgress.slice(1).map((item) => (
-                <div key={item.title} className="rounded-xl border border-line px-6 py-5">
-                  <h3 className="text-paper font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-bone">{item.body}</p>
-                </div>
-              ))}
+<div className="overflow-hidden rounded-xl border border-[#6035AC] bg-gradient-to-br from-[#130825] via-[#331568] to-[#090717] p-8 sm:p-12"><div className="flex h-full min-h-72 flex-col justify-between"><p className="text-xs uppercase tracking-[0.25em] text-[#BFA1FF]">BELONG / COMMUNITY</p><div><p className="text-5xl font-black tracking-tight text-white sm:text-6xl">WE ALL<br/><span className="text-[#BFA1FF]">BELONG.</span></p><p className="mt-5 max-w-sm text-white/75">Be seen. Find your people. Build what matters.</p></div><div className="mt-10 h-2 w-full rounded-full bg-gradient-to-r from-[#6B25FA] via-[#A782FF] to-[#DCCAFF]"/></div></div>
             </div>
           </div>
         </Reveal>
