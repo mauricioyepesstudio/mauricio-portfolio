@@ -20,9 +20,9 @@ export const studioProjects: StudioProject[] = [
     { title: "Data integration and reconciliation", state: "in_progress", detail: "Live account connectivity and data accuracy must be verified before claiming automation." },
     { title: "Automated monthly insights", state: "planned", detail: "Planned explanations, comparisons and actionable reports." }
   ]},
-  { slug: "owner-statements", name: "Owner Statements", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal concept for statements, imports, unit reporting and annual tax documents.", stage: "Prototype", milestones: [
+  { slug: "park-place-owner", name: "Park Place Owner Portal", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal for monthly unit statements, Excel/PDF imports, owner reporting and annual 1099 documents.", stage: "Prototype", milestones: [
     { title: "Owner and admin requirements", state: "completed", detail: "Excel/PDF imports, monthly views, owner visibility and 1099 requirements documented." },
-    { title: "Client pilot and validation", state: "in_progress", detail: "Awaiting real client testing and acceptance." },
+    { title: "Client pilot and validation", state: "in_progress", detail: "Client acceptance and real import workflows still require verification." },
     { title: "Production readiness", state: "planned", detail: "Security, permissions, data checks and release gates remain to be verified." }
   ]},
   { slug: "resource-living", name: "Resource Living", tagline: "Creative and lead-generation systems.", summary: "Marketing, campaigns and automation workflows; work shown as a portfolio overview, not as access to client systems.", stage: "Portfolio case study", milestones: [
