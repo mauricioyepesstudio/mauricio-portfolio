@@ -54,10 +54,44 @@ export default function BuildingPage() {
           })}
         </section>
         <section id="other-projects" className="scroll-mt-32 py-20">
-          <p className="eyebrow mb-4">More in the studio</p><h2 className="max-w-3xl text-4xl font-semibold tracking-tight text-paper sm:text-5xl">What we’re building next.</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {studioProjects.filter(p=>p.slug!=="evolusa"&&p.slug!=="belong").map(p=><article id={p.slug} key={p.slug} className="scroll-mt-32 rounded-2xl border border-line p-6 sm:p-8"><div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-2xl font-semibold text-paper">{p.name}</h3><span className="text-xs uppercase tracking-wider text-gold">{p.stage}</span></div><p className="mt-2 text-lg text-paper">{p.tagline}</p><p className="mt-3 text-sm leading-7 text-bone">{p.summary}</p><div className="mt-6 flex flex-wrap gap-2">{p.milestones.map(m=><span key={m.title} className="rounded-full border border-line px-3 py-2 text-xs text-bone">{m.title}</span>)}</div>{p.slug==="personal-cfo"&&<Link href="/personal-cfo" className="mt-6 inline-flex items-center gap-2 border-b border-gold pb-2 text-sm text-gold">Explore brandbook & product <ArrowUpRight size={15}/></Link>}{p.slug==="park-place-owner"&&<Link href="/park-place" className="mt-6 inline-flex items-center gap-2 border-b border-gold pb-2 text-sm text-gold">Explore interactive owner & admin tour <ArrowUpRight size={15}/></Link>}</article>)}
-          </div>
+          <p className="eyebrow mb-4">03 / Product studio</p>
+          <h2 className="max-w-3xl text-4xl font-semibold tracking-tight text-paper sm:text-5xl">More than a concept.</h2>
+          <article id="personal-cfo" className="scroll-mt-32 border-b border-line py-16">
+            <p className="eyebrow mb-5">03 / Brand identity · Financial product</p>
+            <h3 className="mb-8 text-5xl font-bold text-paper sm:text-7xl">Personal CFO</h3>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="flex min-h-[450px] flex-col justify-between rounded-3xl p-9 sm:p-12" style={{background:"#102A43"}}>
+                <p className="text-sm font-bold tracking-[0.22em]" style={{color:"#72E3B2"}}>PERSONAL CFO / CAMPAIGN</p>
+                <div><p className="text-[clamp(3rem,5vw,5rem)] font-black leading-[0.95] text-white">YOUR MONEY.<br/><span style={{color:"#72E3B2"}}>YOUR MOVE.</span></p><p className="mt-7 text-lg text-white/75">Know where you stand. Decide what comes next.</p></div>
+                <div className="flex gap-3">{["#72E3B2","#127C70","#F3F6F8"].map(c=><span key={c} className="h-9 w-9 rounded-full" style={{background:c}}/>)}</div>
+              </div>
+              <div className="flex min-h-[450px] flex-col justify-between rounded-3xl p-9 sm:p-12" style={{background:"#72E3B2",color:"#102A43"}}>
+                <p className="text-sm font-bold tracking-[0.22em]">PERSONAL CFO / FINANCIAL CLARITY</p>
+                <div><p className="text-[clamp(3rem,5vw,5rem)] font-black leading-[0.95]">LESS<br/>GUESSING.<br/>MORE<br/>CLARITY.</p></div>
+                <p className="text-sm">Net worth / Cash flow / Monthly movement</p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-bone">Editorial portfolio creatives; the original vector brand assets are retained separately.</p>
+            <Link href="/personal-cfo" className="mt-7 inline-flex items-center gap-2 text-sm text-gold">Full identity and product case study <ArrowUpRight size={16}/></Link>
+          </article>
+          <article id="park-place-owner" className="scroll-mt-32 py-16">
+            <p className="eyebrow mb-5">04 / Property management · SaaS development</p>
+            <h3 className="mb-8 text-5xl font-bold text-paper sm:text-7xl">Park Place</h3>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="flex min-h-[450px] flex-col justify-between rounded-3xl p-9 sm:p-12" style={{background:"#FAF8F4",color:"#252522"}}>
+                <p className="text-sm font-bold tracking-[0.22em]" style={{color:"#A85C35"}}>PARK PLACE / OWNER PORTAL</p>
+                <div><p className="text-[clamp(3rem,5vw,5rem)] font-bold leading-[0.95]">YOUR<br/>PROPERTY.<br/><span style={{color:"#A85C35"}}>YOUR<br/>NUMBERS.</span></p></div>
+                <p className="text-sm" style={{color:"#77736C"}}>Monthly statements · Documents · Unit performance</p>
+              </div>
+              <div className="flex min-h-[450px] flex-col justify-between rounded-3xl p-9 sm:p-12" style={{background:"#EAE2D7",color:"#252522"}}>
+                <p className="text-sm font-bold tracking-[0.22em]" style={{color:"#A85C35"}}>PARK PLACE / WORKFLOW</p>
+                <div><p className="text-[clamp(3rem,5vw,5rem)] font-bold leading-[0.95]">FROM<br/>EXCEL<br/><span style={{color:"#A85C35"}}>TO INSIGHT.</span></p><div className="mt-8 grid grid-cols-3 gap-2">{["IMPORT","REVIEW","PUBLISH"].map((v,i)=><div key={v} className="rounded-lg border border-[#C6B6A6] bg-white/70 p-3 text-center"><p className="text-2xl font-bold" style={{color:"#A85C35"}}>0{i+1}</p><p className="mt-2 text-[10px] font-bold">{v}</p></div>)}</div></div>
+                <p className="text-sm" style={{color:"#77736C"}}>Administrative workflow / Portfolio visualization</p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-bone">Illustrative editorial compositions, without owner financial data.</p>
+            <Link href="/park-place" className="mt-7 inline-flex items-center gap-2 text-sm text-gold">Full case study and product walkthrough <ArrowUpRight size={16}/></Link>
+          </article>
         </section>
       </div>
     </main>
