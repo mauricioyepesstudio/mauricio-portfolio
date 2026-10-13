@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, BarChart3, BookOpen, LayoutDashboard, ShieldCheck, TrendingUp } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
+export const metadata: Metadata = pageMetadata({ title: "Personal CFO — Brand & Product", description: "Explore the identity, brandbook, experience and development roadmap for Personal CFO.", path: "/personal-cfo" });
+const palette = [
+  { name: "Navy", hex: "#102A43", note: "Foundation" },{ name: "Mint", hex: "#72E3B2", note: "Accent" },
+  { name: "Teal", hex: "#127C70", note: "Actions" },{ name: "Teal dark", hex: "#0B5147", note: "Contrast" },
+  { name: "Muted", hex: "#526B7F", note: "Secondary" },{ name: "Loss", hex: "#A04F4A", note: "Warnings" },
+];
+const sections = [
+  { title: "Financial overview", description: "Net worth, assets and liabilities in a single overview.", Icon: LayoutDashboard },
+  { title: "Monthly movement", description: "Understand what changed from one month to the next.", Icon: TrendingUp },
+  { title: "Spending and cash flow", description: "See income, spending and category movement clearly.", Icon: BarChart3 },
+  { title: "Data and privacy", description: "Missing values stay unregistered rather than becoming zero; sensitive figures are never shown here.", Icon: ShieldCheck },
+];
+export default function PersonalCFOPage(){
+return <main className="pb-28 pt-32 sm:pt-40"><div className="container-px mx-auto max-w-content">
+<Link href="/building#personal-cfo" className="inline-flex items-center gap-2 text-sm text-bone hover:text-gold"><ArrowLeft size={15}/> All projects</Link>
+<p className="eyebrow mb-4 mt-12">Personal CFO / Brand & product</p>
+<h1 className="max-w-5xl text-[clamp(3.5rem,10vw,7rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-paper">Clarity for your <span className="font-serif italic text-gold">financial life.</span></h1>
+<p className="mt-7 max-w-2xl text-lg leading-8 text-bone">From financial complexity to a clear picture of assets, debts and the decisions that shape your future.</p>
+<section aria-label="Personal CFO visual identity" className="mt-14 overflow-hidden rounded-3xl" style={{background:"#102A43"}}>
+<div className="grid gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:items-center lg:p-16">
+<div><p className="text-xs uppercase tracking-[0.2em]" style={{color:"#72E3B2"}}>Brand identity / 2026</p><div className="mt-7 flex items-center gap-4"><span className="flex h-20 w-20 items-center justify-center rounded-[22px] border-[6px] text-5xl font-bold" style={{color:"#72E3B2",borderColor:"#72E3B2"}} aria-label="P monogram illustration">P</span><span className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Personal <span style={{color:"#72E3B2"}}>CFO</span></span></div><p className="mt-7 max-w-md text-base leading-7" style={{color:"#DCE7EE"}}>Navy for stability. Mint for clarity. A financial product designed to make change understandable.</p><p className="mt-4 text-xs" style={{color:"#DCE7EE"}}>Typography-based composition illustrating the documented palette; the original master logo is preserved in the supplied brand package.</p></div>
+<div className="rounded-[24px] p-6 sm:p-8" style={{background:"#F3F6F8",color:"#102A43"}}>
+<div className="flex items-center justify-between gap-3"><span className="font-bold">Financial overview</span><span className="text-xs" style={{color:"#526B7F"}}>Illustrative UI</span></div><p className="mt-8 text-sm" style={{color:"#526B7F"}}>Net worth</p><p className="mt-1 text-5xl font-bold tabular-nums">—</p><p className="mt-2 text-sm" style={{color:"#127C70"}}>Connect or enter data to calculate</p><div className="mt-8 grid grid-cols-2 gap-3">{[{label:"Assets",icon:"+"},{label:"Liabilities",icon:"−"}].map(x=><div key={x.label} className="rounded-2xl bg-white p-4"><span className="text-sm" style={{color:"#526B7F"}}>{x.label}</span><p className="mt-2 text-2xl font-bold">{x.icon} —</p><p className="mt-1 text-xs" style={{color:"#526B7F"}}>Not registered</p></div>)}</div></div>
+</div></section>
+<section className="mt-24"><p className="eyebrow mb-4">01 / Brandbook</p><h2 className="text-4xl font-semibold text-paper">A visual system with rules.</h2><p className="mt-4 max-w-2xl leading-7 text-bone">Based on the Personal CFO brand manual, version 2 (September 28, 2026). The official logo is a constructed P and trajectory mark; the typographic illustration above is not a replacement for the original vector.</p>
+<div className="mt-9 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">{palette.map(p=><div key={p.hex} className="overflow-hidden rounded-xl border border-line"><div className="h-24" style={{background:p.hex}}/><div className="p-3"><p className="text-sm font-semibold text-paper">{p.name}</p><p className="mt-1 text-xs text-bone">{p.hex}</p><p className="mt-1 text-xs text-bone">{p.note}</p></div></div>)}</div>
+<div className="mt-7 grid gap-4 md:grid-cols-3">{[{title:"Typography",detail:"Arial / Helvetica. Clear hierarchy, tabular figures and no external font requests."},{title:"Construction",detail:"120 × 120-unit mark, 30-unit clear space and minimum 32 px digital symbol."},{title:"Accessible color",detail:"Contrast is documented; positive and negative change always includes a sign and explanatory words."}].map(x=><div key={x.title} className="rounded-2xl border border-line p-6"><h3 className="text-lg font-semibold text-paper">{x.title}</h3><p className="mt-3 text-sm leading-7 text-bone">{x.detail}</p></div>)}</div>
+</section>
+<section className="mt-24"><p className="eyebrow mb-4">02 / Experience</p><h2 className="text-4xl font-semibold text-paper">Every screen has a purpose.</h2><div className="mt-9 grid gap-4 md:grid-cols-2">{sections.map(({title,description,Icon})=><div key={title} className="rounded-2xl border border-line p-7"><Icon className="text-gold" size={25}/><h3 className="mt-5 text-xl font-semibold text-paper">{title}</h3><p className="mt-3 text-sm leading-7 text-bone">{description}</p></div>)}</div></section>
+<section className="mt-24 border-t border-line pt-12"><p className="eyebrow mb-4">03 / Building in public</p><h2 className="text-4xl font-semibold text-paper">From identity to product.</h2><div className="mt-9 grid gap-4 md:grid-cols-3">{[{step:"01",title:"Identity established",body:"Naming, palette, typography, logo construction and campaign system documented.",state:"Documented"},{step:"02",title:"Product experience",body:"Dashboard, net worth and month-to-month explanation designed; integration requires verification.",state:"In development"},{step:"03",title:"Connected intelligence",body:"Future data reconciliation, automation and monthly financial insights.",state:"Planned"}].map(x=><div key={x.step} className="rounded-2xl border border-line p-7"><p className="text-sm text-gold">{x.step} / {x.state}</p><h3 className="mt-5 text-xl font-semibold text-paper">{x.title}</h3><p className="mt-3 text-sm leading-7 text-bone">{x.body}</p></div>)}</div><Link href="/building" className="mt-9 inline-flex items-center gap-2 text-sm text-gold hover:text-paper">Explore all projects <ArrowUpRight size={16}/></Link></section>
+</div></main>;
+}
