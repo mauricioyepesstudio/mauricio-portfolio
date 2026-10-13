@@ -4,6 +4,15 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
+const categories = [
+  { name: "Marketing & Digital Presence", status: "Live" },
+  { name: "Business Operations", status: "Live" },
+  { name: "Notary", status: "Activating" },
+  { name: "Tax & Accounting", status: "Coming soon" },
+  { name: "Legal & Immigration", status: "Coming soon" },
+];
+
+
 export function EvolusaPageContent({ embedded = false }: { embedded?: boolean }) {
   return (
     <div className={embedded ? "pb-12 pt-10" : "pb-24 pt-28 sm:pt-36 md:pb-32 md:pt-40"}>
