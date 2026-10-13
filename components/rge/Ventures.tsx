@@ -28,17 +28,7 @@ const ventures = [
     accent: "#7c3aed",
     logo: null,
   },
-  {
-    name: "Personal CFO",
-    status: "Prototype",
-    tagline: "Your money, clearly explained.",
-    description: "A personal financial command center: cash flow, net worth, debts and monthly trends — developed with an emphasis on clarity and practical decisions.",
-    proof: null,
-    href: "/personal-cfo",
-    external: null,
-    accent: "#b08d57",
-    logo: null,
-  },
+
 ];
 
 export default function RGEVentures() {
@@ -52,7 +42,7 @@ export default function RGEVentures() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3 md:gap-6">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-6">
           {ventures.map((v, i) => (
             <Reveal key={v.name} delay={i * 0.08} className="min-w-0">
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white/[0.02] p-6 sm:p-10 transition hover:border-white/20">
