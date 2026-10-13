@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function PortfolioPage() {
-  const projects = getProjects();
+  const projects = getProjects().filter((project) => !/personal[\s-]*cfo/i.test(project.slug));
   const featured = FEATURED_CASE_STUDY_SLUGS.map((slug) => projects.find((p) => p.slug === slug)).filter(
     (project): project is NonNullable<typeof project> => Boolean(project),
   );
