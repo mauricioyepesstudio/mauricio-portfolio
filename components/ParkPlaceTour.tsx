@@ -1,12 +1,106 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight, ChevronLeft, ChevronRight, FileSpreadsheet, FileText, LayoutDashboard, ShieldCheck, Upload, Users } from "lucide-react";
-const steps=[
-{title:"Owner dashboard",kicker:"01 / Owner experience",description:"Each owner signs in to see only their assigned units, monthly statements, year-to-date totals and income-versus-expenses. All figures below are placeholders, not real client data.",Icon:LayoutDashboard},
-{title:"Monthly statements",kicker:"02 / Statement detail",description:"Review Rent, Service Fees, Refund / Claim, Total Expenses and Due to Owner. Expand Total Expenses to inspect the underlying items.",Icon:FileText},
-{title:"Admin imports",kicker:"03 / Administration",description:"Upload the monthly Excel workbook in bulk, attach statement PDFs by unit and month, and review validation results before publishing.",Icon:FileSpreadsheet},
-{title:"1099 documents",kicker:"04 / Tax documents",description:"The administrator uploads the annual 1099 for each unit. Its owner can then access it from their own profile.",Icon:Upload},
-{title:"Access boundaries",kicker:"05 / Privacy & roles",description:"Owners never see other owners' units. Commission is hidden from the owner-facing summary; Cleaning, Resort Fee and HST are omitted from summary cards.",Icon:ShieldCheck},
+import { ArrowUpRight, ChevronLeft, ChevronRight, FileText, LayoutDashboard, Upload, ShieldCheck, Users } from "lucide-react";
+
+const steps = [
+  { title: "Owner dashboard", detail: "Monthly and year-to-date reporting by assigned unit.", Icon: LayoutDashboard },
+  { title: "Monthly statements", detail: "Rent, Service Fee, Refund / Claim, Total Expenses and Due to Owner.", Icon: FileText },
+  { title: "Admin imports", detail: "Bulk Excel intake and PDF attachments per unit and month.", Icon: Upload },
+  { title: "1099 documents", detail: "Annual tax documents uploaded by admin and visible to the relevant owner.", Icon: FileText },
+  { title: "Privacy and roles", detail: "Owner access is restricted by unit. Commission is hidden in the owner summary.", Icon: ShieldCheck },
 ];
-export default function ParkPlaceTour(){const [index,setIndex]=useState(0);const [role,setRole]=useState<"owner"|"admin">("owner");const [expenses,setExpenses]=useState(false);const s=steps[index];return <section aria-label="Interactive Park Place product walkthrough" className="mt-14 overflow-hidden rounded-3xl border border-line bg-white/[0.02]"><div className="flex flex-wrap items-center justify-between gap-4 border-b border-line px-6 py-5 sm:px-9"><div><p className="eyebrow">Interactive product walkthrough</p><p className="mt-2 text-xs text-bone">Illustrative UI · No client data · Not a live app session</p></div><div className="flex rounded-full border border-line p-1">{(["owner","admin"] as const).map(r=><button key={r} onClick={()=>setRole(r)} aria-pressed={role===r} className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-widest ${role===r?"bg-paper text-black":"text-bone"}`}>{r}</button>)}</div></div><div className="grid lg:grid-cols-[240px_1fr]"><nav aria-label="Tour sections" className="border-b border-line p-4 lg:border-b-0 lg:border-r">{steps.map((x,i)=><button key={x.title} onClick={()=>setIndex(i)} aria-current={index===i?"step":undefined} className={`mb-2 flex w-full items-center gap-3 rounded-xl px-4 py-4 text-left text-sm ${index===i?"bg-white/10 text-paper":"text-bone hover:bg-white/5"}`}><x.Icon size={18}/><span>{x.title}</span></button>)}</nav><div className="min-w-0 p-5 sm:p-9"><div className="mb-6 flex items-center justify-between"><div><p className="text-xs uppercase tracking-widest text-gold">{s.kicker}</p><h3 className="mt-2 text-2xl font-semibold text-paper">{s.title}</h3></div><s.Icon size={28} className="text-gold"/></div><div className="rounded-2xl border border-[#DDE4EC] bg-[#F5F7FA] p-4 text-[#182C42] sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#DDE4EC] pb-5"><div className="flex items-center gap-3"><span className="rounded-xl bg-[#19344C] p-3 text-white"><Users size={18}/></span><div><p className="font-bold">Park Place</p><p className="text-xs text-[#60738A]">{role==="owner"?"Owner portal":"Admin console"} · Concept preview</p></div></div><span className="rounded-full bg-white px-3 py-2 text-xs text-[#60738A]">Sample unit · 2026</span></div><div className="mt-5 grid gap-3 sm:grid-cols-3">{(role==="owner"?["Income","Total Expenses","Due to Owner"]:["Units","Statements","1099 files"]).map((label,i)=><div key={label} className="rounded-xl bg-white p-4 shadow-sm"><p className="text-xs text-[#60738A]">{label}</p><p className="mt-3 text-2xl font-semibold">{role==="owner"?"—":i===0?"200*":"—"}</p><p className="mt-2 text-[11px] text-[#60738A]">{role==="owner"?"No real financial values":"Illustrative only"}</p></div>)}</div><div className="mt-4 rounded-xl bg-white p-5"><div className="flex flex-wrap items-center justify-between gap-3"><p className="font-semibold">{role==="owner"?"Monthly statement overview":"Monthly administration"}</p><span className="rounded-full bg-[#E8F1F5] px-3 py-1 text-xs text-[#356478]">{role==="owner"?"Owner view":"Admin view"}</span></div>{role==="owner"?<><div className="mt-5 space-y-3">{["Rent","Service Fee","Refund / Claim","Total Expenses","Due to Owner"].map(x=><div key={x} className="flex justify-between border-b border-[#EDF0F4] pb-3 text-sm"><span>{x}</span><span>—</span></div>)}</div><button onClick={()=>setExpenses(!expenses)} aria-expanded={expenses} className="mt-4 text-sm font-semibold text-[#127C70]">{expenses?"− Hide":"+ Expand"} Total Expenses</button>{expenses&&<p className="mt-2 rounded-lg bg-[#F5F7FA] p-3 text-xs text-[#60738A]">Detailed expense rows will appear here when a validated statement is loaded.</p>}</>:<div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="rounded-xl border border-dashed border-[#B5C3D2] p-5"><Upload size={22}/><p className="mt-3 font-semibold">Import Excel / PDF</p><p className="mt-2 text-xs text-[#60738A]">Demonstration only · Upload disabled</p></div><div className="rounded-xl border border-dashed border-[#B5C3D2] p-5"><FileText size={22}/><p className="mt-3 font-semibold">Attach 1099 by unit</p><p className="mt-2 text-xs text-[#60738A]">Demonstration only · No documents</p></div></div>}</div></div><p className="mt-6 max-w-2xl text-sm leading-7 text-bone">{s.description}</p><div className="mt-6 flex items-center justify-between"><button onClick={()=>setIndex((index+steps.length-1)%steps.length)} className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 text-sm text-paper"><ChevronLeft size={16}/> Previous</button><span className="text-xs text-bone">{index+1} / {steps.length}</span><button onClick={()=>setIndex((index+1)%steps.length)} className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 text-sm text-paper">Next <ChevronRight size={16}/></button></div></div></div></div><div className="border-t border-line px-6 py-5 sm:px-9"><a href="https://park-place-owner-portal.myepes01.chatgpt.site" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-gold">Open existing external demo <ArrowUpRight size={16}/></a><p className="mt-2 text-xs text-bone">External demo functionality, imports and access permissions have not been independently verified.</p></div></section>}
+export default function ParkPlaceTour() {
+  const [active, setActive] = useState(0);
+  const [role, setRole] = useState<"owner" | "admin">("owner");
+  const step = steps[active];
+  const Icon = step.Icon;
+  const metrics = role === "owner"
+    ? ["Rent", "Total Expenses", "Due to Owner"]
+    : ["Unit records", "Monthly statements", "1099 documents"];
+  return (
+    <section className="mt-14 overflow-hidden rounded-3xl border border-line bg-white/[0.02]">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line px-6 py-5">
+        <div>
+          <p className="eyebrow">Interactive product walkthrough</p>
+          <p className="mt-2 text-xs text-bone">Illustrative interface · No client data</p>
+        </div>
+        <div className="flex gap-2">
+          {(["owner", "admin"] as const).map((r) => (
+            <button key={r} type="button" onClick={() => setRole(r)}
+              aria-pressed={role === r}
+              className={`rounded-full px-5 py-2 text-sm ${role === r ? "bg-paper text-black" : "border border-line text-bone"}`}>
+              {r === "owner" ? "Owner" : "Admin"}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="grid lg:grid-cols-[230px_1fr]">
+        <nav aria-label="Park Place walkthrough" className="border-b border-line p-4 lg:border-b-0 lg:border-r">
+          {steps.map((item, i) => (
+            <button key={item.title} type="button" onClick={() => setActive(i)}
+              aria-current={active === i ? "step" : undefined}
+              className={`mb-2 flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm ${active === i ? "bg-white/10 text-paper" : "text-bone hover:bg-white/5"}`}>
+              <item.Icon size={18} /><span>{item.title}</span>
+            </button>
+          ))}
+        </nav>
+        <div className="min-w-0 p-5 sm:p-9">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-gold">Step {active + 1} / {steps.length}</p>
+              <h3 className="mt-3 text-2xl font-semibold text-paper">{step.title}</h3>
+            </div>
+            <Icon size={28} className="text-gold" />
+          </div>
+          <p className="mt-4 text-sm leading-7 text-bone">{step.detail}</p>
+          <div className="mt-7 rounded-2xl bg-[#F5F7FA] p-5 text-[#182C42] sm:p-7">
+            <div className="flex items-center gap-3 border-b border-[#DDE4EC] pb-5">
+              <Users size={22} />
+              <div>
+                <p className="font-semibold">Park Place</p>
+                <p className="text-xs text-[#60738A]">{role === "owner" ? "Owner portal" : "Admin console"} · Concept</p>
+              </div>
+            </div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {metrics.map((name) => (
+                <div key={name} className="rounded-xl bg-white p-4">
+                  <p className="text-xs text-[#60738A]">{name}</p>
+                  <p className="mt-3 text-2xl font-semibold">—</p>
+                  <p className="mt-2 text-xs text-[#60738A]">Illustrative only</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 rounded-xl bg-white p-5">
+              <p className="font-semibold">{role === "owner" ? "Monthly statement" : "Monthly administration"}</p>
+              <div className="mt-4 space-y-3">
+                {(role === "owner" ? ["Rent", "Service Fee", "Refund / Claim", "Total Expenses", "Due to Owner"] : ["Import Excel", "Attach PDF", "Attach 1099"]).map((item) => (
+                  <div key={item} className="flex justify-between border-b border-[#EDF0F4] pb-3 text-sm">
+                    <span>{item}</span><span>—</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 flex items-center justify-between gap-3">
+            <button type="button" onClick={() => setActive((active + steps.length - 1) % steps.length)}
+              className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 text-sm text-paper">
+              <ChevronLeft size={16} /> Previous
+            </button>
+            <span className="text-xs text-bone">{active + 1} / {steps.length}</span>
+            <button type="button" onClick={() => setActive((active + 1) % steps.length)}
+              className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 text-sm text-paper">
+              Next <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-line px-6 py-5">
+        <a href="https://park-place-owner-portal.myepes01.chatgpt.site" target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-gold">
+          Open external demo <ArrowUpRight size={16} />
+        </a>
+        <p className="mt-2 text-xs text-bone">External demo and production data connections are not verified.</p>
+      </div>
+    </section>
+  );
+}
