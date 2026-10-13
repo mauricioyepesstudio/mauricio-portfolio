@@ -13,6 +13,7 @@ const links = [
   { href: "/evolusa", label: "EVOLUSA" },
   { href: "/belong", label: "BELONG" },
   { href: "/portfolio", label: "Work" },
+  { href: "/building", label: "Building" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -96,7 +97,7 @@ export default function Nav() {
             <BrandWordmark as="span" />
           </Link>
 
-          <ul className="hidden items-center gap-10 md:flex">
+          <ul className="hidden items-center gap-5 lg:gap-8 md:flex">
             {links.map((link) => {
               const active =
                 pathname === link.href ||
@@ -107,7 +108,7 @@ export default function Nav() {
                   <Link
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative text-sm uppercase tracking-[0.25em] transition-colors ${
+                    className={`relative text-sm uppercase tracking-[0.16em] transition-colors ${
                       active ? "text-paper" : "text-bone hover:text-paper"
                     }`}
                   >
