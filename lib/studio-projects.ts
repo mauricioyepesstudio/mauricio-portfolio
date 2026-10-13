@@ -25,11 +25,6 @@ export const studioProjects: StudioProject[] = [
     { title: "Client pilot and validation", state: "in_progress", detail: "Client acceptance and real import workflows still require verification." },
     { title: "Production readiness", state: "planned", detail: "Security, permissions, data checks and release gates remain to be verified." }
   ]},
-  { slug: "resource-living", name: "Resource Living", tagline: "Creative and lead-generation systems.", summary: "Marketing, campaigns and automation workflows; work shown as a portfolio overview, not as access to client systems.", stage: "Portfolio case study", milestones: [
-    { title: "Creative campaigns", state: "completed", detail: "Marketing and creative portfolio work." },
-    { title: "Lead workflow improvements", state: "in_progress", detail: "Operational changes must be reviewed in their own system." },
-    { title: "Verified performance case study", state: "planned", detail: "Only publish results supported by approved metrics." }
-  ]},
   { slug: "agency-control-plane", name: "AI Control Plane", tagline: "One view across independent projects.", summary: "A central coordination and reporting layer for project status, decisions, permissions and next steps.", stage: "In development", milestones: [
     { title: "Project inventory", state: "completed", detail: "Repository and project coordination structure created." },
     { title: "Commercial DOT and AI Lab", state: "in_progress", detail: "Code and workflows exist; live operation and integration require separate verification." },
