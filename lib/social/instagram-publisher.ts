@@ -33,12 +33,10 @@ export async function publishApprovedInstagramMedia(input: InstagramPublishInput
   const media = new URL(input.mediaUrl);
   if(media.protocol!=="https:") throw new Error("Public HTTPS media URL required.");
   if(input.caption.length>2200) throw new Error("Instagram caption is too long.");
+  if(input.mediaType==="REELS") throw new Error("Reel processing and status polling not implemented yet.");
   const containerId = await metaPost("/me/media",token,input.mediaType==="IMAGE"
     ? {image_url:media.toString(),caption:input.caption}
     : {media_type:"REELS",video_url:media.toString(),caption:input.caption});
-  // REELS container processing is asynchronous. The orchestration layer must poll
-  // container status_code=FINISHED before calling media_publish; never publish blindly.
-  if(input.mediaType==="REELS") throw new Error(`Reel container ${containerId} created; processing/polling must complete before publishing.`);
   const mediaId = await metaPost("/me/media_publish",token,{creation_id:containerId});
   return {mediaId};
 }
