@@ -139,17 +139,17 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
   },
   "real-group-entertainment": {
     "01-2026-ventures": {
-      title: "2026 Ventures — EvoluSA, BELONG",
+      title: "EvolUSA & BELONG",
       eyebrow: "Venture Studio · 2026",
       context:
-        "The current build-in-public phase: two ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
+        "Two products, distinct identities, one venture studio.",
       priority: 0,
     },
     "02-belong-brand": {
-      title: "BELONG — Brand Identity",
+      title: "BELONG Identity",
       eyebrow: "Brand Identity · 2026",
       context:
-        "The visual identity for BELONG: a luminous B-and-star symbol, the JUST BELONG lockup and a family of banners built around one line — be seen, find your people, build what matters.",
+        "Identity, logo and campaign applications.",
       priority: 1,
     },
   },
