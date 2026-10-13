@@ -34,7 +34,7 @@ const ventures = [
     tagline: "Your money, clearly explained.",
     description: "A personal financial command center: cash flow, net worth, debts and monthly trends — developed with an emphasis on clarity and practical decisions.",
     proof: null,
-    href: "/building#personal-cfo",
+    href: "/personal-cfo",
     external: null,
     accent: "#b08d57",
     logo: null,
