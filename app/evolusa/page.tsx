@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import VentureShowcase from "@/components/VentureShowcase";
 import { ArrowUpRight } from "lucide-react";
 
 const evolusaTitle = "EVOLUSA";
@@ -78,6 +79,8 @@ export default function EvolusaPage() {
           </div>
         </Reveal>
 
+        <VentureShowcase venture="evolusa" />
+
         <Reveal delay={0.08}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-line">
             <Image
@@ -106,7 +109,7 @@ export default function EvolusaPage() {
         </Reveal>
 
         <Reveal delay={0.13}>
-          <div className="mt-20 border-t border-line pt-10">
+          <div id="venture-brand" className="mt-20 scroll-mt-32 border-t border-line pt-10">
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Marketing &amp; Social Presence
             </p>
@@ -149,7 +152,7 @@ export default function EvolusaPage() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="mt-20 border-t border-line pt-10">
+          <div id="venture-roadmap" className="mt-20 scroll-mt-32 border-t border-line pt-10">
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Service Categories
             </p>
