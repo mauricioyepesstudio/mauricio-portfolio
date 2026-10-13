@@ -14,8 +14,8 @@ const sections = [
   { title: "Spending and cash flow", description: "See income, spending and category movement clearly.", Icon: BarChart3 },
   { title: "Data and privacy", description: "Missing values stay unregistered rather than becoming zero; sensitive figures are never shown here.", Icon: ShieldCheck },
 ];
-export default function PersonalCFOPage(){
-return <div className="pb-28 pt-32 sm:pt-40"><div className="container-px mx-auto max-w-content">
+export default function PersonalCFOPage({ embedded = false }: { embedded?: boolean }){
+return <div className={embedded ? "pb-12 pt-10" : "pb-28 pt-32 sm:pt-40"}><div className={embedded ? "" : "container-px mx-auto max-w-content"}>
 <Link href="/building#personal-cfo" className="inline-flex items-center gap-2 text-sm text-bone hover:text-gold"><ArrowLeft size={15}/> All projects</Link>
 <p className="eyebrow mb-4 mt-12">Personal CFO / Brand & product</p>
 <h1 className="max-w-5xl text-[clamp(3.5rem,10vw,7rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-paper">Clarity for your <span className="font-serif italic text-gold">financial life.</span></h1>
