@@ -3,12 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Circle, Clock3 } from "lucide-react";
 import { studioProjects } from "@/lib/studio-projects";
-import { getProjects, FEATURED_CASE_STUDY_SLUGS } from "@/lib/projects";
-import ProjectCard from "@/components/ProjectCard";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Building — Work & Ventures",
+  title: "Building — Products in Progress",
   description: "Explore the identity, creative work, product experiences and development of EVOLUSA, BELONG, Personal CFO and more.",
   path: "/building",
 });
@@ -25,18 +23,15 @@ const features = [
 ] as const;
 
 export default function BuildingPage() {
-  const allWork = getProjects();
-  const ordered = [...FEATURED_CASE_STUDY_SLUGS.map(slug => allWork.find(p => p.slug === slug)).filter((p): p is NonNullable<typeof p> => Boolean(p)), ...allWork.filter(p => !FEATURED_CASE_STUDY_SLUGS.includes(p.slug as (typeof FEATURED_CASE_STUDY_SLUGS)[number]))];
   return (
     <main className="pb-28 pt-32 sm:pt-40">
       <div className="container-px mx-auto max-w-content">
-        <p className="eyebrow mb-5">Building / Selected work</p>
+        <p className="eyebrow mb-5">Building / Products in progress</p>
         <h1 className="max-w-5xl text-[clamp(3rem,9vw,6.8rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-paper">Ideas made <span className="font-serif italic text-gold">visible.</span></h1>
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-bone">Brand identities, digital products, campaigns and the work behind them. Explore each project from concept to what comes next.</p>
+        <p className="mt-7 max-w-2xl text-lg leading-8 text-bone">The products we are creating: their identity, experience, progress and next steps. From concept to real development.</p>
         <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-b border-line pb-6 text-xs uppercase tracking-[0.15em]">
           <a href="#ventures" className="text-gold hover:text-paper">Ventures</a>
           <a href="#other-projects" className="text-bone hover:text-paper">In progress</a>
-          <a href="#client-work" className="text-bone hover:text-paper">Creative work</a>
         </div>
         <section id="ventures" className="scroll-mt-32">
           {features.map((f) => {
@@ -64,7 +59,6 @@ export default function BuildingPage() {
             {studioProjects.filter(p=>p.slug!=="evolusa"&&p.slug!=="belong").map(p=><article id={p.slug} key={p.slug} className="scroll-mt-32 rounded-2xl border border-line p-6 sm:p-8"><div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-2xl font-semibold text-paper">{p.name}</h3><span className="text-xs uppercase tracking-wider text-gold">{p.stage}</span></div><p className="mt-2 text-lg text-paper">{p.tagline}</p><p className="mt-3 text-sm leading-7 text-bone">{p.summary}</p><div className="mt-6 flex flex-wrap gap-2">{p.milestones.map(m=><span key={m.title} className="rounded-full border border-line px-3 py-2 text-xs text-bone">{m.title}</span>)}</div>{p.slug==="personal-cfo"&&<Link href="/personal-cfo" className="mt-6 inline-flex items-center gap-2 border-b border-gold pb-2 text-sm text-gold">Explore brandbook & product <ArrowUpRight size={15}/></Link>}</article>)}
           </div>
         </section>
-        <section id="client-work" className="scroll-mt-32 border-t border-line py-20"><p className="eyebrow mb-4">Selected creative work</p><h2 className="mb-10 text-4xl font-semibold tracking-tight text-paper sm:text-5xl">Campaigns, identities & editorial.</h2><div className="grid gap-6 md:grid-cols-2">{ordered.map(project=><ProjectCard key={project.slug} project={project}/>)}</div></section>
       </div>
     </main>
   );
