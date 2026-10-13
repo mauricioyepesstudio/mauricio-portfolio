@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import VentureShowcase from "@/components/VentureShowcase";
 import { ArrowUpRight } from "lucide-react";
 
 const belongDescription =
@@ -101,6 +102,8 @@ export default function BelongPage() {
           </div>
         </Reveal>
 
+        <VentureShowcase venture="belong" />
+
         <Reveal delay={0.08}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-line">
             <Image
@@ -127,7 +130,7 @@ export default function BelongPage() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="mt-20 border-t border-line pt-10">
+          <div id="venture-brand" className="mt-20 scroll-mt-32 border-t border-line pt-10">
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Brand Identity
             </p>
@@ -173,7 +176,7 @@ export default function BelongPage() {
         </Reveal>
 
         <Reveal delay={0.13}>
-          <div className="mt-20 border-t border-line pt-10">
+          <div id="venture-roadmap" className="mt-20 scroll-mt-32 border-t border-line pt-10">
             <p className="text-xs uppercase tracking-[0.35em] text-bone mb-8">
               Recent Development
             </p>
