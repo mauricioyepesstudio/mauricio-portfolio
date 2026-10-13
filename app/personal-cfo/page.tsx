@@ -14,7 +14,7 @@ const sections = [
   { title: "Spending and cash flow", description: "See income, spending and category movement clearly.", Icon: BarChart3 },
   { title: "Data and privacy", description: "Missing values stay unregistered rather than becoming zero; sensitive figures are never shown here.", Icon: ShieldCheck },
 ];
-export default function PersonalCFOPage({ embedded = false }: { embedded?: boolean }){
+export function PersonalCFOPageContent({ embedded = false }: { embedded?: boolean }){
 return <div className={embedded ? "pb-12 pt-10" : "pb-28 pt-32 sm:pt-40"}><div className={embedded ? "" : "container-px mx-auto max-w-content"}>
 <Link href="/building#personal-cfo" className="inline-flex items-center gap-2 text-sm text-bone hover:text-gold"><ArrowLeft size={15}/> All projects</Link>
 <p className="eyebrow mb-4 mt-12">Personal CFO / Brand & product</p>
@@ -35,3 +35,5 @@ return <div className={embedded ? "pb-12 pt-10" : "pb-28 pt-32 sm:pt-40"}><div c
 <section className="mt-24 border-t border-line pt-12"><p className="eyebrow mb-4">04 / Building in public</p><h2 className="text-4xl font-semibold text-paper">From identity to product.</h2><div className="mt-9 grid gap-4 md:grid-cols-3">{[{step:"01",title:"Identity established",body:"Naming, palette, typography, logo construction and campaign system documented.",state:"Documented"},{step:"02",title:"Product experience",body:"Dashboard, net worth and month-to-month explanation designed; integration requires verification.",state:"In development"},{step:"03",title:"Connected intelligence",body:"Future data reconciliation, automation and monthly financial insights.",state:"Planned"}].map(x=><div key={x.step} className="rounded-2xl border border-line p-7"><p className="text-sm text-gold">{x.step} / {x.state}</p><h3 className="mt-5 text-xl font-semibold text-paper">{x.title}</h3><p className="mt-3 text-sm leading-7 text-bone">{x.body}</p></div>)}</div><Link href="/building" className="mt-9 inline-flex items-center gap-2 text-sm text-gold hover:text-paper">Explore all projects <ArrowUpRight size={16}/></Link></section>
 </div></div>;
 }
+
+export default function PersonalCFOPage() { return <PersonalCFOPageContent />; }
