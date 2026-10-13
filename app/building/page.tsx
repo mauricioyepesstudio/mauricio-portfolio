@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import BuildingTabs from "@/components/BuildingTabs";
-import { EvolusaPageContent } from "@/app/evolusa/page"
-import { BelongPageContent } from "@/app/belong/page"
-import { PersonalCFOPageContent } from "@/app/personal-cfo/page"
-import { ParkPlacePageContent } from "@/app/park-place/page"
+import { EvolusaPageContent } from "@/components/building/EvolusaPageContent"
+import { BelongPageContent } from "@/components/building/BelongPageContent"
+import { PersonalCFOPageContent } from "@/components/building/PersonalCFOPageContent"
+import { ParkPlacePageContent } from "@/components/building/ParkPlacePageContent"
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
