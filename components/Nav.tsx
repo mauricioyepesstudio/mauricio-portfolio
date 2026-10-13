@@ -12,7 +12,6 @@ const links = [
   { href: "/real-group-entertainment", label: "RGE" },
   { href: "/evolusa", label: "EVOLUSA" },
   { href: "/belong", label: "BELONG" },
-  { href: "/portfolio", label: "Work" },
   { href: "/building", label: "Building" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -109,7 +108,7 @@ export default function Nav() {
                     href={link.href}
                     aria-current={active ? "page" : undefined}
                     className={`relative text-sm uppercase tracking-[0.16em] transition-colors ${
-                      active ? "text-paper" : "text-bone hover:text-paper"
+                      active ? "text-gold" : link.href === "/building" ? "text-gold/90 hover:text-gold" : "text-bone hover:text-paper"
                     }`}
                   >
                     {link.label}
