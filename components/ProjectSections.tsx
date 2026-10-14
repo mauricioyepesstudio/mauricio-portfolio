@@ -168,10 +168,10 @@ function VideoSectionBlock({ assets }: { assets: MediaAsset[] }) {
 
 function SectionGroup({ sections, brand }: { sections: MediaSection[]; brand: string }) {
   return (
-    <div className="space-y-14 sm:space-y-20">
+    <div className="space-y-10 sm:space-y-12">
       {sections.map((section) => (
         <section key={section.kind} aria-labelledby={`section-${section.kind}`}>
-          <div className="mb-6 flex items-center gap-4 sm:mb-8">
+          <div className="mb-4 flex items-center gap-4 sm:mb-6">
             <h3 id={`section-${section.kind}`} className="text-xl font-medium text-paper sm:text-2xl">
               {section.title}
             </h3>
@@ -195,19 +195,19 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
   if (!campaigns.length && !supportingWork?.length) return null;
 
   return (
-    <section className="mt-24 space-y-28 sm:mt-36 sm:space-y-40">
+    <section className="mt-16 space-y-16 sm:mt-20 sm:space-y-20">
       <CampaignMenu chapters={campaigns} />
       {campaigns.map((campaign, campaignIndex) => (
         <article key={campaign.slug} id={campaign.slug} className="scroll-mt-52">
           <Reveal>
-            <header className="mb-8 grid gap-5 border-t border-white/10 pt-7 sm:mb-12 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.55fr)] lg:items-end">
+            <header className="mb-6 grid gap-4 border-t border-white/10 pt-6 sm:mb-8 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.65fr)] lg:items-end">
               <div className="flex items-start gap-4 sm:gap-6">
                 <p aria-hidden="true" className="shrink-0 font-serif text-[clamp(2.25rem,5vw,3.5rem)] italic leading-[0.9] text-gold/70">
                   {String(campaignIndex + 1).padStart(2, "0")}
                 </p>
                 <div>
                   <p className="eyebrow mb-3">{campaign.eyebrow ?? `Chapter ${String(campaignIndex + 1).padStart(2, "0")}`}</p>
-                  <h2 className="max-w-4xl break-words text-[clamp(2.35rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
+                  <h2 className="max-w-4xl break-words text-[clamp(2rem,4.5vw,4rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-paper">
                     {campaign.title}
                   </h2>
                 </div>
@@ -221,7 +221,7 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
           {campaign.hero && (
             <Reveal>
               <div
-                className="relative mb-12 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[32px]"
+                className="relative mb-8 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[32px]"
                 style={{ aspectRatio: clampRatio(ratioOf(campaign.hero)), maxHeight: "82vh" }}
               >
                 <Image
@@ -242,10 +242,10 @@ export default function ProjectSections({ campaigns, supportingWork, brand }: Pr
       {supportingWork && supportingWork.length > 0 && (
         <article className="scroll-mt-52">
           <Reveal>
-            <header className="mb-8 border-t border-white/10 pt-7 sm:mb-12">
+            <header className="mb-6 border-t border-white/10 pt-6 sm:mb-8">
               <p className="eyebrow mb-3">Selected Supporting Work</p>
               <h2 className="max-w-4xl text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-paper">
-                Additional creative supporting the campaign system.
+                Additional work.
               </h2>
             </header>
           </Reveal>
