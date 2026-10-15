@@ -5,6 +5,7 @@ export type StudioProject = {
   href?: string; portfolioHref?: string; milestones: { title: string; state: MilestoneState; detail: string }[];
 };
 export const studioProjects: StudioProject[] = [
+  { slug: "real-group-entertainment", name: "Real Group Entertainment", tagline: "Independent products, one creative studio.", summary: "Brand strategy and creative direction across the studio’s own ventures.", stage: "Live product", portfolioHref: "/portfolio/real-group-entertainment", milestones: [] },
   { slug: "evolusa", name: "EVOLUSA", tagline: "Tu próximo paso.", summary: "Professional discovery and qualified connections for Spanish-speaking communities.", stage: "Live product", href: "https://evolusa.vercel.app", portfolioHref: "/evolusa", milestones: [
     { title: "Identity and concept", state: "completed", detail: "Brand assets and positioning documented." },
     { title: "Public product", state: "completed", detail: "Product link and professional application flow available." },

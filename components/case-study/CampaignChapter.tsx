@@ -95,7 +95,7 @@ export default function CampaignChapter({
   const newsletterSection = newsletters.length ? (
     <div className="mb-14 sm:mb-20">
       <SectionLabel title="Email & Newsletter" />
-      <div className={newsletters.length > 1 ? "grid items-start gap-6 md:grid-cols-2 sm:gap-8" : ""}>
+      <div className="space-y-6 sm:space-y-8">
         {newsletters.map((item, index) => (
           <Reveal key={item.src} delay={Math.min(index * 0.05, 0.1)}>
             <NewsletterFrame
@@ -105,7 +105,6 @@ export default function CampaignChapter({
               campaign={chapter.title}
               width={item.width}
               height={item.height}
-              compact={newsletters.length > 1}
             />
           </Reveal>
         ))}

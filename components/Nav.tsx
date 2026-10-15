@@ -10,7 +10,7 @@ import BrandWordmark from "@/components/BrandWordmark";
 
 const links = [
   { href: "/portfolio", label: "Work" },
-  { href: "/building", label: "Studio" },
+  { href: "/building", label: "Building" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

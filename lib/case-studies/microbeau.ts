@@ -255,7 +255,7 @@ const fluxMax: CampaignChapterData = {
     alt: "Flux Max S — Oudwood colorway studio product shot — Microbeau",
   },
   logo: {
-    src: "/projects/microbeau/flux-max/logo/microbeau-flux-max-logo.jpg",
+    src: "/projects/microbeau/flux-max/logo/flux-max-s-owner-logo.png",
     alt: "Flux Max logo lockup",
   },
   newsletter: {

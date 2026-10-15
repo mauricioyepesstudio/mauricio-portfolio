@@ -122,11 +122,7 @@ export default function EditorialChapter({
       )}
 
       {hasSecondaryColumn && (
-        // Only split into two columns when both a spotlight image and a newsletter exist side
-        // by side. A chapter with just one of the two (e.g. newsletter alone) would otherwise
-        // still reserve a lg:grid-cols-2 track for the missing element, leaving an empty column
-        // beside the email — the "unused black area" the desktop layout pass was fixing.
-        <div className={`grid min-w-0 gap-6 sm:gap-8 ${chapter.spotlight && chapter.newsletter ? "lg:grid-cols-2" : ""}`}>
+        <div className="min-w-0 space-y-6 sm:space-y-8">
           {chapter.spotlight && (
             <Reveal delay={0.05}>
               <figure className="min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:rounded-[28px]">
