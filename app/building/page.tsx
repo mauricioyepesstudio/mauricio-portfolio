@@ -5,7 +5,7 @@ import { studioProjects } from "@/lib/studio-projects";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Building in Public",
+  title: "Studio",
   description: "Explore EVOLUSA, BELONG, Personal CFO and the evolving studio project roadmap.",
   path: "/building",
 });
@@ -20,17 +20,16 @@ export default function BuildingPage() {
   return (
     <div className="pb-24 pt-28 sm:pt-36 md:pb-32 md:pt-40">
       <div className="container-px mx-auto max-w-content">
-        <p className="eyebrow mb-5">The studio / Building in public</p>
+        <p className="eyebrow mb-5">The studio</p>
         <h1 className="max-w-5xl text-[clamp(2.8rem,8vw,5.4rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-paper">
-          From first idea<br /><span className="font-serif italic text-gold">to what ships next.</span>
+          From first idea
+          <span className="mt-2 block font-sans font-normal not-italic leading-[1.12] tracking-normal text-gold">to what ships next.</span>
         </h1>
         <p className="mt-7 max-w-2xl text-base leading-7 text-bone">
-          Every project has a story. Explore its purpose, what exists today, what is being built and what comes next.
+          Products, brands and projects taking shape in the studio.
         </p>
-        <p className="mt-3 max-w-2xl text-xs leading-6 text-bone">
-          Editorial project log, not a live operational dashboard. Milestones are curated and updated through code review; no automatic sync is claimed.
-        </p>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <Link href="/real-group-entertainment" className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm text-gold underline underline-offset-4">Explore Real Group Entertainment <ArrowUpRight size={15} /></Link>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {studioProjects.map((project) => (
             <article key={project.slug} id={project.slug} className="scroll-mt-32 rounded-3xl border border-line bg-white/[0.025] p-6 sm:p-8">
               <div className="flex flex-wrap items-start justify-between gap-3">
@@ -39,7 +38,9 @@ export default function BuildingPage() {
               </div>
               <p className="mt-3 text-lg text-paper">{project.tagline}</p>
               <p className="mt-2 text-sm leading-6 text-bone">{project.summary}</p>
-              <ol className="mt-8 space-y-5 border-l border-white/15 pl-5">
+              <details className="mt-6 border-t border-line pt-4">
+                <summary className="min-h-11 cursor-pointer text-sm font-medium text-paper">Project milestones</summary>
+              <ol className="mt-4 space-y-5 border-l border-white/15 pl-5">
                 {project.milestones.map((m) => {
                   const { Icon, label } = states[m.state];
                   return (
@@ -51,6 +52,7 @@ export default function BuildingPage() {
                   );
                 })}
               </ol>
+              </details>
               <div className="mt-8 flex flex-wrap gap-3">
                 {project.portfolioHref && <Link href={project.portfolioHref} className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-3 text-sm text-black">Explore case study <ArrowUpRight size={15}/></Link>}
                 {project.href && <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 text-sm text-paper hover:border-paper">Open public product <ArrowUpRight size={15}/></a>}
