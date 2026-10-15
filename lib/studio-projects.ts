@@ -15,10 +15,10 @@ export const studioProjects: StudioProject[] = [
     { title: "Public product experience", state: "completed", detail: "Public site is available; features should be verified against the live build." },
     { title: "Community and Proof Loop", state: "in_progress", detail: "Ongoing product development; no completion claim." }
   ]},
-  { slug: "personal-cfo", name: "Personal CFO", tagline: "See your financial picture clearly.", summary: "A personal finance dashboard concept covering cash flow, net worth, liabilities and month-over-month changes.", stage: "Prototype", milestones: [
-    { title: "Financial dashboard concept", state: "completed", detail: "Initial app structure and key metrics defined." },
-    { title: "Data integration and reconciliation", state: "in_progress", detail: "Live account connectivity and data accuracy must be verified before claiming automation." },
-    { title: "Automated monthly insights", state: "planned", detail: "Planned explanations, comparisons and actionable reports." }
+  { slug: "personal-cfo", name: "Personal CFO", tagline: "See your financial picture clearly.", summary: "Track income, expenses, net worth and monthly changes with data you enter yourself. No bank connections.", stage: "Live product", href: "https://personalcfo.me/app/", portfolioHref: "/portfolio/personal-cfo", milestones: [
+    { title: "Financial overview", state: "completed", detail: "Income, expenses, assets and debts in one place." },
+    { title: "Monthly comparison", state: "completed", detail: "Compare debt, bank balances and investments with the previous month." },
+    { title: "Client review", state: "in_progress", detail: "The current release is being reviewed with Miguel." }
   ]},
   { slug: "owner-statements", name: "Owner Statements", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal concept for statements, imports, unit reporting and annual tax documents.", stage: "Prototype", milestones: [
     { title: "Owner and admin requirements", state: "completed", detail: "Excel/PDF imports, monthly views, owner visibility and 1099 requirements documented." },

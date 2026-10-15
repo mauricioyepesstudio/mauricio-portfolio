@@ -29,17 +29,11 @@ export default function PortfolioPage() {
             <p className="eyebrow mb-5">Portfolio</p>
 
             <h1 className="font-sans text-[clamp(2.7rem,10vw,4.75rem)] font-semibold leading-[0.94] tracking-[-0.04em] text-paper">
-              Every project here
-              <br />
-              ships with the process
-              <br />
-              behind it.
+              Selected work.
             </h1>
 
             <p className="mt-6 max-w-3xl text-base leading-7 text-bone sm:mt-8 sm:text-xl sm:leading-9">
-              Branding, editorial design, lead-generation systems and product launches — each case
-              study broken down by problem, approach and outcome, not just a gallery of final
-              assets.
+              Brand identities, campaigns and digital experiences.
             </p>
           </div>
         </Reveal>
