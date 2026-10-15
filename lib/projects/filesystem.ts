@@ -68,7 +68,7 @@ const SECTION_ORDER: MediaKind[] = ["logo", "packaging", "product", "print", "ev
 
 /** Fallback ordering when a campaign has no explicit editorial `priority`. Substring-matched against the campaign slug. */
 const CAMPAIGN_PRIORITY: Record<string, string[]> = {
-  "south-florida-home-magazine": ["pool-leads", "broward-palm-beach"],
+  "resource-living": ["pool-leads", "broward-palm-beach"],
   getlost: ["hero", "logos", "packaging", "new-products", "events", "web-site", "social", "estationery"],
   evenflo: ["true-lips", "blonde-to-brunette"],
 };

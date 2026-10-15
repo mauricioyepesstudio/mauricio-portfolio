@@ -2,87 +2,134 @@ import "server-only";
 
 import type { EditorialChapter, SectionIntro, SocialPick } from "./types";
 
-// ANONYMOUS CASE — requires written permission before naming the client.
-// No client name, logo, URL or figures may appear in this case. Only assets
-// verified free of the client's logo/wordmark are referenced: the ad-sales,
-// C2 Multimedia and "Your Business Here" tracks, the stories and the pool
-// video all carry the client's branding and stay out until permission exists.
-// Paths use the public alias below; next.config.mjs rewrites it to the source
-// folder so the client's name never appears in a URL.
-export const ANONYMOUS_SLUG = "south-florida-home-magazine";
-const ASSETS = `/projects/${ANONYMOUS_SLUG}`;
+// Named case (client permission confirmed 2026-10-09). Still no invented
+// figures: performance insights are added only once real data exists.
+export const RESOURCE_LIVING_SLUG = "resource-living";
+const ASSETS = `/projects/${RESOURCE_LIVING_SLUG}`;
+const OCT_2026 = `${ASSETS}/campaigns/06-broward-palm-beach-oct-2026`;
 
+const POOL_LEADS = `${ASSETS}/campaigns/02-pool-leads/final-2026`;
+const FREE_ESTIMATES = `${ASSETS}/campaigns/07-get-3-free-estimates-2026`;
+
+const verticalVideo = (base: string, file: string, caption: string) => ({
+  src: `${base}/video/${file}.mp4`,
+  poster: `${base}/video/${file}-poster.jpg`,
+  caption,
+  orientation: "vertical" as const,
+});
+
+// Final 2026 pool-builder lead creative. No wide hero exists for this
+// campaign, so the chapter leads with its feed ads and vertical videos.
 const poolLeads: EditorialChapter = {
   slug: "pool-leads",
   eyebrow: "04 — Campaign",
   title: "Pool Leads",
   intro:
-    "A homeowner-facing lead campaign for South Florida pool and outdoor-living builders, pairing lifestyle imagery with a direct consultation call to action.",
-  hero: {
-    src: `${ASSETS}/campaigns/02-pool-leads/hero/South-Florida-Living-Luxury-Comfort-Memories-Free-Consultation-hero.png`,
-    alt: "Pool Leads campaign hero — South Florida living",
-  },
-  featureVisual: {
-    src: `${ASSETS}/campaigns/02-pool-leads/social/Luxury-Pools.png`,
-    alt: "Luxury pools lead ad — South Florida lifestyle photography",
-    width: 1080,
-    height: 1920,
-  },
+    "A homeowner-facing lead campaign that connects South Florida homeowners with vetted pool builders, pairing resort-style backyard imagery with a free-consultation and flexible-financing call to action.",
   social: [
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/Pool-Builders-Dream-Backyard-Design-Top-Pool-Builders-Free-Consultation.png`, alt: "Pool builders — dream backyard design" },
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/South-Florida-Outdoor-Living-Backyard-Design-Evolution.png`, alt: "Outdoor living — backyard design evolution" },
-    { src: `${ASSETS}/campaigns/02-pool-leads/social/Vacation-Living.png`, alt: "Vacation living lead ad" },
+    { src: `${POOL_LEADS}/social/you-may-qualify-dream-pool.jpg`, alt: "Pool ad — You may qualify to build your dream pool" },
+    { src: `${POOL_LEADS}/social/empty-backyard-to-private-resort.jpg`, alt: "Before-and-after pool ad — From empty backyard to private resort" },
+    { src: `${POOL_LEADS}/social/build-your-dream-backyard.jpg`, alt: "Pool ad — Build your dream backyard" },
+    { src: `${POOL_LEADS}/social/get-matched-pool-builders.jpg`, alt: "Pool ad — Get matched with top pool builders in South Florida" },
+    { src: `${POOL_LEADS}/social/luxury-pools.jpg`, alt: "Luxury Pools campaign post" },
+    { src: `${POOL_LEADS}/social/outdoor-living.jpg`, alt: "Outdoor Living campaign post" },
+    { src: `${POOL_LEADS}/social/every-day-feels-like-vacation.jpg`, alt: "Pool ad — Live where every day feels like vacation" },
+    { src: `${POOL_LEADS}/social/magazine-download.jpg`, alt: "Resource Living magazine download ad" },
+  ],
+  videos: [
+    verticalVideo(POOL_LEADS, "empty-backyard-to-resort", "From empty backyard to private resort."),
+    verticalVideo(POOL_LEADS, "made-for-family", "Made for family, built for memories."),
+    verticalVideo(POOL_LEADS, "get-matched-vacation", "Get matched with top pool builders."),
   ],
 };
 
-// The current track: a single Meta Ads campaign covering Broward and Palm
-// Beach counties, segmented into per-category ad sets. Performance insights
-// get added only once the campaign reports real data (and the client allows it).
+// "Get 3 Free Estimates" Meta lead kit: one feed post and one 6-second reel per
+// service category, all pointing to the same free-estimates offer.
+const freeEstimates: EditorialChapter = {
+  slug: "get-3-free-estimates",
+  eyebrow: "05 — Campaign",
+  title: "Get 3 Free Estimates",
+  intro:
+    "A Meta lead-generation kit for South Florida homeowners: one feed post, Story and 6-second vertical reel per service category, each built around the same offer — compare trusted local professionals and request up to three free estimates.",
+  social: [
+    { src: `${FREE_ESTIMATES}/social/kitchen-post.jpg`, alt: "Kitchen remodeling ad — The kitchen you keep imagining" },
+    { src: `${FREE_ESTIMATES}/social/closets-post.jpg`, alt: "Custom closets ad — Make room for the life you live" },
+    { src: `${FREE_ESTIMATES}/social/garage-post.jpg`, alt: "Garage solutions ad — Reclaim the space you already have" },
+    { src: `${FREE_ESTIMATES}/social/landscaping-post.jpg`, alt: "Landscaping ad — Turn your yard into the view" },
+    { src: `${FREE_ESTIMATES}/social/painting-post.jpg`, alt: "Painting ad — Change the color. Change the feel." },
+    { src: `${FREE_ESTIMATES}/social/pavers-post.jpg`, alt: "Pavers ad — Make every arrival feel impressive" },
+  ],
+  videos: [
+    verticalVideo(FREE_ESTIMATES, "kitchen-reel", "Kitchens — Imagine this as your kitchen."),
+    verticalVideo(FREE_ESTIMATES, "closets-reel", "Closets — Space, designed around you."),
+    verticalVideo(FREE_ESTIMATES, "garage-reel", "Garages — Your garage can do more."),
+    verticalVideo(FREE_ESTIMATES, "landscaping-reel", "Landscaping — Your dream yard starts here."),
+    verticalVideo(FREE_ESTIMATES, "painting-reel", "Painting — A fresh start for every room."),
+    verticalVideo(FREE_ESTIMATES, "pavers-reel", "Pavers — Curb appeal starts here."),
+  ],
+};
+
+// The current track: one Meta Ads campaign covering Broward and Palm Beach,
+// segmented into per-category ad sets. October 2026 refresh: a new editorial
+// photo system, typographic category ads and a 3-second vertical video per
+// category. Performance insights get added only once the campaign reports data.
+const categoryVideo = (file: string, caption: string) => verticalVideo(OCT_2026, file, caption);
+
+const BROWARD_PALM_BEACH_HERO = `${OCT_2026}/hero/biscayne-bay-living-room-hero.jpg`;
+
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
-  eyebrow: "05 — Campaign",
+  eyebrow: "06 — Campaign",
   title: "Broward – Palm Beach Lead Campaign",
   intro:
-    "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, structured as a single campaign segmented into service-category ad sets — AC, bathrooms, pavers, roofing, windows & doors, landscaping, kitchens, pools and more — each with its own creative and a dedicated Meta lead form.",
+    "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — pools, kitchens, bathrooms, impact windows, roofing, pavers, pergolas, outdoor kitchens and more. The October 2026 refresh gives every category one editorial look: golden-hour South Florida homes, restrained serif headlines and a short vertical video per category.",
   hero: {
-    src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/hero/broward-palm-beach-campaign-hero.png`,
-    alt: "Broward – Palm Beach Meta Ads lead campaign hero — kitchens category creative",
+    src: BROWARD_PALM_BEACH_HERO,
+    alt: "Waterfront living room at golden hour overlooking Biscayne Bay",
   },
   social: [
-    { src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/advertising/kitchens-ad-creative.png`, alt: "Kitchens category ad creative" },
-    { src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/advertising/bathrooms-ad-creative.png`, alt: "Bathrooms category ad creative" },
-    { src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/advertising/roofing-ad-creative.png`, alt: "Roofing category ad creative" },
-    { src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/advertising/windows-and-doors-ad-creative.png`, alt: "Windows & doors category ad creative" },
-    { src: `${ASSETS}/campaigns/05-broward-palm-beach-meta-campaign/advertising/landscaping-ad-creative.jpg`, alt: "Landscaping category ad creative" },
+    { src: `${OCT_2026}/advertising/kitchens-baths-beautifully-lived-in.jpg`, alt: "Kitchens & baths ad — Beautifully lived in" },
+    { src: `${OCT_2026}/advertising/impact-windows-light-meets-strength.jpg`, alt: "Impact windows & doors ad — Light meets strength" },
+    { src: `${OCT_2026}/advertising/roofing-beauty-above-it-all.jpg`, alt: "Roofing ad — Beauty above it all" },
+    { src: `${OCT_2026}/advertising/pavers-a-beautiful-first-impression.jpg`, alt: "Pavers & driveways ad — A beautiful first impression" },
+    { src: `${OCT_2026}/advertising/interiors-every-detail-elevated.jpg`, alt: "Interiors & home care ad — Every detail, elevated" },
+    { src: `${OCT_2026}/advertising/garage-room-for-more.jpg`, alt: "Garage & epoxy ad — Room for more" },
+    { src: `${OCT_2026}/advertising/restoration-beauty-renewed.jpg`, alt: "Cleaning & restoration ad — Beauty, renewed" },
+    { src: `${OCT_2026}/social/pergola-twilight.jpg`, alt: "Pergola over a pool at twilight" },
   ],
-};
-
-const impactWindows = {
-  src: `${ASSETS}/social/Impact-Windows-Doors-Elegance-Security-Hurricane-Protection.png`,
-  alt: "Impact windows & doors category ad",
+  videos: [
+    categoryVideo("01-pools", "Pools — Evenings that feel like a private resort."),
+    categoryVideo("02-kitchens", "Kitchens — Where every gathering begins."),
+    categoryVideo("03-bathrooms", "Bathrooms — Your daily retreat, redefined."),
+    categoryVideo("05-impact-windows-doors", "Impact windows & doors — Light, views and peace of mind."),
+    categoryVideo("06-roofing", "Roofing — Built to stand beautiful."),
+    categoryVideo("07-pavers", "Pavers — Every arrival, a statement."),
+    categoryVideo("10-pergolas", "Pergolas — Outdoor living, elevated."),
+    categoryVideo("11-screen-enclosures", "Screen enclosures — Enjoy the outdoors, your way."),
+    categoryVideo("21-outdoor-kitchens", "Outdoor kitchens — Entertaining, South Florida style."),
+  ],
 };
 
 const closingSystem: SectionIntro = {
-  eyebrow: "07 — Closing",
+  eyebrow: "08 — Closing",
   title: "One commercial system, not a set of ads.",
   description:
-    "Homeowner-facing pool and outdoor-living leads and the Broward–Palm Beach Meta campaign share one creative system and one lead-capture mechanism that extends to any new service category.",
+    "Resource Living's pool leads, the Get 3 Free Estimates kit and the Broward–Palm Beach Meta campaign share one creative system and one lead-capture mechanism that extends to any new service category.",
 };
 
 const socialSection: SectionIntro = {
-  eyebrow: "06 — Social Campaign System",
-  title: "Two campaigns, one editorial sequence.",
-  description: "The strongest feed and story executions across both tracks, curated side by side rather than shown as a full export dump.",
+  eyebrow: "07 — Organic Content",
+  title: "One editorial look across every category.",
+  description: "Organic posts from the October 2026 calendar — the same photography and light that carry the paid campaign, published as the magazine's own feed.",
 };
 
 const social: SocialPick[] = [
-  { ...poolLeads.social![0], campaign: "Pool Leads", size: "feature" },
-  { ...browardPalmBeach.social![0], campaign: "Broward – Palm Beach", size: "tall" },
-  { ...poolLeads.social![2], campaign: "Pool Leads", size: "support" },
-  { ...impactWindows, campaign: "Service Categories", size: "support" },
-  { ...poolLeads.social![1], campaign: "Pool Leads", size: "tall" },
-  { ...browardPalmBeach.social![1], campaign: "Broward – Palm Beach", size: "support" },
-  { ...browardPalmBeach.social![3], campaign: "Broward – Palm Beach", size: "support" },
+  { src: `${OCT_2026}/social/pool-teal-oasis.jpg`, alt: "Teal pool with in-water loungers", campaign: "Pools", size: "support" },
+  { src: `${OCT_2026}/social/kitchen-dusk-pool.jpg`, alt: "Marble kitchen at dusk overlooking the pool", campaign: "Kitchens", size: "support" },
+  { src: `${OCT_2026}/social/bathroom-palm-beach-canal.jpg`, alt: "Palm Beach bathroom with canal view", campaign: "Bathrooms", size: "support" },
+  { src: `${OCT_2026}/social/roofing-waterway-estate.jpg`, alt: "Charcoal-roofed estate by the waterway", campaign: "Roofing", size: "support" },
+  { src: `${OCT_2026}/social/closet-marble-island.jpg`, alt: "Walk-in closet with marble island", campaign: "Closets", size: "support" },
+  { src: `${OCT_2026}/social/outdoor-kitchen-golden-hour.jpg`, alt: "Outdoor kitchen by the pool at golden hour", campaign: "Outdoor Kitchens", size: "support" },
 ];
 
 export type ResourceLivingCaseStudyData = {
@@ -100,7 +147,7 @@ export type ResourceLivingCaseStudyData = {
 };
 
 export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
-  heroImage: browardPalmBeach.hero.src,
+  heroImage: BROWARD_PALM_BEACH_HERO,
   narrative: {
     creativeSystem:
       "A modular design system — consistent typography, color and layout rules — lets every homeowner lead campaign and service category read as part of one trusted publication instead of separate marketing efforts.",
@@ -110,7 +157,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
     outcome:
       "The campaigns now share one visual and messaging system — a repeatable framework the publication can extend to new service categories without starting from scratch.",
   },
-  chapters: [poolLeads, browardPalmBeach],
+  chapters: [poolLeads, freeEstimates, browardPalmBeach],
   closingSystem,
   socialSection,
   social,

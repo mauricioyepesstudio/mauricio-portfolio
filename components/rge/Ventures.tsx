@@ -28,6 +28,17 @@ const ventures = [
     accent: "#7c3aed",
     logo: null,
   },
+  {
+    name: "Personal CFO",
+    status: "Prototype",
+    tagline: "Your money, clearly explained.",
+    description: "A personal financial command center: cash flow, net worth, debts and monthly trends — developed with an emphasis on clarity and practical decisions.",
+    proof: null,
+    href: "/building#personal-cfo",
+    external: null,
+    accent: "#b08d57",
+    logo: null,
+  },
 ];
 
 export default function RGEVentures() {
@@ -37,11 +48,11 @@ export default function RGEVentures() {
         <Reveal>
           <p className="eyebrow mb-5">The Ventures</p>
           <h2 className="font-sans text-[clamp(2.4rem,7vw,4rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-paper max-w-3xl">
-            Two products in production, not two decks.
+            Products, experiments and ideas in motion.
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-10">
+        <div className="mt-16 grid gap-6 md:grid-cols-3 md:gap-6">
           {ventures.map((v, i) => (
             <Reveal key={v.name} delay={i * 0.08} className="min-w-0">
               <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white/[0.02] p-6 sm:p-10 transition hover:border-white/20">
@@ -112,6 +123,7 @@ export default function RGEVentures() {
             </Reveal>
           ))}
         </div>
+        <div className="mt-10 text-center"><Link href="/building" className="inline-flex items-center gap-2 rounded-full border border-line px-7 py-4 text-sm text-paper transition hover:border-paper">Explore the complete project roadmap <ArrowUpRight size={16} /></Link></div>
       </div>
     </section>
   );

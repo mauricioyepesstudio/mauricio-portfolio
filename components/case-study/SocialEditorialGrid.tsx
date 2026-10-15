@@ -2,12 +2,6 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import type { SectionIntro, SocialPick } from "@/lib/case-studies/types";
 
-const SIZE_CLASS: Record<SocialPick["size"], string> = {
-  feature: "sm:col-span-2 sm:row-span-2 aspect-[4/5] sm:aspect-auto",
-  tall: "row-span-2 aspect-[9/16] sm:aspect-auto",
-  support: "aspect-[4/5] sm:aspect-auto",
-};
-
 export default function SocialEditorialGrid({
   intro,
   picks,
@@ -27,19 +21,20 @@ export default function SocialEditorialGrid({
         </div>
       </Reveal>
 
-      <div className="grid min-w-0 grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6 sm:[grid-auto-rows:130px] lg:[grid-auto-rows:150px]">
+      {/* Uniform 4:5 tiles: posts are composed for that frame, so nothing gets cropped. */}
+      <div className="grid min-w-0 grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
         {picks.map((pick, index) => (
           <Reveal
             key={pick.src}
             delay={Math.min(index * 0.04, 0.2)}
-            className={`min-w-0 ${SIZE_CLASS[pick.size]}`}
+            className="min-w-0"
           >
-            <figure className="group relative h-full min-h-[220px] w-full min-w-0 overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:min-h-0 sm:rounded-2xl">
+            <figure className="group relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:rounded-2xl">
               <Image
                 src={pick.src}
                 alt={pick.alt}
                 fill
-                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 46vw, 24vw"
+                sizes="(max-width: 1024px) 46vw, 30vw"
                 className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

@@ -53,7 +53,7 @@ export const experience = [
 
   {
     role: "Senior Graphic Designer & Marketing Specialist",
-    org: "South Florida Home-Improvement Magazine",
+    org: "Resource Living Magazine",
     location: "Miami, Florida",
     period: "2022 — Present",
     description:

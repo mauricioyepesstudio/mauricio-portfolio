@@ -1,3 +1,4 @@
+import CampaignMenu from "./CampaignMenu";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -74,6 +75,8 @@ export default function ResourceLivingCaseStudy({ project, previous, next }: Pro
           channels={study.narrative.channels}
           outcome={study.narrative.outcome}
         />
+
+        <CampaignMenu chapters={study.chapters} />
 
         {study.chapters.map((chapter) => (
           <EditorialChapter key={chapter.slug} chapter={chapter} brand={project.title} />

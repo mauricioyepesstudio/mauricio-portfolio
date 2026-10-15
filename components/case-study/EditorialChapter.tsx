@@ -69,7 +69,7 @@ export default function EditorialChapter({
   const hasSecondaryColumn = chapter.spotlight || chapter.newsletter;
 
   return (
-    <article id={chapter.slug} className="mt-24 scroll-mt-32 sm:mt-36">
+    <article id={chapter.slug} className="mt-24 scroll-mt-52 sm:mt-36">
       <Reveal>
         <header className="mb-10 grid gap-5 border-t border-white/10 pt-7 sm:mb-14 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.5fr)] lg:items-end">
           <div>
@@ -82,19 +82,21 @@ export default function EditorialChapter({
         </header>
       </Reveal>
 
-      <Reveal>
-        <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
-          <div className="relative aspect-[16/10] sm:aspect-[16/9]">
-            <Image
-              src={chapter.hero.src}
-              alt={chapter.hero.alt}
-              fill
-              sizes="(max-width: 1536px) 92vw, 1440px"
-              className="object-cover"
-            />
+      {chapter.hero && (
+        <Reveal>
+          <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9]">
+              <Image
+                src={chapter.hero.src}
+                alt={chapter.hero.alt}
+                fill
+                sizes="(max-width: 1536px) 92vw, 1440px"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      )}
 
       {chapter.featureVisual && (
         <Reveal>
@@ -177,11 +179,21 @@ export default function EditorialChapter({
             </div>
             <div
               className={`grid min-w-0 gap-6 sm:gap-8 ${
-                chapter.videos.length > 1 ? "lg:grid-cols-2" : "max-w-2xl"
+                chapter.videos.length === 1
+                  ? "max-w-2xl"
+                  : chapter.videos.length > 2 && chapter.videos.every((video) => video.orientation === "vertical")
+                    ? "sm:grid-cols-2 lg:grid-cols-3"
+                    : "lg:grid-cols-2"
               }`}
             >
               {chapter.videos.map((video) => (
-                <ProjectVideoPlayer key={video.src} src={video.src} caption={video.caption} orientation={video.orientation} />
+                <ProjectVideoPlayer
+                  key={video.src}
+                  src={video.src}
+                  poster={video.poster}
+                  caption={video.caption}
+                  orientation={video.orientation}
+                />
               ))}
             </div>
           </div>

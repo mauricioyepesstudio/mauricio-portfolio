@@ -3,7 +3,7 @@
 **Proyecto ACTIVO (reactivado 2026-10-01); lo resume el cerebro central (AI-Projects-Control-Plane) cada lunes.**
 
 - **Objetivo:** Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
-- **Regla de clientes:** un proyecto de cliente (Resource Living, Laura/1MIGRATION) solo aparece si el cliente lo autoriza; márcalo como "requiere permiso". Resource Living se mantiene solo ANÓNIMO ("Revista de mejoras del hogar del sur de Florida"; sin logo, nombre ni cifras) hasta tener permiso escrito; Laura/1MIGRATION no se muestra.
+- **Regla de clientes:** un proyecto de cliente (Resource Living, Laura/1MIGRATION) solo aparece si el cliente lo autoriza; márcalo como "requiere permiso". Resource Living: permiso confirmado por el usuario el 2026-10-09 (lo gestiona vía Real Group Entertainment), se muestra con nombre y logo, sin cifras inventadas; Laura/1MIGRATION no se muestra.
 
 - **Qué es:** portfolio oficial de Mauricio Yepes (Senior Graphic Designer / Art Director / Creative Director). Repo oficial: `mauricioyepesstudio/mauricio-portfolio` (el repo `mauricioyepes` está archivado).
 - **Stack:** Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion; desplegado en Vercel.

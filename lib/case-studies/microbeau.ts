@@ -31,6 +31,21 @@ const beautyInAuthenticity: CampaignChapterData = {
     width: 600,
     height: 7116,
   },
+  extraNewsletters: [
+    {
+      src: "/projects/microbeau/beauty-in-authenticity/newsletter/microbeau-beauty-in-authenticity-newsletter-2.webp",
+      alt: "Beauty in Authenticity offer email — machine and carrying case",
+      note: "Offer Email",
+      width: 600,
+      height: 3058,
+    },
+  ],
+  banners: [
+    {
+      src: "/projects/microbeau/beauty-in-authenticity/gallery/web-banners/microbeau-beauty-in-authenticity-web-banner-1.jpg",
+      alt: "Beauty in Authenticity web banner — machine with free carrying case offer",
+    },
+  ],
   posts: [
     ...[1, 2, 3, 4].map((n) => ({
       src: `/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-${n}.jpg`,
@@ -40,6 +55,8 @@ const beautyInAuthenticity: CampaignChapterData = {
     // folder — strengthens the portrait storytelling the chapter is meant to lead with.
     { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Ari-Schweiger-Beauty-Brows-Lips-Nips.png", alt: "Beauty in Authenticity — Ari Schweiger portrait" },
     { src: "/projects/microbeau/campaigns/01-beauty-in-authenticity/social/Liv-Seidel-Beauty-Authentic-Beauty.png", alt: "Beauty in Authenticity — Liv Seidel portrait" },
+    // Group portrait of the four featured artists — the campaign's collective key visual in feed format.
+    { src: "/projects/microbeau/beauty-in-authenticity/social/posts/microbeau-beauty-in-authenticity-post-5.jpg", alt: "Beauty in Authenticity — four featured artists group portrait" },
   ],
   stories: [1, 2, 3].map((n) => ({
     src: `/projects/microbeau/beauty-in-authenticity/social/stories/microbeau-beauty-in-authenticity-story-${n}.jpg`,
@@ -61,6 +78,7 @@ const beautyInAuthenticity: CampaignChapterData = {
 
 const vertixPico: CampaignChapterData = {
   slug: "vertix-pico",
+  hideHero: true,
   eyebrow: "06 — Campaign",
   title: "Vertix Pico",
   intro:
@@ -81,7 +99,6 @@ const vertixPico: CampaignChapterData = {
     alt: "Vertix Pico packaging mockup",
   },
   banners: [
-    { src: "/projects/microbeau/vertix-pico/hero/microbeau-vertix-pico-hero.jpg", alt: "Vertix Pico application macro — hand, needle and ink tube" },
     { src: "/projects/microbeau/vertix-pico/gallery/web-banners/microbeau-vertix-pico-web-banner-2.jpg", alt: "Vertix Pico web banner 2" },
   ],
   newsletter: {
@@ -104,18 +121,6 @@ const vertixPico: CampaignChapterData = {
       src: "/projects/microbeau/vertix-pico/video/microbeau-vertix-pico-video.mp4",
       caption: "Vertix Pico — Campaign Film",
       orientation: "landscape",
-    },
-  ],
-  // Real educational/technical asset from the pico-needle configuration
-  // material — proof the campaign also translated technical specs for
-  // working artists, not just product photography.
-  gallery: [
-    {
-      title: "Needle Configuration Guide",
-      assets: [
-        { src: "/projects/microbeau/campaigns/08-pico-needle/hero/Vertix-Pico-Pico-Round-Shader-Medium-Taper-Curved-Magnum.png", alt: "Vertix Pico needle configuration comparison — round shader vs. curved magnum" },
-      ],
-      emphasis: "large",
     },
   ],
 };
@@ -184,6 +189,7 @@ const fluxMini: CampaignChapterData = {
   stories: [1, 2, 3].map((n) => ({
     src: `/projects/microbeau/flux-mini/social/stories/microbeau-flux-mini-story-${n}.webp`,
     alt: `Flux Mini social story ${n}`,
+    ...(n === 1 ? { fit: "contain" as const, background: "light" as const } : {}),
   })),
   videos: [
     {
@@ -194,9 +200,50 @@ const fluxMini: CampaignChapterData = {
   ],
 };
 
+const fluxMiniAnniversary: CampaignChapterData = {
+  slug: "flux-mini-anniversary",
+  eyebrow: "09 — Campaign",
+  title: "Flux Mini — One Year Anniversary",
+  intro:
+    "A birthday campaign celebrating a year of the Flux Mini — a celebratory key visual, artist testimonials and a short anniversary offer carried through feed, story and email.",
+  hero: {
+    src: "/projects/microbeau/flux-mini-anniversary/hero/microbeau-flux-mini-anniversary-hero.jpg",
+    alt: "Flux Mini one-year anniversary key visual — Microbeau",
+  },
+  heroFit: "contain",
+  newsletter: {
+    src: "/projects/microbeau/flux-mini-anniversary/newsletter/microbeau-flux-mini-anniversary-newsletter.jpg",
+    alt: "Flux Mini anniversary deals email",
+    note: "Anniversary Email",
+    width: 600,
+    height: 5072,
+  },
+  extraNewsletters: [
+    {
+      src: "/projects/microbeau/flux-mini-anniversary/newsletter/microbeau-flux-mini-anniversary-newsletter-2.jpg",
+      alt: "Flux Mini follow-up email — it's not too late to celebrate",
+      note: "Follow-Up Email",
+      width: 600,
+      height: 4531,
+    },
+  ],
+  posts: [
+    { src: "/projects/microbeau/flux-mini-anniversary/social/posts/microbeau-flux-mini-anniversary-post-1.jpg", alt: "Flux Mini anniversary artist testimonial — Anna Manina" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/posts/microbeau-flux-mini-anniversary-post-2.jpg", alt: "Flux Mini anniversary artist testimonial — Henna Hamidi" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/posts/microbeau-flux-mini-anniversary-post-3.jpg", alt: "Flux Mini anniversary artist testimonial — Jacqueline Yang" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/posts/microbeau-flux-mini-anniversary-post-4.jpg", alt: "Flux Mini anniversary stroke-size birthday offer" },
+  ],
+  stories: [
+    { src: "/projects/microbeau/flux-mini-anniversary/social/stories/microbeau-flux-mini-anniversary-story-1.jpg", alt: "Flux Mini anniversary story" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/stories/microbeau-flux-mini-anniversary-story-2.jpg", alt: "Flux Mini 2.5mm and 3.0mm stroke offer story" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/stories/microbeau-flux-mini-anniversary-story-3.jpg", alt: "Flux Mini battery story" },
+    { src: "/projects/microbeau/flux-mini-anniversary/social/stories/microbeau-flux-mini-anniversary-story-4.jpg", alt: "Flux S voltages explained story" },
+  ],
+};
+
 const fluxMax: CampaignChapterData = {
   slug: "flux-max",
-  eyebrow: "09 — Campaign",
+  eyebrow: "10 — Campaign",
   title: "Flux Max",
   intro:
     "The flagship machine in the Flux line, introduced through a bolder hero treatment and colorway-driven social content aimed at working professionals.",
@@ -211,6 +258,26 @@ const fluxMax: CampaignChapterData = {
     src: "/projects/microbeau/flux-max/logo/microbeau-flux-max-logo.jpg",
     alt: "Flux Max logo lockup",
   },
+  newsletter: {
+    src: "/projects/microbeau/flux-max/newsletter/microbeau-flux-max-newsletter.jpg",
+    alt: "Flux S Max campaign email — see why artists are loving the Flux S Max",
+    note: "Campaign Email",
+    width: 600,
+    height: 5150,
+  },
+  extraNewsletters: [
+    {
+      src: "/projects/microbeau/flux-max/newsletter/microbeau-flux-max-newsletter-2.jpg",
+      alt: "Flux S Max email — scalp micropigmentation procedures, needles and machines",
+      note: "Procedures Email",
+      width: 600,
+      height: 3745,
+    },
+  ],
+  posts: [
+    { src: "/projects/microbeau/flux-max/social/posts/microbeau-flux-max-post-1.webp", alt: "Vertix Pico 3RS round shader cartridge post" },
+    { src: "/projects/microbeau/flux-max/social/posts/microbeau-flux-max-post-2.webp", alt: "Vertix Pico 9CM curved magnum cartridge post" },
+  ],
   gallery: [
     {
       // "Rouge" pairs with the Oudwood hero as the chapter's secondary
@@ -234,7 +301,7 @@ const fluxMax: CampaignChapterData = {
 
 const killSwitch: CampaignChapterData = {
   slug: "kill-switch",
-  eyebrow: "10 — Campaign",
+  eyebrow: "11 — Campaign",
   title: "Kill Switch — Black Friday",
   intro:
     "A high-contrast promotional push for the brand's Black Friday moment, built for speed — a single hero and email paired with a fast-moving story sequence.",
@@ -263,10 +330,10 @@ export const microbeauCaseStudy: CaseStudyData = {
   // asset has "Beauty in Authenticity" script typography baked into the JPEG,
   // which collided with the page's own ProjectHero title rendered on top of it.
   heroImage: "/projects/microbeau/flux-mini/hero/microbeau-flux-mini-hero.webp",
-  campaigns: [beautyInAuthenticity, vertixPico, kickstartVertix, fluxMini, fluxMax, killSwitch],
+  campaigns: [beautyInAuthenticity, vertixPico, kickstartVertix, fluxMini, fluxMiniAnniversary, fluxMax, killSwitch],
   brandPackagingCopy: {
     eyebrow: "04 — Brand System",
-    title: "Six launches, one recognizable system.",
+    title: "Seven launches, one recognizable system.",
     description:
       "Every Microbeau campaign — from flagship product launches to fast-moving promotions — shares one identity language and packaging template, adapted for its own audience and moment.",
   },
@@ -280,7 +347,7 @@ export const microbeauCaseStudy: CaseStudyData = {
     { asset: vertixPico.packaging!, label: "Vertix Pico", kind: "Packaging" },
   ],
   socialCopy: {
-    eyebrow: "11 — Social Campaign System",
+    eyebrow: "12 — Social Campaign System",
     title: "Six campaigns, one editorial sequence.",
     description: "The strongest feed and story executions across every launch, curated side by side rather than shown as a full export dump.",
   },
@@ -295,7 +362,7 @@ export const microbeauCaseStudy: CaseStudyData = {
     { ...kickstartVertix.posts![0], campaign: "Kickstart Vertix", size: "support" },
   ],
   motionCopy: {
-    eyebrow: "12 — Motion",
+    eyebrow: "13 — Motion",
     title: "Product stories, in motion.",
   },
   motion: [beautyInAuthenticity, vertixPico, fluxMini].flatMap((c) => c.videos!.map((v) => ({ ...v, campaign: c.title }))),

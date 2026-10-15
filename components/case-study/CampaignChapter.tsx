@@ -4,7 +4,7 @@ import BannerFrame from "@/components/case-study/BannerFrame";
 import NewsletterFrame from "@/components/case-study/NewsletterFrame";
 import WebsiteFrame from "@/components/case-study/WebsiteFrame";
 import ProjectVideoPlayer from "@/components/ProjectVideoPlayer";
-import type { CampaignChapterData, GallerySection } from "@/lib/case-studies/types";
+import type { CampaignChapterData, GallerySection, CuratedAsset } from "@/lib/case-studies/types";
 
 function isBannerGallery(section: GallerySection) {
   return /banner|advertising|digital ad/i.test(section.title);
@@ -40,7 +40,7 @@ function SocialRow({
   emphasis = "standard",
 }: {
   title: string;
-  assets: { src: string; alt: string }[];
+  assets: CuratedAsset[];
   aspect: string;
   brand: string;
   emphasis?: "standard" | "large";
@@ -58,13 +58,13 @@ function SocialRow({
       <div className={`grid gap-4 sm:gap-5 ${gridCols}`}>
         {assets.map((asset, index) => (
           <Reveal key={asset.src} delay={Math.min(index * 0.04, 0.16)}>
-            <figure className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:rounded-2xl ${aspect}`}>
+            <figure style={asset.background === "light" ? { backgroundColor: "#fff" } : undefined} className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#111] sm:rounded-2xl ${aspect}`}>
               <Image
                 src={asset.src}
                 alt={`${asset.alt} — ${brand}`}
                 fill
                 sizes={emphasis === "large" ? "(max-width: 640px) 92vw, 46vw" : "(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 22vw"}
-                className={`transition-transform duration-700 motion-safe:group-hover:scale-[1.03] ${emphasis === "large" ? "object-contain" : "object-cover"}`}
+                className={`transition-transform duration-700 motion-safe:group-hover:scale-[1.03] ${asset.fit === "contain" || emphasis === "large" ? "object-contain" : "object-cover"}`}
               />
             </figure>
           </Reveal>
@@ -91,24 +91,30 @@ export default function CampaignChapter({
     </div>
   ) : null;
 
-  const newsletterSection = chapter.newsletter ? (
+  const newsletters = chapter.newsletter ? [chapter.newsletter, ...(chapter.extraNewsletters ?? [])] : [];
+  const newsletterSection = newsletters.length ? (
     <div className="mb-14 sm:mb-20">
       <SectionLabel title="Email & Newsletter" />
-      <Reveal>
-        <NewsletterFrame
-          src={chapter.newsletter.src}
-          alt={chapter.newsletter.alt}
-          note={chapter.newsletter.note}
-          campaign={chapter.title}
-          width={chapter.newsletter.width}
-          height={chapter.newsletter.height}
-        />
-      </Reveal>
+      <div className={newsletters.length > 1 ? "grid items-start gap-6 md:grid-cols-2 sm:gap-8" : ""}>
+        {newsletters.map((item, index) => (
+          <Reveal key={item.src} delay={Math.min(index * 0.05, 0.1)}>
+            <NewsletterFrame
+              src={item.src}
+              alt={item.alt}
+              note={item.note}
+              campaign={chapter.title}
+              width={item.width}
+              height={item.height}
+              compact={newsletters.length > 1}
+            />
+          </Reveal>
+        ))}
+      </div>
     </div>
   ) : null;
 
   return (
-    <article id={chapter.slug} className="mt-24 scroll-mt-32 sm:mt-36">
+    <article id={chapter.slug} className="mt-24 scroll-mt-52 sm:mt-36">
       <Reveal>
         <header className="mb-10 grid gap-5 border-t border-white/10 pt-7 sm:mb-14 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.5fr)] lg:items-end">
           <div>
@@ -122,19 +128,19 @@ export default function CampaignChapter({
       </Reveal>
 
       {/* Hero */}
-      <Reveal>
+      {!chapter.hideHero && <Reveal>
         <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-[#111] sm:mb-16 sm:rounded-[32px]">
-          <div className="relative aspect-[16/9]">
+          <div className={`relative aspect-[16/9] ${chapter.heroFit === "contain" ? "bg-[#0a0a0a]" : ""}`}>
             <Image
               src={chapter.hero.src}
               alt={chapter.hero.alt}
               fill
               sizes="(max-width: 1536px) 92vw, 1440px"
-              className="object-cover"
+              className={chapter.heroFit === "contain" ? "object-contain" : "object-cover"}
             />
           </div>
         </div>
-      </Reveal>
+      </Reveal>}
 
       {/* Packaging — its own large, uncropped presentation */}
       {chapter.packaging && (

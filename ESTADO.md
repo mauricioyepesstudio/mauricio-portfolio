@@ -6,7 +6,7 @@
 Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
 
 ## Siguiente (máx. 3, una por PR)
-Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
+Trabajo a destacar: EVOLUSA, BELONG y Resource Living (nombre y logo autorizados el 2026-10-09).
 
 1. **Casos de estudio EVOLUSA y BELONG** — convertir `/evolusa` y `/belong` en casos de estudio. **Espera las capturas que entregará Mauricio.** Sin cifras ni métricas; lo no confirmado se marca "por confirmar".
    - EVOLUSA: plataforma en español para orientar a latinos en EE. UU. a encontrar su próximo paso y conectar con profesionales aprobados. Next.js, Supabase y Stripe. Rol: producto, diseño, desarrollo y automatización. En línea, red en crecimiento.
@@ -15,7 +15,7 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
 3. **SEO básico** — títulos/descripciones únicos por caso, OG por proyecto, `lastModified` real en sitemap, y fijar `NEXT_PUBLIC_SITE_URL` cuando exista un dominio propio.
 
 ## Clientes y permisos
-- **Resource Living:** se mantiene como caso, **ANÓNIMO** ("Revista de mejoras del hogar del sur de Florida"), sin logo, nombre ni cifras, hasta tener permiso escrito (**requiere permiso**). Anonimizado (2026-10-01): caso en `/portfolio/south-florida-home-magazine`, solo piezas sin logo/nombre/URL (Pool Leads y Broward–Palm Beach); fuera ad-sales, C2 Multimedia, "Your Business Here", stories y el video de piscinas porque llevan la marca; nombre retirado de about, resume, RGE y logo wall; la URL de los assets usa un alias (rewrite en `next.config.mjs`). Pendiente de revisar a mano: `public/resume.pdf` (el texto no lo menciona, pero no revisé su diseño).
+- **Resource Living:** caso con nombre real desde 2026-10-09 (el usuario confirmó que tiene permiso: gestiona al cliente vía Real Group Entertainment). URL `/portfolio/resource-living`; la anónima redirige ahí. Galería nueva: campaña Broward–Palm Beach de oct. 2026 (7 anuncios por categoría, 9 videos verticales de 3 s, fotos orgánicas) en `public/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026/`, copiada de `N:\C2 Multimedia\Social Media\New Resource Living Campaign Oct 2026`. Sigue sin cifras.
 - **Laura / 1MIGRATION:** no se muestra (**requiere permiso**).
 
 ## Auditoría 2026-10-01 (sin cambios de código)
@@ -33,6 +33,10 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
 
 ## Bloqueos
 - Sin dominio propio: mauricioyepes.com es de un tercero. Se usa el dominio de Vercel como canonical hasta que Mauricio elija y compre uno.
-- Permiso escrito de Resource Living (mientras tanto, anónimo) y de Laura/1MIGRATION (no se muestra).
+- Laura/1MIGRATION no tiene permiso para aparecer. Resource Living sí tiene permiso confirmado desde 2026-10-09; conservar sus assets reales, sin inventar cifras.
 - Remitente propio: requiere dominio nuevo verificado en Resend; luego definir `CONTACT_FROM_EMAIL`.
 - Capturas de EVOLUSA y BELONG (las entrega Mauricio).
+
+## Seguimiento 2026-10-15 — PR12
+
+PR12 permanece preparado/en borrador, no integrado ni desplegado. Se actualizó sobre main 77c0882 conservando todos los assets y cambios posteriores; no se abrió un segundo PR propio. Ver diagnóstico reproducible en docs/cerebro/2026-10-15-mobile-validation.md. Producción está READY en 77c0882; /contact responde 200, sin envío de correo ni confirmación de recepción. Falta QA real en ocho anchos y reduced-motion: el navegador Playwright no está instalado y su descarga devuelve un archivo inválido. No se afirma resuelto el overflow.

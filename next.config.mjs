@@ -18,8 +18,18 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // Anonymous case study: serve its source folder under a neutral path so the
-  // client's name never appears in a public URL (requires written permission).
+  // The Resource Living case ran anonymously under this slug until 2026-10-09;
+  // keep old links working.
+  async redirects() {
+    return [
+      {
+        source: "/portfolio/south-florida-home-magazine",
+        destination: "/portfolio/resource-living",
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return {
       beforeFiles: [

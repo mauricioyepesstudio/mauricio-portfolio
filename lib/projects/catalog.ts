@@ -1,7 +1,7 @@
 import type { Brand } from "./types";
 
 export type BrandCopy = Omit<Brand, "heroImage" | "campaigns"> & {
-  /** Folder under public/projects/ when it differs from the public slug (anonymous cases). */
+  /** Set for cases curated entirely in lib/case-studies: skips raw folder-scanned campaigns. Folder under public/projects/. */
   assetDir?: string;
   /** Explicit card/hero image; otherwise the first discovered hero is used. */
   heroImage?: string;
@@ -25,7 +25,7 @@ export type CampaignEditorial = {
  * their auto-derived title and default ordering.
  */
 export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> = {
-  "south-florida-home-magazine": {
+  "resource-living": {
     "02-pool-leads": {
       title: "Pool Leads Campaign",
       eyebrow: "Digital Marketing · Lead Generation",
@@ -139,10 +139,26 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
   },
   "real-group-entertainment": {
     "01-2026-ventures": {
-      title: "2026 Ventures — EvoluSA, BELONG",
+      title: "EvolUSA & BELONG",
       eyebrow: "Venture Studio · 2026",
       context:
-        "The current build-in-public phase: two ventures operating under the RGE umbrella, each with its own product, creative system and growth channel — shown here as running product, not a deck.",
+        "Two products, distinct identities, one venture studio.",
+      priority: 0,
+    },
+    "02-belong-brand": {
+      title: "BELONG Identity",
+      eyebrow: "Brand Identity · 2026",
+      context:
+        "Identity, logo and campaign applications.",
+      priority: 1,
+    },
+  },
+  "personal-cfo": {
+    "01-brand-identity": {
+      title: "Brand Identity & Launch System",
+      eyebrow: "Identity · Social · Advertising",
+      context:
+        "One identity carried from the logo system to social profiles, a seven-post educational series and launch ads — every piece built on the same navy-and-mint palette and plain-language voice.",
       priority: 0,
     },
   },
@@ -150,22 +166,21 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
 
 export const brandCatalog: BrandCopy[] = [
   {
-    // ANONYMOUS until written permission: no client name, logo or figures.
-    slug: "south-florida-home-magazine",
+    // Curated in lib/case-studies/resource-living.ts; raw folder scans stay out.
+    slug: "resource-living",
     assetDir: "resource-living",
-    heroImage:
-      "/projects/south-florida-home-magazine/campaigns/05-broward-palm-beach-meta-campaign/hero/broward-palm-beach-campaign-hero.png",
-    title: "South Florida Home-Improvement Magazine",
-    client: "Confidential client",
+    heroImage: "/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026/hero/biscayne-bay-living-room-hero.jpg",
+    title: "Resource Living",
+    client: "Resource Living",
     category: "Editorial & Integrated Marketing",
     year: "Ongoing",
-    deliverables: ["Creative Direction", "Campaign Systems", "Lead Generation", "Social Media", "Paid Social"],
+    deliverables: ["Creative Direction", "Campaign Systems", "Lead Generation", "Social Media", "Paid Social", "Short-form Video"],
     cover: { from: "#1d2b22", to: "#a78753" },
-    excerpt: "Homeowner lead generation for a South Florida home-improvement magazine — pool and outdoor-living campaigns and a Meta Ads system segmented by service category.",
+    excerpt: "Homeowner lead generation for Resource Living, a South Florida home-improvement magazine — pool and outdoor-living campaigns and a Broward – Palm Beach Meta Ads system with creative and video for every service category.",
     services: ["Creative Direction", "Advertising", "Lead Generation", "Digital Strategy"],
-    problem: "A South Florida home-improvement magazine needed its homeowner lead programs to feel like parts of one trusted publication rather than disconnected marketing pieces.",
+    problem: "Resource Living needed its homeowner lead programs to feel like parts of one trusted publication rather than disconnected marketing pieces.",
     strategy: "Organize the work around homeowner journeys: lifestyle-led campaigns build desire, and category-specific ad sets turn that interest into qualified service inquiries.",
-    solution: "Directed a connected lead-generation system spanning pool and outdoor-living campaigns, category-specific Meta ad sets with dedicated lead forms, and recurring social content.",
+    solution: "Directed a connected lead-generation system spanning pool and outdoor-living campaigns, category-specific Meta ad sets with dedicated lead forms, a short vertical video per category and recurring organic content.",
     result: "The resulting system gives the publication a consistent structure that can be extended by campaign and service category without rebuilding the creative framework each time.",
     metrics: [
       { label: "Industry", value: "Home & Living" },
@@ -280,6 +295,27 @@ export const brandCatalog: BrandCopy[] = [
     ],
   },
   {
+    slug: "personal-cfo",
+    title: "Personal CFO",
+    client: "Personal CFO",
+    category: "Brand Identity · Personal Finance",
+    year: "2026",
+    deliverables: ["Brand Identity", "Logo System", "Brand Guidelines", "Social Media", "Advertising", "Profile Design"],
+    cover: { from: "#102A43", to: "#127C70" },
+    excerpt: "A calm, precise identity for a personal-finance app that explains what you own, what you owe and what changed each month — from the P-with-trajectory symbol to social, profiles and launch ads.",
+    services: ["Brand Identity", "Brand Guidelines", "Social Media", "Advertising"],
+    problem: "A personal-finance product needed to feel trustworthy and easy to read for non-experts, without the jargon, hype or alarm common in the category.",
+    strategy: "Build the brand around clarity: a single symbol (the P with a rising trajectory), a navy-and-mint palette checked for contrast, and a plain-language voice that always pairs color with a sign and a word.",
+    solution: "Designed the logo system in horizontal, symbol-only and single-ink versions, a brand manual, social profile covers, a seven-post educational series and launch ads in feed, Story and display formats.",
+    result: "One consistent identity that reads the same on an app icon, a social feed and a display ad.",
+    metrics: [
+      { label: "Industry", value: "Personal Finance" },
+      { label: "Scope", value: "Identity System" },
+      { label: "Channels", value: "Social + Ads" },
+      { label: "Role", value: "Brand Designer" },
+    ],
+  },
+  {
     slug: "stilogroup",
     title: "Stilo Group",
     client: "Stilo Group",
@@ -323,6 +359,7 @@ export const brandCatalog: BrandCopy[] = [
   },
   {
     slug: "real-group-entertainment",
+    heroImage: "/projects/real-group-entertainment/hero/rge-cover.jpg",
     title: "Real Group Entertainment",
     client: "Real Group Entertainment LLC",
     category: "Venture Studio",

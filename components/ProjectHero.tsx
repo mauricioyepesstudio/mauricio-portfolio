@@ -34,7 +34,7 @@ export default function ProjectHero({
       <section className="mt-4 sm:mt-8 md:mt-12">
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[36px]">
 
-          <div className="relative min-h-[560px] sm:h-[68vh] sm:min-h-[620px]">
+          <div className="relative min-h-[480px] sm:min-h-[520px] lg:min-h-[560px]">
 
             {image ? (
               <>
@@ -82,9 +82,9 @@ export default function ProjectHero({
               />
             )}
 
-            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-14 xl:p-20">
+            <div className="relative z-10 flex min-h-[480px] flex-col justify-end p-6 sm:min-h-[520px] sm:p-10 lg:min-h-[560px] lg:p-14">
 
-              <div className="max-w-5xl">
+              <div className="max-w-4xl">
 
                 <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80">
                   Case Study
@@ -94,11 +94,11 @@ export default function ProjectHero({
                   {category}
                 </p>
 
-                <h1 className="mt-4 break-words text-[clamp(2.65rem,13vw,7rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-white lg:text-[7.5rem] min-[1440px]:text-[8.75rem] min-[1920px]:text-[10rem]">
+                <h1 className="mt-4 max-w-[18ch] break-words text-[clamp(2.5rem,6.4vw,5.75rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-white">
                   {title}
                 </h1>
 
-                <div className="mt-8 grid max-w-2xl grid-cols-2 gap-x-5 gap-y-6 border-t border-white/20 pt-6 sm:mt-12 sm:grid-cols-3 sm:gap-10 sm:border-0 sm:pt-0">
+                <div className="mt-7 grid max-w-2xl grid-cols-2 gap-x-5 gap-y-5 border-t border-white/20 pt-5 sm:mt-9 sm:grid-cols-3 sm:gap-10 sm:border-0 sm:pt-0">
 
                   <div>
                     <p className="text-xs uppercase tracking-[0.3em] text-white/50">

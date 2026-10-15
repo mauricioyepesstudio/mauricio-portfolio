@@ -1,6 +1,9 @@
 export type CuratedAsset = {
   src: string;
   alt: string;
+  /** Per-asset presentation only; default styling remains unchanged. */
+  fit?: "cover" | "contain";
+  background?: "light";
 };
 
 export type NewsletterAsset = CuratedAsset & {
@@ -16,6 +19,8 @@ export type WebsiteAsset = CuratedAsset & {
 
 export type CampaignVideo = {
   src: string;
+  /** Still frame shown before playback. */
+  poster?: string;
   caption: string;
   /** Controls aspect ratio and grid sizing. Defaults to "landscape". */
   orientation?: "landscape" | "vertical";
@@ -38,6 +43,10 @@ export type CampaignChapterData = {
   title: string;
   intro: string;
   hero: CuratedAsset;
+  /** "contain" shows the hero uncropped inside the 16:9 panel — for square/portrait or non-16:9 key visuals that would lose content under the default "cover" crop. */
+  heroFit?: "cover" | "contain";
+  /** Keep the source but omit a requested hero from this campaign. */
+  hideHero?: boolean;
   logo?: CuratedAsset;
   packaging?: CuratedAsset;
   /** Horizontal web/display ad creative — always rendered full content width, uncropped. */
@@ -45,6 +54,8 @@ export type CampaignChapterData = {
   posts?: CuratedAsset[];
   stories?: CuratedAsset[];
   newsletter?: NewsletterAsset;
+  /** Additional emails from the same campaign. Shown side by side with `newsletter` (two columns on desktop, native width). */
+  extraNewsletters?: NewsletterAsset[];
   /** Website/landing-page screenshots. First item renders as the large scrollable frame; any additional items render as smaller supporting shots (e.g. a mobile view) below it. */
   website?: WebsiteAsset[];
   videos?: CampaignVideo[];
@@ -56,6 +67,7 @@ export type CampaignChapterData = {
 
 export type SocialPick = CuratedAsset & {
   campaign: string;
+  /** Tile size in SocialEditorial's mosaic; SocialEditorialGrid renders uniform tiles and ignores it. */
   size: "feature" | "tall" | "support";
 };
 
@@ -98,7 +110,8 @@ export type EditorialChapter = {
   eyebrow: string;
   title: string;
   intro: string;
-  hero: CuratedAsset;
+  /** Optional: a chapter whose source files have no sharp wide image skips the hero instead of upscaling a small one. */
+  hero?: CuratedAsset;
   spotlight?: CuratedAsset & { label: string };
   newsletter?: NewsletterAsset;
   /** A single full-width, natural-aspect visual for a standout tall/wide asset (a system diagram, an oversized mockup) that shouldn't be cropped, shrunk into a square "spotlight" frame, or wrapped in newsletter chrome. Renders at intrinsic aspect ratio with the page owning scroll — no internal scroll trap. */

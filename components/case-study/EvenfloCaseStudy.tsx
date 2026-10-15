@@ -1,3 +1,4 @@
+import CampaignMenu from "./CampaignMenu";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -75,6 +76,8 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
           result={project.result}
         />
 
+        <CampaignMenu chapters={evenfloCaseStudy.campaigns} />
+
         {/* 04 — Brand & Packaging */}
         <BrandPackaging
           items={[...evenfloCaseStudy.brandPackaging]}
@@ -83,18 +86,18 @@ export default function EvenfloCaseStudy({ project, previous, next }: Props) {
           description="Blonde2Brunette Ink and True Lips share one identity and packaging template — the anchor that keeps both launches unmistakably Evenflo Colours."
         />
 
-        {/* 05, 06 & 07 — Campaign Chapters (05 Blonde2Brunette Ink, 06 True Lips, 07 System Recap) */}
+        {/* 05–08 — Campaign Chapters (05 Blonde2Brunette Ink, 06 True Lips, 07 It's Raining Gold Ink, 08 System Recap) */}
         {evenfloCaseStudy.campaigns.map((chapter) => (
           <CampaignChapter key={chapter.slug} chapter={chapter} brand={project.title} />
         ))}
 
-        {/* 08 — Social Campaign System */}
-        <SocialEditorial picks={[...evenfloCaseStudy.social]} eyebrow="08 — Social Campaign System" />
+        {/* 09 — Social Campaign System */}
+        <SocialEditorial picks={[...evenfloCaseStudy.social]} eyebrow="09 — Social Campaign System" />
 
-        {/* 09 — Motion */}
-        <MotionGallery videos={[...evenfloCaseStudy.motion]} eyebrow="09 — Motion" />
+        {/* 10 — Motion */}
+        <MotionGallery videos={[...evenfloCaseStudy.motion]} eyebrow="10 — Motion" />
 
-        {/* 10 — Final Navigation / CTA */}
+        {/* 11 — Final Navigation / CTA */}
         <ProjectNavigation previous={previous} next={next} />
       </div>
     </article>
