@@ -21,7 +21,7 @@ export const studioProjects: StudioProject[] = [
     { title: "Monthly comparison", state: "completed", detail: "Compare debt, bank balances and investments with the previous month." },
     { title: "Client review", state: "in_progress", detail: "The current release is being reviewed with Miguel." }
   ]},
-  { slug: "owner-statements", name: "Owner Statements", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal concept for statements, imports, unit reporting and annual tax documents.", stage: "Prototype", milestones: [
+  { slug: "owner-statements", name: "Park Place — Owner Portal", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal concept for statements, imports, unit reporting and annual tax documents.", stage: "Prototype", href: "https://park-place-owner-portal.myepes01.chatgpt.site", milestones: [
     { title: "Owner and admin requirements", state: "completed", detail: "Excel/PDF imports, monthly views, owner visibility and 1099 requirements documented." },
     { title: "Client pilot and validation", state: "in_progress", detail: "Awaiting real client testing and acceptance." },
     { title: "Production readiness", state: "planned", detail: "Security, permissions, data checks and release gates remain to be verified." }

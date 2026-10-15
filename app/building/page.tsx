@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getStudioCreative } from "@/lib/studio-creative";
 import { ArrowUpRight, CheckCircle2, Circle, Clock3 } from "lucide-react";
+import { studioSystems } from "@/lib/studio-systems";
 import { studioProjects } from "@/lib/studio-projects";
 import { pageMetadata } from "@/lib/seo";
 
@@ -31,9 +32,10 @@ export default function BuildingPage() {
           Products, brands and projects taking shape in the studio.
         </p>
         <Link href="/real-group-entertainment" className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm text-gold underline underline-offset-4">Explore Real Group Entertainment <ArrowUpRight size={15} /></Link>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid items-start gap-5 md:grid-cols-2">
           {studioProjects.filter(project => project.slug !== "resource-living").map((project) => {
             const creative = getStudioCreative(project.slug);
+            const system = studioSystems[project.slug];
             return (
             <article key={project.slug} id={project.slug} className="scroll-mt-32 rounded-3xl border border-line bg-white/[0.025] p-6 sm:p-8">
               {creative && <Image src={creative.cover} alt={`${project.name} — creative development`} width={1200} height={675} sizes="(max-width: 768px) 92vw, 46vw" className="mb-6 h-auto w-full rounded-xl" />}
@@ -46,11 +48,18 @@ export default function BuildingPage() {
               {creative && <>
                 <h3 className="mt-6 text-xs font-semibold uppercase tracking-widest text-gold">Strategy</h3>
                 <p className="mt-2 text-sm leading-6 text-bone">{creative.strategy}</p>
-                {creative.images.length > 0 && <details className="mt-5 border-t border-line pt-4">
-                  <summary className="min-h-11 cursor-pointer text-sm font-medium text-paper">Graphic development · {creative.images.length} pieces</summary>
-                  <div className="mt-4 space-y-5">{creative.images.map((src, index) => <Image key={src} src={src} alt={`${project.name} — graphic development ${index + 1}`} width={1200} height={1200} sizes="(max-width: 768px) 92vw, 46vw" className="h-auto w-full rounded-lg" />)}</div>
-                </details>}
+                {creative.images.length > 0 && <section aria-label={`${project.name} graphic development`} className="mt-5 border-t border-line pt-4">
+                  <h3 className="text-sm font-medium text-paper">Graphic development · {creative.images.length} pieces</h3>
+                  <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">{creative.images.map((src, index) => <a key={src} href={src} target="_blank" rel="noopener noreferrer" className="relative block aspect-square overflow-hidden rounded-lg border border-line bg-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold" aria-label={`Open ${project.name} graphic ${index + 1}`}><Image src={src} alt={`${project.name} — graphic development ${index + 1}`} fill sizes="(max-width: 768px) 28vw, 15vw" className="object-contain p-1" /></a>)}</div>
+                </section>}
               </>}
+              {system && <section aria-label={`${project.name} development`} className="mt-6 border-t border-line pt-4">
+                {!creative && <div className="mb-5 rounded-xl border border-line bg-black/20 p-4">
+                  <p className="mb-3 text-xs uppercase tracking-widest text-gold">Architecture map · in development</p>
+                  <ol className="grid grid-cols-3 gap-2">{system.flow.map(step => <li key={step} className="rounded-lg border border-white/15 p-3 text-center text-xs text-paper">{step}</li>)}</ol>
+                </div>}
+                <dl className="space-y-4">{([['Architecture',system.architecture],['Engineering',system.engineering],['Creativity',system.creativity],['Automation',system.automation]] as const).map(([label,value]) => <div key={label}><dt className="text-xs font-semibold uppercase tracking-widest text-gold">{label}</dt><dd className="mt-1 text-sm leading-6 text-bone">{value}</dd></div>)}</dl>
+              </section>}
               {project.milestones.length > 0 && <details className="mt-6 border-t border-line pt-4">
                 <summary className="min-h-11 cursor-pointer text-sm font-medium text-paper">Project milestones</summary>
               <ol className="mt-4 space-y-5 border-l border-white/15 pl-5">
