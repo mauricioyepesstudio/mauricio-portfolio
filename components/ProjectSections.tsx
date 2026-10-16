@@ -55,19 +55,19 @@ function WideFigure({ asset, title, brand }: { asset: MediaAsset; title: string;
 
 function LongFormatFigure({ asset, title, brand }: { asset: MediaAsset; title: string; brand: string }) {
   return (
-    <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[28px]">
+    <figure className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b] sm:rounded-[28px]">
       <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-3" aria-hidden="true">
         <span className="h-2 w-2 rounded-full bg-white/15" />
         <span className="h-2 w-2 rounded-full bg-white/15" />
         <span className="h-2 w-2 rounded-full bg-white/15" />
       </div>
-      <div className="max-h-[65vh] w-full overflow-y-auto">
+      <div className="max-h-[min(760px,75vh)] w-full overflow-y-auto overscroll-contain">
         <Image
           src={asset.src}
           alt={`${altFromPath(asset.src, title)} — ${brand}`}
           width={asset.width ?? 1080}
           height={asset.height ?? 1920}
-          sizes="(max-width: 640px) 92vw, 640px"
+          sizes="(max-width: 480px) 92vw, 420px"
           className="h-auto w-full object-contain"
         />
       </div>
@@ -183,7 +183,7 @@ function SectionGroup({ sections, brand }: { sections: MediaSection[]; brand: st
           ) : section.kind === "logo" ? (
             <IdentityGrid assets={section.assets} title={section.title} brand={brand} />
           ) : section.kind === "newsletter" ? (
-            <div className="space-y-6 sm:space-y-8">{section.assets.map(asset => <LongFormatFigure key={asset.src} asset={asset} title={section.title} brand={brand} />)}</div>
+            <div className="grid grid-cols-[minmax(0,1fr)] gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">{section.assets.map(asset => <LongFormatFigure key={asset.src} asset={asset} title={section.title} brand={brand} />)}</div>
           ) : (
             <MediaSectionBlock assets={section.assets} title={section.title} brand={brand} />
           )}
