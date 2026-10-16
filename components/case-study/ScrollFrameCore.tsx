@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 type ScrollFrameCoreProps = {
+  className?: string;
   viewportClassName: string;
   scrollHint: string;
   ariaLabel: string;
@@ -12,6 +13,7 @@ type ScrollFrameCoreProps = {
 };
 
 export default function ScrollFrameCore({
+  className = "",
   viewportClassName,
   scrollHint,
   ariaLabel,
@@ -64,7 +66,7 @@ export default function ScrollFrameCore({
   }, [updateScrollState, children]);
 
   return (
-    <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] sm:rounded-[28px]">
+    <figure className={`overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] sm:rounded-[28px] ${className}`}>
       {header}
 
       <div className="relative">
