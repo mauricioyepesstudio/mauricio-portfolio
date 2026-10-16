@@ -8,6 +8,8 @@ export type BrandCopy = Omit<Brand, "heroImage" | "campaigns"> & {
 };
 
 export type CampaignEditorial = {
+  /** Omit an unrelated or unsuitable source hero without altering the original file. */
+  hideHero?: boolean;
   /** Overrides the auto-derived (folder-name-based) title. */
   title?: string;
   /** Short category label shown above the title, replacing the default "Campaign NN" numbering. */
@@ -139,6 +141,7 @@ export const campaignCatalog: Record<string, Record<string, CampaignEditorial>> 
   },
   "real-group-entertainment": {
     "01-2026-ventures": {
+      hideHero: true,
       title: "EvolUSA & BELONG",
       eyebrow: "Venture Studio · 2026",
       context:

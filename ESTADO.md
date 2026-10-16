@@ -40,3 +40,7 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (nombre y logo autorizados
 ## Seguimiento 2026-10-15 — PR12
 
 PR12 permanece preparado/en borrador, no integrado ni desplegado. Se actualizó sobre main 77c0882 conservando todos los assets y cambios posteriores; no se abrió un segundo PR propio. Ver diagnóstico reproducible en docs/cerebro/2026-10-15-mobile-validation.md. Producción está READY en 77c0882; /contact responde 200, sin envío de correo ni confirmación de recepción. Falta QA real en ocho anchos y reduced-motion: el navegador Playwright no está instalado y su descarga devuelve un archivo inválido. No se afirma resuelto el overflow.
+
+## Seguimiento 2026-10-16 — QA de navegador en CI
+
+PR12 actualizado sobre main fe7f943 sin modificar originales. Se prepara prueba reproducible scripts/qa-home-responsive.mjs en CI existente: ocho anchos y dos preferencias de movimiento, home→Servicios y contacto/fallback; sin cuentas ni envíos. TypeScript, lint, 4 pruebas de contacto, build27 páginas y diff check pasan localmente. La existencia de la prueba no acredita su resultado: consultar CI del commit exacto y cerebro central. Producción READY fe7f943, /contact200, aún sin este parche. Se conserva el creativo equivalente del15, sin nueva generación ni publicación. Ver docs/cerebro/2026-10-16-responsive-ci.md.

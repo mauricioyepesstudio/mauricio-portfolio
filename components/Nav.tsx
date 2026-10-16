@@ -9,9 +9,6 @@ import { Menu, X } from "lucide-react";
 import BrandWordmark from "@/components/BrandWordmark";
 
 const links = [
-  { href: "/real-group-entertainment", label: "RGE" },
-  { href: "/evolusa", label: "EVOLUSA" },
-  { href: "/belong", label: "BELONG" },
   { href: "/portfolio", label: "Work" },
   { href: "/building", label: "Building" },
   { href: "/about", label: "About" },

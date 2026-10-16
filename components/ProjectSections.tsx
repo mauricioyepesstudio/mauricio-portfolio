@@ -182,6 +182,8 @@ function SectionGroup({ sections, brand }: { sections: MediaSection[]; brand: st
             <VideoSectionBlock assets={section.assets} />
           ) : section.kind === "logo" ? (
             <IdentityGrid assets={section.assets} title={section.title} brand={brand} />
+          ) : section.kind === "newsletter" ? (
+            <div className="space-y-6 sm:space-y-8">{section.assets.map(asset => <LongFormatFigure key={asset.src} asset={asset} title={section.title} brand={brand} />)}</div>
           ) : (
             <MediaSectionBlock assets={section.assets} title={section.title} brand={brand} />
           )}

@@ -168,7 +168,7 @@ function sectionsFromGrouped(grouped: Map<MediaKind, MediaAsset[]>): MediaSectio
 function campaignFromDirectory(brandSlug: string, directory: string, campaignSlug: string): Campaign | null {
   const editorial = findEditorial(brandSlug, campaignSlug);
   const grouped = dedupeAndLimit(collectStandardFolders(directory), brandSlug, campaignSlug);
-  const hero = grouped.get("hero")?.[0];
+  const hero = editorial?.hideHero ? undefined : grouped.get("hero")?.[0];
   grouped.delete("hero");
   const sections = sectionsFromGrouped(grouped);
   if (!hero && !sections.length) return null;
