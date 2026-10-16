@@ -29,3 +29,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Install isolated browser QA tooling
+        run: |
+          npm install --no-save --package-lock=false --ignore-scripts playwright@1.62.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify home responsive and contact navigation
+        run: node scripts/qa-home-responsive.mjs

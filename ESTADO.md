@@ -6,7 +6,7 @@
 Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
 
 ## Siguiente (máx. 3, una por PR)
-Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
+Trabajo a destacar: EVOLUSA, BELONG y Resource Living (nombre y logo autorizados el 2026-10-09).
 
 1. **Casos de estudio EVOLUSA y BELONG** — convertir `/evolusa` y `/belong` en casos de estudio. **Espera las capturas que entregará Mauricio.** Sin cifras ni métricas; lo no confirmado se marca "por confirmar".
    - EVOLUSA: plataforma en español para orientar a latinos en EE. UU. a encontrar su próximo paso y conectar con profesionales aprobados. Next.js, Supabase y Stripe. Rol: producto, diseño, desarrollo y automatización. En línea, red en crecimiento.
@@ -33,6 +33,14 @@ Trabajo a destacar: EVOLUSA, BELONG y Resource Living (anónimo).
 
 ## Bloqueos
 - Sin dominio propio: mauricioyepes.com es de un tercero. Se usa el dominio de Vercel como canonical hasta que Mauricio elija y compre uno.
-- Permiso escrito de Resource Living (mientras tanto, anónimo) y de Laura/1MIGRATION (no se muestra).
+- Laura/1MIGRATION no tiene permiso para aparecer. Resource Living sí tiene permiso confirmado desde 2026-10-09; conservar sus assets reales, sin inventar cifras.
 - Remitente propio: requiere dominio nuevo verificado en Resend; luego definir `CONTACT_FROM_EMAIL`.
 - Capturas de EVOLUSA y BELONG (las entrega Mauricio).
+
+## Seguimiento 2026-10-15 — PR12
+
+PR12 permanece preparado/en borrador, no integrado ni desplegado. Se actualizó sobre main 77c0882 conservando todos los assets y cambios posteriores; no se abrió un segundo PR propio. Ver diagnóstico reproducible en docs/cerebro/2026-10-15-mobile-validation.md. Producción está READY en 77c0882; /contact responde 200, sin envío de correo ni confirmación de recepción. Falta QA real en ocho anchos y reduced-motion: el navegador Playwright no está instalado y su descarga devuelve un archivo inválido. No se afirma resuelto el overflow.
+
+## Seguimiento 2026-10-16 — QA de navegador en CI
+
+PR12 actualizado sobre main fe7f943 sin modificar originales. Se prepara prueba reproducible scripts/qa-home-responsive.mjs en CI existente: ocho anchos y dos preferencias de movimiento, home→Servicios y contacto/fallback; sin cuentas ni envíos. TypeScript, lint, 4 pruebas de contacto, build27 páginas y diff check pasan localmente. La existencia de la prueba no acredita su resultado: consultar CI del commit exacto y cerebro central. Producción READY fe7f943, /contact200, aún sin este parche. Se conserva el creativo equivalente del15, sin nueva generación ni publicación. Ver docs/cerebro/2026-10-16-responsive-ci.md.
