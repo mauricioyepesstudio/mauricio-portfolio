@@ -74,6 +74,9 @@ try {
         await page.locator('header a[href="/contact"]:visible').first().click();
         await page.waitForURL(`${origin}/contact`);
         await page.waitForLoadState("networkidle");
+        // App Router may commit the URL before streamed content is attached.
+        // Require the real form; don't treat network-idle as route readiness.
+        await page.locator("form").waitFor({ state: "attached" });
         const contact = await page.evaluate(() => ({
           fits: document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1,
           hasForm: !!document.querySelector("form"),
