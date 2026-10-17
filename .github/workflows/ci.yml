@@ -37,3 +37,6 @@ jobs:
 
       - name: Verify home responsive and contact navigation
         run: node scripts/qa-home-responsive.mjs
+
+      - name: Verify contact confirmation and safe retry (mocked delivery only)
+        run: node scripts/qa-contact-confirmation.mjs
