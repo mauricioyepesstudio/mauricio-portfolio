@@ -2,6 +2,13 @@
 
 **Estado: ACTIVO** — reactivado 2026-10-01.
 
+## Seguimiento 2026-10-17 — confirmación de contacto
+
+- Base remota fb3247065509e066895dff31018e19372fe3f542, producción READY verificada, preserva newsletters PR29 y responsive PR12 ya integrados. Los estados históricos de PR12 preparado más abajo quedan superados por esa entrega.
+- ContactForm exige HTTP satisfactorio y JSON objeto con success boolean true antes de mostrar éxito/borrar borrador. Respuestas incompletas/falsas o JSON inválido siguen el fallback existente y conservan campos. Sin cambios de diseño, assets, servidor, proveedor o secretos.
+- TypeScript, lint sin warnings/errores, 4 pruebas de validación y build27 páginas PASS. Nuevo QA local de producción simulado: 24 casos de confirmación/reintento a360/1440; toda escritura queda interceptada o bloqueada. Su resultado y la matriz responsive16 se comprueban en CI del commit exacto, no se presumen por existir el script.
+- Handoff: docs/cerebro/2026-10-17-contact-confirmation.md. PR/CI/integración/despliegue/verificación al cierre en tarea central portfolio-contact-confirmation-20261017. No envío ni recepción real de email verificados. Creativo equivalente del15 conservado, no publicado en redes.
+
 ## Objetivo
 Conseguir clientes mostrando trabajo reciente y real, con un contacto claro.
 

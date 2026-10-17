@@ -33,6 +33,16 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Request failed");
+      const result: unknown = await res.json();
+      if (
+        !result ||
+        typeof result !== "object" ||
+        Array.isArray(result) ||
+        !("success" in result) ||
+        result.success !== true
+      ) {
+        throw new Error("Contact delivery was not confirmed");
+      }
       setStatus("success");
       reset();
     } catch {
