@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -14,6 +14,11 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
+  const successHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (status === "success") successHeadingRef.current?.focus();
+  }, [status]);
 
   const {
     register,
@@ -58,7 +63,7 @@ export default function ContactForm() {
         className="border border-line rounded-2xl p-10 text-center"
       >
         <CheckCircle2 className="mx-auto text-gold" size={40} />
-        <h3 className="font-serif italic text-2xl text-paper mt-4">
+        <h3 ref={successHeadingRef} tabIndex={-1} className="font-serif italic text-2xl text-paper mt-4">
           Message sent.
         </h3>
         <p className="text-bone mt-2">
@@ -69,7 +74,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} aria-busy={status === "loading"} className="space-y-8" noValidate>
       <div className="grid sm:grid-cols-2 gap-8">
         <div>
           <label htmlFor="name" className="text-sm text-bone">
@@ -161,6 +166,7 @@ export default function ContactForm() {
       <AnimatePresence>
         {status === "error" && (
           <motion.p
+            role="alert"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
