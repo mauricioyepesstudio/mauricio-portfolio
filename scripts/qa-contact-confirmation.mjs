@@ -43,6 +43,7 @@ try {
       const errors = [];
       const consoleErrors = [];
       let attempts = 0;
+      const gates = [];
       // Fail closed for every write, even outside /api, before it can leave.
       await context.route("**/*", async route => {
         const method = route.request().method();
@@ -59,9 +60,14 @@ try {
         }
         interceptedWrites++;
         attempts++;
+        const attempt = attempts;
+        const gate = gates[attempt - 1];
+        assert.ok(gate, "Every contact attempt must have an explicit response gate");
         assert.deepEqual(route.request().postDataJSON(), draft);
-        if (attempts === 1 && scenario.abort) return route.abort("failed");
-        return route.fulfill({ status: attempts > 1 ? 200 : scenario.status ?? 200, contentType: "application/json", body: attempts > 1 ? '{"success":true}' : scenario.body });
+        gate.intercepted = true;
+        await gate.promise;
+        if (attempt === 1 && scenario.abort) return route.abort("failed");
+        return route.fulfill({ status: attempt > 1 ? 200 : scenario.status ?? 200, contentType: "application/json", body: attempt > 1 ? '{"success":true}' : scenario.body });
       });
       const page = await context.newPage();
       page.on("pageerror", error => errors.push(error.message));
@@ -72,22 +78,45 @@ try {
           else escapedWrites++;
         }
       });
+      async function submitWithKeyboard() {
+        let release;
+        const promise = new Promise(resolve => { release = resolve; });
+        const gate = { promise, release, intercepted: false };
+        gates.push(gate);
+        const submit = page.getByRole("button", { name: "Send Message", exact: true });
+        await submit.focus();
+        assert.ok(await submit.evaluate(element => element === document.activeElement), "Submit must receive keyboard focus");
+        await page.keyboard.press("Enter");
+        for (let poll = 0; poll < 500 && !gate.intercepted; poll++) await delay(20);
+        assert.ok(gate.intercepted, "Keyboard submit must reach the intercepted contact route");
+        await page.locator('form[aria-busy="true"]').waitFor();
+        assert.equal(await page.locator("form").getAttribute("aria-busy"), "true");
+        assert.ok(await page.getByRole("button", { name: "Sending...", exact: true }).isDisabled());
+        assert.equal(await page.getByRole("heading", { name: "Message sent.", exact: true }).count(), 0);
+        gate.release();
+      }
       try {
         await page.goto(`${origin}/contact`, { waitUntil: "networkidle" });
         await page.locator("form").waitFor();
         for (const field of ["name", "email", "company", "message"]) await page.locator(`#${field}`).fill(draft[field]);
         await page.locator("#budget").selectOption(draft.budget);
-        await page.getByRole("button", { name: "Send Message", exact: true }).click();
+        await submitWithKeyboard();
         if (!scenario.confirmed) {
-          await page.getByText("Something went wrong.", { exact: false }).waitFor();
+          await page.getByRole("alert").filter({ hasText: "Something went wrong." }).waitFor();
+          assert.equal(await page.locator("form").getAttribute("aria-busy"), "false");
           assert.equal(await page.getByText("Message sent.", { exact: true }).count(), 0);
+          assert.equal(await page.evaluate(() => document.activeElement?.textContent?.trim() === "Message sent."), false);
           for (const field of ["name", "email", "company", "budget", "message"]) assert.equal(await page.locator(`#${field}`).inputValue(), draft[field]);
           assert.ok(await page.locator('form a[href="mailto:rgentertainmentmanagement@gmail.com"]').isVisible());
           assert.ok(await page.getByRole("button", { name: "Send Message", exact: true }).isEnabled());
           // A real second submit of the retained draft, with confirmed delivery.
-          await page.getByRole("button", { name: "Send Message", exact: true }).click();
+          await submitWithKeyboard();
         }
-        await page.getByText("Message sent.", { exact: true }).waitFor();
+        const successHeading = page.getByRole("heading", { name: "Message sent.", exact: true });
+        await successHeading.waitFor();
+        await page.waitForFunction(() => document.activeElement?.textContent?.trim() === "Message sent.");
+        assert.equal(await successHeading.evaluate(element => element.tabIndex), -1);
+        assert.ok(await successHeading.evaluate(element => element === document.activeElement));
         assert.equal(await page.locator("form").count(), 0, "Confirmed success must remove the editable draft");
         assert.equal(attempts, scenario.confirmed ? 1 : 2);
         assert.deepEqual(errors, [], "Unexpected client runtime exception");
@@ -99,7 +128,10 @@ try {
         results.push({ width, scenario: scenario.name, attempts, passed: true, expectedNetworkErrors: consoleErrors });
       } catch (error) {
         results.push({ width, scenario: scenario.name, passed: false, error: String(error), errors, consoleErrors });
-      } finally { await context.close(); }
+      } finally {
+        for (const gate of gates) gate.release();
+        await context.close();
+      }
     }
   }
   console.log("CONTACT_CONFIRMATION_QA", JSON.stringify({ results, observedWrites, interceptedWrites, escapedWrites }, null, 2));

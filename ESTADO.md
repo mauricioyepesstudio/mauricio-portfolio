@@ -2,6 +2,14 @@
 
 **Estado: ACTIVO** — reactivado 2026-10-01.
 
+## Seguimiento 2026-10-18 — feedback accesible de contacto
+
+- Base remota `4ca98d6`; PR30 ya integrado y producción READY confirmada. Se conserva la confirmación estricta de envío.
+- El formulario expone `aria-busy` durante la espera, el error asíncrono usa `role="alert"` y el encabezado de éxito recibe foco solo tras confirmación válida. Sin región live de éxito duplicada, ni cambios de estilos, textos, API o assets.
+- Cuatro pruebas de validación, TypeScript y lint sin warnings/errores pasan. Build y CI del commit exacto se registran al cierre en la tarea central `portfolio-contact-accessible-feedback-20261018`; no inferir navegador por existencia del script.
+- QA de contacto ampliado: 24 casos con respuestas retenidas, envío por teclado, espera, error, borrador y foco; conserva las 16 verificaciones responsive existentes. Todas las escrituras de prueba quedan interceptadas o bloqueadas. No prueba manual de lector de pantalla ni recepción real de correo.
+- Handoff: `docs/cerebro/2026-10-18-contact-accessible-feedback.md`. Creativo equivalente reciente del15 conservado; nada publicado en redes.
+
 ## Seguimiento 2026-10-17 — confirmación de contacto
 
 - Base remota fb3247065509e066895dff31018e19372fe3f542, producción READY verificada, preserva newsletters PR29 y responsive PR12 ya integrados. Los estados históricos de PR12 preparado más abajo quedan superados por esa entrega.
