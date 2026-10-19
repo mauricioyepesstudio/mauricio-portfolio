@@ -3,9 +3,9 @@ import { getProject } from "@/lib/projects";
 
 export function getStudioCreative(slug: string) {
   if (slug === "owner-statements") return {
-    strategy: "Make statements clear by property and month, with separate owner and administrator journeys and an interface focused on the owner payout.",
-    cover: "/projects/park-place/identity/park-place-provisional.svg",
-    images: ["/projects/park-place/identity/park-place-provisional.svg"],
+    strategy: "Reduce manual month-end work through traceable imports, reviewed exceptions and clear owner reports. Develop a repeatable subscription product with separate owner and administrator experiences.",
+    cover: "/studio/owner-statements/workflow.svg",
+    images: ["/studio/owner-statements/workflow.svg"],
   };
   if (slug === "evolusa") return {
     strategy: "Connect Spanish-speaking communities with relevant professionals through a clear next step, supported by a recognizable identity and educational content.",
