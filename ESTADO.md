@@ -2,6 +2,13 @@
 
 **Estado: ACTIVO** — reactivado 2026-10-01.
 
+## Seguimiento 2026-10-19 — ciclo de navegación móvil
+
+- Base remota y producción inicial READY `2f44827350d41e6f6e2b0d9f15f02ee50d86dce8`; los cambios de contacto PR30/31 se conservan.
+- El menú móvil se cierra al cruzar a escritorio (768px), restaurando el overflow anterior. Escape devuelve foco al botón y se asocia el control con su panel; sin rediseño, bloqueo modal, cambios de assets ni contacto/API.
+- QA existente ampliado: abrir, Escape/foco, 767→768, volver a móvil cerrado, reabrir y navegar a Contacto, junto con ocho anchos y dos preferencias de movimiento. Resultados exactos de build, CI y producción en tarea central `portfolio-mobile-nav-lifecycle-20261019`; no inferirlos por existencia del script.
+- Evidencia: `docs/cerebro/2026-10-19-mobile-nav-lifecycle.md`. Creativo equivalente del15 conservado; producido/listo para compartir aquí, no publicado externamente. Aceptación manual con lector de pantalla y recepción real de correo pendientes; sin envíos de esta entrega.
+
 ## Seguimiento 2026-10-18 — feedback accesible de contacto
 
 - Base remota `4ca98d6`; PR30 ya integrado y producción READY confirmada. Se conserva la confirmación estricta de envío.

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BrandWordmark from "@/components/BrandWordmark";
@@ -20,6 +20,7 @@ export default function Nav() {
 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,6 +40,16 @@ export default function Nav() {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    closeOnDesktop();
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
   // Locks page scroll and closes the menu on Escape while it's open.
   useEffect(() => {
     if (!open) return;
@@ -47,7 +58,10 @@ export default function Nav() {
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
     };
     window.addEventListener("keydown", onKeyDown);
 
@@ -131,10 +145,12 @@ export default function Nav() {
           </Link>
 
           <button
+            ref={toggleRef}
             onClick={() => setOpen(!open)}
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold md:hidden"
             aria-label={open ? "Close navigation" : "Open navigation"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -143,6 +159,7 @@ export default function Nav() {
         <AnimatePresence>
           {open && (
             <motion.div
+              id="mobile-navigation"
               initial={{
                 opacity: 0,
                 height: 0,
