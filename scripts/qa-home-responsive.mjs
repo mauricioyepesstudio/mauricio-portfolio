@@ -64,12 +64,29 @@ try {
         });
         if (width < 768) {
           const menu = page.getByRole("button", { name: "Open navigation" });
+          const previousOverflow = await page.evaluate(() => document.body.style.overflow);
           await menu.focus();
           await page.keyboard.press("Enter");
           await page.getByRole("button", { name: "Close navigation" }).waitFor();
+          await page.waitForFunction(() => document.body.style.overflow === "hidden");
+          assert.equal(await page.getByRole("button", { name: "Close navigation" }).getAttribute("aria-controls"), "mobile-navigation");
+          await page.locator('#mobile-navigation a[href="/contact"]').focus();
           await page.keyboard.press("Escape");
           await menu.waitFor();
+          await page.waitForFunction(expected => document.body.style.overflow === expected, previousOverflow);
+          assert.equal(await menu.evaluate(element => element === document.activeElement), true, "Escape returns focus to the toggle");
+          await page.locator("#mobile-navigation").waitFor({ state: "detached" });
+          await page.setViewportSize({ width: 767, height: 1000 });
           await menu.click();
+          await page.waitForFunction(() => document.body.style.overflow === "hidden");
+          await page.setViewportSize({ width: 768, height: 1000 });
+          await page.waitForFunction(expected => document.body.style.overflow === expected, previousOverflow);
+          await page.locator("#mobile-navigation").waitFor({ state: "detached" });
+          await page.setViewportSize({ width, height: 1000 });
+          await menu.waitFor();
+          assert.equal(await menu.getAttribute("aria-expanded"), "false", "Returning to mobile keeps navigation closed");
+          await menu.click();
+          await page.waitForFunction(() => document.body.style.overflow === "hidden");
         }
         await page.locator('header a[href="/contact"]:visible').first().click();
         await page.waitForURL(`${origin}/contact`);
@@ -77,6 +94,10 @@ try {
         // App Router may commit the URL before streamed content is attached.
         // Require the real form; don't treat network-idle as route readiness.
         await page.locator("form").waitFor({ state: "attached" });
+        if (width < 768) {
+          await page.waitForFunction(() => document.body.style.overflow !== "hidden");
+          assert.equal(await page.getByRole("button", { name: "Open navigation" }).getAttribute("aria-expanded"), "false");
+        }
         const contact = await page.evaluate(() => ({
           fits: document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1,
           hasForm: !!document.querySelector("form"),
