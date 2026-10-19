@@ -1,0 +1,3 @@
+# Owner Statements — independent product update
+
+2026-10-19. Owner authorized this portfolio update. Replace previous client-pilot positioning with independent product development. Remove public application link; preserve original source assets. Working product name is not a cleared final brand. Use a workflow illustration rather than client records or screenshots. Distinguish implemented pilot capabilities from production SaaS work and commercial validation. No client acceptance, revenue, performance improvement or active external integration is claimed. Original portal access remains private/disabled.

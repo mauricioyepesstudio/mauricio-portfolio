@@ -21,10 +21,12 @@ export const studioProjects: StudioProject[] = [
     { title: "Monthly comparison", state: "completed", detail: "Compare debt, bank balances and investments with the previous month." },
     { title: "Client review", state: "in_progress", detail: "The current release is being reviewed with Miguel." }
   ]},
-  { slug: "owner-statements", name: "Park Place — Owner Portal", tagline: "Financial clarity for property owners.", summary: "An owner and administrator portal concept for statements, imports, unit reporting and annual tax documents.", stage: "Prototype", href: "https://park-place-owner-portal.myepes01.chatgpt.site", milestones: [
-    { title: "Owner and admin requirements", state: "completed", detail: "Excel/PDF imports, monthly views, owner visibility and 1099 requirements documented." },
-    { title: "Client pilot and validation", state: "in_progress", detail: "Awaiting real client testing and acceptance." },
-    { title: "Production readiness", state: "planned", detail: "Security, permissions, data checks and release gates remain to be verified." }
+  { slug: "owner-statements", name: "Owner Statements", tagline: "From monthly files to a reviewed owner report.", summary: "An independent property-reporting product in development: bilingual owner access, bulk imports, traceable expenses and document delivery. The private pilot is preserved while the subscription offering is validated.", stage: "In development", milestones: [
+    { title: "Monthly reporting pilot", state: "completed", detail: "Excel imports, unit matching through external REC identifiers, USD/CAD separation and English/Spanish interfaces implemented in the pilot." },
+    { title: "Documents and expense review", state: "completed", detail: "Bulk PDF handling, staged expense extraction, charge/credit review, reconciliation and batch approval implemented. Uncertain extraction needs human review." },
+    { title: "Owner access and document controls", state: "completed", detail: "Assigned-unit filtering, separate statement publication, annual document archive and audited removal implemented in the pilot; automated permission and restoration checks were executed." },
+    { title: "Independent subscription product", state: "in_progress", detail: "Product positioning, a reusable onboarding process and paid-pilot validation are being developed. The previous pilot is private; no public application access is offered here." },
+    { title: "Production SaaS readiness", state: "planned", detail: "Company isolation, password recovery, offsite recovery, monitoring and billing must be implemented or verified before a commercial launch. No app-store release or active external integration is claimed." }
   ]},
   { slug: "resource-living", name: "Resource Living", tagline: "Creative and lead-generation systems.", summary: "Marketing, campaigns and automation workflows; work shown as a portfolio overview, not as access to client systems.", stage: "Portfolio case study", milestones: [
     { title: "Creative campaigns", state: "completed", detail: "Marketing and creative portfolio work." },
