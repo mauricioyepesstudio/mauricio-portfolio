@@ -2,6 +2,8 @@
 
 **Estado: ACTIVO** — reactivado 2026-10-01.
 
+Agencia por departamentos (agentes y tareas recurrentes): `docs/cerebro/agencia.md`.
+
 ## Seguimiento 2026-10-20 — Building en sitemap
 
 - Base main remoto92cea8c9, con PR32 de navegación y PR33 de Owner Statements conservados. Se incorpora `/building`, página existente y canónica, al sitemap generado; fechas reales desde git, sin inventar lastmod cuando se desconoce.
