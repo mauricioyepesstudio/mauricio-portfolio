@@ -1,0 +1,20 @@
+{
+  "extraKnownMarketplaces": {
+    "equipos-rge": {
+      "source": {
+        "source": "directory",
+        "path": "./.claude/equipos"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "marketing-skills@equipos-rge": true,
+    "social-media-skills@equipos-rge": true,
+    "taste-skill@equipos-rge": true,
+    "diseno-frontend@equipos-rge": true,
+    "documentos@equipos-rge": true,
+    "financial-analysis@equipos-rge": true,
+    "commercial-legal@equipos-rge": true,
+    "ip-legal@equipos-rge": true
+  }
+}

@@ -10,6 +10,7 @@
 - **Reglas:** el trabajo es el protagonista (editorial, premium, sin plantillas SaaS); descubrimiento de assets solo server-side (fs/path); no inventar contenido ni métricas; responsive y accesibilidad obligatorios; validar con `npx tsc --noEmit` y `npm run build` antes de dar algo por terminado.
 - **No se toca:** assets originales en `public/projects/` (no borrar, renombrar ni reorganizar sin aprobación); no agregar proyectos viejos al portfolio sin revisarlos; no cambiar el stack sin razón técnica fuerte.
 - **Estado vivo:** ver `ESTADO.md`.
+- **Equipos de skills (15-oct-2026):** marketing, redes, diseño, documentos, finanzas y legal como plugins fijados a un commit; ver `.claude/equipos/LEEME.md` (los genera el cerebro central, no editar a mano). No reemplazan la dirección creativa de este archivo.
 
 ---
 
