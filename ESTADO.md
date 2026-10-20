@@ -4,6 +4,17 @@
 
 Agencia por departamentos (agentes y tareas recurrentes): `docs/cerebro/agencia.md`.
 
+## 2026-10-20 — Decisión del consejo de fundadores: seguir
+
+- Veredicto y razones: `control-plane/consejo/CONSEJO.md` en AI-Projects-Control-Plane (fuente: `consejo.json`).
+- Objetivos: Postulaciones enviadas por semana (meta 30 días: 5; 90 días: 5); Entrevistas conseguidas (meta 30 días: 2; 90 días: 6).
+- Agentes del consejo instalados en `.claude/agents/`: seo-contenido-es, carrera-postulaciones, analista-metricas, consejo-director. Reglas: no envían, publican, cobran ni gastan sin aprobación de Mauricio; null = sin medir.
+- Tareas:
+  - cj-001 · 2026-10-22 · Mauricio: Enviar la postulación a Abitaro con la carta ya escrita
+  - cj-002 · 2026-10-26 · carrera-postulaciones: Agregar la columna «enviada» a ofertas.csv y dejar 5 postulaciones listas por semana
+  - cj-003 · 2026-11-02 · seo-contenido-es: Escribir los casos de estudio de EVOLUSA y BELONG para el portafolio (borrador con huecos para capturas)
+  - cj-022 · 2026-10-26 · consejo-director: Revisión semanal del consejo: medir objetivos, corregir rumbo y avisar lo que se vence
+
 ## Seguimiento 2026-10-20 — Building en sitemap
 
 - Base main remoto92cea8c9, con PR32 de navegación y PR33 de Owner Statements conservados. Se incorpora `/building`, página existente y canónica, al sitemap generado; fechas reales desde git, sin inventar lastmod cuando se desconoce.
