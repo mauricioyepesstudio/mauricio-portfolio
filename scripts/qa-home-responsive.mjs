@@ -20,6 +20,31 @@ try {
   }
   assert.ok(ready, "Production server did not become ready");
   browser = await chromium.launch();
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://mauricio-portfolio-v2.vercel.app").replace(/\/+$/, "");
+  const sitemapResponse = await fetch(`${origin}/sitemap.xml`);
+  const buildingResponse = await fetch(`${origin}/building`);
+  assert.equal(sitemapResponse.status, 200, "Generated sitemap must load");
+  assert.equal(buildingResponse.status, 200, "Building sitemap destination must load");
+  const sitemapPage = await browser.newPage();
+  try {
+    const discovery = await sitemapPage.evaluate(({ xml, html }) => {
+      const sitemap = new DOMParser().parseFromString(xml, "application/xml");
+      const building = new DOMParser().parseFromString(html, "text/html");
+      return {
+        validXml: !sitemap.querySelector("parsererror") && sitemap.documentElement.localName === "urlset" &&
+          sitemap.documentElement.namespaceURI === "http://www.sitemaps.org/schemas/sitemap/0.9",
+        urls: [...sitemap.querySelectorAll("url > loc")].map(node => node.textContent?.trim()),
+        buildingCanonical: building.querySelector('link[rel="canonical"]')?.getAttribute("href"),
+      };
+    }, { xml: await sitemapResponse.text(), html: await buildingResponse.text() });
+    assert.ok(discovery.validXml, "Sitemap must be well-formed sitemap XML");
+    assert.ok(discovery.urls.length > 0);
+    assert.equal(new Set(discovery.urls).size, discovery.urls.length, "Sitemap URLs must be unique");
+    assert.ok(discovery.urls.every(url => url === siteUrl || url?.startsWith(`${siteUrl}/`)), "Sitemap URLs must use the canonical site");
+    assert.equal(discovery.urls.filter(url => url === `${siteUrl}/building`).length, 1, "Building must appear exactly once");
+    assert.equal(discovery.buildingCanonical, `${siteUrl}/building`, "Building canonical must match its sitemap URL");
+    console.log("SITEMAP_QA", JSON.stringify({ ...discovery, passed: true }));
+  } finally { await sitemapPage.close(); }
   for (const reducedMotion of ["no-preference", "reduce"]) {
     for (const width of [360, 390, 430, 768, 1024, 1280, 1440, 1920]) {
       const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion });

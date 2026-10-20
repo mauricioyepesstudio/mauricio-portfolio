@@ -42,6 +42,7 @@ function lastCommitDate(paths: string[]): Date | undefined {
 const STATIC_ROUTES: { route: string; sources: string[] }[] = [
   { route: "", sources: ["app/page.tsx", "components/rge", "components/SelectedWork.tsx"] },
   { route: "/portfolio", sources: ["app/portfolio/page.tsx", "lib/projects"] },
+  { route: "/building", sources: ["app/building/page.tsx", "lib/studio-projects.ts", "lib/studio-systems.ts", "lib/studio-creative.ts"] },
   { route: "/about", sources: ["app/about/page.tsx"] },
   { route: "/resume", sources: ["app/resume/page.tsx", "public/resume.pdf"] },
   { route: "/contact", sources: ["app/contact/page.tsx"] },

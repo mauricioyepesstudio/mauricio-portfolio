@@ -2,6 +2,13 @@
 
 **Estado: ACTIVO** — reactivado 2026-10-01.
 
+## Seguimiento 2026-10-20 — Building en sitemap
+
+- Base main remoto92cea8c9, con PR32 de navegación y PR33 de Owner Statements conservados. Se incorpora `/building`, página existente y canónica, al sitemap generado; fechas reales desde git, sin inventar lastmod cuando se desconoce.
+- QA existente ampliado con XML válido, URL única y canónica, entrada Building exactamente una vez y destino200 con canonical coincidente. Sin cambios visuales, copy, assets, cuentas o configuración; PR34 de otro agente intacto.
+- Evidencia: `docs/cerebro/2026-10-20-building-sitemap.md`. Pruebas, CI, PR y commit real de producción se registran al cierre en tarea central `portfolio-building-sitemap-20261020`. No se afirma indexación ni mejora de ranking.
+- Creativo equivalente reciente del15 conservado, listo aquí/no publicado. Próximo objetivo: comprobar XML y canonical servidos; casos EVOLUSA/BELONG esperan capturas del dueño.
+
 ## Seguimiento 2026-10-19 — ciclo de navegación móvil
 
 - Base remota y producción inicial READY `2f44827350d41e6f6e2b0d9f15f02ee50d86dce8`; los cambios de contacto PR30/31 se conservan.
