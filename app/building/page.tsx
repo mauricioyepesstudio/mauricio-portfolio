@@ -6,6 +6,9 @@ import { ArrowUpRight, CheckCircle2, Circle, Clock3 } from "lucide-react";
 import { studioSystems } from "@/lib/studio-systems";
 import { studioProjects } from "@/lib/studio-projects";
 import { pageMetadata } from "@/lib/seo";
+import { getStudioUpdates } from "@/lib/studio-updates";
+
+const formatUpdateDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
 export const metadata: Metadata = pageMetadata({
   title: "Building",
@@ -36,6 +39,7 @@ export default function BuildingPage() {
           {studioProjects.filter(project => project.slug !== "resource-living").map((project) => {
             const creative = getStudioCreative(project.slug);
             const system = studioSystems[project.slug];
+            const updates = getStudioUpdates(project.slug).slice(0, 3);
             return (
             <article key={project.slug} id={project.slug} className="scroll-mt-32 rounded-3xl border border-line bg-white/[0.025] p-6 sm:p-8">
               {creative && <Image src={creative.cover} alt={`${project.name} — creative development`} width={1200} height={675} sizes="(max-width: 768px) 92vw, 46vw" className="mb-6 h-auto w-full rounded-xl" />}
@@ -45,6 +49,10 @@ export default function BuildingPage() {
               </div>
               <p className="mt-3 text-lg text-paper">{project.tagline}</p>
               <p className="mt-2 text-sm leading-6 text-bone">{project.summary}</p>
+              {updates.length > 0 && <section aria-label={`${project.name} latest updates`} className="mt-5 rounded-xl border border-gold/30 bg-gold/[0.04] p-4">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-gold">Latest updates</h3>
+                <ul className="mt-3 space-y-3">{updates.map(u => <li key={u.date + u.text}><time dateTime={u.date} className="text-xs text-bone">{formatUpdateDate(u.date)}</time><p className="mt-0.5 text-sm leading-6 text-paper">{u.text}</p></li>)}</ul>
+              </section>}
               {creative && <>
                 <h3 className="mt-6 text-xs font-semibold uppercase tracking-widest text-gold">Strategy</h3>
                 <p className="mt-2 text-sm leading-6 text-bone">{creative.strategy}</p>

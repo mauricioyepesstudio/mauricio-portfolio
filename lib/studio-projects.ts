@@ -36,7 +36,7 @@ export const studioProjects: StudioProject[] = [
   { slug: "agency-control-plane", name: "AI Control Plane", tagline: "One view across independent projects.", summary: "A central coordination and reporting layer for project status, decisions, permissions and next steps.", stage: "In development", milestones: [
     { title: "Project inventory", state: "completed", detail: "Repository and project coordination structure created." },
     { title: "Commercial DOT and AI Lab", state: "in_progress", detail: "Code and workflows exist; live operation and integration require separate verification." },
-    { title: "Automated portfolio updates", state: "planned", detail: "Future publishing pipeline subject to review and approval." }
+    { title: "Automated portfolio updates", state: "in_progress", detail: "Weekly progress notes flow from each project\u2019s status into this page, reviewed and approved before publishing." }
   ]}
 ];
 export function getStudioProject(slug: string) { return studioProjects.find((p) => p.slug === slug); }
