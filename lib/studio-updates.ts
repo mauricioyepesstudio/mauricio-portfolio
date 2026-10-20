@@ -5,6 +5,7 @@ export type StudioUpdate = { date: string; text: string };
 
 export const studioUpdates: Record<string, StudioUpdate[]> = {
   evolusa: [
+    { date: "2026-10-19", text: "Mobile navigation now closes cleanly when the window reaches desktop width, and the keyboard returns focus to the menu button." },
     { date: "2026-10-18", text: "The home page now leads with the six-stage Roadmap right after the hero, with numbered stages and a direct path to onboarding." },
     { date: "2026-10-17", text: "Professional profile links are checked for privacy before they are saved or shown, and LinkedIn company links display as public pages." },
     { date: "2026-10-13", text: "Content planner: image upload with automatic JPEG conversion and metadata removal, brand-kit suggestions and CSV/XLSX content-grid import." },
