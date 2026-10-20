@@ -7,6 +7,8 @@ import { studioSystems } from "@/lib/studio-systems";
 import { studioProjects } from "@/lib/studio-projects";
 import { pageMetadata } from "@/lib/seo";
 import { getStudioUpdates } from "@/lib/studio-updates";
+import { getBrandBook } from "@/lib/studio-brandbooks";
+import BrandBook, { PieceGrid } from "@/components/BrandBook";
 
 const formatUpdateDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -40,9 +42,10 @@ export default function BuildingPage() {
             const creative = getStudioCreative(project.slug);
             const system = studioSystems[project.slug];
             const updates = getStudioUpdates(project.slug).slice(0, 3);
+            const book = getBrandBook(project.slug);
             return (
             <article key={project.slug} id={project.slug} className="scroll-mt-32 rounded-3xl border border-line bg-white/[0.025] p-6 sm:p-8">
-              {creative && <Image src={creative.cover} alt={`${project.name} — creative development`} width={1200} height={675} sizes="(max-width: 768px) 92vw, 46vw" className="mb-6 h-auto w-full rounded-xl" />}
+              {book?.coverPieces ? <div className="mb-6"><PieceGrid pieces={book.coverPieces} sizes="(max-width: 768px) 30vw, 15vw" /></div> : creative && <Image src={creative.cover} alt={`${project.name} — creative development`} width={1200} height={675} sizes="(max-width: 768px) 92vw, 46vw" className="mb-6 h-auto w-full rounded-xl" />}
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <h2 className="text-2xl font-semibold tracking-tight text-paper">{project.name}</h2>
                 <span className="rounded-full border border-white/15 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-bone">{project.stage}</span>
@@ -56,7 +59,11 @@ export default function BuildingPage() {
               {creative && <>
                 <h3 className="mt-6 text-xs font-semibold uppercase tracking-widest text-gold">Strategy</h3>
                 <p className="mt-2 text-sm leading-6 text-bone">{creative.strategy}</p>
-                {creative.images.length > 0 && <section aria-label={`${project.name} graphic development`} className="mt-5 border-t border-line pt-4">
+                {book && <BrandBook name={project.name} book={book} />}
+                {book?.pieces ? <section aria-label={`${project.name} graphic pieces`} className="mt-6 border-t border-line pt-4">
+                  <h3 className="text-sm font-medium text-paper">{book.pieces.title} · {book.pieces.items.length} pieces</h3>
+                  <div className="mt-4"><PieceGrid pieces={book.pieces.items} /></div>
+                </section> : creative.images.length > 0 && <section aria-label={`${project.name} graphic development`} className="mt-5 border-t border-line pt-4">
                   <h3 className="text-sm font-medium text-paper">Graphic development · {creative.images.length} pieces</h3>
                   <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">{creative.images.map((src, index) => <a key={src} href={src} target="_blank" rel="noopener noreferrer" className="relative block aspect-square overflow-hidden rounded-lg border border-line bg-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold" aria-label={`Open ${project.name} graphic ${index + 1}`}><Image src={src} alt={`${project.name} — graphic development ${index + 1}`} fill sizes="(max-width: 768px) 28vw, 15vw" className="object-contain p-1" /></a>)}</div>
                 </section>}
