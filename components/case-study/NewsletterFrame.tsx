@@ -19,7 +19,7 @@ export default function NewsletterFrame({
   height,
 }: NewsletterFrameProps) {
   return (
-    <ScrollFrameCore className="mx-auto w-full max-w-[420px]" viewportClassName="max-h-[min(760px,75vh)]" scrollHint="Scroll to read the full newsletter" ariaLabel={`${campaign} — ${note}`} header={
+    <ScrollFrameCore className="w-full newsletter-frame" viewportClassName="max-h-[min(760px,75vh)]" scrollHint="Scroll to read the full newsletter" ariaLabel={`${campaign} — ${note}`} header={
       <div className="flex items-center gap-3 border-b border-white/10 bg-[#111]/90 px-5 py-4">
         <span className="flex gap-1.5" aria-hidden="true">
           <span className="h-2 w-2 rounded-full bg-white/15" />
@@ -36,7 +36,7 @@ export default function NewsletterFrame({
         alt={alt}
         width={width}
         height={height}
-        sizes="(max-width: 480px) 92vw, 420px"
+        sizes="(max-width: 1536px) 92vw, 1440px"
         className="h-auto w-full"
       />
     </ScrollFrameCore>
