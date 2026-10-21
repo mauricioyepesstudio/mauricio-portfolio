@@ -1,0 +1,46 @@
+version: 1
+project: mauricio-portfolio
+orchestrator:
+  role: orchestrator
+  max_parallel_tasks: 4
+  requires_review: true
+agents:
+  - id: career_strategist
+    area: career
+    can_write: true
+  - id: portfolio_director
+    area: portfolio
+    can_write: true
+  - id: ux_reviewer
+    area: assurance
+    can_write: false
+  - id: creative_director
+    area: portfolio
+    can_write: true
+  - id: case_study_writer
+    area: content
+    can_write: true
+  - id: resume_agent
+    area: content
+    can_write: true
+  - id: job_research
+    area: career
+    can_write: false
+  - id: application_prep
+    area: career
+    can_write: true
+  - id: interview_agent
+    area: career
+    can_write: true
+  - id: qa
+    area: assurance
+    can_write: false
+  - id: reviewer
+    area: assurance
+    can_write: false
+policies:
+  default_external_submission: ready-for-owner
+  default_public_write: review-required
+  require_independent_reviewer: true
+  owner_decision_status: owner-decision
+  proof_required_for_done: true
