@@ -22,7 +22,7 @@ const verticalVideo = (base: string, file: string, caption: string) => ({
 // campaign, so the chapter leads with its feed ads and vertical videos.
 const poolLeads: EditorialChapter = {
   slug: "pool-leads",
-  eyebrow: "04 — Campaign",
+  eyebrow: "06 — Campaign",
   title: "Pool Leads",
   intro:
     "A homeowner-facing lead campaign that connects South Florida homeowners with vetted pool builders, pairing resort-style backyard imagery with a free-consultation and flexible-financing call to action.",
@@ -79,7 +79,7 @@ const BROWARD_PALM_BEACH_HERO = `${OCT_2026}/hero/biscayne-bay-living-room-hero.
 
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
-  eyebrow: "06 — Campaign",
+  eyebrow: "04 — Campaign",
   title: "Broward – Palm Beach Lead Campaign",
   intro:
     "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — pools, kitchens, bathrooms, impact windows, roofing, pavers, pergolas, outdoor kitchens and more. The October 2026 refresh gives every category one editorial look: golden-hour South Florida homes, restrained serif headlines and a short vertical video per category.",
@@ -157,7 +157,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
     outcome:
       "The campaigns now share one visual and messaging system — a repeatable framework the publication can extend to new service categories without starting from scratch.",
   },
-  chapters: [poolLeads, freeEstimates, browardPalmBeach],
+  chapters: [browardPalmBeach, freeEstimates, poolLeads],
   closingSystem,
   socialSection,
   social,
