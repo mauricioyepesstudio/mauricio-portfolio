@@ -38,7 +38,10 @@ try{
  }
  console.log("Campaign kit, six PNG downloads and mobile layout PASS");
  await page.goto(base+"/portfolio/microbeau",{waitUntil:"domcontentloaded"});
+ await page.setViewportSize({width:1440,height:1100});
  await page.locator(".newsletter-frame").first().scrollIntoViewIfNeeded();
+ await page.waitForTimeout(1800);
+ assert.ok(await page.locator(".newsletter-frame").first().evaluate(n=>Number(getComputedStyle(n.closest(".reveal")).opacity)>0.99),"Newsletter reveal visible");
  await page.screenshot({path:process.env.QA_SCREENSHOT||"newsletter-qa.png"});
  await page.close();
 }finally{await browser?.close();server.kill();}
