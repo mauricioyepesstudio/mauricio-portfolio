@@ -4,6 +4,13 @@
 
 Agencia por departamentos (agentes y tareas recurrentes): `docs/cerebro/agencia.md`.
 
+## Seguimiento 2026-10-22 — comprobante de entrega del contacto
+
+- El formulario solo confirma “Message sent” cuando Resend devuelve un identificador de recepción (`data.id`); una respuesta sin error y sin comprobante ahora devuelve 502 y conserva el borrador para reintentar.
+- Cambio limitado a `app/api/contact/route.ts`: sin cambios de UI, assets, esquema, permisos, secretos ni destinatario.
+- Validación local aprobada: TypeScript, lint, 5 pruebas de contacto y build. No se envió correo real en esta entrega; el comprobante del proveedor evita afirmar éxito sin evidencia.
+- Creativo equivalente reciente conservado; no se produjo ni publicó contenido duplicado.
+
 ## 2026-10-20 — Decisión del consejo de fundadores: seguir
 
 - Veredicto y razones: `control-plane/consejo/CONSEJO.md` en AI-Projects-Control-Plane (fuente: `consejo.json`).

@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { contactSchema } from "../lib/contact.ts";
+import { contactSchema, hasDeliveryReceipt } from "../lib/contact.ts";
 const valid = { name: "Mauricio", email: "hello@example.com", message: "A real project inquiry." };
+test("requires a non-empty provider receipt before confirming delivery", () => {
+  assert.equal(hasDeliveryReceipt({ id: "email_123" }), true);
+  for (const data of [undefined, null, {}, { id: "" }, { id: "   " }]) assert.equal(hasDeliveryReceipt(data), false);
+});
+
 test("normalizes valid inquiries with optional fields omitted", () => {
   const result = contactSchema.parse({ ...valid, name: " Mauricio ", email: " hello@example.com " });
   assert.equal(result.name, "Mauricio"); assert.equal(result.email, "hello@example.com");
