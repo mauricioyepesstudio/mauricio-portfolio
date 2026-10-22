@@ -1,5 +1,11 @@
 import { z } from "zod";
 
+export function hasDeliveryReceipt(
+  data: { id?: string } | null | undefined,
+): data is { id: string } {
+  return typeof data?.id === "string" && data.id.trim().length > 0;
+}
+
 export const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(120),
   email: z.string().trim().email("Please enter a valid email").max(254),

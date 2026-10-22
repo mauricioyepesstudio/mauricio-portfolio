@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { contactSchema } from "@/lib/contact";
+import { contactSchema, hasDeliveryReceipt } from "@/lib/contact";
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>'"]/g, (character) => {
@@ -69,16 +69,18 @@ export async function POST(req: Request) {
       `,
       });
 
-    let { error } = await send(FROM_PRIMARY);
+    let { data, error } = await send(FROM_PRIMARY);
     if (error && FROM_PRIMARY !== FROM_FALLBACK) {
       console.error("Contact send failed with primary sender, retrying", error);
-      ({ error } = await send(FROM_FALLBACK));
+      ({ data, error } = await send(FROM_FALLBACK));
     }
 
-    if (error) {
-      console.error("Contact send failed", error);
-      return NextResponse.json({ success: false }, { status: 500 });
+    if (error || !hasDeliveryReceipt(data)) {
+      console.error("Contact delivery was not confirmed", error);
+      return NextResponse.json({ success: false }, { status: 502 });
     }
+
+    console.info("Contact delivery confirmed", { messageId: data.id });
 
     return NextResponse.json({
       success: true,
