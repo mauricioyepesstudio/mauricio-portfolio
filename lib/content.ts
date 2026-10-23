@@ -41,7 +41,17 @@ export const services = [
   },
 ];
 
-export const experience = [
+// Source: Mauricio's resume (Mauricio_Perfil_Planner_Real_Group.html, #experiencia).
+// Dates are transcribed from the resume; location is omitted where the resume does not state it.
+export type ExperienceItem = {
+  role: string;
+  org: string;
+  location?: string;
+  period: string;
+  description: string;
+};
+
+export const experience: ExperienceItem[] = [
   {
     role: "Creative Director & Founder",
     org: "Real Group Entertainment LLC",
@@ -50,43 +60,83 @@ export const experience = [
     description:
       "Leading branding, creative direction, UI/UX, web design, editorial design and digital marketing initiatives. Developing visual identities, advertising campaigns, websites and lead generation systems for businesses across the United States.",
   },
-
   {
-    role: "Senior Graphic Designer & Marketing Specialist",
-    org: "Resource Living Magazine",
+    role: "Graphic Design & Social Media Advertising",
+    org: "C2 Multimedia · Resource Living Magazine",
     location: "Miami, Florida",
-    period: "2022 — Present",
+    period: "Dec 2024 — Present",
     description:
-      "Responsible for the creative direction of a premium home improvement publication, designing editorial layouts, print advertising, direct mail campaigns, social media content, landing pages and marketing materials for contractors throughout South Florida.",
+      "Graphic design for C2 Multimedia's Resource Living Magazine: editorial design and digital advertising, plus management of digital marketing campaigns across social media platforms.",
   },
-
+  {
+    role: "Graphic Designer / Marketing Specialist",
+    org: "DB Distro Inc",
+    period: "Jun 2023 — Dec 2024",
+    description:
+      "Visual and brand strategies for the wholesale smoke-shop market: product design, packaging and visual identity that communicate each brand's identity and values.",
+  },
   {
     role: "Graphic Designer",
     org: "FK Irons",
     location: "Miami, Florida",
-    period: "2023",
+    period: "Jan 2022 — Jun 2023",
     description:
-      "Created digital marketing assets, product launch campaigns, social media graphics and print collateral while maintaining a premium visual identity for one of the world's leading tattoo equipment brands.",
+      "Visual identity and branding for the beauty brands Microbeau and Evenflo Colours, from packaging concepts to product graphics and digital assets.",
   },
-
   {
-    role: "Senior Graphic Designer & Brand Consultant",
-    org: "International Clients",
-    location: "United States & Colombia",
-    period: "2015 — 2021",
-    description:
-      "Partnered with agencies, startups and established companies to develop brand identities, advertising campaigns, editorial publications, packaging, websites and digital experiences across multiple industries.",
-  },
-
-  {
-    role: "Graphic Designer & Art Director",
-    org: "Advertising Agencies",
+    role: "Brand Identity",
+    org: "Landers S.A.",
     location: "Colombia",
-    period: "2003 — 2015",
+    period: "Jun 2018 — Jun 2021",
     description:
-      "Designed advertising campaigns, magazines, retail graphics, packaging, point-of-sale materials and corporate communications for national and international brands.",
+      "International packaging design and graphic communication strategies for product development and launches, keeping brand identity consistent across the company's brands.",
   },
-
+  {
+    role: "Graphic Designer",
+    org: "Le*Bon",
+    period: "Feb — Jun 2018",
+    description: "Catalog design and creative direction.",
+  },
+  {
+    role: "Creative Designer",
+    org: "GLUE",
+    period: "Oct — Dec 2017",
+    description:
+      "Campaign proposals in collaboration with multidisciplinary teams.",
+  },
+  {
+    role: "Design & Digital Marketing",
+    org: "TYU Importaciones",
+    period: "Dec 2015 — Nov 2016",
+    description:
+      "OpenCart e-commerce, UX/UI, social media and content.",
+  },
+  {
+    role: "Design & Digital Marketing",
+    org: "Estudio 300 DPI",
+    period: "Mar 2014 — Nov 2015",
+    description: "Advertising, editorial design and printed materials.",
+  },
+  {
+    role: "Graphic Designer",
+    org: "Esquema Publicidad",
+    period: "Oct 2012 — Dec 2014",
+    description:
+      "Branding and communication materials for real estate projects.",
+  },
+  {
+    role: "Freelance Graphic Designer",
+    org: "Independent",
+    period: "2010 — 2020",
+    description: "Brand creation and digital communication management.",
+  },
+  {
+    role: "Photography Production Assistant",
+    org: "Fashion & catalog production",
+    period: "2003 — 2007",
+    description:
+      "Coordination of fashion photography and catalog production.",
+  },
   {
     role: "Founder & Creative Director",
     org: "BMX Colombia Magazine",

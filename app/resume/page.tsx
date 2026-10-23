@@ -145,8 +145,8 @@ export default function ResumePage() {
               {experience.map((item, index) => (
 
                 <Reveal
-                  key={item.role}
-                  delay={index * 0.05}
+                  key={`${item.org}-${item.period}`}
+                  delay={Math.min(index, 6) * 0.05}
                 >
 
                   <div className="grid md:grid-cols-12 gap-6">
@@ -167,11 +167,13 @@ export default function ResumePage() {
                         {item.org}
                       </p>
 
-                      <p className="mb-5 text-sm text-bone/70">
-                        {item.location}
-                      </p>
+                      {item.location && (
+                        <p className="text-sm text-bone/70">
+                          {item.location}
+                        </p>
+                      )}
 
-                      <p className="leading-8 text-bone">
+                      <p className="mt-5 leading-8 text-bone">
                         {item.description}
                       </p>
 
