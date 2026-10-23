@@ -58,6 +58,14 @@ export default function ServicesPage() {
               <ul className="my-6 space-y-3 text-base leading-7 text-bone">
                 {plan.items.map(item => <li key={item} className="border-t border-line pt-3">{item}</li>)}
               </ul>
+              {"example" in plan && (
+                <p className="mb-6 text-sm leading-6 text-bone">
+                  In practice:{" "}
+                  <Link href={plan.example.href} className="text-paper underline decoration-gold underline-offset-4 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold">
+                    {plan.example.label}
+                  </Link>
+                </p>
+              )}
               <Link href="/contact" className={ctaClass + " mt-auto self-start"}>
                 {plan.cta} <ArrowUpRight size={18} aria-hidden="true" />
               </Link>

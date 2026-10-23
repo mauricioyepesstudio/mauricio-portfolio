@@ -28,6 +28,7 @@ try {
     assert.equal(await page.locator('section[aria-labelledby="capabilities-heading"] article').count(), 6);
     assert.equal(await page.locator('section[aria-labelledby="plans-heading"] article').count(), 4);
     for (const name of ["Start", "Renew", "Run", "Build"]) assert.equal(await page.getByRole("heading", { level: 3, name, exact: true }).count(), 1);
+    for (const href of ["/evolusa", "/portfolio/resource-living", "/belong"]) assert.equal(await page.locator(`section[aria-labelledby="plans-heading"] a[href="${href}"]`).count(), 1);
     assert.equal(await page.locator('a[href="/resume"]').filter({ hasText: "View resume" }).count(), 1);
     assert.ok(await page.locator("main").evaluate(e => e.scrollWidth <= innerWidth));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
