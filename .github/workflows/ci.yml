@@ -40,3 +40,9 @@ jobs:
 
       - name: Verify contact confirmation and safe retry (mocked delivery only)
         run: node scripts/qa-contact-confirmation.mjs
+
+      - name: Verify services plans and Resource Living campaign order
+        run: node scripts/qa-services.mjs
+
+      - name: Verify full-width newsletters and RGE campaign kit
+        run: node scripts/qa-newsletters.mjs

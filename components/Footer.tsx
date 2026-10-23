@@ -28,6 +28,7 @@ export default function Footer() {
                   Portfolio
                 </Link>
               </li>
+              <li><Link href="/services" className="text-bone hover:text-paper transition-colors">Services & Plans</Link></li>
               <li>
                 <Link href="/about" className="text-bone hover:text-paper transition-colors">
                   About

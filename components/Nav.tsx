@@ -11,6 +11,7 @@ import BrandWordmark from "@/components/BrandWordmark";
 const links = [
   { href: "/portfolio", label: "Work" },
   { href: "/building", label: "Building" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
