@@ -10,10 +10,10 @@ export default function RGEServices() {
         <Reveal>
           <p className="eyebrow mb-5">Services</p>
           <h2 className="font-sans text-[clamp(2.4rem,7vw,4rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-paper max-w-3xl">
-            Build your brand.<br />Launch your next idea.
+            Start, renew<br />or run your business.
           </h2>
           <p className="mt-6 max-w-2xl text-bone text-lg leading-8">
-            Branding, websites, apps and connected marketing systems, from a focused launch to ongoing creative and technical support.
+            Branding, websites, social media, ads and connected systems for a new business, a brand that needs renewing or a company that wants its marketing handled every month.
           </p>
         </Reveal>
         <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

@@ -26,7 +26,9 @@ try {
     await page.evaluate(() => document.fonts.ready);
     assert.equal(await page.locator("h1").count(), 1);
     assert.equal(await page.locator('section[aria-labelledby="capabilities-heading"] article').count(), 6);
-    assert.equal(await page.locator('section[aria-labelledby="plans-heading"] article').count(), 3);
+    assert.equal(await page.locator('section[aria-labelledby="plans-heading"] article').count(), 4);
+    for (const name of ["Start", "Renew", "Run", "Build"]) assert.equal(await page.getByRole("heading", { level: 3, name, exact: true }).count(), 1);
+    assert.equal(await page.locator('a[href="/resume"]').filter({ hasText: "View resume" }).count(), 1);
     assert.ok(await page.locator("main").evaluate(e => e.scrollWidth <= innerWidth));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     const cta = page.getByRole("link", { name: "Discuss a launch" });

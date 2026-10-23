@@ -5,7 +5,7 @@ import { serviceAreas, engagementPlans } from "@/lib/services";
 
 export const metadata = pageMetadata({
   title: "Services & Development Plans",
-  description: "Branding, websites, apps, CRM, automations, social media and creative production by Mauricio Yepes. Explore project and monthly engagements.",
+  description: "Start, renew or run your business with Mauricio Yepes and Real Group Entertainment: branding, websites, social media, ads, CRM and automations as a project or monthly engagement.",
   path: "/services",
 });
 
@@ -17,10 +17,10 @@ export default function ServicesPage() {
       <header className="max-w-4xl">
         <p className="eyebrow mb-6">Services & Development Plans</p>
         <h1 className="font-sans text-[clamp(2.5rem,7vw,5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-paper">
-          From brand idea<br />to working business tools.
+          Start it. Renew it.<br />Run it.
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-8 text-bone">
-          One creative and technical partner for your identity, digital presence and day-to-day systems. Choose a focused project or an ongoing engagement around what your business needs.
+          One creative and technical partner for opening a new business, renewing an established one or keeping its marketing running every month. Choose a focused project or an ongoing engagement around where your business is today.
         </p>
         <Link href="/contact" className={ctaClass + " mt-7"}>
           Tell me about your project <ArrowUpRight size={18} aria-hidden="true" />
@@ -45,11 +45,11 @@ export default function ServicesPage() {
 
       <section aria-labelledby="plans-heading" className="mt-24 border-t border-line pt-10">
         <p className="eyebrow mb-4">Ways to work together</p>
-        <h2 id="plans-heading" className="text-3xl font-semibold text-paper">A plan built around your next step.</h2>
+        <h2 id="plans-heading" className="text-3xl font-semibold text-paper">Wherever your business is, a plan for the next step.</h2>
         <p className="mt-5 max-w-2xl text-base leading-7 text-bone">
           Every proposal defines deliverables, milestones, revisions and price before work begins. These are starting points for scope, not unlimited bundles.
         </p>
-        <div className="mt-12 grid gap-10 lg:grid-cols-3">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
           {engagementPlans.map(plan => (
             <article key={plan.id} id={plan.id} className="flex min-w-0 flex-col border-t border-gold pt-6">
               <p className="text-xs uppercase tracking-[0.15em] text-gold">{plan.format}</p>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           ))}
         </div>
         <p className="mt-10 max-w-3xl text-sm leading-7 text-bone">
-          Domains, hosting, software subscriptions, ad spend and app-store fees are quoted separately where needed. Store releases depend on platform review. Campaign results depend on the offer, audience and budget.
+          Domains, hosting, software subscriptions, ad spend and app-store fees are quoted separately where needed. Store releases depend on platform review. Campaign results depend on the offer, audience and budget. Company registration, legal, accounting and tax services are not included; I work alongside your attorney or accountant.
         </p>
       </section>
 
@@ -77,6 +77,15 @@ export default function ServicesPage() {
           <li><span className="block font-semibold text-paper">03 / Launch & improve</span>Hand over the agreed deliverables, then prioritize any ongoing support separately.</li>
         </ol>
         <Link href="/contact" className={ctaClass + " mt-10"}>Request a proposal <ArrowUpRight size={18} aria-hidden="true" /></Link>
+      </section>
+
+      <section aria-labelledby="hire-heading" className="mt-24 border-t border-line pt-10">
+        <p className="eyebrow mb-4">Hiring in-house?</p>
+        <h2 id="hire-heading" className="text-3xl font-semibold text-paper">The same work, inside your team.</h2>
+        <p className="mt-5 max-w-2xl text-base leading-7 text-bone">
+          I am also open to full-time and contract roles in creative direction, art direction and marketing design, in Miami or remote.
+        </p>
+        <Link href="/resume" className={ctaClass + " mt-7"}>View resume <ArrowUpRight size={18} aria-hidden="true" /></Link>
       </section>
     </div>
   );
