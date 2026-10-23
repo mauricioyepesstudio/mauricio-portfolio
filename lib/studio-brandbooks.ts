@@ -1,7 +1,7 @@
 // Brand book and curated graphic pieces per studio project, shown on /building.
 // Logos, colors and rules come from each brand's own published files:
 // EVOLUSA: pros360era docs/EVOLUSA-BRAND-BOOK.md and config/brand.ts.
-// BELONG: belong app/globals.css (brand tokens) and components/ui/logo.tsx.
+// BELONG: belong app/globals.css (brand tokens), components/ui/logo.tsx and public/social.
 // Personal CFO: the logo files already in public/projects/personal-cfo.
 // Real Group Entertainment: logo files in public/brand/rge; accent colors sampled from the studio's published pieces.
 
@@ -22,6 +22,7 @@ export type BrandBook = {
 const rl = "/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026";
 const belong = "/projects/real-group-entertainment/campaigns/02-belong-brand";
 const cfo = "/projects/personal-cfo/campaigns/01-brand-identity";
+const cfoPost = (n: string): BrandPiece => ({ src: `${cfo}/social/post-${n}-4x5.png`, alt: `Personal CFO educational post: ${n.slice(3).replace(/-/g, " ")}`, ratio: "portrait" });
 
 export const brandBooks: Record<string, BrandBook> = {
   "real-group-entertainment": {
@@ -35,9 +36,6 @@ export const brandBooks: Record<string, BrandBook> = {
       { name: "Ink", hex: "#0A0A0A", role: "Logo and primary text" },
       { name: "Paper", hex: "#FFFFFF", role: "Reverse logo and space" },
       { name: "Campaign Gold", hex: "#A88255", role: "2026 studio campaign" },
-      { name: "Sun", hex: "#E9CD3D", role: "Service accent" },
-      { name: "Lavender", hex: "#B085E6", role: "Service accent" },
-      { name: "Mint", hex: "#54DEC8", role: "Service accent" },
     ],
     rules: [
       "Use the black lockup on light backgrounds and the white lockup on dark backgrounds.",
@@ -108,10 +106,11 @@ export const brandBooks: Record<string, BrandBook> = {
     rules: [
       "Always pair color with a sign and a word, so changes read without relying on color alone.",
     ],
+    coverPieces: ["01-banco-baja", "02-dos-destinos", "03-nueva-deuda"].map(cfoPost),
     pieces: {
       title: "Social and launch pieces",
       items: [
-        ...["01-banco-baja", "02-dos-destinos", "03-nueva-deuda", "05-cuota-corta", "06-negativo", "07-pack-sesiones"].map((n) => ({ src: `${cfo}/social/post-${n}-4x5.png`, alt: `Personal CFO educational post: ${n.slice(3).replace(/-/g, " ")}`, ratio: "portrait" as const })),
+        ...["05-cuota-corta", "06-negativo", "07-pack-sesiones"].map(cfoPost),
         { src: `${cfo}/advertising/01-feed-ad.png`, alt: "Personal CFO feed ad", ratio: "square" },
         { src: `${cfo}/advertising/02-story-ad.png`, alt: "Personal CFO Story ad", ratio: "portrait" },
         { src: `${cfo}/social/post-04-pago-extra-1x1.png`, alt: "Personal CFO educational post: extra payment", ratio: "square" },
@@ -135,11 +134,15 @@ export const brandBooks: Record<string, BrandBook> = {
     rules: [
       "Carry the B symbol and the community message consistently across identity, campaigns and product.",
     ],
+    coverPieces: [
+      { src: "/studio/belong/belong-post-01-your-world.jpg", alt: "BELONG launch post: This is your world. Build it. Together.", ratio: "portrait" },
+      { src: `${belong}/social/belong-event-scene.jpg`, alt: "BELONG event scene", ratio: "portrait" },
+      { src: `${belong}/social/belong-star-mark.jpg`, alt: "BELONG star mark", ratio: "portrait" },
+    ],
     pieces: {
       title: "Campaign pieces",
       items: [
         { src: `${belong}/hero/belong-community-banner.jpg`, alt: "BELONG community banner", ratio: "wide" },
-        { src: `${belong}/social/belong-event-scene.jpg`, alt: "BELONG event scene", ratio: "wide" },
         { src: `${belong}/social/just-belong-banner.jpg`, alt: "Just BELONG banner", ratio: "wide" },
         { src: `${belong}/social/we-all-belong-banner.jpg`, alt: "We all BELONG banner", ratio: "wide" },
         { src: `${belong}/social/different-stories-banner.jpg`, alt: "BELONG different stories banner", ratio: "wide" },
