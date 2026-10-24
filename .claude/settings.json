@@ -16,5 +16,36 @@
     "financial-analysis@equipos-rge": true,
     "commercial-legal@equipos-rge": true,
     "ip-legal@equipos-rge": true
-  }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Edit|Write|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/mods/guardia.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/mods/parte.mjs\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node \"$CLAUDE_PROJECT_DIR/.claude/mods/linea.mjs\""
+  },
+  "enabledMcpjsonServers": [
+    "vercel",
+    "playwright"
+  ]
 }

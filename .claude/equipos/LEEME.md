@@ -1,6 +1,6 @@
 # Equipos de skills — Portafolio de Mauricio
 
-> Generado por `AI-Projects-Control-Plane/equipos-skills` (versión 2026-10-15). No editar a mano: el cambio se hace en el cerebro central y se regenera.
+> Generado por `AI-Projects-Control-Plane/equipos-skills` (versión 2026-10-23). No editar a mano: el cambio se hace en el cerebro central y se regenera.
 
 **Para qué sirve este proyecto:** Conseguir clientes mostrando trabajo real con un contacto claro.
 
@@ -22,6 +22,23 @@
 | Finanzas (apoyo, con revisión humana) | `financial-analysis` | Equipo financiero: modelo de 3 estados, DCF, comparables, análisis competitivo, auditoría y limpieza de Excel, decks financieros. *Requiere:* Trae conectores de datos de mercado (FactSet, S&P, Morningstar, Daloopa, Moody's) que piden cuenta propia; sin ellos trabaja con los números que le des. | [anthropics/financial-services-plugins](https://github.com/anthropics/financial-services-plugins/tree/574ed3624aebd0418c7e96cd101262f30210ab26/plugins/vertical-plugins/financial-analysis) @ `574ed36` · Apache-2.0 |
 | Legal (apoyo, con revisión de abogado) | `commercial-legal` | Contratos: NDAs (verde/amarillo/rojo), contratos de proveedor y SaaS, renovaciones, enmiendas, escalamiento. | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal/tree/4a6c651889c97cc9140580363c73e0eb17379c2b/commercial-legal) @ `4a6c651` · Apache-2.0 |
 | Legal (apoyo, con revisión de abogado) | `ip-legal` | Propiedad intelectual: búsqueda de marca (clearance), cláusulas de PI, licencias open source, takedowns y cartas de cese. | [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal/tree/4a6c651889c97cc9140580363c73e0eb17379c2b/ip-legal) @ `4a6c651` · Apache-2.0 |
+
+## Conectores (`.mcp.json`)
+
+| Conector | Para qué |
+|---|---|
+| `vercel` | Despliegues, logs de build y de runtime, dominios. Para verificar que producción está READY. |
+| `playwright` | Navegador real para QA (recorridos 375/768/1280, capturas). Paquete `@playwright/mcp@0.0.83` fijado. |
+
+Supabase y Vercel piden iniciar sesión la primera vez (`/mcp` → el conector → Authenticate). Lo hace el dueño con su cuenta; no se guardan llaves en el repo ni se pegan en el chat.
+
+## Mods (`.claude/mods/`)
+
+| Mod | Cuándo corre | Qué hace |
+|---|---|---|
+| `guardia` | Antes de cada comando o edición | Frena push directo o forzado a la rama principal, `gh pr merge`, migraciones al Supabase vivo, `vercel --prod`, Stripe Live y edición de `.env`. Explica el motivo y manda a pedírselo al dueño. |
+| `parte` | Al abrir una sesión | Le da al agente el «Siguiente» y el «Bloqueado» de `ESTADO.md` y avisa si lleva más de 3 días sin actualizarse. |
+| `linea` | Siempre, en la barra de estado | Puntos de color: ● ESTADO al día (verde ≤2 días, amarillo ≤7, rojo más), ● cambios sin commit, ● agentes del proyecto. |
 
 ## Reglas de este proyecto (mandan sobre cualquier skill)
 
