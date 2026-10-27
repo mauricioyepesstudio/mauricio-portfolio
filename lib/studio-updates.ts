@@ -16,6 +16,7 @@ export const studioUpdates: Record<string, StudioUpdate[]> = {
     { date: "2026-10-11", text: "Tasks, owners and goal progress are now saved and kept in sync across the community workspace." },
   ],
   "personal-cfo": [
+    { date: "2026-10-21", text: "The checkout screen now states exactly what the app unlocks, and optional sessions with a professional are offered and paid for separately in Contact." },
     { date: "2026-10-14", text: "New monthly summary: three key points, a simple comparison of debt, bank balances and investments against last month, a new cover and an Available Savings ratio." },
     { date: "2026-10-08", text: "Live on personalcfo.me with real accounts: sign-up, saving and recovering data were tested end to end." },
   ],
