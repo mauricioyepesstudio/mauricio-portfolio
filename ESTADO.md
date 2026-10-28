@@ -4,6 +4,13 @@
 
 Agencia por departamentos (agentes y tareas recurrentes): `docs/cerebro/agencia.md`.
 
+## 2026-10-28 — Super agencia: piloto sin cobro en /services
+
+- Pedido de Mauricio (28-oct): ejecutar la super agencia con piloto sin cobro, que cada botón funcione y cada servicio tenga equipo.
+- `/services` pasa de 6 a 10 áreas (suma IA, Operaciones y administración, Finanzas y legal básico, Formación) y agrega la sección «Pilot program» sin costo. Cada botón abre `/contact?topic=<tema>`; el formulario preselecciona el tema y el correo llega con el tema en el asunto.
+- Agentes nuevos en `.claude/agents/`: gerente-cuenta, automatizador, formador y analitica-web (asignados por el consejo). Ruta de cada tema: `control-plane/super-agencia/` en el cerebro central.
+- QA: `scripts/qa-links.mjs` recorre todas las páginas del sitemap y falla si un enlace interno no responde o un mailto/tel/WhatsApp está mal; `qa-services.mjs` revisa las 10 áreas, el piloto y la preselección del tema. Sin envío real de correo en las pruebas.
+
 ## Seguimiento 2026-10-22 — comprobante de entrega del contacto
 
 - El formulario solo confirma “Message sent” cuando Resend devuelve un identificador de recepción (`data.id`); una respuesta sin error y sin comprobante ahora devuelve 502 y conserva el borrador para reintentar.

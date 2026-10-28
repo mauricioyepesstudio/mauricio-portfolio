@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
-import { serviceAreas, engagementPlans } from "@/lib/services";
+import { serviceAreas, engagementPlans, pilotProgram, contactHref } from "@/lib/services";
 
 export const metadata = pageMetadata({
   title: "Services & Development Plans",
-  description: "Start, renew or run your business with Mauricio Yepes and Real Group Entertainment: branding, websites, social media, ads, CRM and automations as a project or monthly engagement.",
+  description: "Start, renew or run your business with Mauricio Yepes and Real Group Entertainment: branding, websites, apps, marketing, automation, AI, operations and training as a project or monthly engagement. Pilot projects now open at no fee.",
   path: "/services",
 });
 
@@ -27,6 +27,18 @@ export default function ServicesPage() {
         </Link>
       </header>
 
+      <section id="pilot" aria-labelledby="pilot-heading" className="mt-24 border-t border-gold pt-10">
+        <p className="eyebrow mb-4">Now open</p>
+        <h2 id="pilot-heading" className="text-3xl font-semibold text-paper">{pilotProgram.title}</h2>
+        <p className="mt-5 max-w-2xl text-base leading-7 text-bone">{pilotProgram.summary}</p>
+        <ul className="mt-6 max-w-2xl space-y-3 text-base leading-7 text-bone">
+          {pilotProgram.items.map(item => <li key={item} className="border-t border-line pt-3">{item}</li>)}
+        </ul>
+        <Link href={contactHref("pilot")} className={ctaClass + " mt-7"}>
+          {pilotProgram.cta} <ArrowUpRight size={18} aria-hidden="true" />
+        </Link>
+      </section>
+
       <section aria-labelledby="capabilities-heading" className="mt-24 border-t border-line pt-10">
         <h2 id="capabilities-heading" className="text-3xl font-semibold text-paper">What we can build together</h2>
         <div className="mt-12 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -38,6 +50,9 @@ export default function ServicesPage() {
               <ul className="mt-5 space-y-3 text-base leading-7 text-bone">
                 {service.items.map(item => <li key={item} className="border-t border-line pt-3">{item}</li>)}
               </ul>
+              <Link href={contactHref(service.id)} className={ctaClass + " mt-4"} aria-label={`Ask about ${service.title}`}>
+                Ask about this <ArrowUpRight size={18} aria-hidden="true" />
+              </Link>
             </article>
           ))}
         </div>
@@ -66,7 +81,7 @@ export default function ServicesPage() {
                   </Link>
                 </p>
               )}
-              <Link href="/contact" className={ctaClass + " mt-auto self-start"}>
+              <Link href={contactHref(plan.id)} className={ctaClass + " mt-auto self-start"}>
                 {plan.cta} <ArrowUpRight size={18} aria-hidden="true" />
               </Link>
             </article>
