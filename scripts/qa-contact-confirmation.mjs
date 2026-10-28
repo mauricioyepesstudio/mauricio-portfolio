@@ -21,7 +21,7 @@ const cases = [
   { name: "HTTP-500", status: 500, body: '{"success":true}' },
   { name: "confirmed", body: '{"success":true}', confirmed: true },
 ];
-const draft = { name: "QA Draft", email: "draft@example.invalid", company: "QA only", budget: "5k-15k", message: "This is an intercepted browser test, never send it." };
+const draft = { name: "QA Draft", email: "draft@example.invalid", company: "QA only", budget: "5k-15k", topic: "pilot", message: "This is an intercepted browser test, never send it." };
 const results = [];
 let browser;
 let observedWrites = 0;
@@ -100,13 +100,14 @@ try {
         await page.locator("form").waitFor();
         for (const field of ["name", "email", "company", "message"]) await page.locator(`#${field}`).fill(draft[field]);
         await page.locator("#budget").selectOption(draft.budget);
+        await page.locator("#topic").selectOption(draft.topic);
         await submitWithKeyboard();
         if (!scenario.confirmed) {
           await page.getByRole("alert").filter({ hasText: "Something went wrong." }).waitFor();
           assert.equal(await page.locator("form").getAttribute("aria-busy"), "false");
           assert.equal(await page.getByText("Message sent.", { exact: true }).count(), 0);
           assert.equal(await page.evaluate(() => document.activeElement?.textContent?.trim() === "Message sent."), false);
-          for (const field of ["name", "email", "company", "budget", "message"]) assert.equal(await page.locator(`#${field}`).inputValue(), draft[field]);
+          for (const field of ["name", "email", "company", "budget", "topic", "message"]) assert.equal(await page.locator(`#${field}`).inputValue(), draft[field]);
           assert.ok(await page.locator('form a[href="mailto:rgentertainmentmanagement@gmail.com"]').isVisible());
           assert.ok(await page.getByRole("button", { name: "Send Message", exact: true }).isEnabled());
           // A real second submit of the retained draft, with confirmed delivery.
