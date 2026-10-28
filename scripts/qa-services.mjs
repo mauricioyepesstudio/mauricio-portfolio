@@ -25,17 +25,22 @@ try {
     assert.equal((await page.goto(origin + "/services", { waitUntil: "networkidle" })).status(), 200);
     await page.evaluate(() => document.fonts.ready);
     assert.equal(await page.locator("h1").count(), 1);
-    assert.equal(await page.locator('section[aria-labelledby="capabilities-heading"] article').count(), 6);
+    assert.equal(await page.locator('section[aria-labelledby="capabilities-heading"] article').count(), 10);
     assert.equal(await page.locator('section[aria-labelledby="plans-heading"] article').count(), 4);
     for (const name of ["Start", "Renew", "Run", "Build"]) assert.equal(await page.getByRole("heading", { level: 3, name, exact: true }).count(), 1);
     for (const href of ["/evolusa", "/portfolio/resource-living", "/belong"]) assert.equal(await page.locator(`section[aria-labelledby="plans-heading"] a[href="${href}"]`).count(), 1);
     assert.equal(await page.locator('a[href="/resume"]').filter({ hasText: "View resume" }).count(), 1);
     assert.ok(await page.locator("main").evaluate(e => e.scrollWidth <= innerWidth));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    assert.equal(await page.locator('section[aria-labelledby="capabilities-heading"] a[href^="/contact?topic="]').count(), 10);
+    assert.equal(await page.locator('section[aria-labelledby="pilot-heading"] a[href="/contact?topic=pilot"]').count(), 1);
     const cta = page.getByRole("link", { name: "Discuss a launch" });
     await cta.click();
-    await page.waitForURL("**/contact");
+    await page.waitForURL(/\/contact\?topic=start$/);
+    // La navegación es del lado del cliente: la URL cambia antes de que el formulario se pinte.
+    await page.locator("form").waitFor();
     assert.equal(await page.locator("form").count(), 1);
+    await page.waitForFunction(() => document.querySelector("#topic")?.value === "start");
     assert.deepEqual(errors, []);
     console.log("Services responsive + contact navigation PASS", width);
     await page.close();

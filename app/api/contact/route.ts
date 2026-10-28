@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema, hasDeliveryReceipt } from "@/lib/contact";
+import { contactTopics } from "@/lib/services";
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>'"]/g, (character) => {
@@ -32,7 +33,9 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
-    const { name, email, company = "", budget = "", message } = parsed.data;
+    const { name, email, company = "", budget = "", topic = "", message } = parsed.data;
+    // El tema viene del botón que abrió el formulario (/contact?topic=...); solo se aceptan temas conocidos.
+    const topicLabel = contactTopics.find((item) => item.id === topic)?.label ?? "";
 
     // Se valida antes de comprobar la configuración: una petición mal formada
     // siempre recibe 400, aunque falte RESEND_API_KEY.
@@ -51,7 +54,7 @@ export async function POST(req: Request) {
         from,
         to: "rgentertainmentmanagement@gmail.com",
         replyTo: email,
-        subject: `New Portfolio Inquiry from ${name}`,
+        subject: topicLabel ? `New ${topicLabel} inquiry from ${name}` : `New Portfolio Inquiry from ${name}`,
         html: `
         <h2>New Contact Form Submission</h2>
 
@@ -62,6 +65,8 @@ export async function POST(req: Request) {
         <p><strong>Company:</strong> ${escapeHtml(company || "-")}</p>
 
         <p><strong>Budget:</strong> ${escapeHtml(budget || "-")}</p>
+
+        <p><strong>Topic:</strong> ${escapeHtml(topicLabel || "-")}</p>
 
         <hr/>
 

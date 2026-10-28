@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { contactSchema as schema } from "@/lib/contact";
+import { contactTopics } from "@/lib/services";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, CheckCircle2 } from "lucide-react";
 
@@ -24,10 +25,17 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
+
+  // Los botones de /services abren /contact?topic=<id>; se preselecciona ese tema.
+  useEffect(() => {
+    const topic = new URLSearchParams(window.location.search).get("topic");
+    if (topic && contactTopics.some((item) => item.id === topic)) setValue("topic", topic);
+  }, [setValue]);
 
   async function onSubmit(data: FormData) {
     setStatus("loading");
@@ -142,6 +150,22 @@ export default function ContactForm() {
             <option value="50k+">$50,000+</option>
           </select>
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="topic" className="text-sm text-bone">
+          What do you need? (optional)
+        </label>
+        <select
+          id="topic"
+          {...register("topic")}
+          className="w-full bg-ink border-b border-line focus:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold py-3 text-paper mt-2 transition-colors"
+        >
+          <option value="">Select a topic</option>
+          {contactTopics.map((topic) => (
+            <option key={topic.id} value={topic.id}>{topic.label}</option>
+          ))}
+        </select>
       </div>
 
       <div>
