@@ -36,7 +36,9 @@ try {
     assert.equal(await page.locator('section[aria-labelledby="pilot-heading"] a[href="/contact?topic=pilot"]').count(), 1);
     const cta = page.getByRole("link", { name: "Discuss a launch" });
     await cta.click();
-    await page.waitForURL("**/contact?topic=start");
+    await page.waitForURL(/\/contact\?topic=start$/);
+    // La navegación es del lado del cliente: la URL cambia antes de que el formulario se pinte.
+    await page.locator("form").waitFor();
     assert.equal(await page.locator("form").count(), 1);
     await page.waitForFunction(() => document.querySelector("#topic")?.value === "start");
     assert.deepEqual(errors, []);
