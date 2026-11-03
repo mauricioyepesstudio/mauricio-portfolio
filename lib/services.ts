@@ -19,15 +19,14 @@ const VENTURES = "/projects/real-group-entertainment/campaigns/01-2026-ventures/
 
 export type Package = {
   id: string; title: string; format: string; tagline: string; gets: readonly string[]; cta: string;
-  example: { label: string; href: string }; cover: string; media: readonly PackageMedia[];
+  example: { label: string; href: string }; cover: string; headline: readonly [string, string]; media: readonly PackageMedia[];
 };
 
 export const engagementPlans: readonly Package[] = [
   {
-    id: "start", title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
+    id: "start", cover: "/services/cover-start.jpg", headline: ["Start with a", "clear direction."], title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
     gets: ["Logo & identity", "Website", "Social launch kit", "Google profile"], cta: "Discuss a launch",
     example: { label: "See EVOLUSA", href: "/evolusa" },
-    cover: "/studio/evolusa/pieces/guia-google-negocio-1.jpg",
     media: [
       { src: `${VENTURES}/evolusa-live-product.png`, alt: "EVOLUSA website home page", label: "Website" },
       { src: "/studio/evolusa/brand/evolusa-primary.png", alt: "EVOLUSA logo", label: "Logo", fit: "contain", bg: "#f4f2ee" },
@@ -36,10 +35,9 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "renew", title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
+    id: "renew", cover: "/services/cover-renew.jpg", headline: ["Renew what", "you outgrew."], title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
     gets: ["Brand review", "Packaging", "Campaign creative", "Newsletters & social"], cta: "Plan a renewal",
     example: { label: "See Evenflo", href: "/portfolio/evenflo" },
-    cover: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg",
     media: [
       { src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg", alt: "Evenflo True Lips packaging", label: "Packaging" },
       { src: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg", alt: "Evenflo True Lips campaign post", label: "Campaign" },
@@ -48,10 +46,9 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "run", title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
+    id: "run", cover: "/services/cover-run.jpg", headline: ["Run it with", "intention."], title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
     gets: ["Social posts", "Ads & print", "Video", "Monthly report"], cta: "Plan ongoing support",
     example: { label: "See Resource Living", href: "/portfolio/resource-living" },
-    cover: `${RL}/hero/biscayne-bay-living-room-hero.jpg`,
     media: [
       { src: `${RL}/social/kitchen-dusk-pool.jpg`, alt: "Resource Living kitchen social post", label: "Social" },
       { src: `${RL}/advertising/pavers-a-beautiful-first-impression.jpg`, alt: "Resource Living pavers magazine ad", label: "Print ad" },
@@ -60,10 +57,9 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "build", title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
+    id: "build", cover: "/services/cover-build.jpg", headline: ["Build it with", "purpose."], title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
     gets: ["Prototype", "Web app", "Testing", "Launch content"], cta: "Scope a product",
     example: { label: "See BELONG", href: "/belong" },
-    cover: "/studio/belong/belong-post-01-your-world.jpg",
     media: [
       { src: `${VENTURES}/belong-live-product.png`, alt: "BELONG app home page", label: "Web app" },
       { src: `${CFO}/identity/01-logo-system.png`, alt: "Personal CFO logo system", label: "App logo", fit: "contain", bg: "#ffffff" },
