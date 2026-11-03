@@ -14,7 +14,7 @@ export default function Experience() {
 
         <div className="divide-y divide-line border-t border-b border-line">
           {experience.map((item, i) => (
-            <Reveal key={item.role} delay={i * 0.08}>
+            <Reveal key={`${item.org}-${item.period}`} delay={Math.min(i, 6) * 0.06}>
               <div className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 items-baseline">
                 <span className="md:col-span-2 text-sm text-gold font-medium">
                   {item.period}
@@ -24,7 +24,8 @@ export default function Experience() {
                     {item.role}
                   </h3>
                   <p className="text-sm text-bone mt-1">
-                    {item.org} · {item.location}
+                    {item.org}
+                    {item.location ? ` · ${item.location}` : null}
                   </p>
                 </div>
                 <p className="md:col-span-6 text-bone leading-relaxed">
