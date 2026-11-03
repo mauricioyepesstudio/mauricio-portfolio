@@ -11,12 +11,67 @@ export const serviceAreas = [
   { id: "training", title: "Training & Professional Growth", summary: "Leave your team able to run what we build, and help people grow their own careers.", items: ["Hands-on training & short manuals for every handover", "AI-for-business workshops", "Resume, LinkedIn & portfolio refresh"] },
 ] as const;
 
-export const engagementPlans = [
-  { id: "start", title: "Start", format: "New business · defined project", description: "For founders opening a new business who need to look established from day one.", items: ["Naming support, positioning & brand identity", "Website or landing page with a contact journey", "Social profiles, Google Business Profile & launch content kit", "Lead form, CRM pipeline & handover"], cta: "Discuss a launch", example: { label: "EVOLUSA, a brand and platform launched from zero", href: "/evolusa" } },
-  { id: "renew", title: "Renew", format: "Existing business · defined project", description: "For a business whose brand, website or marketing no longer matches the company it has become.", items: ["Brand & marketing audit with clear priorities", "Identity refresh or full rebrand", "Website redesign & content update", "Refreshed ads, social and print with AI-assisted production"], cta: "Plan a renewal" },
-  { id: "run", title: "Run", format: "Monthly engagement", description: "For owners who want marketing, content and digital tools handled consistently every month.", items: ["Content planner & social media management", "Ads creative & campaign management", "Website, CRM & automation care", "Monthly activity report & next priorities"], cta: "Plan ongoing support", example: { label: "Resource Living, ongoing creative and lead campaigns", href: "/portfolio/resource-living" } },
-  { id: "build", title: "Build", format: "Milestone-based development", description: "For a business ready to turn a manual process or product idea into a useful tool.", items: ["Discovery, scope & interactive prototype", "App, portal or CRM implementation", "Testing, release plan & team handover"], cta: "Scope a product", example: { label: "BELONG, a community app in development", href: "/belong" } },
-] as const;
+export type PackageMedia = { src: string; alt: string; label: string; fit?: "contain"; bg?: string; pos?: string };
+
+const RL = "/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026";
+const CFO = "/projects/personal-cfo/campaigns/01-brand-identity";
+const VENTURES = "/projects/real-group-entertainment/campaigns/01-2026-ventures/web";
+
+export type Package = {
+  id: string; title: string; format: string; tagline: string; gets: readonly string[]; cta: string;
+  example: { label: string; href: string }; cover: string; media: readonly PackageMedia[];
+};
+
+export const engagementPlans: readonly Package[] = [
+  {
+    id: "start", title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
+    gets: ["Logo & identity", "Website", "Social launch kit", "Google profile"], cta: "Discuss a launch",
+    example: { label: "See EVOLUSA", href: "/evolusa" },
+    cover: "/studio/evolusa/pieces/guia-google-negocio-1.jpg",
+    media: [
+      { src: `${VENTURES}/evolusa-live-product.png`, alt: "EVOLUSA website home page", label: "Website" },
+      { src: "/studio/evolusa/brand/evolusa-primary.png", alt: "EVOLUSA logo", label: "Logo", fit: "contain", bg: "#f4f2ee" },
+      { src: "/studio/evolusa/pieces/evolusa-post-05-marketing.jpg", alt: "EVOLUSA launch social post", label: "Social post" },
+      { src: "/studio/evolusa/pieces/guia-google-negocio-1.jpg", alt: "EVOLUSA guide to appearing on Google", label: "Google guide" },
+    ],
+  },
+  {
+    id: "renew", title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
+    gets: ["Brand review", "Packaging", "Campaign creative", "Newsletters & social"], cta: "Plan a renewal",
+    example: { label: "See Evenflo", href: "/portfolio/evenflo" },
+    cover: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg",
+    media: [
+      { src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg", alt: "Evenflo True Lips packaging", label: "Packaging" },
+      { src: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg", alt: "Evenflo True Lips campaign post", label: "Campaign" },
+      { src: "/projects/microbeau/flux-mini-anniversary/hero/microbeau-flux-mini-anniversary-hero.jpg", alt: "Microbeau Flux Mini anniversary creative", label: "Product launch" },
+      { src: "/projects/microbeau/beauty-in-authenticity/logo/microbeau-beauty-in-authenticity-logo.jpg", alt: "Microbeau Beauty in Authenticity campaign", label: "Campaign identity" },
+    ],
+  },
+  {
+    id: "run", title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
+    gets: ["Social posts", "Ads & print", "Video", "Monthly report"], cta: "Plan ongoing support",
+    example: { label: "See Resource Living", href: "/portfolio/resource-living" },
+    cover: `${RL}/hero/biscayne-bay-living-room-hero.jpg`,
+    media: [
+      { src: `${RL}/social/kitchen-dusk-pool.jpg`, alt: "Resource Living kitchen social post", label: "Social" },
+      { src: `${RL}/advertising/pavers-a-beautiful-first-impression.jpg`, alt: "Resource Living pavers magazine ad", label: "Print ad" },
+      { src: `${RL}/video/01-pools-poster.jpg`, alt: "Resource Living pools video reel", label: "Video reel", pos: "50% 70%" },
+      { src: `${RL}/social/outdoor-kitchen-golden-hour.jpg`, alt: "Resource Living outdoor kitchen social post", label: "Social" },
+    ],
+  },
+  {
+    id: "build", title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
+    gets: ["Prototype", "Web app", "Testing", "Launch content"], cta: "Scope a product",
+    example: { label: "See BELONG", href: "/belong" },
+    cover: "/studio/belong/belong-post-01-your-world.jpg",
+    media: [
+      { src: `${VENTURES}/belong-live-product.png`, alt: "BELONG app home page", label: "Web app" },
+      { src: `${CFO}/identity/01-logo-system.png`, alt: "Personal CFO logo system", label: "App logo", fit: "contain", bg: "#ffffff" },
+      { src: `${CFO}/social/post-01-banco-baja-4x5.png`, alt: "Personal CFO launch post", label: "Launch post" },
+      { src: "/studio/belong/belong-post-01-your-world.jpg", alt: "BELONG launch post", label: "Launch post" },
+    ],
+  },
+];
 
 export const pilotProgram = {
   title: "Pilot program",
