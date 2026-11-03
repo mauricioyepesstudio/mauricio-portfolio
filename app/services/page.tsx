@@ -36,8 +36,8 @@ export default function ServicesPage() {
   return (
     <div className="container-px mx-auto max-w-content pb-24 pt-32 sm:pt-40 md:pb-40">
       <header>
-        <h1 className="max-w-4xl font-sans text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-paper">
-          Pick where your business is.<br />See what you get.
+        <h1 className="max-w-4xl font-serif text-[clamp(2.75rem,7.5vw,6rem)] leading-[1] text-paper">
+          Pick where your<br />business is.<br /><span className="text-gold">See what you get.</span>
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-8 text-bone">Four packages, each shown with work we actually delivered.</p>
 
@@ -53,11 +53,14 @@ export default function ServicesPage() {
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-apple motion-safe:group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink from-15% via-ink/85 via-40% to-transparent to-75%" aria-hidden="true" />
-                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                  <p className="text-xs text-gold">{plan.format}</p>
-                  <p className="mt-1 text-2xl font-semibold text-paper sm:text-3xl">{plan.title}</p>
-                  <p className="mt-2 hidden text-sm leading-5 text-bone sm:block">{plan.tagline}</p>
+                <div className="absolute inset-0 bg-gradient-to-b from-ink/95 via-ink/40 via-45% to-ink/90" aria-hidden="true" />
+                <div className="absolute inset-0 flex flex-col p-4 sm:p-6">
+                  <p className="text-[0.65rem] tracking-[0.3em] text-paper sm:text-xs">{plan.title.toUpperCase()}</p>
+                  <span className="mt-2 block h-px w-6 bg-gold" aria-hidden="true" />
+                  <p className="mt-4 font-serif text-[1.6rem] leading-[1.02] text-paper sm:text-[2.4rem] lg:text-[2.1rem] xl:text-[2.5rem]">
+                    {plan.headline[0]}<br /><span className="text-gold">{plan.headline[1]}</span>
+                  </p>
+                  <p className="mt-auto text-xs leading-5 text-bone sm:text-sm">{plan.format}<span className="hidden sm:inline"> · {plan.tagline}</span></p>
                 </div>
               </div>
             </a>
@@ -84,7 +87,7 @@ export default function ServicesPage() {
               <article key={plan.id} id={plan.id} className="grid scroll-mt-28 gap-10 lg:grid-cols-12 lg:gap-14">
                 <div className={`flex flex-col lg:col-span-4 ${i % 2 ? "lg:order-2" : ""}`}>
                   <p className="text-sm text-gold">{plan.format}</p>
-                  <h3 className="mt-3 text-[clamp(3rem,7vw,5.5rem)] font-semibold leading-none tracking-[-0.03em] text-paper">{plan.title}</h3>
+                  <h3 className="mt-3 font-serif text-[clamp(3.25rem,7vw,6rem)] leading-none text-paper">{plan.title}</h3>
                   <p className="mt-5 text-xl leading-8 text-bone">{plan.tagline}</p>
                   <ul className="mt-8 space-y-3" aria-label={`${plan.title} includes`}>
                     {plan.gets.map(item => (
