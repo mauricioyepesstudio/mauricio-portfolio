@@ -147,7 +147,8 @@ export default function RootLayout({
           </PageTransition>
           <Footer />
         </MotionConfig>
-        <Analytics />
+        {/* Vercel serves the analytics script only on its own deployments. */}
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   );
