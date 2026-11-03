@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { MotionConfig } from "framer-motion";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -146,6 +147,7 @@ export default function RootLayout({
           </PageTransition>
           <Footer />
         </MotionConfig>
+        <Analytics />
       </body>
     </html>
   );
