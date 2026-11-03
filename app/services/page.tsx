@@ -13,21 +13,16 @@ export const metadata = pageMetadata({
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold";
 const ctaClass = `inline-flex min-h-11 items-center gap-3 border-b border-gold py-3 text-paper hover:text-gold ${focus}`;
 
-function Tile({ item, className, sizes, priority }: { item: PackageMedia; className: string; sizes: string; priority?: boolean }) {
-  const bg = item.bg;
-  const contain = item.fit === "contain";
+function Tile({ item, className, sizes }: { item: PackageMedia; className: string; sizes: string }) {
   return (
-    <figure className={`group relative overflow-hidden bg-white/5 ${className}`} style={bg ? { backgroundColor: bg } : undefined}>
+    <figure className={`group relative overflow-hidden bg-ink ${className}`}>
       <Image
         src={item.src}
-        alt={item.alt}
+        alt={`${item.label}: ${item.alt}`}
         fill
         sizes={sizes}
-        priority={priority}
-        style={item.pos ? { objectPosition: item.pos } : undefined}
-        className={`${contain ? "object-contain p-[8%]" : "object-cover"} motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-apple motion-safe:group-hover:scale-[1.03]`}
+        className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-apple motion-safe:group-hover:scale-[1.03]"
       />
-      <figcaption className="absolute bottom-3 left-3 bg-ink/80 px-2.5 py-1 text-xs text-paper backdrop-blur-sm">{item.label}</figcaption>
     </figure>
   );
 }
