@@ -19,12 +19,12 @@ const VENTURES = "/projects/real-group-entertainment/campaigns/01-2026-ventures/
 
 export type Package = {
   id: string; title: string; format: string; tagline: string; gets: readonly string[]; cta: string;
-  example: { label: string; href: string }; cover: string; headline: readonly [string, string]; media: readonly PackageMedia[];
+  example: { label: string; href: string }; cover: string; poster: string; sub: readonly [string, string]; headline: readonly [string, string]; media: readonly PackageMedia[];
 };
 
 export const engagementPlans: readonly Package[] = [
   {
-    id: "start", cover: "/services/cover-start.jpg", headline: ["Start with a", "clear direction."], title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
+    id: "start", cover: "/services/cover-start.jpg", poster: "/services/poster-start.jpg", sub: ["Logo, website and social,", "ready from day one."], headline: ["Start with a", "clear direction."], title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
     gets: ["Logo & identity", "Website", "Social launch kit", "Google profile"], cta: "Discuss a launch",
     example: { label: "See EVOLUSA", href: "/evolusa" },
     media: [
@@ -35,7 +35,7 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "renew", cover: "/services/cover-renew.jpg", headline: ["Renew what", "you outgrew."], title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
+    id: "renew", cover: "/services/cover-renew.jpg", poster: "/services/poster-renew.jpg", sub: ["Packaging, campaigns and content", "that fit who you are now."], headline: ["Renew what", "you outgrew."], title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
     gets: ["Brand review", "Packaging", "Campaign creative", "Newsletters & social"], cta: "Plan a renewal",
     example: { label: "See Evenflo", href: "/portfolio/evenflo" },
     media: [
@@ -46,7 +46,7 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "run", cover: "/services/cover-run.jpg", headline: ["Run it with", "intention."], title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
+    id: "run", cover: "/services/cover-run.jpg", poster: "/services/poster-run.jpg", sub: ["Posts, ads and video,", "handled every month."], headline: ["Run it with", "intention."], title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
     gets: ["Social posts", "Ads & print", "Video", "Monthly report"], cta: "Plan ongoing support",
     example: { label: "See Resource Living", href: "/portfolio/resource-living" },
     media: [
@@ -57,7 +57,7 @@ export const engagementPlans: readonly Package[] = [
     ],
   },
   {
-    id: "build", cover: "/services/cover-build.jpg", headline: ["Build it with", "purpose."], title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
+    id: "build", cover: "/services/cover-build.jpg", poster: "/services/poster-build.jpg", sub: ["Prototype, app and launch,", "built around real use."], headline: ["Build it with", "purpose."], title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
     gets: ["Prototype", "Web app", "Testing", "Launch content"], cta: "Scope a product",
     example: { label: "See BELONG", href: "/belong" },
     media: [
