@@ -5,7 +5,8 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const compat = new FlatCompat({ baseDirectory: __dirname });
 
-export default [
+const config = [
+  { ignores: ["scripts/sync-projects.js", ".next/**", "node_modules/**"] },
   ...compat.extends("next/core-web-vitals"),
   {
     rules: {
@@ -14,3 +15,5 @@ export default [
     },
   },
 ];
+
+export default config;
