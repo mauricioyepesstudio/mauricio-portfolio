@@ -68,6 +68,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section aria-labelledby="automation-heading" className="mt-20 border border-gold/60 bg-[#101010] p-7 sm:p-10">
+        <p className="eyebrow">Real Group · Business Automation</p>
+        <h2 id="automation-heading" className="mt-4 font-serif text-3xl text-paper sm:text-4xl">Your next customer deserves a follow-up.</h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-bone">Capture leads from forms and campaigns, route them privately, and track contact, quotes and actual sales. A ready-to-adapt service for businesses—not a generic email workflow.</p>
+        <Link href="/lead-automation" className={`mt-6 inline-flex min-h-11 items-center gap-3 border-b border-gold py-2 font-semibold text-paper hover:text-gold ${focus}`}>Explore lead automation <ArrowUpRight size={18} aria-hidden="true" /></Link>
+      </section>
+
       <section id="pilot" aria-labelledby="pilot-heading" className="mt-20 flex flex-col gap-4 border border-gold/60 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
         <div>
           <h2 id="pilot-heading" className="text-2xl font-semibold text-paper">Pilot projects at no fee</h2>
