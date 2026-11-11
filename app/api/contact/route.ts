@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema, hasDeliveryReceipt } from "@/lib/contact";
 import { contactTopics } from "@/lib/services";
+import { mirrorCommercialContact } from "@/lib/commercial";
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>'"]/g, (character) => {
@@ -86,6 +87,16 @@ export async function POST(req: Request) {
     }
 
     console.info("Contact delivery confirmed", { messageId: data.id });
+
+    // Mirror only after Resend accepted the message; one stable ID per email receipt.
+    // A CRM outage must not lose the already-delivered contact request.
+    const commercialStatus = await mirrorCommercialContact({
+      externalId: data.id,
+      name,
+      email,
+      category: topicLabel || "General inquiry",
+    });
+    console.info("Commercial intake result", { status: commercialStatus });
 
     return NextResponse.json({
       success: true,
