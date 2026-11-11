@@ -65,6 +65,7 @@ export default function LeadAutomationPage() {
           <Link href="/contact?topic=automation" className={`inline-flex min-h-12 items-center gap-3 rounded-full bg-gold px-7 font-semibold text-ink transition hover:bg-paper ${focus}`}>
             Request a proposal <ArrowRight size={18} aria-hidden="true" />
           </Link>
+          <Link href="/lead-automation/demo" className={`inline-flex min-h-12 items-center border-b border-gold text-bone hover:text-paper ${focus}`}>Try the interactive demo</Link>
           <a href="#how-it-works" className={`inline-flex min-h-12 items-center border-b border-gold text-bone hover:text-paper ${focus}`}>How it works</a>
         </div>
       </header>
