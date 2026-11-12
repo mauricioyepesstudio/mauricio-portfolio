@@ -89,6 +89,28 @@ export default function LeadAutomationPage() {
         </p>
       </section>
 
+      <section aria-labelledby="fieldwork-title" className="mt-16 border border-gold/25 bg-[#141414] p-7 sm:p-10">
+        <p className="eyebrow">Real client work · Resource Living</p>
+        <h2 id="fieldwork-title" className="mt-4 max-w-3xl font-serif text-3xl sm:text-4xl">
+          A real campaign operation behind the demonstration.
+        </h2>
+        <p className="mt-5 max-w-3xl leading-8 text-bone">
+          Our Resource Living engagement combines Meta lead forms, Make automation,
+          delivery-audit records and contractor routing rules with creative campaigns.
+          The pool program uses an exclusive contractor-recipient configuration; broader
+          services follow category-based routing. Delivery reconciliation and commercial
+          follow-up are being validated, so we do not present projected conversions as results.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-6">
+          <Link href="/portfolio/resource-living" className={`inline-flex min-h-11 items-center gap-2 border-b border-gold font-semibold text-paper hover:text-gold ${focus}`}>
+            View the Resource Living case study <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+          <Link href="/lead-automation/demo" className={`inline-flex min-h-11 items-center gap-2 border-b border-gold font-semibold text-paper hover:text-gold ${focus}`}>
+            Test the sample workflow <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       <section aria-labelledby="benefits-title" className="mt-24">
         <p className="eyebrow">What you get</p>
         <h2 id="benefits-title" className="mt-4 font-serif text-4xl sm:text-5xl">Built to move a lead forward.</h2>
