@@ -1,47 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { serviceAreas, engagementPlans, pilotProgram, contactHref, type Package } from "@/lib/services";
 
 export const metadata = pageMetadata({
   title: "Services & Development Plans",
-  description: "Start, renew or run your business with Mauricio Yepes and Real Group Entertainment: four packages for brand, websites, apps and monthly marketing, shown with real work. Pilot projects now open at no fee.",
+  description: "Real Group Entertainment offers brand design, websites, apps, monthly marketing and lead automation. Explore deliverables and examples from the portfolio.",
   path: "/services",
 });
 
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold";
 const ctaClass = `inline-flex min-h-11 items-center gap-3 border-b border-gold py-3 text-paper hover:text-gold ${focus}`;
 
-function Poster({ plan, priority }: { plan: Package; priority?: boolean }) {
+const packageTitles: Record<string, string> = {
+  start: "Launch a business",
+  renew: "Refresh your brand",
+  run: "Get monthly marketing support",
+  build: "Build an app or portal",
+};
+
+function ServicePackage({ plan }: { plan: Package }) {
+  const image = plan.media[0];
+
   return (
-    <article id={plan.id} aria-labelledby={`${plan.id}-title`} className="scroll-mt-28">
-      <h3 id={`${plan.id}-title`} className="sr-only">{plan.title}</h3>
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#050505]" style={{ containerType: "inline-size" }}>
-        <div className="absolute inset-x-0 bottom-0 h-[60%] [mask-image:linear-gradient(to_bottom,transparent,black_35%)]">
-          <Image src={plan.poster} alt="" fill priority={priority} sizes="(min-width: 768px) 45vw, 100vw" className="object-cover object-bottom" />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" aria-hidden="true" />
-        <div className="relative flex h-full flex-col items-center px-[7%] pt-[7%] pb-[6%] text-center">
-          <p className="text-[max(11px,2.6cqw)] tracking-[0.42em] text-gold" aria-hidden="true">{plan.title.toUpperCase()} · {plan.format.toUpperCase()}</p>
-          <span className="mt-[2cqw] block h-px w-[7cqw] bg-gold" aria-hidden="true" />
-          <p className="mt-[4.5cqw] font-serif text-[11.5cqw] leading-[0.98] text-paper">
-            {plan.headline[0]}<br /><span className="bg-gradient-to-b from-[#e6c58e] to-[#a9824c] bg-clip-text text-transparent">{plan.headline[1]}</span>
-          </p>
-          <p className="mt-[4cqw] font-serif text-[4.2cqw] leading-[1.3] text-paper/90">{plan.sub[0]}<br />{plan.sub[1]}</p>
-          <Link
-            href={contactHref(plan.id)}
-            className={`mt-[5cqw] inline-flex min-h-11 items-center gap-2 rounded-full border border-gold/80 bg-black/40 px-[5cqw] text-[max(14px,3.2cqw)] text-paper backdrop-blur-sm hover:bg-gold hover:text-ink ${focus}`}
-          >
-            {plan.cta} <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
-          <p className="mt-auto max-w-[90%] border-t border-gold/60 pt-[3cqw] font-serif text-[max(12px,3cqw)] tracking-[0.06em] text-paper/90">
-            {plan.gets.join(" · ")}
-          </p>
-        </div>
+    <article id={plan.id} className="grid scroll-mt-28 gap-6 border-t border-line py-8 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] sm:items-center sm:gap-10 sm:py-12">
+      <div>
+        <h3 className="text-2xl font-semibold tracking-tight text-paper sm:text-3xl">{packageTitles[plan.id] ?? plan.title}</h3>
+        <p className="mt-3 leading-7 text-bone">{plan.tagline}</p>
+        <ul className="mt-5 grid gap-x-5 gap-y-2 text-sm text-paper min-[400px]:grid-cols-2">
+          {plan.gets.map(item => (
+            <li key={item} className="border-l border-gold/70 pl-3">{item}</li>
+          ))}
+        </ul>
+        <Link href={contactHref(plan.id)} className={ctaClass + " mt-5"}>
+          {plan.cta} <ArrowUpRight size={16} aria-hidden="true" />
+        </Link>
       </div>
-      <Link href={plan.example.href} className={`mt-3 inline-flex min-h-11 items-center text-sm text-bone underline decoration-gold underline-offset-4 hover:text-gold ${focus}`}>
-        {plan.example.label}
+      <Link href={plan.example.href} className={`group block rounded-xl border border-line bg-[#151515] p-3 ${focus}`}>
+        <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-[#222]">
+          <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1440px) 560px, (min-width: 640px) 45vw, 90vw" className="object-cover object-top" />
+        </div>
+        <span className="flex min-h-11 items-center justify-between gap-2 px-1 pt-2 text-sm font-medium text-paper group-hover:text-gold">
+          {plan.example.label} <ArrowUpRight size={16} aria-hidden="true" />
+        </span>
       </Link>
     </article>
   );
@@ -50,28 +52,30 @@ function Poster({ plan, priority }: { plan: Package; priority?: boolean }) {
 export default function ServicesPage() {
   return (
     <div className="container-px mx-auto max-w-content pb-24 pt-32 sm:pt-40 md:pb-40">
-      <header>
-        <h1 className="max-w-4xl font-serif text-[clamp(2.75rem,7.5vw,6rem)] leading-[1] text-paper">
-          Pick where your<br />business is.<br /><span className="text-gold">See what you get.</span>
+      <header className="rounded-2xl bg-[#f4f2ee] p-7 text-[#171614] sm:p-12 lg:p-16">
+        <h1 className="max-w-4xl text-[clamp(2.4rem,6vw,5.5rem)] font-semibold leading-[1.04] tracking-tight">
+          Brand, marketing &amp; digital products
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-8 text-bone">Four packages. Pick one and we shape it to your business.</p>
-
-        
+        <p className="mt-5 max-w-xl text-base leading-7 text-[#514b43] sm:text-lg">
+          Work with Real Group to launch a brand, build a website or app, or get ongoing help with campaigns and lead follow-up.
+        </p>
+        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Link href="/contact" className={`inline-flex min-h-12 items-center gap-3 rounded-lg bg-[#171614] px-5 font-medium text-white hover:bg-[#403930] ${focus}`}>
+            Request a proposal <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+          <a href="#services" className={`inline-flex min-h-11 items-center font-medium underline underline-offset-4 ${focus}`}>Explore services</a>
+        </div>
       </header>
 
-      
-
-      <section aria-labelledby="plans-heading" className="mt-14">
-        <h2 id="plans-heading" className="sr-only">Packages</h2>
-        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:gap-x-10">
-          {engagementPlans.map((plan, i) => <Poster key={plan.id} plan={plan} priority={i < 2} />)}
-        </div>
+      <section id="services" aria-labelledby="plans-heading" className="mt-16 scroll-mt-28 sm:mt-24">
+        <h2 id="plans-heading" className="mb-6 text-3xl font-semibold tracking-tight text-paper sm:text-4xl">How we can help</h2>
+        {engagementPlans.map(plan => <ServicePackage key={plan.id} plan={plan} />)}
       </section>
 
       <section aria-labelledby="automation-heading" className="mt-20 border border-gold/60 bg-[#101010] p-7 sm:p-10">
-        <p className="eyebrow">Real Group · Business Automation</p>
-        <h2 id="automation-heading" className="mt-4 font-serif text-3xl text-paper sm:text-4xl">Your next customer deserves a follow-up.</h2>
-        <p className="mt-4 max-w-2xl text-base leading-7 text-bone">Capture leads from forms and campaigns, route them privately, and track contact, quotes and actual sales. A ready-to-adapt service for businesses—not a generic email workflow.</p>
+        <p className="eyebrow">Lead automation</p>
+        <h2 id="automation-heading" className="mt-4 font-serif text-3xl text-paper sm:text-4xl">Follow up on every lead</h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-bone">Capture inquiries from forms and campaigns, assign them to the right person, and track follow-up, quotes and sales.</p>
         <Link href="/lead-automation" className={`mt-6 inline-flex min-h-11 items-center gap-3 border-b border-gold py-2 font-semibold text-paper hover:text-gold ${focus}`}>Explore lead automation <ArrowUpRight size={18} aria-hidden="true" /></Link>
       </section>
 
