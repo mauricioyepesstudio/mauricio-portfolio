@@ -1,4 +1,4 @@
-export type ProjectStage = "Live product" | "Prototype" | "In development" | "Portfolio case study";
+export type ProjectStage = "Live product" | "In operation" | "Prototype" | "In development" | "Portfolio case study";
 export type MilestoneState = "completed" | "in_progress" | "planned";
 export type StudioProject = {
   slug: string; name: string; tagline: string; summary: string; stage: ProjectStage;
@@ -32,6 +32,12 @@ export const studioProjects: StudioProject[] = [
     { title: "Creative campaigns", state: "completed", detail: "Marketing and creative portfolio work." },
     { title: "Lead workflow improvements", state: "in_progress", detail: "Operational changes must be reviewed in their own system." },
     { title: "Verified performance case study", state: "planned", detail: "Only publish results supported by approved metrics." }
+  ]},
+  { slug: "ai-marketing-agency", name: "AI Marketing Agency System", tagline: "One system for content, publishing and lead follow-up.", summary: "The marketing operations system Real Group runs for Resource Living: magazine advertiser posts published on schedule, new Meta leads delivered to the team by email, an organic content calendar and category creative produced from one template. Every publication and every dollar of spend still needs human approval.", stage: "In operation", portfolioHref: "/portfolio/resource-living", milestones: [
+    { title: "Scheduled advertiser publishing", state: "completed", detail: "Final magazine ads are queued by edition and published to Facebook and Instagram on a daily schedule." },
+    { title: "Lead notifications", state: "completed", detail: "Meta lead forms are checked every 15 minutes and each new lead is sent to the team as an individual email." },
+    { title: "Organic calendar and category creative", state: "completed", detail: "Photo posts and Reels are scheduled in batches; each service category gets a feed post, Story and reel from one shared layout." },
+    { title: "Performance reporting", state: "planned", detail: "Results are published only once leads and sales are reconciled; no conversion or revenue figures are claimed yet." }
   ]},
   { slug: "agency-control-plane", name: "AI Control Plane", tagline: "One view across independent projects.", summary: "A central coordination and reporting layer for project status, decisions, permissions and next steps.", stage: "In development", milestones: [
     { title: "Project inventory", state: "completed", detail: "Repository and project coordination structure created." },

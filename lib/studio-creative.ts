@@ -7,6 +7,14 @@ export function getStudioCreative(slug: string) {
     cover: "/studio/owner-statements/workflow.svg",
     images: ["/studio/owner-statements/workflow.svg"],
   };
+  if (slug === "ai-marketing-agency") {
+    const base = "/projects/resource-living/campaigns/08-service-categories-nov-2026/social";
+    return {
+      strategy: "Give a regional home-improvement magazine an always-on marketing operation: advertiser content goes out on schedule, every new lead reaches the team within minutes and new creative follows one premium South Florida look. Automation handles the repetition; people approve what is published and what is spent.",
+      cover: "/studio/ai-marketing-agency/cover.jpg",
+      images: ["pools-patios-pergolas", "kitchens", "bathrooms", "impact-windows-doors", "roofing", "pavers"].map((name) => `${base}/${name}-post.jpg`),
+    };
+  }
   if (slug === "evolusa") return {
     strategy: "Connect Spanish-speaking communities with relevant professionals through a clear next step, supported by a recognizable identity and educational content.",
     cover: "/brand/live-product/evolusa-hero-creative.webp",
