@@ -49,9 +49,9 @@ try {
   await page.goto(origin + "/portfolio/resource-living", { waitUntil: "domcontentloaded" });
   await page.locator('nav[aria-label="Campaign menu"] a').first().waitFor();
   const order = await page.locator('nav[aria-label="Campaign menu"] a').evaluateAll(a => a.map(e => e.getAttribute("href")));
-  assert.deepEqual(order, ["#broward-palm-beach-campaign", "#get-3-free-estimates", "#pool-leads"]);
+  assert.deepEqual(order, ["#service-categories-nov-2026", "#broward-palm-beach-campaign", "#get-3-free-estimates", "#pool-leads"]);
   for (const id of order) assert.equal(await page.locator(id).count(), 1);
-  const sectionOrder = await page.locator('article[id]').evaluateAll(a => a.map(e => "#"+e.id).filter(id => ["#broward-palm-beach-campaign","#get-3-free-estimates","#pool-leads"].includes(id)));
+  const sectionOrder = await page.locator('article[id]').evaluateAll(a => a.map(e => "#"+e.id).filter(id => ["#service-categories-nov-2026","#broward-palm-beach-campaign","#get-3-free-estimates","#pool-leads"].includes(id)));
   assert.deepEqual(sectionOrder, order);
   const xml = await (await fetch(origin + "/sitemap.xml")).text();
   assert.equal(xml.split("/services</loc>").length - 1, 1);
