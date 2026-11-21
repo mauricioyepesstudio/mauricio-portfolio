@@ -10,6 +10,7 @@ const OCT_2026 = `${ASSETS}/campaigns/06-broward-palm-beach-oct-2026`;
 
 const POOL_LEADS = `${ASSETS}/campaigns/02-pool-leads/final-2026`;
 const FREE_ESTIMATES = `${ASSETS}/campaigns/07-get-3-free-estimates-2026`;
+const SERVICE_CATEGORIES = `${ASSETS}/campaigns/08-service-categories-nov-2026`;
 
 const verticalVideo = (base: string, file: string, caption: string) => ({
   src: `${base}/video/${file}.mp4`,
@@ -22,7 +23,7 @@ const verticalVideo = (base: string, file: string, caption: string) => ({
 // campaign, so the chapter leads with its feed ads and vertical videos.
 const poolLeads: EditorialChapter = {
   slug: "pool-leads",
-  eyebrow: "06 — Campaign",
+  eyebrow: "07 — Campaign",
   title: "Pool Leads",
   intro:
     "A homeowner-facing lead campaign that connects South Florida homeowners with vetted pool builders, pairing resort-style backyard imagery with a free-consultation and flexible-financing call to action.",
@@ -47,7 +48,7 @@ const poolLeads: EditorialChapter = {
 // service category, all pointing to the same free-estimates offer.
 const freeEstimates: EditorialChapter = {
   slug: "get-3-free-estimates",
-  eyebrow: "05 — Campaign",
+  eyebrow: "06 — Campaign",
   title: "Get 3 Free Estimates",
   intro:
     "A Meta lead-generation kit for South Florida homeowners: one feed post, Story and 6-second vertical reel per service category, each built around the same offer — compare trusted local professionals and request up to three free estimates.",
@@ -79,7 +80,7 @@ const BROWARD_PALM_BEACH_HERO = `${OCT_2026}/hero/biscayne-bay-living-room-hero.
 
 const browardPalmBeach: EditorialChapter = {
   slug: "broward-palm-beach-campaign",
-  eyebrow: "04 — Campaign",
+  eyebrow: "05 — Campaign",
   title: "Broward – Palm Beach Lead Campaign",
   intro:
     "One Meta Ads lead-generation campaign covering Broward and Palm Beach counties, segmented into service-category ad sets — pools, kitchens, bathrooms, impact windows, roofing, pavers, pergolas, outdoor kitchens and more. The October 2026 refresh gives every category one editorial look: golden-hour South Florida homes, restrained serif headlines and a short vertical video per category.",
@@ -110,15 +111,47 @@ const browardPalmBeach: EditorialChapter = {
   ],
 };
 
+// November 2026: one feed post, Story and vertical reel for each of eleven
+// home-service categories that had no dedicated creative yet. Same offer and
+// layout across categories so the set reads as one system.
+const serviceCategories: EditorialChapter = {
+  slug: "service-categories-nov-2026",
+  eyebrow: "04 — Campaign",
+  title: "Eleven Service Categories",
+  intro:
+    "A November 2026 creative kit for the Broward – Palm Beach lead program: eleven home-service categories, each with a 4:5 feed post, a 9:16 Story and a vertical reel. One layout, one red accent and one call to action — get your free estimate — carried across pavers, bathrooms, kitchens, garages, pressure washing, restoration, landscaping, pools, interiors, roofing and impact windows.",
+  social: [
+    { src: `${SERVICE_CATEGORIES}/social/pools-patios-pergolas-post.jpg`, alt: "Pools, patios and pergolas ad — Your backyard resort starts here" },
+    { src: `${SERVICE_CATEGORIES}/social/kitchens-post.jpg`, alt: "Kitchens and cabinets ad — Built to last" },
+    { src: `${SERVICE_CATEGORIES}/social/bathrooms-post.jpg`, alt: "Bathrooms ad — Bathrooms that feel like a retreat" },
+    { src: `${SERVICE_CATEGORIES}/social/impact-windows-doors-post.jpg`, alt: "Impact windows and doors ad — Hurricane protection without compromising style" },
+    { src: `${SERVICE_CATEGORIES}/social/roofing-post.jpg`, alt: "Roofing ad — Roofing built for Florida storms" },
+    { src: `${SERVICE_CATEGORIES}/social/pavers-post.jpg`, alt: "Pavers ad — Pavers that elevate your curb appeal" },
+    { src: `${SERVICE_CATEGORIES}/social/garage-epoxy-post.jpg`, alt: "Garage and epoxy ad — A garage worth showing off" },
+    { src: `${SERVICE_CATEGORIES}/social/interiors-post.jpg`, alt: "Flooring, paint and closets ad — Interiors finished to perfection" },
+    { src: `${SERVICE_CATEGORIES}/social/landscaping-post.jpg`, alt: "Landscaping ad — Landscapes made for Florida living" },
+    { src: `${SERVICE_CATEGORIES}/social/pressure-washing-post.jpg`, alt: "Pressure washing ad — Pressure washing, done right" },
+    { src: `${SERVICE_CATEGORIES}/social/restoration-post.jpg`, alt: "Cleaning and restoration ad — Make your home like new again" },
+  ],
+  videos: [
+    verticalVideo(SERVICE_CATEGORIES, "pools-patios-pergolas-reel", "Pools, patios & pergolas — Your backyard resort starts here."),
+    verticalVideo(SERVICE_CATEGORIES, "bathrooms-reel", "Bathrooms — A retreat, start to finish."),
+    verticalVideo(SERVICE_CATEGORIES, "garage-epoxy-reel", "Garages — A garage worth showing off."),
+    verticalVideo(SERVICE_CATEGORIES, "pressure-washing-reel", "Pressure washing — Driveways, pavers, roofs and facades."),
+    verticalVideo(SERVICE_CATEGORIES, "roofing-reel", "Roofing — Built for Florida storms."),
+    verticalVideo(SERVICE_CATEGORIES, "impact-windows-doors-reel", "Impact windows & doors — Protection without compromising style."),
+  ],
+};
+
 const closingSystem: SectionIntro = {
-  eyebrow: "08 — Closing",
+  eyebrow: "09 — Closing",
   title: "One commercial system, not a set of ads.",
   description:
-    "Resource Living's pool leads, the Get 3 Free Estimates kit and the Broward–Palm Beach Meta campaign share one creative system and one lead-capture mechanism that extends to any new service category.",
+    "Resource Living's pool leads, the Get 3 Free Estimates kit, the Broward–Palm Beach Meta campaign and the eleven-category kit share one creative system and one lead-capture mechanism that extends to any new service category.",
 };
 
 const socialSection: SectionIntro = {
-  eyebrow: "07 — Organic Content",
+  eyebrow: "08 — Organic Content",
   title: "One editorial look across every category.",
   description: "Organic posts from the October 2026 calendar — the same photography and light that carry the paid campaign, published as the magazine's own feed.",
 };
@@ -157,7 +190,7 @@ export const resourceLivingCaseStudy: ResourceLivingCaseStudyData = {
     outcome:
       "The campaigns now share one visual and messaging system — a repeatable framework the publication can extend to new service categories without starting from scratch.",
   },
-  chapters: [browardPalmBeach, freeEstimates, poolLeads],
+  chapters: [serviceCategories, browardPalmBeach, freeEstimates, poolLeads],
   closingSystem,
   socialSection,
   social,

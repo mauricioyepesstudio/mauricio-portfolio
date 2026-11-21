@@ -11,60 +11,67 @@ export const serviceAreas = [
   { id: "training", title: "Training & Professional Growth", summary: "Leave your team able to run what we build, and help people grow their own careers.", items: ["Hands-on training & short manuals for every handover", "AI-for-business workshops", "Resume, LinkedIn & portfolio refresh"] },
 ] as const;
 
-export type PackageMedia = { src: string; alt: string; label: string; fit?: "contain"; bg?: string; pos?: string };
+export type StepVisual =
+  | { kind: "image"; src: string; alt: string; fit?: "contain"; bg?: string; pos?: string }
+  | { kind: "report" }
+  | { kind: "wireframe" }
+  | { kind: "checks"; items: readonly string[] };
+
+export type PackageStep = { title: string; text: string; visual: StepVisual };
 
 const RL = "/projects/resource-living/campaigns/06-broward-palm-beach-oct-2026";
-const CFO = "/projects/personal-cfo/campaigns/01-brand-identity";
 const VENTURES = "/projects/real-group-entertainment/campaigns/01-2026-ventures/web";
 
 export type Package = {
   id: string; title: string; format: string; tagline: string; gets: readonly string[]; cta: string;
-  example: { label: string; href: string }; cover: string; poster: string; sub: readonly [string, string]; headline: readonly [string, string]; media: readonly PackageMedia[];
+  sub: readonly [string, string]; headline: readonly [string, string]; steps: readonly PackageStep[];
 };
 
+// Each package is shown as the path a client walks through. The images are real pieces
+// from past work, used only as illustrations of each step (no client names, no results).
 export const engagementPlans: readonly Package[] = [
   {
-    id: "start", cover: "/services/cover-start.jpg", poster: "/services/poster-start.jpg", sub: ["Logo, website and social,", "ready from day one."], headline: ["Start with a", "clear direction."], title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
+    id: "start", title: "Start", format: "New business", tagline: "Open with a brand that already looks established.",
+    headline: ["Start with a", "clear direction."], sub: ["Logo, website and social,", "ready from day one."],
     gets: ["Logo & identity", "Website", "Social launch kit", "Google profile"], cta: "Discuss a launch",
-    example: { label: "See EVOLUSA", href: "/evolusa" },
-    media: [
-      { src: `${VENTURES}/evolusa-live-product.png`, alt: "EVOLUSA website home page", label: "Website" },
-      { src: "/studio/evolusa/brand/evolusa-primary.png", alt: "EVOLUSA logo", label: "Logo", fit: "contain", bg: "#f4f2ee" },
-      { src: "/studio/evolusa/pieces/evolusa-post-05-marketing.jpg", alt: "EVOLUSA launch social post", label: "Social post" },
-      { src: "/studio/evolusa/pieces/guia-google-negocio-1.jpg", alt: "EVOLUSA guide to appearing on Google", label: "Google guide" },
+    steps: [
+      { title: "Logo & identity", text: "Your logo, colors and type, so everything looks like one brand.", visual: { kind: "image", src: "/studio/evolusa/brand/evolusa-primary.png", alt: "Example logo", fit: "contain", bg: "#f4f2ee" } },
+      { title: "Website", text: "A clear site that says what you do and how to reach you.", visual: { kind: "image", src: `${VENTURES}/evolusa-live-product.png`, alt: "Example website home page", pos: "50% 0%" } },
+      { title: "Social launch kit", text: "Your first posts and profile images, ready to publish.", visual: { kind: "image", src: "/studio/evolusa/pieces/evolusa-post-05-marketing.jpg", alt: "Example launch post" } },
+      { title: "Google profile", text: "Set up so customers find you on Google and Maps.", visual: { kind: "image", src: "/studio/evolusa/pieces/guia-google-negocio-1.jpg", alt: "Example guide to appearing on Google" } },
     ],
   },
   {
-    id: "renew", cover: "/services/cover-renew.jpg", poster: "/services/poster-renew.jpg", sub: ["Packaging, campaigns and content", "that fit who you are now."], headline: ["Renew what", "you outgrew."], title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
+    id: "renew", title: "Renew", format: "Existing business", tagline: "Refresh a brand that outgrew its look.",
+    headline: ["Renew what", "you outgrew."], sub: ["Packaging, campaigns and content", "that fit who you are now."],
     gets: ["Brand review", "Packaging", "Campaign creative", "Newsletters & social"], cta: "Plan a renewal",
-    example: { label: "See Evenflo", href: "/portfolio/evenflo" },
-    media: [
-      { src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg", alt: "Evenflo True Lips packaging", label: "Packaging" },
-      { src: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg", alt: "Evenflo True Lips campaign post", label: "Campaign" },
-      { src: "/projects/microbeau/flux-mini-anniversary/hero/microbeau-flux-mini-anniversary-hero.jpg", alt: "Microbeau Flux Mini anniversary creative", label: "Product launch" },
-      { src: "/projects/microbeau/beauty-in-authenticity/logo/microbeau-beauty-in-authenticity-logo.jpg", alt: "Microbeau Beauty in Authenticity campaign", label: "Campaign identity" },
+    steps: [
+      { title: "Brand review", text: "We look at what still works and what no longer fits.", visual: { kind: "checks", items: ["Keep", "Refresh", "Replace"] } },
+      { title: "Packaging", text: "Packaging that looks like the brand you are now.", visual: { kind: "image", src: "/projects/evenflo/true-lips-campaign/packaging/evenflo-true-lips-packaging-mockup.jpg", alt: "Example packaging" } },
+      { title: "Campaign creative", text: "One campaign idea carried across ads, social and print.", visual: { kind: "image", src: "/projects/evenflo/true-lips-campaign/social/posts/evenflo-true-lips-social-post-1.jpg", alt: "Example campaign post" } },
+      { title: "Newsletters & social", text: "Regular content that keeps customers coming back.", visual: { kind: "image", src: "/projects/microbeau/flux-mini-anniversary/hero/microbeau-flux-mini-anniversary-hero.jpg", alt: "Example product launch creative" } },
     ],
   },
   {
-    id: "run", cover: "/services/cover-run.jpg", poster: "/services/poster-run.jpg", sub: ["Posts, ads and video,", "handled every month."], headline: ["Run it with", "intention."], title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
+    id: "run", title: "Run", format: "Every month", tagline: "Your marketing, handled every month.",
+    headline: ["Run it with", "intention."], sub: ["Posts, ads and video,", "handled every month."],
     gets: ["Social posts", "Ads & print", "Video", "Monthly report"], cta: "Plan ongoing support",
-    example: { label: "See Resource Living", href: "/portfolio/resource-living" },
-    media: [
-      { src: `${RL}/social/kitchen-dusk-pool.jpg`, alt: "Resource Living kitchen social post", label: "Social" },
-      { src: `${RL}/advertising/pavers-a-beautiful-first-impression.jpg`, alt: "Resource Living pavers magazine ad", label: "Print ad" },
-      { src: `${RL}/video/01-pools-poster.jpg`, alt: "Resource Living pools video reel", label: "Video reel", pos: "50% 70%" },
-      { src: `${RL}/social/outdoor-kitchen-golden-hour.jpg`, alt: "Resource Living outdoor kitchen social post", label: "Social" },
+    steps: [
+      { title: "Social posts", text: "Fresh posts every week, in one premium look.", visual: { kind: "image", src: `${RL}/social/kitchen-dusk-pool.jpg`, alt: "Example social post" } },
+      { title: "Ads & print", text: "Ads for social, search and print, made from the same campaign.", visual: { kind: "image", src: `${RL}/advertising/pavers-a-beautiful-first-impression.jpg`, alt: "Example magazine ad" } },
+      { title: "Video", text: "Short vertical reels for Instagram and Facebook.", visual: { kind: "image", src: `${RL}/video/01-pools-poster.jpg`, alt: "Example video reel", pos: "50% 70%" } },
+      { title: "Monthly report", text: "What went out, how people responded and what comes next.", visual: { kind: "report" } },
     ],
   },
   {
-    id: "build", cover: "/services/cover-build.jpg", poster: "/services/poster-build.jpg", sub: ["Prototype, app and launch,", "built around real use."], headline: ["Build it with", "purpose."], title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
+    id: "build", title: "Build", format: "Apps & tools", tagline: "Turn an idea into an app people use.",
+    headline: ["Build it with", "purpose."], sub: ["Prototype, app and launch,", "built around real use."],
     gets: ["Prototype", "Web app", "Testing", "Launch content"], cta: "Scope a product",
-    example: { label: "See BELONG", href: "/belong" },
-    media: [
-      { src: `${VENTURES}/belong-live-product.png`, alt: "BELONG app home page", label: "Web app" },
-      { src: `${CFO}/identity/01-logo-system.png`, alt: "Personal CFO logo system", label: "App logo", fit: "contain", bg: "#ffffff" },
-      { src: `${CFO}/social/post-01-banco-baja-4x5.png`, alt: "Personal CFO launch post", label: "Launch post" },
-      { src: "/studio/belong/belong-post-01-your-world.jpg", alt: "BELONG launch post", label: "Launch post" },
+    steps: [
+      { title: "Prototype", text: "Clickable screens to test the idea before anything is built.", visual: { kind: "wireframe" } },
+      { title: "Web app", text: "A working app that runs on phone and desktop.", visual: { kind: "image", src: `${VENTURES}/belong-live-product.png`, alt: "Example web app home page", pos: "50% 0%" } },
+      { title: "Testing", text: "Real people try it and we fix what gets in their way.", visual: { kind: "checks", items: ["Phone", "Desktop", "Real users"] } },
+      { title: "Launch content", text: "Posts and visuals to announce it on day one.", visual: { kind: "image", src: "/studio/belong/belong-post-01-your-world.jpg", alt: "Example launch post" } },
     ],
   },
 ];

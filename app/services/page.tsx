@@ -1,8 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
-import { serviceAreas, engagementPlans, pilotProgram, contactHref, type Package } from "@/lib/services";
+import { serviceAreas, engagementPlans, pilotProgram, contactHref } from "@/lib/services";
+import PackageJourney from "@/components/PackageJourney";
+import SystemFlowExplainer from "@/components/SystemFlowExplainer";
+import { agencyFlows, engagementFlow } from "@/lib/system-flows";
 
 export const metadata = pageMetadata({
   title: "Services & Development Plans",
@@ -13,40 +15,6 @@ export const metadata = pageMetadata({
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold";
 const ctaClass = `inline-flex min-h-11 items-center gap-3 border-b border-gold py-3 text-paper hover:text-gold ${focus}`;
 
-function Poster({ plan, priority }: { plan: Package; priority?: boolean }) {
-  return (
-    <article id={plan.id} aria-labelledby={`${plan.id}-title`} className="scroll-mt-28">
-      <h3 id={`${plan.id}-title`} className="sr-only">{plan.title}</h3>
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#050505]" style={{ containerType: "inline-size" }}>
-        <div className="absolute inset-x-0 bottom-0 h-[60%] [mask-image:linear-gradient(to_bottom,transparent,black_35%)]">
-          <Image src={plan.poster} alt="" fill priority={priority} sizes="(min-width: 768px) 45vw, 100vw" className="object-cover object-bottom" />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" aria-hidden="true" />
-        <div className="relative flex h-full flex-col items-center px-[7%] pt-[7%] pb-[6%] text-center">
-          <p className="text-[max(11px,2.6cqw)] tracking-[0.42em] text-gold" aria-hidden="true">{plan.title.toUpperCase()} · {plan.format.toUpperCase()}</p>
-          <span className="mt-[2cqw] block h-px w-[7cqw] bg-gold" aria-hidden="true" />
-          <p className="mt-[4.5cqw] font-serif text-[11.5cqw] leading-[0.98] text-paper">
-            {plan.headline[0]}<br /><span className="bg-gradient-to-b from-[#e6c58e] to-[#a9824c] bg-clip-text text-transparent">{plan.headline[1]}</span>
-          </p>
-          <p className="mt-[4cqw] font-serif text-[4.2cqw] leading-[1.3] text-paper/90">{plan.sub[0]}<br />{plan.sub[1]}</p>
-          <Link
-            href={contactHref(plan.id)}
-            className={`mt-[5cqw] inline-flex min-h-11 items-center gap-2 rounded-full border border-gold/80 bg-black/40 px-[5cqw] text-[max(14px,3.2cqw)] text-paper backdrop-blur-sm hover:bg-gold hover:text-ink ${focus}`}
-          >
-            {plan.cta} <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
-          <p className="mt-auto max-w-[90%] border-t border-gold/60 pt-[3cqw] font-serif text-[max(12px,3cqw)] tracking-[0.06em] text-paper/90">
-            {plan.gets.join(" · ")}
-          </p>
-        </div>
-      </div>
-      <Link href={plan.example.href} className={`mt-3 inline-flex min-h-11 items-center text-sm text-bone underline decoration-gold underline-offset-4 hover:text-gold ${focus}`}>
-        {plan.example.label}
-      </Link>
-    </article>
-  );
-}
-
 export default function ServicesPage() {
   return (
     <div className="container-px mx-auto max-w-content pb-24 pt-32 sm:pt-40 md:pb-40">
@@ -54,24 +22,22 @@ export default function ServicesPage() {
         <h1 className="max-w-4xl font-serif text-[clamp(2.75rem,7.5vw,6rem)] leading-[1] text-paper">
           Pick where your<br />business is.<br /><span className="text-gold">See what you get.</span>
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-8 text-bone">Four packages. Pick one and we shape it to your business.</p>
-
-        
+        <p className="mt-6 max-w-xl text-lg leading-8 text-bone">Four packages. Each one is a clear path: these are the steps, and this is what you receive at each one.</p>
       </header>
-
-      
 
       <section aria-labelledby="plans-heading" className="mt-14">
         <h2 id="plans-heading" className="sr-only">Packages</h2>
-        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:gap-x-10">
-          {engagementPlans.map((plan, i) => <Poster key={plan.id} plan={plan} priority={i < 2} />)}
+        <div className="space-y-16 lg:space-y-24">
+          {engagementPlans.map((plan, i) => <PackageJourney key={plan.id} plan={plan} index={i} />)}
         </div>
       </section>
 
-      <section aria-labelledby="automation-heading" className="mt-20 border border-gold/60 bg-[#101010] p-7 sm:p-10">
-        <p className="eyebrow">Real Group · Business Automation</p>
-        <h2 id="automation-heading" className="mt-4 font-serif text-3xl text-paper sm:text-4xl">Your next customer deserves a follow-up.</h2>
-        <p className="mt-4 max-w-2xl text-base leading-7 text-bone">Capture leads from forms and campaigns, route them privately, and track contact, quotes and actual sales. A ready-to-adapt service for businesses—not a generic email workflow.</p>
+      <section aria-label="Systems we run" className="mt-20">
+        <SystemFlowExplainer
+          flows={agencyFlows}
+          eyebrow="Real Group · Systems we run"
+          heading="See how it works, step by step."
+        />
         <Link href="/lead-automation" className={`mt-6 inline-flex min-h-11 items-center gap-3 border-b border-gold py-2 font-semibold text-paper hover:text-gold ${focus}`}>Explore lead automation <ArrowUpRight size={18} aria-hidden="true" /></Link>
       </section>
 
@@ -104,14 +70,8 @@ export default function ServicesPage() {
       </section>
 
       <section aria-labelledby="process-heading" className="mt-24 border-t border-line pt-12">
-        <h2 id="process-heading" className="text-3xl font-semibold text-paper">How it works</h2>
-        <ol className="mt-8 grid gap-6 sm:grid-cols-3">
-          {["We agree the scope and price", "You review the work at each step", "We launch and hand it over"].map((step, i) => (
-            <li key={step} className="flex items-baseline gap-4 text-lg text-paper">
-              <span className="text-gold">{i + 1}</span>{step}
-            </li>
-          ))}
-        </ol>
+        <h2 id="process-heading" className="mb-8 text-3xl font-semibold text-paper">How it works</h2>
+        <SystemFlowExplainer flows={[engagementFlow]} />
         <p className="mt-10 max-w-3xl text-sm leading-6 text-bone/80">
           Domains, hosting, subscriptions, ad spend and store fees are quoted separately. Results depend on the offer, audience and budget. Legal, accounting and tax work stays with your attorney or accountant.
         </p>
