@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { serviceAreas, engagementPlans, pilotProgram, contactHref, type Package } from "@/lib/services";
+import SystemFlowExplainer from "@/components/SystemFlowExplainer";
+import { agencyFlows, engagementFlow } from "@/lib/system-flows";
 
 export const metadata = pageMetadata({
   title: "Services & Development Plans",
@@ -68,10 +70,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="automation-heading" className="mt-20 border border-gold/60 bg-[#101010] p-7 sm:p-10">
-        <p className="eyebrow">Real Group · Business Automation</p>
-        <h2 id="automation-heading" className="mt-4 font-serif text-3xl text-paper sm:text-4xl">Your next customer deserves a follow-up.</h2>
-        <p className="mt-4 max-w-2xl text-base leading-7 text-bone">Capture leads from forms and campaigns, route them privately, and track contact, quotes and actual sales. A ready-to-adapt service for businesses—not a generic email workflow.</p>
+      <section aria-label="Systems we run" className="mt-20">
+        <SystemFlowExplainer
+          flows={agencyFlows}
+          eyebrow="Real Group · Systems we run"
+          heading="See how it works, step by step."
+        />
         <Link href="/lead-automation" className={`mt-6 inline-flex min-h-11 items-center gap-3 border-b border-gold py-2 font-semibold text-paper hover:text-gold ${focus}`}>Explore lead automation <ArrowUpRight size={18} aria-hidden="true" /></Link>
       </section>
 
@@ -104,14 +108,8 @@ export default function ServicesPage() {
       </section>
 
       <section aria-labelledby="process-heading" className="mt-24 border-t border-line pt-12">
-        <h2 id="process-heading" className="text-3xl font-semibold text-paper">How it works</h2>
-        <ol className="mt-8 grid gap-6 sm:grid-cols-3">
-          {["We agree the scope and price", "You review the work at each step", "We launch and hand it over"].map((step, i) => (
-            <li key={step} className="flex items-baseline gap-4 text-lg text-paper">
-              <span className="text-gold">{i + 1}</span>{step}
-            </li>
-          ))}
-        </ol>
+        <h2 id="process-heading" className="mb-8 text-3xl font-semibold text-paper">How it works</h2>
+        <SystemFlowExplainer flows={[engagementFlow]} />
         <p className="mt-10 max-w-3xl text-sm leading-6 text-bone/80">
           Domains, hosting, subscriptions, ad spend and store fees are quoted separately. Results depend on the offer, audience and budget. Legal, accounting and tax work stays with your attorney or accountant.
         </p>

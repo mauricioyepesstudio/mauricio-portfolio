@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Check, CircleCheck, Gauge, Inbox, Route, ShieldCheck, Workflow } from "lucide-react";
+import { ArrowRight, Check, CircleCheck, Gauge, Inbox, Route, Workflow } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
+import SystemFlowExplainer from "@/components/SystemFlowExplainer";
+import { leadFlow } from "@/lib/system-flows";
 
 export const metadata = pageMetadata({
   title: "Lead Automation & CRM | Real Group",
@@ -70,21 +72,10 @@ export default function LeadAutomationPage() {
         </div>
       </header>
 
-      <section aria-labelledby="workflow-title" className="mt-24 border-y border-line py-12 sm:mt-32">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <h2 id="workflow-title" className="font-serif text-3xl sm:text-4xl">One connected workflow.</h2>
-          <ShieldCheck className="text-gold" aria-hidden="true" />
-        </div>
-        <ol className="grid gap-4 md:grid-cols-4">
-          {["Customer request", "Smart assignment", "Private notification", "Follow-up & sale"].map((item, index) => (
-            <li key={item} className="border border-line bg-[#101010] p-5">
-              <span className="text-xs font-semibold tracking-[0.2em] text-gold">STEP 0{index + 1}</span>
-              <p className="mt-5 text-lg font-semibold">{item}</p>
-            </li>
-          ))}
-        </ol>
+      <section id="workflow" aria-label="How lead follow-up works" className="mt-24 scroll-mt-28 sm:mt-32">
+        <SystemFlowExplainer flows={[leadFlow]} eyebrow="One connected workflow" heading="Watch a request travel, step by step." />
         <p className="mt-6 max-w-3xl text-sm leading-6 text-bone">
-          Internal demonstration of the workflow; not a live feed of customer or contractor data.
+          Illustrative screens; not a live feed of customer or contractor data.
           Every client has separate access and its own operating rules.
         </p>
       </section>
@@ -95,11 +86,10 @@ export default function LeadAutomationPage() {
           A real campaign operation behind the demonstration.
         </h2>
         <p className="mt-5 max-w-3xl leading-8 text-bone">
-          Our Resource Living engagement combines Meta lead forms, Make automation,
-          delivery-audit records and contractor routing rules with creative campaigns.
-          The pool program uses an exclusive contractor-recipient configuration; broader
-          services follow category-based routing. Delivery reconciliation and commercial
-          follow-up are being validated, so we do not present projected conversions as results.
+          Our Resource Living engagement runs this workflow every day: Meta lead forms are
+          checked every 15 minutes and each new request reaches the team as its own email,
+          alongside the creative campaigns that bring those requests in. Commercial follow-up
+          is still being measured, so we do not present projected conversions as results.
         </p>
         <div className="mt-7 flex flex-wrap gap-6">
           <Link href="/portfolio/resource-living" className={`inline-flex min-h-11 items-center gap-2 border-b border-gold font-semibold text-paper hover:text-gold ${focus}`}>
