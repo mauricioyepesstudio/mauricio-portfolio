@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Equipos de skills de Portafolio de Mauricio. Generado por AI-Projects-Control-Plane/equipos-skills; no editar a mano.",
-    "version": "2026-10-23"
+    "version": "2026-11-23"
   },
   "plugins": [
     {
@@ -103,6 +103,60 @@
         "url": "anthropics/claude-for-legal",
         "path": "ip-legal",
         "sha": "4a6c651889c97cc9140580363c73e0eb17379c2b"
+      }
+    },
+    {
+      "name": "tiktok-video-skills",
+      "description": "Video corto vertical: reels/TikTok/Shorts con gancho y retención, subtítulos animados palabra por palabra, lower thirds y cuentas regresivas.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/tiktok-video-skills",
+        "sha": "88e7152fc2710fa16852d013959cfd988a8adc8b"
+      }
+    },
+    {
+      "name": "ad-video-skills",
+      "description": "Video de anuncios: creativos de video para pauta y variantes A/B, videos de lanzamiento y testimonios animados.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/ad-video-skills",
+        "sha": "cc8071678f4225ee7bdccc4506f2468722bb3515"
+      }
+    },
+    {
+      "name": "data-animation-skills",
+      "description": "Datos en movimiento: gráficas animadas desde CSV, infografías animadas y presentaciones/decks convertidos en video.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/data-animation-skills",
+        "sha": "6570c0c4fbc9daa8d7ac1f1163a890352344206b"
+      }
+    },
+    {
+      "name": "web-animation-skills",
+      "description": "Animación web: GSAP y scroll, SVG, Lottie, microinteracciones, transiciones de página, rendimiento a 60fps y respeto a prefers-reduced-motion.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/web-animation-skills",
+        "sha": "ed3a045192679b24d32090ee7a983871311ababd"
+      }
+    },
+    {
+      "name": "freelance-motion-skills",
+      "description": "Negocio de estudio: brief creativo, cotización de proyectos de motion, control de revisiones y alcance, specs de entrega por red y guía de motion de marca.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/freelance-motion-skills",
+        "sha": "9f294eb6df73cde7e2dea235f42275df11a16466"
+      }
+    },
+    {
+      "name": "motion-design-skills",
+      "description": "Motion design de estudio: Remotion (video desde código), animación de logos, principios de animación, dirección de arte, color, composición, edición al ritmo y expresiones de After Effects.",
+      "source": {
+        "source": "github",
+        "repo": "iart-ai/motion-design-skills",
+        "sha": "b85e50c4cef5ff17aa2187a10d49d2dae9226c74"
       }
     }
   ]

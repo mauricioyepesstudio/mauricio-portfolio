@@ -16,7 +16,13 @@
     "documentos@equipos-rge": true,
     "financial-analysis@equipos-rge": true,
     "commercial-legal@equipos-rge": true,
-    "ip-legal@equipos-rge": true
+    "ip-legal@equipos-rge": true,
+    "tiktok-video-skills@equipos-rge": true,
+    "ad-video-skills@equipos-rge": true,
+    "data-animation-skills@equipos-rge": true,
+    "web-animation-skills@equipos-rge": true,
+    "freelance-motion-skills@equipos-rge": true,
+    "motion-design-skills@equipos-rge": true
   },
   "hooks": {
     "PreToolUse": [
