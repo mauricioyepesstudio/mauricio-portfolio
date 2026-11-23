@@ -40,7 +40,7 @@ const LIMITS: Record<MediaKind, number> = {
   social: 8,
   newsletter: 4,
   web: 6,
-  packaging: 8,
+  packaging: 16,
   print: 6,
   promo: 6,
   product: 8,
